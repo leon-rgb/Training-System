@@ -1,0 +1,683 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.3f1 (76626098c1c4) revision 7758432'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Enterprise; OS build 18363.1854; Version 1909; 64bit' Language: 'de' Physical Memory: 32701 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2020.3.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/bopperln/Documents/GitHub/Training-System/VR Training System
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+2522
+Successfully changed project path to: C:/Users/bopperln/Documents/GitHub/Training-System/VR Training System
+C:/Users/bopperln/Documents/GitHub/Training-System/VR Training System
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 42.17 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.3f1 (76626098c1c4)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/bopperln/Documents/GitHub/Training-System/VR Training System/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: AMD Radeon VII (ID=0x66af)
+    Vendor:   
+    VRAM:     16311 MB
+    Driver:   27.20.1034.6
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56936
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.001237 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 34.16 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.896 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.004303 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.779 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 0.42 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1738 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 81.4 MB.
+System memory in use after: 81.4 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2182.
+Total: 1.821400 ms (FindLiveObjects: 0.176100 ms CreateObjectMapping: 0.090500 ms MarkObjects: 1.478900 ms  DeleteObjects: 0.075100 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/Surgical Instruments - Free hospital props/Models
+  artifactKey: Guid(576a9bebe8832be408d703e4526c1998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models using Guid(576a9bebe8832be408d703e4526c1998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10c7ed4648fc1ac98bbc4fa206e33c9c') in 0.006112 seconds
+  Import took 0.008523 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Hook_1.fbx
+  artifactKey: Guid(ddf5f78d1cecd90459c48028ae7640e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Hook_1.fbx using Guid(ddf5f78d1cecd90459c48028ae7640e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '934b25ff551ab9ed03c8b049aae8ff91') in 0.288585 seconds
+  Import took 0.293973 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000286 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Clamp_1.fbx
+  artifactKey: Guid(c127cab234a627d44b74f682c2c7c1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Clamp_1.fbx using Guid(c127cab234a627d44b74f682c2c7c1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05b343b6f82b2d796e27abc49b94cce5') in 0.080184 seconds
+  Import took 0.085649 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Clamp_2.fbx
+  artifactKey: Guid(9627d0173e36af945a796d8ebc20f3f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Clamp_2.fbx using Guid(9627d0173e36af945a796d8ebc20f3f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0810ff81a41c103e8d01abd56fa8e2fb') in 0.074371 seconds
+  Import took 0.079947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000295 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Hook_2.fbx
+  artifactKey: Guid(1bb3de73d63b9e547b9d485ddd71ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Hook_2.fbx using Guid(1bb3de73d63b9e547b9d485ddd71ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87dff41d5348447a0fcfba0acb960146') in 0.063437 seconds
+  Import took 0.068984 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Syringe_1.fbx
+  artifactKey: Guid(ff922435942a14b4ea077d5db343bf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Syringe_1.fbx using Guid(ff922435942a14b4ea077d5db343bf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfd96a43323c0efa9a4f2d1f5503c111') in 0.072144 seconds
+  Import took 0.077536 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Scalpel_2.fbx
+  artifactKey: Guid(9af32ca06224ee843b1f379b3b5c2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Scalpel_2.fbx using Guid(9af32ca06224ee843b1f379b3b5c2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc6d732071e1d36b8c1753e8fde9954e') in 0.063205 seconds
+  Import took 0.068695 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Surgical Instruments - Free hospital props
+  artifactKey: Guid(7e305724c44dd3e44a1005284cd13864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props using Guid(7e305724c44dd3e44a1005284cd13864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5697bee8627090612148743ff1b53dc3') in 0.004044 seconds
+  Import took 0.006692 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Saw_2.fbx
+  artifactKey: Guid(62c2e5ad8f6c6b04daef46e5a808bf58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Saw_2.fbx using Guid(62c2e5ad8f6c6b04daef46e5a808bf58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '700caadcf677279ec38d97740bf9cbfc') in 0.054265 seconds
+  Import took 0.059541 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Swathe_1.fbx
+  artifactKey: Guid(25cb0fadb96cc344e94d34ac393bb9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Swathe_1.fbx using Guid(25cb0fadb96cc344e94d34ac393bb9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c8aa2133e528171f9f683d3734b0823') in 0.052408 seconds
+  Import took 0.057854 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Saw_1.fbx
+  artifactKey: Guid(f0d49cb37c81ae245a453db25febe949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Saw_1.fbx using Guid(f0d49cb37c81ae245a453db25febe949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd26e9ff0c090aff04e7fb275ca226374') in 0.064810 seconds
+  Import took 0.070144 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Scalpel_1.fbx
+  artifactKey: Guid(ab4f68ad744228a4197cd96af45409ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Scalpel_1.fbx using Guid(ab4f68ad744228a4197cd96af45409ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6aa5f782cde9f106ac50538186bce58') in 0.061474 seconds
+  Import took 0.066882 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000265 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Forceps_1.fbx
+  artifactKey: Guid(5fb91beefe44cac4f9a3c50f29bd917d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Forceps_1.fbx using Guid(5fb91beefe44cac4f9a3c50f29bd917d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc9a32fe4e0de8a71e350227edd3e506') in 0.055752 seconds
+  Import took 0.061308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Drill_1.fbx
+  artifactKey: Guid(f8f38d2ab99ae394d9c72bb554387a90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Drill_1.fbx using Guid(f8f38d2ab99ae394d9c72bb554387a90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89598ec690939635125ac550b219b202') in 0.066984 seconds
+  Import took 0.072335 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Forceps_2.fbx
+  artifactKey: Guid(3eae65bf2a58bb84eb3741427dcb8100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Forceps_2.fbx using Guid(3eae65bf2a58bb84eb3741427dcb8100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60aa8b8485177583c6eb7de2761aaa2b') in 0.056117 seconds
+  Import took 0.061508 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Forceps_3.fbx
+  artifactKey: Guid(0fe923a60b4678c4b94cd01c2707ad95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Forceps_3.fbx using Guid(0fe923a60b4678c4b94cd01c2707ad95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b9b09dca5fe25cef692b5dccb2f5b4b') in 0.054329 seconds
+  Import took 0.059886 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000356 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Tampon_1.fbx
+  artifactKey: Guid(1b06da34f95f3fe498b13372dd64d8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Tampon_1.fbx using Guid(1b06da34f95f3fe498b13372dd64d8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c7ee8db754cb35d42cc048782b63fc7') in 0.052670 seconds
+  Import took 0.058331 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000225 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Bowl_1.fbx
+  artifactKey: Guid(98badb7ccc679b343b4e4dce6eef25f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Bowl_1.fbx using Guid(98badb7ccc679b343b4e4dce6eef25f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d36875c7d5e22adcfaa4d240aec2e7f') in 0.053702 seconds
+  Import took 0.059191 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Scalpel_Cap.fbx
+  artifactKey: Guid(95aacef69e284294994a1f8a3ad11648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Scalpel_Cap.fbx using Guid(95aacef69e284294994a1f8a3ad11648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d476b119c64352d7618dcba827021ee') in 0.052138 seconds
+  Import took 0.057675 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.452537 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Materials
+  artifactKey: Guid(089aa06f1ec7e9b4eba6aeb8a1247ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Materials using Guid(089aa06f1ec7e9b4eba6aeb8a1247ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5510a0d225dd137b87fe9dd88fb79c82') in 0.004300 seconds
+  Import took 0.006870 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.380737 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs
+  artifactKey: Guid(f447ed42607cfb44c876696a6318b056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs using Guid(f447ed42607cfb44c876696a6318b056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a826413b6441b488837ee9a594632c9f') in 0.004060 seconds
+  Import took 0.006485 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.185497 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Bowl_1.prefab
+  artifactKey: Guid(7857aa28e4f43bc40b8118e519d3b83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Bowl_1.prefab using Guid(7857aa28e4f43bc40b8118e519d3b83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '476756ddeba7357db0704bff131c83e4') in 0.052274 seconds
+  Import took 0.057534 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_2.prefab
+  artifactKey: Guid(0eeabd0171cfec44698ec9270270b72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_2.prefab using Guid(0eeabd0171cfec44698ec9270270b72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeaad4c6e531128b0dba79607ed3c77b') in 0.049166 seconds
+  Import took 0.054694 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000305 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Tampon_1.prefab
+  artifactKey: Guid(1babb517b1317af4eb147082d5f06b83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Tampon_1.prefab using Guid(1babb517b1317af4eb147082d5f06b83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e114ad1c2092c5233822ccbdf05982') in 0.050459 seconds
+  Import took 0.055926 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_1.prefab
+  artifactKey: Guid(12f6b8c842c5b5b4299d7a429ad1327a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_1.prefab using Guid(12f6b8c842c5b5b4299d7a429ad1327a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '401c10535ff5652fb1e9fd52763ba518') in 0.049704 seconds
+  Import took 0.055180 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Drill_1.prefab
+  artifactKey: Guid(f9183015c68ac23438a558eb6e7634db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Drill_1.prefab using Guid(f9183015c68ac23438a558eb6e7634db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e62c8d901f626b09a7132fd7d648ed8') in 0.049573 seconds
+  Import took 0.054922 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000284 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_1.prefab
+  artifactKey: Guid(d0044fb3bfc89b6459de10e952a6f57e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_1.prefab using Guid(d0044fb3bfc89b6459de10e952a6f57e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7eae07036a923b302e30bf8df3cbdf8') in 0.048725 seconds
+  Import took 0.054272 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Swathe_1.prefab
+  artifactKey: Guid(c4f3b7589cf524446ab824e0b6e6761b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Swathe_1.prefab using Guid(c4f3b7589cf524446ab824e0b6e6761b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '567b6e8f2de55dc2aeefc2167e636daf') in 0.049957 seconds
+  Import took 0.055412 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_1.prefab
+  artifactKey: Guid(0ba556535b75b424db2a05aa469c7c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_1.prefab using Guid(0ba556535b75b424db2a05aa469c7c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb52601da9c94427627af070749e3507') in 0.051054 seconds
+  Import took 0.056883 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_3.prefab
+  artifactKey: Guid(ce3277385b368c94b8500b97f4f8e563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_3.prefab using Guid(ce3277385b368c94b8500b97f4f8e563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df993c6ad6a5b35b6e908bba5045ed3') in 0.049323 seconds
+  Import took 0.054967 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000282 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_1.prefab
+  artifactKey: Guid(92dc2944667e86b41b0562764893f5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_1.prefab using Guid(92dc2944667e86b41b0562764893f5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44141826ac6e8c9c9b2c7c56f79227d9') in 0.049341 seconds
+  Import took 0.054824 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000304 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_2.prefab
+  artifactKey: Guid(55cc550a5ce32494b88d9de29a9b4f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_2.prefab using Guid(55cc550a5ce32494b88d9de29a9b4f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d4f338203689e0cae7b91e50f710bb5') in 0.049388 seconds
+  Import took 0.054860 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000229 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_Cap.prefab
+  artifactKey: Guid(4382752964b8e1c438dfd58cc5356d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_Cap.prefab using Guid(4382752964b8e1c438dfd58cc5356d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5786a848feb8d045e51651266a310cd') in 0.049780 seconds
+  Import took 0.055263 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Syringe_1.prefab
+  artifactKey: Guid(540a7917b18ad1b4a940c00dade155ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Syringe_1.prefab using Guid(540a7917b18ad1b4a940c00dade155ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7624d7cd28dd0a3e9455dd8aab8cce6') in 0.051723 seconds
+  Import took 0.057099 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_2.prefab
+  artifactKey: Guid(300a4f83c1daf1e41af306286d9f6a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_2.prefab using Guid(300a4f83c1daf1e41af306286d9f6a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '281e9482e23a6965979bef0ed4614e0d') in 0.049921 seconds
+  Import took 0.055201 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000287 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_1.prefab
+  artifactKey: Guid(bc7f5fe3b32d0e541830b74b97809dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_1.prefab using Guid(bc7f5fe3b32d0e541830b74b97809dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c940830998509ae67bd322fb5ea68ba') in 0.050094 seconds
+  Import took 0.055645 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_2.prefab
+  artifactKey: Guid(98a37c149a3eb414ba6878504f59350e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_2.prefab using Guid(98a37c149a3eb414ba6878504f59350e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8725e7249fa0d0f77d8e0a0953a17c7e') in 0.049183 seconds
+  Import took 0.054740 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000253 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_2.prefab
+  artifactKey: Guid(e994b9f4bcbcead4dbe34c3ccbadc2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_2.prefab using Guid(e994b9f4bcbcead4dbe34c3ccbadc2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '620836911ee73736b2bd6b29e81da457') in 0.049320 seconds
+  Import took 0.054881 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 613.529709 seconds.
+  path: Assets/CobleGames
+  artifactKey: Guid(187134d34b13a79419b6c275b4dd9678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames using Guid(187134d34b13a79419b6c275b4dd9678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f353d0572ed91c57ce80931aa912ced') in 0.004319 seconds
+  Import took 0.007354 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.957839 seconds.
+  path: Assets/CobleGames/Prefabs
+  artifactKey: Guid(471f169f064f5744a8be2db2c33e9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames/Prefabs using Guid(471f169f064f5744a8be2db2c33e9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3a0b3e842c6b3cfdde495a66a9198c8') in 0.003570 seconds
+  Import took 0.006097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.076937 seconds.
+  path: Assets/CobleGames/Prefabs/hospital bed.prefab
+  artifactKey: Guid(2a3b3a882d9cfc74392ec24693855ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames/Prefabs/hospital bed.prefab using Guid(2a3b3a882d9cfc74392ec24693855ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee52ae349adc05173139c7c92374b6f3') in 0.054617 seconds
+  Import took 0.060285 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003801 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.779 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.0 MB.
+System memory in use after: 83.1 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2196.
+Total: 1.686700 ms (FindLiveObjects: 0.145700 ms CreateObjectMapping: 0.045700 ms MarkObjects: 1.450700 ms  DeleteObjects: 0.043900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 35.977057 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Info (Free hospital props).pdf
+  artifactKey: Guid(7dd1d31128721264db28f3225a7f0de5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Info (Free hospital props).pdf using Guid(7dd1d31128721264db28f3225a7f0de5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db0dfe76d0462f7aae6e6201c62a69ba') in 0.016564 seconds
+  Import took 0.019089 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 8.501354 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes
+  artifactKey: Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes using Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e167209da2749518ab4b42e83a5713c3') in 0.003820 seconds
+  Import took 0.006509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.002234 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes
+  artifactKey: Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes using Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e167209da2749518ab4b42e83a5713c3') in 0.003682 seconds
+  Import took 0.006278 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 4.679257 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity
+  artifactKey: Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity using Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '633ac872c715c689a262fbfbf7791efc') in 0.004349 seconds
+  Import took 0.006904 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001700 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity
+  artifactKey: Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity using Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '633ac872c715c689a262fbfbf7791efc') in 0.003998 seconds
+  Import took 0.006668 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 17.728571 seconds.
+  path: Assets/Scenes/New Scene.unity
+  artifactKey: Guid(ebc70c914a8adf04fba36bb3763c5d32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/New Scene.unity using Guid(ebc70c914a8adf04fba36bb3763c5d32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0958b7b4c9d642ad3a79190bc817a60d') in 0.004220 seconds
+  Import took 0.006918 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003710 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.756 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.3 MB.
+System memory in use after: 83.4 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2200.
+Total: 1.807900 ms (FindLiveObjects: 0.170800 ms CreateObjectMapping: 0.056500 ms MarkObjects: 1.529100 ms  DeleteObjects: 0.050500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003676 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.749 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.4 MB.
+System memory in use after: 83.4 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2204.
+Total: 2.200300 ms (FindLiveObjects: 0.162600 ms CreateObjectMapping: 0.055700 ms MarkObjects: 1.927200 ms  DeleteObjects: 0.053600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 363.478208 seconds.
+  path: Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbx
+  artifactKey: Guid(8db88bf2ff3634ce8bb31e96a0211637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbx using Guid(8db88bf2ff3634ce8bb31e96a0211637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba3c8c2dd81b44e03906568b2d42a3d3') in 0.219875 seconds
+  Import took 0.222697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 40.690945 seconds.
+  path: Assets/CobleGames/Materials/hospital bed.mat
+  artifactKey: Guid(45223e1f4025fe148a9a0b006eb143dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames/Materials/hospital bed.mat using Guid(45223e1f4025fe148a9a0b006eb143dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12cac9d3f5f5a59b8abefb2a8e9fa42b') in 0.064752 seconds
+  Import took 0.071144 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.000889 seconds.
+  path: Assets/CobleGames/Meshes/hospital bed.fbx
+  artifactKey: Guid(b177f7ee60a86d44fa63b6e6f65c2fc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames/Meshes/hospital bed.fbx using Guid(b177f7ee60a86d44fa63b6e6f65c2fc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c06de482ba0f0d6bb4f8045fdd69eae1') in 0.050664 seconds
+  Import took 0.056784 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 2.654719 seconds.
+  path: Assets/CobleGames/Textures/bed lp_Bed_AlbedoTransparency.tga
+  artifactKey: Guid(5715bb262c1086946805749b7a9e6e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames/Textures/bed lp_Bed_AlbedoTransparency.tga using Guid(5715bb262c1086946805749b7a9e6e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9bf59f8ae5d650da528a37d2ecbac1c') in 0.029651 seconds
+  Import took 0.033564 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000293 seconds.
+  path: Assets/CobleGames/Textures/bed lp_Bed_MetallicSmoothness.tga
+  artifactKey: Guid(3d66acc38552a2c4fa11b595cd34197e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames/Textures/bed lp_Bed_MetallicSmoothness.tga using Guid(3d66acc38552a2c4fa11b595cd34197e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3305dd0b6b20935ad9906df0f009ca1') in 0.023797 seconds
+  Import took 0.027690 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/CobleGames/Textures/bed lp_Bed_Normal.tga
+  artifactKey: Guid(30f3108aa3f1c4b44b30747e2deb2eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/CobleGames/Textures/bed lp_Bed_Normal.tga using Guid(30f3108aa3f1c4b44b30747e2deb2eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '225c4fa2a4ac2085a045684dddbff534') in 0.031910 seconds
+  Import took 0.035758 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004065 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.782 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.7 MB.
+System memory in use after: 83.8 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2246.
+Total: 1.839100 ms (FindLiveObjects: 0.183100 ms CreateObjectMapping: 0.058100 ms MarkObjects: 1.541300 ms  DeleteObjects: 0.055600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004181 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.771 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.8 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2250.
+Total: 2.073400 ms (FindLiveObjects: 0.232200 ms CreateObjectMapping: 0.078400 ms MarkObjects: 1.710100 ms  DeleteObjects: 0.051600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004279 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.761 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.56 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.8 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2254.
+Total: 1.711000 ms (FindLiveObjects: 0.182800 ms CreateObjectMapping: 0.063100 ms MarkObjects: 1.410900 ms  DeleteObjects: 0.053200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004321 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.46 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.9 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2258.
+Total: 1.886600 ms (FindLiveObjects: 0.194600 ms CreateObjectMapping: 0.066800 ms MarkObjects: 1.564400 ms  DeleteObjects: 0.060000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004090 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.785 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.8 MB.
+System memory in use after: 83.9 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2262.
+Total: 2.339400 ms (FindLiveObjects: 0.192400 ms CreateObjectMapping: 0.067600 ms MarkObjects: 2.007100 ms  DeleteObjects: 0.071400 ms)
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
