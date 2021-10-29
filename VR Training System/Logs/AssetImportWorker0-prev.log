@@ -15,11 +15,11 @@ C:/Users/bopperln/Documents/GitHub/Training-System/VR Training System
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-2522
+5654
 Successfully changed project path to: C:/Users/bopperln/Documents/GitHub/Training-System/VR Training System
 C:/Users/bopperln/Documents/GitHub/Training-System/VR Training System
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 42.17 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 63.90 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.3f1 (76626098c1c4)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Resources/UnitySubsystems
@@ -35,586 +35,374 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56936
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001237 seconds.
+Registered in 0.029053 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 34.16 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 35.49 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.896 seconds
+- Completed reload, in  2.868 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.004303 seconds.
+Registered in 0.127052 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.42 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.779 seconds
+- Completed reload, in  1.314 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
-Refreshing native plugins compatible for Editor in 0.42 ms, found 4 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
+Refreshing native plugins compatible for Editor in 0.46 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1738 Unused Serialized files (Serialized files now loaded: 0)
 System memory in use before: 81.4 MB.
-System memory in use after: 81.4 MB.
+System memory in use after: 81.5 MB.
 
 Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 2182.
-Total: 1.821400 ms (FindLiveObjects: 0.176100 ms CreateObjectMapping: 0.090500 ms MarkObjects: 1.478900 ms  DeleteObjects: 0.075100 ms)
+Total: 1.768000 ms (FindLiveObjects: 0.178400 ms CreateObjectMapping: 0.097700 ms MarkObjects: 1.409600 ms  DeleteObjects: 0.081200 ms)
 
 ========================================================================
 Received Import Request.
-  path: Assets/Surgical Instruments - Free hospital props/Models
-  artifactKey: Guid(576a9bebe8832be408d703e4526c1998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models using Guid(576a9bebe8832be408d703e4526c1998) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '10c7ed4648fc1ac98bbc4fa206e33c9c') in 0.006112 seconds
-  Import took 0.008523 seconds .
+  path: Assets/SteamVR_Input/SteamVR_Actions.asmdef
+  artifactKey: Guid(bc5afab19092de8478dae5df1a1f5567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR_Input/SteamVR_Actions.asmdef using Guid(bc5afab19092de8478dae5df1a1f5567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '480296e3cbcfa8e646decbf1d4fb803c') in 0.083464 seconds
+  Import took 0.085912 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Hook_1.fbx
-  artifactKey: Guid(ddf5f78d1cecd90459c48028ae7640e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Hook_1.fbx using Guid(ddf5f78d1cecd90459c48028ae7640e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '934b25ff551ab9ed03c8b049aae8ff91') in 0.288585 seconds
-  Import took 0.293973 seconds .
+  Time since last request: 61.008575 seconds.
+  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/4.Teleport/Materials/Walkable.mat
+  artifactKey: Guid(73db86ee094aa314e8dfbeaa2cf83427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/4.Teleport/Materials/Walkable.mat using Guid(73db86ee094aa314e8dfbeaa2cf83427) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4d930f81cbd691532e266a2e00f2c79d') in 0.083467 seconds
+  Import took 0.085898 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000286 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Clamp_1.fbx
-  artifactKey: Guid(c127cab234a627d44b74f682c2c7c1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Clamp_1.fbx using Guid(c127cab234a627d44b74f682c2c7c1cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05b343b6f82b2d796e27abc49b94cce5') in 0.080184 seconds
-  Import took 0.085649 seconds .
+  Time since last request: 0.000271 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointText.mat
+  artifactKey: Guid(7405a0e72d2cbda4184774c25ee70fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointText.mat using Guid(7405a0e72d2cbda4184774c25ee70fd4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'da5f12ccd5b3736464587ca365640601') in 0.012059 seconds
+  Import took 0.014337 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000254 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Clamp_2.fbx
-  artifactKey: Guid(9627d0173e36af945a796d8ebc20f3f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Clamp_2.fbx using Guid(9627d0173e36af945a796d8ebc20f3f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0810ff81a41c103e8d01abd56fa8e2fb') in 0.074371 seconds
-  Import took 0.079947 seconds .
+  Time since last request: 0.000243 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointLocked.mat
+  artifactKey: Guid(c8665e1aa63020343bc825410291e43a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointLocked.mat using Guid(c8665e1aa63020343bc825410291e43a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a663c6c44f78ccaa13e7730124e64a08') in 0.011271 seconds
+  Import took 0.013630 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000295 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Hook_2.fbx
-  artifactKey: Guid(1bb3de73d63b9e547b9d485ddd71ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Hook_2.fbx using Guid(1bb3de73d63b9e547b9d485ddd71ba6d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '87dff41d5348447a0fcfba0acb960146') in 0.063437 seconds
-  Import took 0.068984 seconds .
+  Time since last request: 0.000210 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointVisible.mat
+  artifactKey: Guid(bda4e134e1985594ea5aa36ca5a739e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointVisible.mat using Guid(bda4e134e1985594ea5aa36ca5a739e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '962e555a7faa01fc1c067c521b5457c3') in 0.010331 seconds
+  Import took 0.012911 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Syringe_1.fbx
-  artifactKey: Guid(ff922435942a14b4ea077d5db343bf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Syringe_1.fbx using Guid(ff922435942a14b4ea077d5db343bf86) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cfd96a43323c0efa9a4f2d1f5503c111') in 0.072144 seconds
-  Import took 0.077536 seconds .
+  Time since last request: 0.000261 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointInvalid.mat
+  artifactKey: Guid(69cf60201b6b1c447825fbb5f8d2240b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointInvalid.mat using Guid(69cf60201b6b1c447825fbb5f8d2240b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '209a615adf87a2a0dd6d152da02191d1') in 0.009435 seconds
+  Import took 0.011822 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000292 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Scalpel_2.fbx
-  artifactKey: Guid(9af32ca06224ee843b1f379b3b5c2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Scalpel_2.fbx using Guid(9af32ca06224ee843b1f379b3b5c2e9c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc6d732071e1d36b8c1753e8fde9954e') in 0.063205 seconds
-  Import took 0.068695 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/Surgical Instruments - Free hospital props
-  artifactKey: Guid(7e305724c44dd3e44a1005284cd13864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props using Guid(7e305724c44dd3e44a1005284cd13864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5697bee8627090612148743ff1b53dc3') in 0.004044 seconds
-  Import took 0.006692 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000265 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Saw_2.fbx
-  artifactKey: Guid(62c2e5ad8f6c6b04daef46e5a808bf58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Saw_2.fbx using Guid(62c2e5ad8f6c6b04daef46e5a808bf58) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '700caadcf677279ec38d97740bf9cbfc') in 0.054265 seconds
-  Import took 0.059541 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000218 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Swathe_1.fbx
-  artifactKey: Guid(25cb0fadb96cc344e94d34ac393bb9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Swathe_1.fbx using Guid(25cb0fadb96cc344e94d34ac393bb9f8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4c8aa2133e528171f9f683d3734b0823') in 0.052408 seconds
-  Import took 0.057854 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Saw_1.fbx
-  artifactKey: Guid(f0d49cb37c81ae245a453db25febe949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Saw_1.fbx using Guid(f0d49cb37c81ae245a453db25febe949) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd26e9ff0c090aff04e7fb275ca226374') in 0.064810 seconds
-  Import took 0.070144 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000220 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Scalpel_1.fbx
-  artifactKey: Guid(ab4f68ad744228a4197cd96af45409ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Scalpel_1.fbx using Guid(ab4f68ad744228a4197cd96af45409ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6aa5f782cde9f106ac50538186bce58') in 0.061474 seconds
-  Import took 0.066882 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000265 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Forceps_1.fbx
-  artifactKey: Guid(5fb91beefe44cac4f9a3c50f29bd917d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Forceps_1.fbx using Guid(5fb91beefe44cac4f9a3c50f29bd917d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dc9a32fe4e0de8a71e350227edd3e506') in 0.055752 seconds
-  Import took 0.061308 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Drill_1.fbx
-  artifactKey: Guid(f8f38d2ab99ae394d9c72bb554387a90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Drill_1.fbx using Guid(f8f38d2ab99ae394d9c72bb554387a90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '89598ec690939635125ac550b219b202') in 0.066984 seconds
-  Import took 0.072335 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000245 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Forceps_2.fbx
-  artifactKey: Guid(3eae65bf2a58bb84eb3741427dcb8100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Forceps_2.fbx using Guid(3eae65bf2a58bb84eb3741427dcb8100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60aa8b8485177583c6eb7de2761aaa2b') in 0.056117 seconds
-  Import took 0.061508 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000258 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Forceps_3.fbx
-  artifactKey: Guid(0fe923a60b4678c4b94cd01c2707ad95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Forceps_3.fbx using Guid(0fe923a60b4678c4b94cd01c2707ad95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b9b09dca5fe25cef692b5dccb2f5b4b') in 0.054329 seconds
-  Import took 0.059886 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000356 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Tampon_1.fbx
-  artifactKey: Guid(1b06da34f95f3fe498b13372dd64d8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Tampon_1.fbx using Guid(1b06da34f95f3fe498b13372dd64d8f4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9c7ee8db754cb35d42cc048782b63fc7') in 0.052670 seconds
-  Import took 0.058331 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000225 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Bowl_1.fbx
-  artifactKey: Guid(98badb7ccc679b343b4e4dce6eef25f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Bowl_1.fbx using Guid(98badb7ccc679b343b4e4dce6eef25f6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1d36875c7d5e22adcfaa4d240aec2e7f') in 0.053702 seconds
-  Import took 0.059191 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000226 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Scalpel_Cap.fbx
-  artifactKey: Guid(95aacef69e284294994a1f8a3ad11648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Scalpel_Cap.fbx using Guid(95aacef69e284294994a1f8a3ad11648) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d476b119c64352d7618dcba827021ee') in 0.052138 seconds
-  Import took 0.057675 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.452537 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Materials
-  artifactKey: Guid(089aa06f1ec7e9b4eba6aeb8a1247ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Materials using Guid(089aa06f1ec7e9b4eba6aeb8a1247ff4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5510a0d225dd137b87fe9dd88fb79c82') in 0.004300 seconds
-  Import took 0.006870 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.380737 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs
-  artifactKey: Guid(f447ed42607cfb44c876696a6318b056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs using Guid(f447ed42607cfb44c876696a6318b056) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a826413b6441b488837ee9a594632c9f') in 0.004060 seconds
-  Import took 0.006485 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.185497 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Bowl_1.prefab
-  artifactKey: Guid(7857aa28e4f43bc40b8118e519d3b83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Bowl_1.prefab using Guid(7857aa28e4f43bc40b8118e519d3b83a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '476756ddeba7357db0704bff131c83e4') in 0.052274 seconds
-  Import took 0.057534 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000269 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_2.prefab
-  artifactKey: Guid(0eeabd0171cfec44698ec9270270b72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_2.prefab using Guid(0eeabd0171cfec44698ec9270270b72d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'eeaad4c6e531128b0dba79607ed3c77b') in 0.049166 seconds
-  Import took 0.054694 seconds .
+  Time since last request: 0.000194 seconds.
+  path: Assets/SteamVR/Models/Materials/vr_glove_color.mat
+  artifactKey: Guid(cbe636ca800df264c9fb91dc95fbd9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/vr_glove_color.mat using Guid(cbe636ca800df264c9fb91dc95fbd9e0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05ba3c97289c6172323677be260eae52') in 0.023976 seconds
+  Import took 0.026481 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000305 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Tampon_1.prefab
-  artifactKey: Guid(1babb517b1317af4eb147082d5f06b83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Tampon_1.prefab using Guid(1babb517b1317af4eb147082d5f06b83) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6e114ad1c2092c5233822ccbdf05982') in 0.050459 seconds
-  Import took 0.055926 seconds .
+  path: Assets/SteamVR/Models/Materials/vr_glove_color_red.mat
+  artifactKey: Guid(8f32b3d74401443479c643e48c21915a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/vr_glove_color_red.mat using Guid(8f32b3d74401443479c643e48c21915a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '101ddfc2b1c625d481611fa727896a13') in 0.018175 seconds
+  Import took 0.020604 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000152 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/Materials/weird table.mat
+  artifactKey: Guid(d07127d506ba1204e94715378a104735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/Materials/weird table.mat using Guid(d07127d506ba1204e94715378a104735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64283b58545e69d2521ee3de581ff112') in 0.041464 seconds
+  Import took 0.043748 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.737218 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaHighlighted.mat
+  artifactKey: Guid(9001ec1e087534147bd9f18cbf931597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaHighlighted.mat using Guid(9001ec1e087534147bd9f18cbf931597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ed83ea07ec70cdbed0365163bd57ba73') in 0.009919 seconds
+  Import took 0.012276 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000252 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaLocked.mat
+  artifactKey: Guid(0fe9e4228ebb3bc469ead815cd305d91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaLocked.mat using Guid(0fe9e4228ebb3bc469ead815cd305d91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4da8ed24cf38524f396fda915c3e773') in 0.014934 seconds
+  Import took 0.017197 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000178 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaVisibleLow.mat
+  artifactKey: Guid(50e5b65061d0b044da1bfd0dc52d912d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaVisibleLow.mat using Guid(50e5b65061d0b044da1bfd0dc52d912d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ec05de3570fbcc4d04b3fec45dd81ce') in 0.010280 seconds
+  Import took 0.012737 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000201 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPlayspaceVisualize.mat
+  artifactKey: Guid(ced2760f8133c2743a275ba997adc9db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPlayspaceVisualize.mat using Guid(ced2760f8133c2743a275ba997adc9db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd47dbff39fe565fa6958ea1abc979d51') in 0.009918 seconds
+  Import took 0.012257 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointHighlighted.mat
+  artifactKey: Guid(92c458d658d953f4588489c06de30b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointHighlighted.mat using Guid(92c458d658d953f4588489c06de30b56) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85f98728dee769688bae2e9e69f4b7f9') in 0.010483 seconds
+  Import took 0.012712 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000208 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaHighlightedBright.mat
+  artifactKey: Guid(42e2d33cb8e988945826a8a0f5c0f543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaHighlightedBright.mat using Guid(42e2d33cb8e988945826a8a0f5c0f543) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c4e028d862e0700fc0fd569da356ff04') in 0.009869 seconds
+  Import took 0.012161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaVisibleBright.mat
+  artifactKey: Guid(7ec109995bd12834794f8eebaf1e7d91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaVisibleBright.mat using Guid(7ec109995bd12834794f8eebaf1e7d91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '08264a0706763adc08373e73aaa874a1') in 0.009981 seconds
+  Import took 0.012404 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaVisible.mat
+  artifactKey: Guid(d2bbbd01c5b7a6b4bb5a1316f21fc1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaVisible.mat using Guid(d2bbbd01c5b7a6b4bb5a1316f21fc1ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2a8e0f1004f8cb43b040fbf54bb502d2') in 0.009212 seconds
+  Import took 0.011662 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaHighlightedLow.mat
+  artifactKey: Guid(bbd3c57c95ca5934abf56f614110fa53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportAreaHighlightedLow.mat using Guid(bbd3c57c95ca5934abf56f614110fa53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff81e22facde9212dfa3e4fabea8e3eb') in 0.010050 seconds
+  Import took 0.012418 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPlaySpace.mat
+  artifactKey: Guid(1d3d8159663c8c94cbf05cd6b9d686b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPlaySpace.mat using Guid(1d3d8159663c8c94cbf05cd6b9d686b6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1df2012f0deb5cc266c2eac633d7705b') in 0.008875 seconds
+  Import took 0.011405 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointer.mat
+  artifactKey: Guid(da2a09186fc8dfa4c9f1c2933159f94f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials URP/URPTeleportPointer.mat using Guid(da2a09186fc8dfa4c9f1c2933159f94f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22969160a102e577b6de2dac050678f7') in 0.008723 seconds
+  Import took 0.011253 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.818456 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Squishy/Materials/URPSquish.mat
+  artifactKey: Guid(607f3c0c7b39ba74dae7acb29ebb7f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Squishy/Materials/URPSquish.mat using Guid(607f3c0c7b39ba74dae7acb29ebb7f2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a49a70c95e1a48b4bef863e64ea3a6cd') in 0.009330 seconds
+  Import took 0.011799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.218782 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Materials/URPflowerMatOp.mat
+  artifactKey: Guid(ac9d55e9d2534df40a84030248c00fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Materials/URPflowerMatOp.mat using Guid(ac9d55e9d2534df40a84030248c00fb0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e551160433c5320f5309be7b9aacc8') in 0.008815 seconds
+  Import took 0.011270 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000251 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_1.prefab
-  artifactKey: Guid(12f6b8c842c5b5b4299d7a429ad1327a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_1.prefab using Guid(12f6b8c842c5b5b4299d7a429ad1327a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '401c10535ff5652fb1e9fd52763ba518') in 0.049704 seconds
-  Import took 0.055180 seconds .
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/URPLightCone_Blue.mat
+  artifactKey: Guid(0f5a6ed934514dd4491f8cfa5cab3a14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/URPLightCone_Blue.mat using Guid(0f5a6ed934514dd4491f8cfa5cab3a14) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78dde9bcd58bc2b53ea80b3f070acdf7') in 0.009036 seconds
+  Import took 0.011345 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000299 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Drill_1.prefab
-  artifactKey: Guid(f9183015c68ac23438a558eb6e7634db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Drill_1.prefab using Guid(f9183015c68ac23438a558eb6e7634db) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e62c8d901f626b09a7132fd7d648ed8') in 0.049573 seconds
-  Import took 0.054922 seconds .
+  Time since last request: 0.024721 seconds.
+  path: Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerTextHintLine.mat
+  artifactKey: Guid(d51c2116441c31e408cfcd6e44b1ff93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerTextHintLine.mat using Guid(d51c2116441c31e408cfcd6e44b1ff93) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4e0ecdddeb292143a76339fa9cce0e51') in 0.008847 seconds
+  Import took 0.011283 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000284 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_1.prefab
-  artifactKey: Guid(d0044fb3bfc89b6459de10e952a6f57e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_1.prefab using Guid(d0044fb3bfc89b6459de10e952a6f57e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f7eae07036a923b302e30bf8df3cbdf8') in 0.048725 seconds
-  Import took 0.054272 seconds .
+  Time since last request: 0.000269 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Materials/URPflowerMat.mat
+  artifactKey: Guid(0a4508424b3d2a74fb181adab02ece03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Materials/URPflowerMat.mat using Guid(0a4508424b3d2a74fb181adab02ece03) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd398a292256b0e65f35223240fec30cd') in 0.009237 seconds
+  Import took 0.011550 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Swathe_1.prefab
-  artifactKey: Guid(c4f3b7589cf524446ab824e0b6e6761b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Swathe_1.prefab using Guid(c4f3b7589cf524446ab824e0b6e6761b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '567b6e8f2de55dc2aeefc2167e636daf') in 0.049957 seconds
-  Import took 0.055412 seconds .
+  Time since last request: 0.013346 seconds.
+  path: Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerButtonHints.mat
+  artifactKey: Guid(70a2eb634d7ed434b86d36f190fcf3a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerButtonHints.mat using Guid(70a2eb634d7ed434b86d36f190fcf3a1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8660641fb1fec452c79bf5cb61a5c7d') in 0.009596 seconds
+  Import took 0.012118 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000293 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_1.prefab
-  artifactKey: Guid(0ba556535b75b424db2a05aa469c7c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_1.prefab using Guid(0ba556535b75b424db2a05aa469c7c7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bb52601da9c94427627af070749e3507') in 0.051054 seconds
-  Import took 0.056883 seconds .
+  Time since last request: 0.000213 seconds.
+  path: Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerTextHintAnchor.mat
+  artifactKey: Guid(5ee00630a4cba94459f162ea174a1d97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerTextHintAnchor.mat using Guid(5ee00630a4cba94459f162ea174a1d97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db993175c36b1e115716c51ad4b563a') in 0.008954 seconds
+  Import took 0.011368 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000268 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_3.prefab
-  artifactKey: Guid(ce3277385b368c94b8500b97f4f8e563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_3.prefab using Guid(ce3277385b368c94b8500b97f4f8e563) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2df993c6ad6a5b35b6e908bba5045ed3') in 0.049323 seconds
-  Import took 0.054967 seconds .
+  Time since last request: 0.004005 seconds.
+  path: Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerTextHintAnchor.mat
+  artifactKey: Guid(5ee00630a4cba94459f162ea174a1d97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Hints/Materials/URPControllerTextHintAnchor.mat using Guid(5ee00630a4cba94459f162ea174a1d97) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2db993175c36b1e115716c51ad4b563a') in 0.008305 seconds
+  Import took 0.010773 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000282 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_1.prefab
-  artifactKey: Guid(92dc2944667e86b41b0562764893f5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_1.prefab using Guid(92dc2944667e86b41b0562764893f5d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44141826ac6e8c9c9b2c7c56f79227d9') in 0.049341 seconds
-  Import took 0.054824 seconds .
+  Time since last request: 0.268964 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/unnamed.mat
+  artifactKey: Guid(14ed578262aab0047a2bf66c3949d2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Materials/unnamed.mat using Guid(14ed578262aab0047a2bf66c3949d2eb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd6eb0b54a0b855726b31649aa294bb09') in 0.011109 seconds
+  Import took 0.013619 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000304 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_2.prefab
-  artifactKey: Guid(55cc550a5ce32494b88d9de29a9b4f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Hook_2.prefab using Guid(55cc550a5ce32494b88d9de29a9b4f2b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3d4f338203689e0cae7b91e50f710bb5') in 0.049388 seconds
-  Import took 0.054860 seconds .
+  Time since last request: 0.000252 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/Materials/unnamed.mat
+  artifactKey: Guid(21caec5e9129c334db1cc10e5cb06a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/Materials/unnamed.mat using Guid(21caec5e9129c334db1cc10e5cb06a88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8789a51a2ba8c443b39e24996582c6fe') in 0.008897 seconds
+  Import took 0.011070 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000229 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_Cap.prefab
-  artifactKey: Guid(4382752964b8e1c438dfd58cc5356d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Scalpel_Cap.prefab using Guid(4382752964b8e1c438dfd58cc5356d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd5786a848feb8d045e51651266a310cd') in 0.049780 seconds
-  Import took 0.055263 seconds .
+  Time since last request: 0.059725 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Materials/TorchHead.mat
+  artifactKey: Guid(67c31797bbf07114eb2d50aa3ae184e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Materials/TorchHead.mat using Guid(67c31797bbf07114eb2d50aa3ae184e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8961918d0588ef6ad712966a2f6fce5') in 0.009813 seconds
+  Import took 0.012417 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000272 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Syringe_1.prefab
-  artifactKey: Guid(540a7917b18ad1b4a940c00dade155ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Syringe_1.prefab using Guid(540a7917b18ad1b4a940c00dade155ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c7624d7cd28dd0a3e9455dd8aab8cce6') in 0.051723 seconds
-  Import took 0.057099 seconds .
+  Time since last request: 0.000244 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Materials/TorchShaft.mat
+  artifactKey: Guid(24e73955ba8338f41a24cd3aea0285a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Materials/TorchShaft.mat using Guid(24e73955ba8338f41a24cd3aea0285a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a89f506041ba78f40fd6c4efc7e5742') in 0.010203 seconds
+  Import took 0.012474 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000271 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_2.prefab
-  artifactKey: Guid(300a4f83c1daf1e41af306286d9f6a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Clamp_2.prefab using Guid(300a4f83c1daf1e41af306286d9f6a5e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '281e9482e23a6965979bef0ed4614e0d') in 0.049921 seconds
-  Import took 0.055201 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000287 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_1.prefab
-  artifactKey: Guid(bc7f5fe3b32d0e541830b74b97809dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_1.prefab using Guid(bc7f5fe3b32d0e541830b74b97809dda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8c940830998509ae67bd322fb5ea68ba') in 0.050094 seconds
-  Import took 0.055645 seconds .
+  Time since last request: 0.210171 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Materials/ThrowingTarget.mat
+  artifactKey: Guid(374354984cbc08b47ba979c830d8e59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Materials/ThrowingTarget.mat using Guid(374354984cbc08b47ba979c830d8e59d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c35eb3d694e115686687b5bcd98bfe39') in 0.026861 seconds
+  Import took 0.029436 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000262 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_2.prefab
-  artifactKey: Guid(98a37c149a3eb414ba6878504f59350e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Saw_2.prefab using Guid(98a37c149a3eb414ba6878504f59350e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8725e7249fa0d0f77d8e0a0953a17c7e') in 0.049183 seconds
-  Import took 0.054740 seconds .
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointText.mat
+  artifactKey: Guid(6e8b24558e6899742b276a1b6c480de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointText.mat using Guid(6e8b24558e6899742b276a1b6c480de1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e7a3a45e148308364c9b7a29f03b6f2') in 0.008833 seconds
+  Import took 0.011160 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000253 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_2.prefab
-  artifactKey: Guid(e994b9f4bcbcead4dbe34c3ccbadc2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Prefabs/Forceps_2.prefab using Guid(e994b9f4bcbcead4dbe34c3ccbadc2d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '620836911ee73736b2bd6b29e81da457') in 0.049320 seconds
-  Import took 0.054881 seconds .
+  Time since last request: 0.000249 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Materials/TorchFire.mat
+  artifactKey: Guid(9fff76eb68ad4c44b87be9e2ca168a80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Materials/TorchFire.mat using Guid(9fff76eb68ad4c44b87be9e2ca168a80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75067cf8f981e209404a00c0f3f47f44') in 0.042449 seconds
+  Import took 0.044957 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 613.529709 seconds.
-  path: Assets/CobleGames
-  artifactKey: Guid(187134d34b13a79419b6c275b4dd9678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames using Guid(187134d34b13a79419b6c275b4dd9678) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6f353d0572ed91c57ce80931aa912ced') in 0.004319 seconds
-  Import took 0.007354 seconds .
+  Time since last request: 0.000245 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointVisible.mat
+  artifactKey: Guid(510c6e0b8b5c948458c2b4bc3de5a637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointVisible.mat using Guid(510c6e0b8b5c948458c2b4bc3de5a637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd16f0a16b823e4dff1a18bbfda9c4221') in 0.056396 seconds
+  Import took 0.058828 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.957839 seconds.
-  path: Assets/CobleGames/Prefabs
-  artifactKey: Guid(471f169f064f5744a8be2db2c33e9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames/Prefabs using Guid(471f169f064f5744a8be2db2c33e9f6b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3a0b3e842c6b3cfdde495a66a9198c8') in 0.003570 seconds
-  Import took 0.006097 seconds .
+  Time since last request: 0.000235 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointInvalid.mat
+  artifactKey: Guid(75bd1350b322bc149ad4b79c719cb687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointInvalid.mat using Guid(75bd1350b322bc149ad4b79c719cb687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5caaaa52fc14411d674e9d0d4a37996c') in 0.010141 seconds
+  Import took 0.012537 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.076937 seconds.
-  path: Assets/CobleGames/Prefabs/hospital bed.prefab
-  artifactKey: Guid(2a3b3a882d9cfc74392ec24693855ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames/Prefabs/hospital bed.prefab using Guid(2a3b3a882d9cfc74392ec24693855ae8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee52ae349adc05173139c7c92374b6f3') in 0.054617 seconds
-  Import took 0.060285 seconds .
+  Time since last request: 0.000260 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointLocked.mat
+  artifactKey: Guid(f855134cdd14ab54fa2838027b3eec2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Materials/TeleportPointLocked.mat using Guid(f855134cdd14ab54fa2838027b3eec2f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf36f7778b27faa00e63fc1ce22e60fe') in 0.009714 seconds
+  Import took 0.012094 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.003801 seconds.
+Registered in 0.004242 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.47 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.779 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.45 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.0 MB.
-System memory in use after: 83.1 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2196.
-Total: 1.686700 ms (FindLiveObjects: 0.145700 ms CreateObjectMapping: 0.045700 ms MarkObjects: 1.450700 ms  DeleteObjects: 0.043900 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 35.977057 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Info (Free hospital props).pdf
-  artifactKey: Guid(7dd1d31128721264db28f3225a7f0de5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Info (Free hospital props).pdf using Guid(7dd1d31128721264db28f3225a7f0de5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'db0dfe76d0462f7aae6e6201c62a69ba') in 0.016564 seconds
-  Import took 0.019089 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 8.501354 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Scenes
-  artifactKey: Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Scenes using Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e167209da2749518ab4b42e83a5713c3') in 0.003820 seconds
-  Import took 0.006509 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.002234 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Scenes
-  artifactKey: Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Scenes using Guid(8125dbdf2da76b34581c23724c54e71d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e167209da2749518ab4b42e83a5713c3') in 0.003682 seconds
-  Import took 0.006278 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.679257 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity
-  artifactKey: Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity using Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '633ac872c715c689a262fbfbf7791efc') in 0.004349 seconds
-  Import took 0.006904 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.001700 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity
-  artifactKey: Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props.unity using Guid(7796cbce256609040b9a0d9044eb5796) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '633ac872c715c689a262fbfbf7791efc') in 0.003998 seconds
-  Import took 0.006668 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 17.728571 seconds.
-  path: Assets/Scenes/New Scene.unity
-  artifactKey: Guid(ebc70c914a8adf04fba36bb3763c5d32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/New Scene.unity using Guid(ebc70c914a8adf04fba36bb3763c5d32) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0958b7b4c9d642ad3a79190bc817a60d') in 0.004220 seconds
-  Import took 0.006918 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003710 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.756 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.3 MB.
-System memory in use after: 83.4 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2200.
-Total: 1.807900 ms (FindLiveObjects: 0.170800 ms CreateObjectMapping: 0.056500 ms MarkObjects: 1.529100 ms  DeleteObjects: 0.050500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.003676 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.749 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.48 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.4 MB.
-System memory in use after: 83.4 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2204.
-Total: 2.200300 ms (FindLiveObjects: 0.162600 ms CreateObjectMapping: 0.055700 ms MarkObjects: 1.927200 ms  DeleteObjects: 0.053600 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 363.478208 seconds.
-  path: Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbx
-  artifactKey: Guid(8db88bf2ff3634ce8bb31e96a0211637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbx using Guid(8db88bf2ff3634ce8bb31e96a0211637) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba3c8c2dd81b44e03906568b2d42a3d3') in 0.219875 seconds
-  Import took 0.222697 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 40.690945 seconds.
-  path: Assets/CobleGames/Materials/hospital bed.mat
-  artifactKey: Guid(45223e1f4025fe148a9a0b006eb143dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames/Materials/hospital bed.mat using Guid(45223e1f4025fe148a9a0b006eb143dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12cac9d3f5f5a59b8abefb2a8e9fa42b') in 0.064752 seconds
-  Import took 0.071144 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.000889 seconds.
-  path: Assets/CobleGames/Meshes/hospital bed.fbx
-  artifactKey: Guid(b177f7ee60a86d44fa63b6e6f65c2fc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames/Meshes/hospital bed.fbx using Guid(b177f7ee60a86d44fa63b6e6f65c2fc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c06de482ba0f0d6bb4f8045fdd69eae1') in 0.050664 seconds
-  Import took 0.056784 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 2.654719 seconds.
-  path: Assets/CobleGames/Textures/bed lp_Bed_AlbedoTransparency.tga
-  artifactKey: Guid(5715bb262c1086946805749b7a9e6e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames/Textures/bed lp_Bed_AlbedoTransparency.tga using Guid(5715bb262c1086946805749b7a9e6e23) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c9bf59f8ae5d650da528a37d2ecbac1c') in 0.029651 seconds
-  Import took 0.033564 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000293 seconds.
-  path: Assets/CobleGames/Textures/bed lp_Bed_MetallicSmoothness.tga
-  artifactKey: Guid(3d66acc38552a2c4fa11b595cd34197e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames/Textures/bed lp_Bed_MetallicSmoothness.tga using Guid(3d66acc38552a2c4fa11b595cd34197e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b3305dd0b6b20935ad9906df0f009ca1') in 0.023797 seconds
-  Import took 0.027690 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000270 seconds.
-  path: Assets/CobleGames/Textures/bed lp_Bed_Normal.tga
-  artifactKey: Guid(30f3108aa3f1c4b44b30747e2deb2eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/CobleGames/Textures/bed lp_Bed_Normal.tga using Guid(30f3108aa3f1c4b44b30747e2deb2eda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '225c4fa2a4ac2085a045684dddbff534') in 0.031910 seconds
-  Import took 0.035758 seconds .
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004065 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.52 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.782 seconds
+- Completed reload, in  0.714 seconds
 Platform modules already initialized, skipping
 Refreshing native plugins compatible for Editor in 0.42 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.7 MB.
-System memory in use after: 83.8 MB.
+System memory in use before: 83.3 MB.
+System memory in use after: 83.3 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2246.
-Total: 1.839100 ms (FindLiveObjects: 0.183100 ms CreateObjectMapping: 0.058100 ms MarkObjects: 1.541300 ms  DeleteObjects: 0.055600 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.004181 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.53 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.771 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.51 ms, found 4 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.8 MB.
-System memory in use after: 83.8 MB.
-
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2250.
-Total: 2.073400 ms (FindLiveObjects: 0.232200 ms CreateObjectMapping: 0.078400 ms MarkObjects: 1.710100 ms  DeleteObjects: 0.051600 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2228.
+Total: 1.725600 ms (FindLiveObjects: 0.148200 ms CreateObjectMapping: 0.089400 ms MarkObjects: 1.442600 ms  DeleteObjects: 0.044600 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004279 seconds.
+Registered in 0.003979 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.54 ms, found 4 plugins.
@@ -623,21 +411,1473 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.761 seconds
+- Completed reload, in  0.757 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.56 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.8 MB.
-System memory in use after: 83.8 MB.
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2254.
-Total: 1.711000 ms (FindLiveObjects: 0.182800 ms CreateObjectMapping: 0.063100 ms MarkObjects: 1.410900 ms  DeleteObjects: 0.053200 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2232.
+Total: 1.692200 ms (FindLiveObjects: 0.157600 ms CreateObjectMapping: 0.050500 ms MarkObjects: 1.435300 ms  DeleteObjects: 0.047700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004321 seconds.
+Registered in 0.004241 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.770 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2236.
+Total: 1.737400 ms (FindLiveObjects: 0.161700 ms CreateObjectMapping: 0.055500 ms MarkObjects: 1.464000 ms  DeleteObjects: 0.055200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004325 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.757 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.63 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2240.
+Total: 1.950500 ms (FindLiveObjects: 0.180600 ms CreateObjectMapping: 0.063500 ms MarkObjects: 1.648300 ms  DeleteObjects: 0.056900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004040 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.51 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.752 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2244.
+Total: 1.839400 ms (FindLiveObjects: 0.205200 ms CreateObjectMapping: 0.058300 ms MarkObjects: 1.521000 ms  DeleteObjects: 0.053900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.003992 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.757 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2248.
+Total: 2.108100 ms (FindLiveObjects: 0.239300 ms CreateObjectMapping: 0.069400 ms MarkObjects: 1.746700 ms  DeleteObjects: 0.050900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004229 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.871 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 83.6 MB.
+System memory in use after: 83.7 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2252.
+Total: 1.824600 ms (FindLiveObjects: 0.178300 ms CreateObjectMapping: 0.066500 ms MarkObjects: 1.525900 ms  DeleteObjects: 0.052600 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 1261.896201 seconds.
+  path: Assets
+  artifactKey: Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets using Guid(00000000000000001000000000000000) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2e0e235c0f4af3754229b664788db90') in 0.008063 seconds
+  Import took 0.011137 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 7.480266 seconds.
+  path: Assets/Materials
+  artifactKey: Guid(f5befbc0fb1df0140b50c2670c2410ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials using Guid(f5befbc0fb1df0140b50c2670c2410ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a7fbc895c7225bff7e157b9cfe815365') in 0.003947 seconds
+  Import took 0.006357 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 12.422215 seconds.
+  path: Assets/Materials/New Material.mat
+  artifactKey: Guid(804f62186c1ebdc40ab6df320b56d677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/New Material.mat using Guid(804f62186c1ebdc40ab6df320b56d677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '440ead80adafff278401f0e4a870c79c') in 0.051741 seconds
+  Import took 0.054423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 158.754223 seconds.
+  path: Assets/SteamVR/Icon/_steamvr.png
+  artifactKey: Guid(200a36575873a1d40baa790e18dafe5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Icon/_steamvr.png using Guid(200a36575873a1d40baa790e18dafe5d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34c84b8dbd7104c1817982289fc5c410') in 0.047982 seconds
+  Import took 0.050769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000219 seconds.
+  path: Assets/SteamVR/Models/Materials/AlienHand_MetallicSmoothness.png
+  artifactKey: Guid(d6f0e028c1244404eb2d02959b9f8f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/AlienHand_MetallicSmoothness.png using Guid(d6f0e028c1244404eb2d02959b9f8f60) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f747183e208fc6798a0e09dab170657') in 0.012206 seconds
+  Import took 0.014700 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/ArcheryWeebleTarget.png
+  artifactKey: Guid(b0b65ac2add33d04b9c6485a060c240a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/ArcheryWeebleTarget.png using Guid(b0b65ac2add33d04b9c6485a060c240a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '692b8ea3d12ee6030c633e149298fd0c') in 0.017120 seconds
+  Import took 0.019474 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000296 seconds.
+  path: Assets/SteamVR/Textures/arrow.png
+  artifactKey: Guid(2db89a771043d7b4eb9d26622f6b97c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Textures/arrow.png using Guid(2db89a771043d7b4eb9d26622f6b97c7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3989486fffb751dc565a7fb8893894e2') in 0.009992 seconds
+  Import took 0.012722 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/SteamVR/Models/Materials/AlienHand_Normal.png
+  artifactKey: Guid(c895ac09c5f562b4798e88828f61e812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/AlienHand_Normal.png using Guid(c895ac09c5f562b4798e88828f61e812) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9ee1e2796d760de1258ac2f3636689da') in 0.016009 seconds
+  Import took 0.018506 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000239 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowAlbedoTransparency.png
+  artifactKey: Guid(0f09256f7da973b45a660eefd832b56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowAlbedoTransparency.png using Guid(0f09256f7da973b45a660eefd832b56b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1855dff49fecba263344816887d6a150') in 0.011909 seconds
+  Import took 0.014537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000292 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowAmbientOcclusion.png
+  artifactKey: Guid(27df4f73a506cc94d99cc2e0c71966a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowAmbientOcclusion.png using Guid(27df4f73a506cc94d99cc2e0c71966a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fada47fd1cf0149dcdb31d14cdd3396e') in 0.011513 seconds
+  Import took 0.013997 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/SteamVR/Models/Materials/AlienHand_AlbedoTransparency.png
+  artifactKey: Guid(c7d922ead57c2c34ea7da4ad4c05bd61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/AlienHand_AlbedoTransparency.png using Guid(c7d922ead57c2c34ea7da4ad4c05bd61) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e52d5d1ba69c5e7664277e06b2938df1') in 0.012037 seconds
+  Import took 0.014537 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.812603 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowGlint.png
+  artifactKey: Guid(c4a7b02e27e148a47b782f8cd5cb598d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowGlint.png using Guid(c4a7b02e27e148a47b782f8cd5cb598d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '686f9a5bb757c8419effc2c9db8359c6') in 0.009914 seconds
+  Import took 0.012503 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000248 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowMetallicSmoothness.png
+  artifactKey: Guid(90891b0a7924dee4a87b2a107431c9f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowMetallicSmoothness.png using Guid(90891b0a7924dee4a87b2a107431c9f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61ecf914f15d4309704f975f822d667d') in 0.011441 seconds
+  Import took 0.013749 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.421172 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowNormal.png
+  artifactKey: Guid(5d44bb3b4714e2b4da3b93d3c921a1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowNormal.png using Guid(5d44bb3b4714e2b4da3b93d3c921a1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ec3f82a43036aa5106989f838ac4eab') in 0.012856 seconds
+  Import took 0.015423 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000249 seconds.
+  path: Assets/SteamVR/Textures/background.png
+  artifactKey: Guid(bb00cc87e146a414fbf2c4d3c0d31151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Textures/background.png using Guid(bb00cc87e146a414fbf2c4d3c0d31151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bcd5f55f00769f5e5d090ad4ccca2042') in 0.012303 seconds
+  Import took 0.014680 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowNormal.png
+  artifactKey: Guid(5d44bb3b4714e2b4da3b93d3c921a1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/ArrowNormal.png using Guid(5d44bb3b4714e2b4da3b93d3c921a1e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ec3f82a43036aa5106989f838ac4eab') in 0.007563 seconds
+  Import took 0.010053 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000204 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/BalloonPop.png
+  artifactKey: Guid(210c1550425ed90419d73be09bde0486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/BalloonPop.png using Guid(210c1550425ed90419d73be09bde0486) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02c8da62ff5f7b2bc8f5a161b39f762f') in 0.009350 seconds
+  Import took 0.011726 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/BalloonColor.png
+  artifactKey: Guid(b57165504b60a7b49b9a5832dc81b5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/BalloonColor.png using Guid(b57165504b60a7b49b9a5832dc81b5c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ddf67c6024a9b5a39dafed31dc64ebac') in 0.014133 seconds
+  Import took 0.016651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000261 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/BalloonPopLine.png
+  artifactKey: Guid(427c3f6e73f47194b8f02cdf53023b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/BalloonPopLine.png using Guid(427c3f6e73f47194b8f02cdf53023b15) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '192096dfabb1fa2857b2fc9dd55395b6') in 0.009759 seconds
+  Import took 0.012485 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.712596 seconds.
+  path: Assets/HTC.UnityPlugin/ViveInputUtility/Resources/Sprites/binding_ui_icons.png
+  artifactKey: Guid(3a23c65532a98fa409e94bf90a84543e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Resources/Sprites/binding_ui_icons.png using Guid(3a23c65532a98fa409e94bf90a84543e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '18e95d8eb8e7d6697b02f37fd217d2ed') in 0.051781 seconds
+  Import took 0.054311 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000255 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/black_floor_metal_001a.jpg
+  artifactKey: Guid(31a81610aba97a948b33ac6481d66c25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/black_floor_metal_001a.jpg using Guid(31a81610aba97a948b33ac6481d66c25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6ace954ed1264cfe27378a15e245796') in 0.013051 seconds
+  Import took 0.015518 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000275 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/black_floor_metal_MET.png
+  artifactKey: Guid(566dfbaf1df81b340b9dc831f02883c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/black_floor_metal_MET.png using Guid(566dfbaf1df81b340b9dc831f02883c6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c25da6a44e94bdf6cb8257327090646f') in 0.012400 seconds
+  Import took 0.015317 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000246 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/black_floor_metal_NRM.jpg
+  artifactKey: Guid(35f6da91b7f761e45b32d5f613a851cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/black_floor_metal_NRM.jpg using Guid(35f6da91b7f761e45b32d5f613a851cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '102744ba79bcdb3a7f9c268b9c0f3a94') in 0.012929 seconds
+  Import took 0.015415 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.246839 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/BlenderBehaviour_Analog_Icon.png
+  artifactKey: Guid(aa701b1f3ae438e469d0ad4f122a0633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/BlenderBehaviour_Analog_Icon.png using Guid(aa701b1f3ae438e469d0ad4f122a0633) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a231a93f3ee6547dba5bf15ed027fc64') in 0.010203 seconds
+  Import took 0.012799 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/BlenderBehaviour_Boolean_Icon.png
+  artifactKey: Guid(2f8721c3878282b44bd0c8a689d4788c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/BlenderBehaviour_Boolean_Icon.png using Guid(2f8721c3878282b44bd0c8a689d4788c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12d2bb08b4edac00c642665718193bc0') in 0.009524 seconds
+  Import took 0.011834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/blob.png
+  artifactKey: Guid(34052ff677e1e0040bfdde61332fac2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/blob.png using Guid(34052ff677e1e0040bfdde61332fac2e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2f874b51d4d084f9037581f469e1054') in 0.014203 seconds
+  Import took 0.016670 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000217 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/BlenderBehaviour_Manual_Icon.png
+  artifactKey: Guid(426d721c1fc5bfa418c79dc808856464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/BlenderBehaviour_Manual_Icon.png using Guid(426d721c1fc5bfa418c79dc808856464) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a9678b4f3314398a187ff823747f2ea') in 0.010264 seconds
+  Import took 0.012697 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.004465 seconds.
+  path: Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbm/bone 2.jpg
+  artifactKey: Guid(6d4e6bda903f7d24680962b0422d1acd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbm/bone 2.jpg using Guid(6d4e6bda903f7d24680962b0422d1acd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '660e34cd3c82c02255593fda611ef850') in 0.012639 seconds
+  Import took 0.015225 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.389254 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_AlbedoTransparency.png
+  artifactKey: Guid(2c2859d9aa48f714b84eb25874ad24e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_AlbedoTransparency.png using Guid(2c2859d9aa48f714b84eb25874ad24e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '437afe2707ba2d8e75919da98cb95d82') in 0.012622 seconds
+  Import took 0.015213 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_Emission.png
+  artifactKey: Guid(30117bfc3ff66ef4cbbbe29471780687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_Emission.png using Guid(30117bfc3ff66ef4cbbbe29471780687) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6c92f914fde2486e1eae318e039a7a4') in 0.011394 seconds
+  Import took 0.013764 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000266 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_AlbedoTransparency.png
+  artifactKey: Guid(2c2859d9aa48f714b84eb25874ad24e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_AlbedoTransparency.png using Guid(2c2859d9aa48f714b84eb25874ad24e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '437afe2707ba2d8e75919da98cb95d82') in 0.008591 seconds
+  Import took 0.011081 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_MetallicSmoothness.png
+  artifactKey: Guid(a918aa40491fd4848ad52fc1accf4a80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_MetallicSmoothness.png using Guid(a918aa40491fd4848ad52fc1accf4a80) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fda08a969b0d683cf99365a796e9a318') in 0.011974 seconds
+  Import took 0.014428 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009615 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_Normal.png
+  artifactKey: Guid(1c038cbe6dac00648b2b243005d40029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/Buggy_LO_Buggy_Normal.png using Guid(1c038cbe6dac00648b2b243005d40029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7b68d2e9f19cada5132ec50d7de8f416') in 0.013770 seconds
+  Import took 0.016476 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/checker.png
+  artifactKey: Guid(ad562515403c3204cbdc9f1d5f899bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/checker.png using Guid(ad562515403c3204cbdc9f1d5f899bfa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d553af81f77eee069d510ba6fdf8a54') in 0.010226 seconds
+  Import took 0.012849 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.426137 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_AlbedoTransparency.png
+  artifactKey: Guid(e97f03e3f9d4c584f991530c7bff882b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_AlbedoTransparency.png using Guid(e97f03e3f9d4c584f991530c7bff882b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0ea1ec38840e9cc1eb4b3f7d47802a8') in 0.011645 seconds
+  Import took 0.014349 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_Emission.png
+  artifactKey: Guid(4e003c622c1d9a6408f4d90438aa389a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_Emission.png using Guid(4e003c622c1d9a6408f4d90438aa389a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0818f38cee404a51c02d79221bd0ed46') in 0.011023 seconds
+  Import took 0.013708 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000251 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_Normal.png
+  artifactKey: Guid(d66d01bd1e0702a4bbfa207820fb2fb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_Normal.png using Guid(d66d01bd1e0702a4bbfa207820fb2fb1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fae5e0a2295e76e1731407b690efa85c') in 0.014603 seconds
+  Import took 0.017293 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000279 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_AlbedoTransparency.png
+  artifactKey: Guid(e97f03e3f9d4c584f991530c7bff882b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_AlbedoTransparency.png using Guid(e97f03e3f9d4c584f991530c7bff882b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0ea1ec38840e9cc1eb4b3f7d47802a8') in 0.008209 seconds
+  Import took 0.010732 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_MetallicSmoothness.png
+  artifactKey: Guid(f953b4ec1bb0a834cadc594cf2a5bca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/controlerbuggy_LO_BuggyController_MetallicSmoothness.png using Guid(f953b4ec1bb0a834cadc594cf2a5bca0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4bdf8802c9c423ba16ee263bad36b2e2') in 0.012539 seconds
+  Import took 0.015198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000220 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/estimatedOnHand.png
+  artifactKey: Guid(067a2cc023f3e0648a62c0649afe7ecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/estimatedOnHand.png using Guid(067a2cc023f3e0648a62c0649afe7ecf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9d05fef9868518b7406b343254b2086c') in 0.012237 seconds
+  Import took 0.014873 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000179 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/estimatedOnObject.png
+  artifactKey: Guid(0d7512e9f3d5af340be754fb56d4c263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/estimatedOnObject.png using Guid(0d7512e9f3d5af340be754fb56d4c263) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a0490373a5b2017b01d9c243270d9adb') in 0.010560 seconds
+  Import took 0.013901 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000226 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/fabric.png
+  artifactKey: Guid(f38d8e4ac87f9894fae9b325586a30c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/fabric.png using Guid(f38d8e4ac87f9894fae9b325586a30c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '463ba325e863bb9a36954fd9bcacbe15') in 0.012039 seconds
+  Import took 0.014648 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000299 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/fabric nrm.png
+  artifactKey: Guid(7927253fa6653fe4f86150e8a01de6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/fabric nrm.png using Guid(7927253fa6653fe4f86150e8a01de6cc) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5bf812d1fd03a771be3ed8f489624a7a') in 0.012497 seconds
+  Import took 0.015489 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 3.052579 seconds.
+  path: Assets/SteamVR/Models/Materials/floppyHand Emit.png
+  artifactKey: Guid(666af8d433621574ea153b525fceae88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/floppyHand Emit.png using Guid(666af8d433621574ea153b525fceae88) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1b98382918091b48ee33223a82184e5') in 0.010823 seconds
+  Import took 0.013420 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.327198 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/Materials/Furniture_AlbedoTransparency.png
+  artifactKey: Guid(f209c99394eca224b90cb94fca3e17c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/Materials/Furniture_AlbedoTransparency.png using Guid(f209c99394eca224b90cb94fca3e17c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '816b5699f20ec5d1acfe64e449e40a00') in 0.009440 seconds
+  Import took 0.011947 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000240 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/Materials/Furniture_MetallicSmoothness.png
+  artifactKey: Guid(7d025787045f1a34d88f9d9a15d0d5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/Materials/Furniture_MetallicSmoothness.png using Guid(7d025787045f1a34d88f9d9a15d0d5ca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dd7ddbce309c1d8a0b548320a11071eb') in 0.010612 seconds
+  Import took 0.012941 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.199100 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Models/Materials/Furniture_Normal.png
+  artifactKey: Guid(c595edc746c897e4e888f1cf26421a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Models/Materials/Furniture_Normal.png using Guid(c595edc746c897e4e888f1cf26421a05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad95404484e8379712dfe084d76b085e') in 0.011584 seconds
+  Import took 0.014415 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000247 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/gooNoise.png
+  artifactKey: Guid(1250643187cd6e84f873b5efc80f049d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/gooNoise.png using Guid(1250643187cd6e84f873b5efc80f049d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a8ae2bc2f99cf1ab0694602cefbe98ee') in 0.012460 seconds
+  Import took 0.014834 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.125513 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/gooNrm.png
+  artifactKey: Guid(cc667b3995f186347b95c15abbb1c3c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/gooNrm.png using Guid(cc667b3995f186347b95c15abbb1c3c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47a091928bd8c632b0e87de02aa4a8df') in 0.010845 seconds
+  Import took 0.013696 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.935354 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/HandLeftIcon.png
+  artifactKey: Guid(1e898a11a01f33d4a80b04e98158023a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/HandLeftIcon.png using Guid(1e898a11a01f33d4a80b04e98158023a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '099edb71e9b6329f591a238b8561c689') in 0.010286 seconds
+  Import took 0.012798 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/handmask.png
+  artifactKey: Guid(d1f34261d4655bc4cb5413868ae9bee2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/handmask.png using Guid(d1f34261d4655bc4cb5413868ae9bee2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af64ce3b2023feb4c82f027ccd1e2a5d') in 0.009097 seconds
+  Import took 0.011571 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.607036 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Index.png
+  artifactKey: Guid(2c4294febb4dfe54d98c37083da7a639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Index.png using Guid(2c4294febb4dfe54d98c37083da7a639) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '60c319337b05710714a77e16e0dc974c') in 0.023044 seconds
+  Import took 0.025509 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000347 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Middle.png
+  artifactKey: Guid(0f57642ec96c82446a79c525bb70b018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Middle.png using Guid(0f57642ec96c82446a79c525bb70b018) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd81d06a282138f5a32f29b3a5b92ef5a') in 0.009919 seconds
+  Import took 0.012281 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.562143 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Palm.png
+  artifactKey: Guid(e0a60ab44553a7f4ca994dec64351d08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Palm.png using Guid(e0a60ab44553a7f4ca994dec64351d08) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '881568ef65bb222c8ead134bbaeb4a66') in 0.009262 seconds
+  Import took 0.011713 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000269 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Pinky.png
+  artifactKey: Guid(4fb892aabe590ec4fb65a57a048a093f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Pinky.png using Guid(4fb892aabe590ec4fb65a57a048a093f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e9a1a73da60de786895ada79dfc4b8e7') in 0.009818 seconds
+  Import took 0.012023 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.447578 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Ring.png
+  artifactKey: Guid(c3b3083cc66322049822d98fa4c15fd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Ring.png using Guid(c3b3083cc66322049822d98fa4c15fd6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b763ae7eb212fb86b99ccf6b817feb5') in 0.009424 seconds
+  Import took 0.011911 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000182 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Thumb.png
+  artifactKey: Guid(764dada5864e19440bb07e24e684e950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/handmask_Thumb.png using Guid(764dada5864e19440bb07e24e684e950) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3efbaf8508939da4055b6074bba63b09') in 0.010358 seconds
+  Import took 0.012714 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.057348 seconds.
+  path: Assets/SteamVR/Input/Editor/Resources/Icons/HandRightIcon.png
+  artifactKey: Guid(985915d4db439114797fb72a46387d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Input/Editor/Resources/Icons/HandRightIcon.png using Guid(985915d4db439114797fb72a46387d71) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9fb0764611b83e86629d3212351cd189') in 0.010025 seconds
+  Import took 0.012768 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000210 seconds.
+  path: Assets/SteamVR/InteractionSystem/Hints/Textures/HintBackground.png
+  artifactKey: Guid(5697c26ee2ef0c848996640f6a3d3432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Hints/Textures/HintBackground.png using Guid(5697c26ee2ef0c848996640f6a3d3432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '568070811db3949d5263559142901954') in 0.010921 seconds
+  Import took 0.013161 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.435042 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JJHat_JJHat_AlbedoTransparency.png
+  artifactKey: Guid(b7b3dd92428b96e4fa1341587cfc19f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JJHat_JJHat_AlbedoTransparency.png using Guid(b7b3dd92428b96e4fa1341587cfc19f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b9d0d70fd9a7cc9adf89befa6fa1bf77') in 0.011400 seconds
+  Import took 0.013933 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000257 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JJHat_JJHat_MetallicSmoothness.png
+  artifactKey: Guid(dac44591bd81b3a42903ba2e28b8de55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JJHat_JJHat_MetallicSmoothness.png using Guid(dac44591bd81b3a42903ba2e28b8de55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22611b05452eb89176af6d407884ecd5') in 0.012053 seconds
+  Import took 0.014343 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.035525 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JJHat_JJHat_Normal.png
+  artifactKey: Guid(90734498e62f9d14b891d73c93f13b4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JJHat_JJHat_Normal.png using Guid(90734498e62f9d14b891d73c93f13b4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '290dbe1d8aab94344262cf5b68d806f0') in 0.013164 seconds
+  Import took 0.015756 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JoeJeff_AlbedoTransparency.png
+  artifactKey: Guid(4c2ebb3f4fad59f479171438f7b76cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JoeJeff_AlbedoTransparency.png using Guid(4c2ebb3f4fad59f479171438f7b76cf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bee5a5aa58b0097bd288dba7cf126aeb') in 0.011806 seconds
+  Import took 0.014425 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JoeJeff_MetallicSmoothness.png
+  artifactKey: Guid(96bd2760927f90943b0441b2127b5a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JoeJeff_MetallicSmoothness.png using Guid(96bd2760927f90943b0441b2127b5a51) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2240fbd2f072523aea6ddd157c67c803') in 0.013249 seconds
+  Import took 0.015971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000321 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JoeJeff_Normal.png
+  artifactKey: Guid(1f0611183d16daa41803993dceeb6fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/JoeJeff_Normal.png using Guid(1f0611183d16daa41803993dceeb6fcf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bba8f9fb16d7df4e00b11c1049627f28') in 0.011804 seconds
+  Import took 0.014271 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.458271 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/Lightmap-0_comp_dir.png
+  artifactKey: Guid(ad5e33ba8fd38644292d4a5de35d07ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/Lightmap-0_comp_dir.png using Guid(ad5e33ba8fd38644292d4a5de35d07ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcfa5e92f5d938213ff8e75480f52b2e') in 0.010076 seconds
+  Import took 0.012876 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/Lightmap-0_comp_light.exr
+  artifactKey: Guid(13710895d7fc9eb43aa01209046047b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/Lightmap-0_comp_light.exr using Guid(13710895d7fc9eb43aa01209046047b7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a471eb53bff65e9d36f90d4374f32086') in 0.021518 seconds
+  Import took 0.023993 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/Lightmap-0_comp_dir.png
+  artifactKey: Guid(ad5e33ba8fd38644292d4a5de35d07ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/Lightmap-0_comp_dir.png using Guid(ad5e33ba8fd38644292d4a5de35d07ed) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fcfa5e92f5d938213ff8e75480f52b2e') in 0.006718 seconds
+  Import took 0.009142 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.014379 seconds.
+  path: Assets/SteamVR/Textures/logo.png
+  artifactKey: Guid(09db43b3b77bf744287ba587fea02f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Textures/logo.png using Guid(09db43b3b77bf744287ba587fea02f8b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32275e97deb9354b226779ab5833ec73') in 0.014642 seconds
+  Import took 0.017239 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/measurementTape.png
+  artifactKey: Guid(9358cb3541f30894c857da8e20533484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/measurementTape.png using Guid(9358cb3541f30894c857da8e20533484) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1bdf0f41051f01b1522a1dd8875ca5dd') in 0.010210 seconds
+  Import took 0.012719 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000270 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/Longbow.png
+  artifactKey: Guid(9d88069c3ec0f1149b35980735852c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/Longbow.png using Guid(9d88069c3ec0f1149b35980735852c65) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1936215aaa1f3f58fd754a5d9d1591dc') in 0.012248 seconds
+  Import took 0.014769 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.813867 seconds.
+  path: Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbm/muscle texture mau 2 leg.jpg
+  artifactKey: Guid(531da19689427a647a8d95d70c8668f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Leg Muscle Asset Folder/model x/LEG muscle apple.fbm/muscle texture mau 2 leg.jpg using Guid(531da19689427a647a8d95d70c8668f2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1a248a4a777ce714b4124ef1c1b9829') in 0.012197 seconds
+  Import took 0.014788 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Grenade/Nade_Nade_AlbedoTransparency.png
+  artifactKey: Guid(7ced61033fda20e499754959d900951f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Grenade/Nade_Nade_AlbedoTransparency.png using Guid(7ced61033fda20e499754959d900951f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f261a7610dc6677cae0965ca3e297544') in 0.011158 seconds
+  Import took 0.013589 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000267 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Grenade/Nade_Nade_MetallicSmoothness.png
+  artifactKey: Guid(e8ebb31845152d24e9c6dfa0e2ba47e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Grenade/Nade_Nade_MetallicSmoothness.png using Guid(e8ebb31845152d24e9c6dfa0e2ba47e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '225821e7ab0684782e05f068bcae2592') in 0.011293 seconds
+  Import took 0.013878 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.018104 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Grenade/Nade_Nade_Normal.png
+  artifactKey: Guid(252597dc79ae6d34bb80daba8c1a3aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Grenade/Nade_Nade_Normal.png using Guid(252597dc79ae6d34bb80daba8c1a3aa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '620e47099223e6184ff023d12b95b9c8') in 0.013325 seconds
+  Import took 0.016266 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/oldControllerVelocity.png
+  artifactKey: Guid(1b0a81148594a0145a30fb42626127ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/oldControllerVelocity.png using Guid(1b0a81148594a0145a30fb42626127ea) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0166dbbbce0a2e10208bd8824269104b') in 0.010086 seconds
+  Import took 0.012717 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.668442 seconds.
+  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop/Sprites/Orange.png
+  artifactKey: Guid(321907ea57315784d917227c1bec08c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop/Sprites/Orange.png using Guid(321907ea57315784d917227c1bec08c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5a2b8ddb910e21109bb1c4b11baf703c') in 0.010829 seconds
+  Import took 0.013308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/SteamVR/Textures/overlay.renderTexture
+  artifactKey: Guid(005ed5a6df2f5ff468efd6497d37fefa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Textures/overlay.renderTexture using Guid(005ed5a6df2f5ff468efd6497d37fefa) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35e0014ba2a1915e101e43aa97ed2054') in 0.013392 seconds
+  Import took 0.015724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.106924 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_AlbedoTransparency.png
+  artifactKey: Guid(5507e8f20e632b845b4aea2c27a0c225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_AlbedoTransparency.png using Guid(5507e8f20e632b845b4aea2c27a0c225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9c50f11d1c9d13ace3289a112885113') in 0.010574 seconds
+  Import took 0.013113 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000262 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_Emission.png
+  artifactKey: Guid(6fc72b9e7ef7d454e9d5f481bd6518ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_Emission.png using Guid(6fc72b9e7ef7d454e9d5f481bd6518ff) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba2f5190b3dd640aaa151c408bf949cb') in 0.011250 seconds
+  Import took 0.013561 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.049646 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_MetallicSmoothness.png
+  artifactKey: Guid(62cf64cc226fcc648aa55fbec5654323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_MetallicSmoothness.png using Guid(62cf64cc226fcc648aa55fbec5654323) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ce6d4bf3b4aba6fc4f8d0c688c4728c') in 0.011181 seconds
+  Import took 0.013794 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000223 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_Normal.png
+  artifactKey: Guid(531b4709e0c844a4ea44d140478c731f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/JoeJeff/Textures/PlatformController_PController_Normal.png using Guid(531b4709e0c844a4ea44d140478c731f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5f5bbd7c55e19dfcb11db0bcf5c3071') in 0.011869 seconds
+  Import took 0.014202 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.247167 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/ReflectionProbe-0.exr
+  artifactKey: Guid(7f0167075c9f8424b9b1a72aebec87c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/ReflectionProbe-0.exr using Guid(7f0167075c9f8424b9b1a72aebec87c8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6d4dc07c531d00f39e8b597e951448b') in 0.024689 seconds
+  Import took 0.027516 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000260 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/ReflectionProbe-1.exr
+  artifactKey: Guid(d27aee844c2f24a4d955bf1604bb157a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Scenes/Surgical Instruments - Free hospital props/ReflectionProbe-1.exr using Guid(d27aee844c2f24a4d955bf1604bb157a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e92f2afc5c68f2a0f0fb7de2729fb5f2') in 0.013759 seconds
+  Import took 0.016097 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000307 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/Roundsquare.png
+  artifactKey: Guid(aa45b5fa956e6234eb161fc63113b33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/Roundsquare.png using Guid(aa45b5fa956e6234eb161fc63113b33a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e2d2e84ea45f70bdc29e50d6ccde2995') in 0.012577 seconds
+  Import took 0.015052 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Interactions_Example/ReflectionProbe-0.exr
+  artifactKey: Guid(f084d048e2acec748aca5f2b0a07ae06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Interactions_Example/ReflectionProbe-0.exr using Guid(f084d048e2acec748aca5f2b0a07ae06) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3c1bf0e3c9f18d7b727da157caf6913f') in 0.013951 seconds
+  Import took 0.016465 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000209 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/RPMCounterFill.png
+  artifactKey: Guid(05f36522b35629f44aac32011b53123b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/RPMCounterFill.png using Guid(05f36522b35629f44aac32011b53123b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a6f4b26e25ecfd4c68c02df3de0da31b') in 0.012994 seconds
+  Import took 0.015699 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000186 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/RPMCounterBorder.png
+  artifactKey: Guid(27916dbd53464474fbd89dc6b88228ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/RPMCounterBorder.png using Guid(27916dbd53464474fbd89dc6b88228ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b2527dabc79ca6027da44dca87d1efeb') in 0.012500 seconds
+  Import took 0.015348 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 1.371269 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_AlbedoTransparency.png
+  artifactKey: Guid(5818e400cbb286541b34bfe13232431f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_AlbedoTransparency.png using Guid(5818e400cbb286541b34bfe13232431f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '368b25d3c9c67e5b1c3f4c1cf07e7db4') in 0.015523 seconds
+  Import took 0.018545 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000276 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_MetallicSmoothness.png
+  artifactKey: Guid(f8f6383ff3580e748824e6b7f2b7b776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_MetallicSmoothness.png using Guid(f8f6383ff3580e748824e6b7f2b7b776) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '88e5d4dcf14f500f4a8c7456f9243e59') in 0.015500 seconds
+  Import took 0.018146 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000230 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_AlbedoTransparency.png
+  artifactKey: Guid(5818e400cbb286541b34bfe13232431f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_AlbedoTransparency.png using Guid(5818e400cbb286541b34bfe13232431f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '368b25d3c9c67e5b1c3f4c1cf07e7db4') in 0.012181 seconds
+  Import took 0.014804 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.006934 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_Normal.png
+  artifactKey: Guid(c7ddd637fe41c13448eb3ad8620e2735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Squishy/Textures/Squishy_Squish_Normal.png using Guid(c7ddd637fe41c13448eb3ad8620e2735) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c0f840e18f43e0e5980b5e5e3e17825') in 0.015873 seconds
+  Import took 0.018624 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000218 seconds.
+  path: Assets/SteamVR/Icon/SteamVR_Skeleton_Pose Icon.png
+  artifactKey: Guid(a9d04296988f9324d98f54789595e5bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Icon/SteamVR_Skeleton_Pose Icon.png using Guid(a9d04296988f9324d98f54789595e5bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6a79ebe9653d73376bc7faf727d4071c') in 0.010793 seconds
+  Import took 0.013515 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.001614 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/steering.png
+  artifactKey: Guid(91b480a4153c3a549ac9da4a987977e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/UI/BuggyUI/steering.png using Guid(91b480a4153c3a549ac9da4a987977e7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '320106af846d90c3d6cfb41101a8e4c5') in 0.013249 seconds
+  Import took 0.015999 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000258 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Grenade/SunFlare.png
+  artifactKey: Guid(c173b3ec5b7c8904fa1811df75863262) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Grenade/SunFlare.png using Guid(c173b3ec5b7c8904fa1811df75863262) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1b427934bf748f899a7c49ada923a0f') in 0.011965 seconds
+  Import took 0.014711 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000215 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Textures/Surgical pack_all_tex_MetallicSmoothness.png
+  artifactKey: Guid(cf47d6599e6edcc4b8be2028f1cb57c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Textures/Surgical pack_all_tex_MetallicSmoothness.png using Guid(cf47d6599e6edcc4b8be2028f1cb57c9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'add694b90c77e96bcc1c4d2dcdcb3e32') in 0.033561 seconds
+  Import took 0.037376 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000264 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/TargetLO_target_MetallicSmoothness.png
+  artifactKey: Guid(8c0dfeb7a8494f841b73f102f41f966a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/TargetLO_target_MetallicSmoothness.png using Guid(8c0dfeb7a8494f841b73f102f41f966a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f5db0a801b63de6edce953fc1d2c98e') in 0.009674 seconds
+  Import took 0.012360 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000254 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/TargetLO_target_AlbedoTransparency.png
+  artifactKey: Guid(91b30a893c129cf49b8d020f6fc6a807) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/TargetLO_target_AlbedoTransparency.png using Guid(91b30a893c129cf49b8d020f6fc6a807) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'df8c9417aaf2a3eba33f11dafeaf1d74') in 0.012155 seconds
+  Import took 0.014807 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000187 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Textures/TeleportAreaPatternColor.tga
+  artifactKey: Guid(f33ccd07f9433f44f8c5430938b168ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Textures/TeleportAreaPatternColor.tga using Guid(f33ccd07f9433f44f8c5430938b168ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72e5be9191071ca6da05742e00556f36') in 0.014658 seconds
+  Import took 0.017282 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Textures/Tile_tex_MetallicSmoothness.png
+  artifactKey: Guid(a070c1ea06af6e9449239d1657eaa1ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Textures/Tile_tex_MetallicSmoothness.png using Guid(a070c1ea06af6e9449239d1657eaa1ef) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50461bd3b02984a12dfb02038e6cc412') in 0.010554 seconds
+  Import took 0.013076 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000200 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Textures/Surgical pack_all_tex_AlbedoTransparency.png
+  artifactKey: Guid(e3a992659fcb65d4cb9f87085fa86443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Textures/Surgical pack_all_tex_AlbedoTransparency.png using Guid(e3a992659fcb65d4cb9f87085fa86443) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a997d96d2c2fa4891bc04db6f88b8906') in 0.026870 seconds
+  Import took 0.030789 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000238 seconds.
+  path: Assets/SteamVR/Models/Materials/vr_glove_color_red.jpg
+  artifactKey: Guid(0b48b3ebf45947c499c4a0f205efd100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/vr_glove_color_red.jpg using Guid(0b48b3ebf45947c499c4a0f205efd100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2f670c0ef0909e70173338d0698550c0') in 0.008373 seconds
+  Import took 0.011199 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000227 seconds.
+  path: Assets/SteamVR/InteractionSystem/Teleport/Textures/TeleportMarker.psd
+  artifactKey: Guid(ebc38d834b57e9d4d992de0a5470615a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Teleport/Textures/TeleportMarker.psd using Guid(ebc38d834b57e9d4d992de0a5470615a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'efb0b22b8fa8d7d232b3323467109060') in 0.011607 seconds
+  Import took 0.014308 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000256 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Textures/Tile_tex_Normal.png
+  artifactKey: Guid(e70ac41855651be43913cb55ac007e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Textures/Tile_tex_Normal.png using Guid(e70ac41855651be43913cb55ac007e70) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6ecc366b7ccf5179c7e207db5af0c007') in 0.011018 seconds
+  Import took 0.013529 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000233 seconds.
+  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop/Sprites/Turquoise.png
+  artifactKey: Guid(66c4580cae2903646861a62234f82b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop/Sprites/Turquoise.png using Guid(66c4580cae2903646861a62234f82b09) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8b1dbb98729f6ea6ecce925709574965') in 0.010358 seconds
+  Import took 0.012990 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000314 seconds.
+  path: Assets/HTC.UnityPlugin/ViveInputUtility/Textures/VIU_logo.png
+  artifactKey: Guid(eb57b6982f691244682dd28e8dace3f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Textures/VIU_logo.png using Guid(eb57b6982f691244682dd28e8dace3f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5cedc4dcf3c3e7fc1f8e55733343f27') in 0.010217 seconds
+  Import took 0.012801 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000224 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system.png
+  artifactKey: Guid(b93fe5c516cf6ed4b9153ec790f856e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system.png using Guid(b93fe5c516cf6ed4b9153ec790f856e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0eb588f854dfabddb4663cf65ad07949') in 0.009794 seconds
+  Import took 0.012378 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000259 seconds.
+  path: Assets/SteamVR/Models/Materials/vr_glove_normal.png
+  artifactKey: Guid(3ba9d5201b468524ca8df1e0969a2108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/vr_glove_normal.png using Guid(3ba9d5201b468524ca8df1e0969a2108) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c6f3f0c1eb419ea59a484e17ef3da36b') in 0.009970 seconds
+  Import took 0.012383 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000216 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_left_hand.png
+  artifactKey: Guid(27f3faef5a63db84c9cbac06e94ab7b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_left_hand.png using Guid(27f3faef5a63db84c9cbac06e94ab7b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a42db556187792e98e8ec52d2c4117f2') in 0.010405 seconds
+  Import took 0.013137 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000271 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_feet.png
+  artifactKey: Guid(032fb1710098a1d47ad34d72e90f714a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_feet.png using Guid(032fb1710098a1d47ad34d72e90f714a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5686b73b217b905880684429e11f0049') in 0.010183 seconds
+  Import took 0.012579 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000268 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_right_hand.png
+  artifactKey: Guid(1acda2a2584a8fb4683ea56799b27fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_right_hand.png using Guid(1acda2a2584a8fb4683ea56799b27fa0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4dc4d2c56bfd5f17a41cdc9202ddab40') in 0.010602 seconds
+  Import took 0.013109 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000365 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_left_hand_question.png
+  artifactKey: Guid(6789d499b24f8964c8bb06e21008e546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_left_hand_question.png using Guid(6789d499b24f8964c8bb06e21008e546) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e5b0146eea2141bf1c712e514ae685e6') in 0.009930 seconds
+  Import took 0.012581 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000206 seconds.
+  path: Assets/SteamVR/InteractionSystem/Longbow/Textures/TorchFire.png
+  artifactKey: Guid(abf6d945eaf1e3448b2c5264c0b1be0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Longbow/Textures/TorchFire.png using Guid(abf6d945eaf1e3448b2c5264c0b1be0f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '761f94b81783947aaa3265f404fe4cdf') in 0.008001 seconds
+  Import took 0.010535 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000195 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Textures/Surgical pack_all_tex_Normal.png
+  artifactKey: Guid(b856bf7346884ff438b5cb18b66b9bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Textures/Surgical pack_all_tex_Normal.png using Guid(b856bf7346884ff438b5cb18b66b9bf5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ffc9e6294a9a1a4a280209b60adf8da7') in 0.026650 seconds
+  Import took 0.030486 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000221 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/Textures/TargetLO_target_Normal.png
+  artifactKey: Guid(065a5d485ea153f4581883639e62f352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/Textures/TargetLO_target_Normal.png using Guid(065a5d485ea153f4581883639e62f352) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af4236f26d5c92057ffe3a592e823b2a') in 0.008890 seconds
+  Import took 0.011593 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000289 seconds.
+  path: Assets/SteamVR/Models/Materials/vr_glove_color.jpg
+  artifactKey: Guid(376598f82a9237644a365fa0cc9e873a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Models/Materials/vr_glove_color.jpg using Guid(376598f82a9237644a365fa0cc9e873a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dbdc610fd49328a0c69c048f1572e7f') in 0.009467 seconds
+  Import took 0.012143 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000231 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_unknown_hand.png
+  artifactKey: Guid(77b322b27d7d39f4d91e479d19065d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_unknown_hand.png using Guid(77b322b27d7d39f4d91e479d19065d50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1065f9964dd2350a6f77245a5a97bbfa') in 0.011037 seconds
+  Import took 0.013762 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000213 seconds.
+  path: Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_right_hand_question.png
+  artifactKey: Guid(90173f9e9e795f74ca97ccc52fe410cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Core/Icons/vr_interaction_system_right_hand_question.png using Guid(90173f9e9e795f74ca97ccc52fe410cd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6018fba9d475412ee69565c10bf3d961') in 0.010240 seconds
+  Import took 0.012724 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000280 seconds.
+  path: Assets/Surgical Instruments - Free hospital props/Models/Textures/Tile_tex_AlbedoTransparency.png
+  artifactKey: Guid(16317309322f2e44db88491d29657527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Surgical Instruments - Free hospital props/Models/Textures/Tile_tex_AlbedoTransparency.png using Guid(16317309322f2e44db88491d29657527) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5649db92f6110f0a94b0d5b45dc4c0a') in 0.010639 seconds
+  Import took 0.013198 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.010100 seconds.
+  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/4.Teleport/Textures/walkable_map 1.png
+  artifactKey: Guid(5788f684c84966f4497d8eefcd94655c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/4.Teleport/Textures/walkable_map 1.png using Guid(5788f684c84966f4497d8eefcd94655c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ceff624bb2ea628b432fc94a3e2c48c5') in 0.010332 seconds
+  Import took 0.012949 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000237 seconds.
+  path: Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/dusty/wg_dust_particles_11.png
+  artifactKey: Guid(a742eafd25923234ca4d16db1a12aec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/InteractionSystem/Samples/BuggyBuddy/Textures/dusty/wg_dust_particles_11.png using Guid(a742eafd25923234ca4d16db1a12aec7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '32f6aaed59a6da1ca7ae30d0fc70697d') in 0.011828 seconds
+  Import took 0.014341 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.402644 seconds.
+  path: Assets/SteamVR/Textures/workshop.png
+  artifactKey: Guid(a57cd5c56c9d75c4ba0ee9fbc6e1d8df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Textures/workshop.png using Guid(a57cd5c56c9d75c4ba0ee9fbc6e1d8df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6d4e5940a597656ab52e01c6c50b5c7') in 0.017550 seconds
+  Import took 0.020123 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000272 seconds.
+  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop/Sprites/Yellow.png
+  artifactKey: Guid(2caa46ba9fdd6eb4ca30fd8259df839a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop/Sprites/Yellow.png using Guid(2caa46ba9fdd6eb4ca30fd8259df839a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e6235fbe6cef04c3454283c1b3ea0098') in 0.011349 seconds
+  Import took 0.013673 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004091 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.766 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.1 MB.
+System memory in use after: 84.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2289.
+Total: 1.835700 ms (FindLiveObjects: 0.197300 ms CreateObjectMapping: 0.064400 ms MarkObjects: 1.523100 ms  DeleteObjects: 0.050200 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 168.334695 seconds.
+  path: Assets/Materials/New Material.mat
+  artifactKey: Guid(804f62186c1ebdc40ab6df320b56d677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Materials/New Material.mat using Guid(804f62186c1ebdc40ab6df320b56d677) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd58b3dd4f3a97a348231a88433d6dd35') in 0.056277 seconds
+  Import took 0.059369 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004350 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.754 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.2 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2294.
+Total: 1.988900 ms (FindLiveObjects: 0.157900 ms CreateObjectMapping: 0.044900 ms MarkObjects: 1.726600 ms  DeleteObjects: 0.058500 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004079 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.754 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2298.
+Total: 1.962700 ms (FindLiveObjects: 0.202700 ms CreateObjectMapping: 0.071600 ms MarkObjects: 1.614900 ms  DeleteObjects: 0.072200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004287 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.767 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.57 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2302.
+Total: 1.910500 ms (FindLiveObjects: 0.204600 ms CreateObjectMapping: 0.062800 ms MarkObjects: 1.587000 ms  DeleteObjects: 0.054900 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004307 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.53 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.764 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2306.
+Total: 1.685300 ms (FindLiveObjects: 0.160600 ms CreateObjectMapping: 0.046900 ms MarkObjects: 1.427900 ms  DeleteObjects: 0.049000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004149 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.776 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2310.
+Total: 2.218000 ms (FindLiveObjects: 0.214000 ms CreateObjectMapping: 0.065300 ms MarkObjects: 1.880900 ms  DeleteObjects: 0.056600 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004272 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2314.
+Total: 1.792500 ms (FindLiveObjects: 0.166400 ms CreateObjectMapping: 0.050000 ms MarkObjects: 1.520900 ms  DeleteObjects: 0.054000 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004390 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2318.
+Total: 1.808800 ms (FindLiveObjects: 0.183900 ms CreateObjectMapping: 0.051700 ms MarkObjects: 1.516500 ms  DeleteObjects: 0.055300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004497 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.766 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2322.
+Total: 1.959100 ms (FindLiveObjects: 0.185300 ms CreateObjectMapping: 0.053600 ms MarkObjects: 1.658700 ms  DeleteObjects: 0.060300 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004085 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.789 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.45 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2326.
+Total: 1.912700 ms (FindLiveObjects: 0.192200 ms CreateObjectMapping: 0.053600 ms MarkObjects: 1.614700 ms  DeleteObjects: 0.050800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004309 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.767 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.42 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2330.
+Total: 2.232500 ms (FindLiveObjects: 0.201200 ms CreateObjectMapping: 0.057300 ms MarkObjects: 1.920000 ms  DeleteObjects: 0.052800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004409 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2334.
+Total: 1.787600 ms (FindLiveObjects: 0.188900 ms CreateObjectMapping: 0.055300 ms MarkObjects: 1.486700 ms  DeleteObjects: 0.055700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004317 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.765 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.2 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2338.
+Total: 1.928100 ms (FindLiveObjects: 0.261900 ms CreateObjectMapping: 0.099200 ms MarkObjects: 1.506300 ms  DeleteObjects: 0.059800 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004377 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.763 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.3 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2342.
+Total: 2.342000 ms (FindLiveObjects: 0.227200 ms CreateObjectMapping: 0.229000 ms MarkObjects: 1.818100 ms  DeleteObjects: 0.065700 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004148 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.750 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 84.3 MB.
+System memory in use after: 84.3 MB.
+
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2346.
+Total: 2.211700 ms (FindLiveObjects: 0.184600 ms CreateObjectMapping: 0.060600 ms MarkObjects: 1.911700 ms  DeleteObjects: 0.053200 ms)
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004206 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
@@ -648,19 +1888,19 @@ RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
 - Completed reload, in  0.763 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.46 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.51 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.8 MB.
-System memory in use after: 83.9 MB.
+System memory in use before: 84.3 MB.
+System memory in use after: 84.4 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2258.
-Total: 1.886600 ms (FindLiveObjects: 0.194600 ms CreateObjectMapping: 0.066800 ms MarkObjects: 1.564400 ms  DeleteObjects: 0.060000 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2350.
+Total: 1.774400 ms (FindLiveObjects: 0.188000 ms CreateObjectMapping: 0.054100 ms MarkObjects: 1.477600 ms  DeleteObjects: 0.053700 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.004090 seconds.
+Registered in 0.004263 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.46 ms, found 4 plugins.
@@ -669,15 +1909,31 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.785 seconds
+- Completed reload, in  0.759 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.43 ms, found 4 plugins.
+Refreshing native plugins compatible for Editor in 0.44 ms, found 4 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 1711 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 83.8 MB.
-System memory in use after: 83.9 MB.
+System memory in use before: 84.3 MB.
+System memory in use after: 84.4 MB.
 
-Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2262.
-Total: 2.339400 ms (FindLiveObjects: 0.192400 ms CreateObjectMapping: 0.067600 ms MarkObjects: 2.007100 ms  DeleteObjects: 0.071400 ms)
+Unloading 13 unused Assets to reduce memory usage. Loaded Objects now: 2354.
+Total: 1.969500 ms (FindLiveObjects: 0.194900 ms CreateObjectMapping: 0.058500 ms MarkObjects: 1.594200 ms  DeleteObjects: 0.120400 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 8395.520770 seconds.
+  path: Assets/Leg Muscle Asset Folder/model x
+  artifactKey: Guid(77d7079f0cb07402f962d97bf4569833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Leg Muscle Asset Folder/model x using Guid(77d7079f0cb07402f962d97bf4569833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a893883c85daf1054fc36333063831') in 0.007410 seconds
+  Import took 0.009988 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.009910 seconds.
+  path: Assets/Leg Muscle Asset Folder/model x
+  artifactKey: Guid(77d7079f0cb07402f962d97bf4569833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Leg Muscle Asset Folder/model x using Guid(77d7079f0cb07402f962d97bf4569833) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3a893883c85daf1054fc36333063831') in 0.004213 seconds
+  Import took 0.006788 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
