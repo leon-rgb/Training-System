@@ -3,7 +3,10 @@ guid: e889afb650f06da47a51696a8c12f183
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - CuttingPlane: {fileID: 3510307160329186314, guid: 48b61f802a4991240aed577d66197df3, type: 3}
+  - DefaultMaterial: {fileID: 2100000, guid: 9fee9cf1f1c78b244bd44e83009d14f3, type: 2}
+  - CorrectInteractionMaterial: {fileID: 2100000, guid: 52995e35c6b6efe408d1e6218930de1f, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
