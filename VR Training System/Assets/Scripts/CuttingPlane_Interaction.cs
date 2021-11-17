@@ -49,10 +49,18 @@ public class CuttingPlane_Interaction : MonoBehaviour
     private float SawHoloPosY;
     private float SawHoloPosZ;
     private Vector3 SawHoloRot;
+    private float SawHoloRotX;
+    private float SawHoloRotY;
+    private float SawHoloRotZ;
     private Vector3 Pos;
     private float PosX;
     private float PosY;
     private float PosZ;
+    private Vector3 Rot;
+    private float RotX;
+    private float RotY;
+    private float RotZ;
+    private float EulerRange;
 
     // Start is called before the first frame update
     void Start()
@@ -63,11 +71,16 @@ public class CuttingPlane_Interaction : MonoBehaviour
         SawHoloPosZ = SawHoloPos.z;
 
         SawHoloRot = SawHolo.transform.eulerAngles;
+        SawHoloRotX = SawHoloRot.x;
+        SawHoloRotY = SawHoloRot.y;
+        SawHoloRotZ = SawHoloRot.z;
 
+        EulerRange = 5f;
         // we need the "normal" euler Angles (not local)
+        /*
         Debug.Log("euler: " + SawHoloRot);
         SawHoloRot = SawHolo.transform.localEulerAngles;
-        /*
+       
         Debug.Log("localeuler: " + SawHoloRot);
         Debug.Log("euler: " + this.transform.eulerAngles);
         Debug.Log("localeuler: " + this.transform.localEulerAngles);
@@ -89,12 +102,22 @@ public class CuttingPlane_Interaction : MonoBehaviour
         PosX = Pos.x;
         PosY = Pos.y;
         PosZ = Pos.z;
-         
+        Rot = this.transform.eulerAngles;
+        RotX = Rot.x;
+        RotY = Rot.y;
+        RotZ = Rot.z;
+
         bool xPosIsOk = SawHoloPosX+0.025f > PosX && SawHoloPosX-0.025f <PosX;
         bool yPosIsOk = SawHoloPosY + 0.025f > PosY && SawHoloPosY - 0.025f < PosY; 
         bool zPosIsOk = SawHoloPosZ + 0.025f > PosZ && SawHoloPosZ - 0.025f < PosZ;
 
-        if (xPosIsOk && yPosIsOk && zPosIsOk){
+        bool xRotIsOK = CalculateEulerAngleRange(RotX, SawHoloRotX); // SawHoloRotX + 6f > RotX && SawHoloRotX - 6f + 360f < RotX;
+        bool yRotIsOK = CalculateEulerAngleRange(RotY, SawHoloRotY); //SawHoloRotY + 6f > RotY && SawHoloRotY - 6f + 360f < RotY;
+        bool zRotIsOK = CalculateEulerAngleRange(RotZ, SawHoloRotZ); //SawHoloRotZ + 6f > RotZ && SawHoloRotZ - 6f + 360f < RotZ;
+
+        Debug.Log("Angles : " + this.transform.eulerAngles + "  " + SawHolo.transform.eulerAngles);
+
+        if (xPosIsOk && yPosIsOk && zPosIsOk && xRotIsOK && yRotIsOK && zRotIsOK){
             ChangeHoloSawColor(SawGreen);
         }
         else
@@ -104,11 +127,45 @@ public class CuttingPlane_Interaction : MonoBehaviour
 
 
         /**
-         * TODO: auch Winkel miteinabauen!
+         * TODO: 
+         * verwendete Hand einbauen, 
+         * movement der holoSaw einbauen,
+         * randomisierte Postion des Cutting Planes einbauen --> bzw vor allem wie tief man cutten soll
+         * Text Instructions hinter dem Opertationschtisch einfügen
+         * Cut Animation / Vibrationsfeedback --> positives und negatives feedback
          */
          
     }
 
+    /**
+     * Calclulates if the Angle of the hold Saw in the hand of the user is positioned correctly according to it's angle relative to the angle of the HoloSaw.
+     * Since Unity uses positive Euler Angles we have to map the angles to this range (0 to 360) if the predefined Euler Range added or subtracted to the angle of the HoloSaw exceed the range.
+     */
+    private bool CalculateEulerAngleRange(float angle, float angleHolo) 
+    {
+        float tmpAngle;
+        float tmpAngle2;
+        bool IsInRange;
+        if (angleHolo + EulerRange > 360f)
+        {
+            tmpAngle = angleHolo + EulerRange - 360;
+            tmpAngle2 = angleHolo - EulerRange;
+            IsInRange = angle < tmpAngle || angle > tmpAngle2;
+        }
+        else if(angleHolo - EulerRange < 0f)
+        {
+            tmpAngle = angleHolo + EulerRange;
+            tmpAngle2 = angleHolo - EulerRange + 360f;
+            IsInRange = angle < tmpAngle || angle > tmpAngle2;
+        }
+        else
+        {
+            tmpAngle = angleHolo + EulerRange;
+            tmpAngle2 = angleHolo - EulerRange;
+            IsInRange = angle < tmpAngle && angle >tmpAngle2;
+        }
+        return IsInRange;
+    }
 
     private void OnTriggerEnter(Collider other)
     {
