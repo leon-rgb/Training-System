@@ -119,10 +119,12 @@ public class CuttingPlane_Interaction : MonoBehaviour
 
         if (xPosIsOk && yPosIsOk && zPosIsOk && xRotIsOK && yRotIsOK && zRotIsOK){
             ChangeHoloSawColor(SawGreen);
+            ActivateLineRenderer(true);
         }
         else
         {
             ChangeHoloSawColor(SawRed);
+            ActivateLineRenderer(false);
         }
 
 
@@ -135,6 +137,20 @@ public class CuttingPlane_Interaction : MonoBehaviour
          * Cut Animation / Vibrationsfeedback --> positives und negatives feedback
          */
          
+    }
+
+    //TODO IMPLEMENT
+    private void ActivateLineRenderer(bool setActive)
+    {
+        //TODO GET LINE AND SPHERE
+        if (setActive)
+        {
+
+        }
+        else
+        {
+
+        }
     }
 
     /**
@@ -183,6 +199,7 @@ public class CuttingPlane_Interaction : MonoBehaviour
        
         if(other.tag == "SawHolo")
         {
+            Debug.Log("This is: " + this.name + "   and : " + other.gameObject.name);
             Debug.Log("SAW HOLO TRIGGER ENTERED");
             foreach (Transform child in other.transform)
             {
