@@ -11,7 +11,6 @@ public class line_Testing : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Points : " + points[0].position + " " + points[1].position);
         line.UpdateLine(points);
     }
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,8 +63,114 @@ public class CuttingPlane_Interaction : MonoBehaviour
     private float RotZ;
     private float EulerRange;
 
+    public GameObject Line;
+    public GameObject LineStartPoint;
+
+    private bool IsInvokingTheFirstTime;
+
     // Start is called before the first frame update
     void Start()
+    {       
+        EulerRange = 5f;
+        CuttingPlaneCollider = CuttingPlane.GetComponent<Collider>();
+        // we need the "normal" euler Angles (not local)
+        /*
+        Debug.Log("euler: " + SawHoloRot);
+        SawHoloRot = SawHolo.transform.localEulerAngles;
+       
+        Debug.Log("localeuler: " + SawHoloRot);
+        Debug.Log("euler: " + this.transform.eulerAngles);
+        Debug.Log("localeuler: " + this.transform.localEulerAngles);
+        */
+        Debug.Log("pos: " + Pos);
+        Debug.Log("posHolo: " + SawHoloPos);
+        Debug.Log(this.GetComponent<Collider>());
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        //Position = this.transform.position;
+        //CuttingPlanePosition = CuttingPlane.transform.position;
+        //ThisCollider = this.GetComponent<Collider>();
+
+        GetPositionsAndAnglesOfSaws();
+        bool SawTransformIsOK = CheckPositionAndAngleOfSaw();
+        if (SawTransformIsOK && !IsInvoking("MoveHoloSaw"))
+        {
+            Invoke("MoveHoloSaw", 3f);
+        }
+        SetSawColorAndActivateLineRenderer(SawTransformIsOK);
+
+        //Debug.Log("Angles : " + this.transform.eulerAngles + "  " + SawHolo.transform.eulerAngles);
+
+        /**
+         * TODO: 
+         * ERLEDIGT - verwendete Hand einbauen, 
+         * movement der holoSaw einbauen,
+         * randomisierte Postion des Cutting Planes einbauen --> bzw vor allem wie tief man cutten soll
+         * Text Instructions hinter dem Opertationschtisch einfügen
+         * Cut Animation / Vibrationsfeedback --> positives und negatives feedback
+         */
+
+    }
+
+    private void MoveHoloSaw()
+    {
+        while (SawHolo.transform.position != CuttingPlane.transform.position)
+        {
+            Debug.Log("MOVING");
+            float step = 0.01f * Time.deltaTime;
+            SawHolo.transform.position = Vector3.MoveTowards(SawHolo.transform.position, CuttingPlane.transform.position, step);
+        }  
+    }
+
+    /// <summary>
+    /// Sets Color of Holo Saw to green and activates the LineRenderer if the Transform of the Saw carried by the user is ok. Else deactives it.
+    /// </summary>
+    /// <param name="SawTransformIsOK"></param>
+    private void SetSawColorAndActivateLineRenderer(bool SawTransformIsOK)
+    {
+        if (SawTransformIsOK)
+        {
+            ChangeHoloSawColor(SawGreen);
+            ActivateLineRenderer(true);
+        }
+        else
+        {
+            ChangeHoloSawColor(SawRed);
+            ActivateLineRenderer(false);
+        }
+    }
+
+    /// <summary>
+    /// Checks if the position and Angle of the Saw carried by the user is similar to those of the Holo Saw.
+    /// </summary>
+    /// <returns> True if Position and Angles of Saw carried by user are ok.</returns>
+    private bool CheckPositionAndAngleOfSaw()
+    {
+        bool xPosIsOk = SawHoloPosX + 0.025f > PosX && SawHoloPosX - 0.025f < PosX;
+        bool yPosIsOk = SawHoloPosY + 0.025f > PosY && SawHoloPosY - 0.025f < PosY;
+        bool zPosIsOk = SawHoloPosZ + 0.025f > PosZ && SawHoloPosZ - 0.025f < PosZ;
+
+        bool xRotIsOK = CalculateEulerAngleRange(RotX, SawHoloRotX); // SawHoloRotX + 6f > RotX && SawHoloRotX - 6f + 360f < RotX;
+        bool yRotIsOK = CalculateEulerAngleRange(RotY, SawHoloRotY); //SawHoloRotY + 6f > RotY && SawHoloRotY - 6f + 360f < RotY;
+        bool zRotIsOK = CalculateEulerAngleRange(RotZ, SawHoloRotZ); //SawHoloRotZ + 6f > RotZ && SawHoloRotZ - 6f + 360f < RotZ;
+
+        if (xPosIsOk && yPosIsOk && zPosIsOk && xRotIsOK && yRotIsOK && zRotIsOK)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// Gets the Positions and Euler angles of the Holo Saw and the Saw that the user should carry.
+    /// </summary>
+    private void GetPositionsAndAnglesOfSaws()
     {
         SawHoloPos = SawHolo.transform.position;
         SawHoloPosX = SawHoloPos.x;
@@ -75,89 +182,43 @@ public class CuttingPlane_Interaction : MonoBehaviour
         SawHoloRotY = SawHoloRot.y;
         SawHoloRotZ = SawHoloRot.z;
 
-        EulerRange = 5f;
-        // we need the "normal" euler Angles (not local)
-        /*
-        Debug.Log("euler: " + SawHoloRot);
-        SawHoloRot = SawHolo.transform.localEulerAngles;
-       
-        Debug.Log("localeuler: " + SawHoloRot);
-        Debug.Log("euler: " + this.transform.eulerAngles);
-        Debug.Log("localeuler: " + this.transform.localEulerAngles);
-        */
-        Debug.Log("pos: " +Pos);
-        Debug.Log("posHolo: " + SawHoloPos);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        //Position = this.transform.position;
-        //CuttingPlanePosition = CuttingPlane.transform.position;
-        //ThisCollider = this.GetComponent<Collider>();
-
-        CuttingPlaneCollider = CuttingPlane.GetComponent<Collider>();
-
         Pos = this.transform.position;
         PosX = Pos.x;
         PosY = Pos.y;
         PosZ = Pos.z;
+
         Rot = this.transform.eulerAngles;
         RotX = Rot.x;
         RotY = Rot.y;
         RotZ = Rot.z;
-
-        bool xPosIsOk = SawHoloPosX+0.025f > PosX && SawHoloPosX-0.025f <PosX;
-        bool yPosIsOk = SawHoloPosY + 0.025f > PosY && SawHoloPosY - 0.025f < PosY; 
-        bool zPosIsOk = SawHoloPosZ + 0.025f > PosZ && SawHoloPosZ - 0.025f < PosZ;
-
-        bool xRotIsOK = CalculateEulerAngleRange(RotX, SawHoloRotX); // SawHoloRotX + 6f > RotX && SawHoloRotX - 6f + 360f < RotX;
-        bool yRotIsOK = CalculateEulerAngleRange(RotY, SawHoloRotY); //SawHoloRotY + 6f > RotY && SawHoloRotY - 6f + 360f < RotY;
-        bool zRotIsOK = CalculateEulerAngleRange(RotZ, SawHoloRotZ); //SawHoloRotZ + 6f > RotZ && SawHoloRotZ - 6f + 360f < RotZ;
-
-        Debug.Log("Angles : " + this.transform.eulerAngles + "  " + SawHolo.transform.eulerAngles);
-
-        if (xPosIsOk && yPosIsOk && zPosIsOk && xRotIsOK && yRotIsOK && zRotIsOK){
-            ChangeHoloSawColor(SawGreen);
-            ActivateLineRenderer(true);
-        }
-        else
-        {
-            ChangeHoloSawColor(SawRed);
-            ActivateLineRenderer(false);
-        }
-
-
-        /**
-         * TODO: 
-         * verwendete Hand einbauen, 
-         * movement der holoSaw einbauen,
-         * randomisierte Postion des Cutting Planes einbauen --> bzw vor allem wie tief man cutten soll
-         * Text Instructions hinter dem Opertationschtisch einfügen
-         * Cut Animation / Vibrationsfeedback --> positives und negatives feedback
-         */
-         
     }
 
-    //TODO IMPLEMENT
+    /// <summary>
+    /// Activates Line Randerer that draws a Line between the Holo Saw and the Cutting Plane (if setActive == true).
+    /// </summary>
+    /// <param name="setActive"></param>
     private void ActivateLineRenderer(bool setActive)
     {
-        //TODO GET LINE AND SPHERE
         if (setActive)
         {
-
+            LineStartPoint.GetComponent<MeshRenderer>().enabled = true;
+            Line.GetComponent<LineRenderer>().enabled = true;
         }
         else
         {
-
+            LineStartPoint.GetComponent<MeshRenderer>().enabled = false;
+            Line.GetComponent<LineRenderer>().enabled = false;
         }
     }
 
-    /**
-     * Calclulates if the Angle of the hold Saw in the hand of the user is positioned correctly according to it's angle relative to the angle of the HoloSaw.
-     * Since Unity uses positive Euler Angles we have to map the angles to this range (0 to 360) if the predefined Euler Range added or subtracted to the angle of the HoloSaw exceed the range.
-     */
-    private bool CalculateEulerAngleRange(float angle, float angleHolo) 
+    /// <summary>
+    /// Calclulates if the Angle of the hold Saw in the hand of the user is positioned correctly according to it's angle relative to the angle of the HoloSaw.
+    /// Since Unity uses positive Euler Angles we have to map the angles to this range (0 to 360) if the predefined Euler Range added or subtracted to the angle of the HoloSaw exceed the range.
+    /// </summary>
+    /// <param name="angle"></param>
+    /// <param name="angleHolo"></param>
+    /// <returns></returns>
+    private bool CalculateEulerAngleRange(float angle, float angleHolo)
     {
         float tmpAngle;
         float tmpAngle2;
@@ -168,7 +229,7 @@ public class CuttingPlane_Interaction : MonoBehaviour
             tmpAngle2 = angleHolo - EulerRange;
             IsInRange = angle < tmpAngle || angle > tmpAngle2;
         }
-        else if(angleHolo - EulerRange < 0f)
+        else if (angleHolo - EulerRange < 0f)
         {
             tmpAngle = angleHolo + EulerRange;
             tmpAngle2 = angleHolo - EulerRange + 360f;
@@ -178,7 +239,7 @@ public class CuttingPlane_Interaction : MonoBehaviour
         {
             tmpAngle = angleHolo + EulerRange;
             tmpAngle2 = angleHolo - EulerRange;
-            IsInRange = angle < tmpAngle && angle >tmpAngle2;
+            IsInRange = angle < tmpAngle && angle > tmpAngle2;
         }
         return IsInRange;
     }
@@ -196,14 +257,14 @@ public class CuttingPlane_Interaction : MonoBehaviour
             Debug.Log("TRIGGER ENTERED");
         }
         */
-       
-        if(other.tag == "SawHolo")
+        Debug.Log("This is: " + this.name + "   and : " + other.gameObject.name);
+        if (other.tag == "SawHolo")
         {
-            Debug.Log("This is: " + this.name + "   and : " + other.gameObject.name);
+           
             Debug.Log("SAW HOLO TRIGGER ENTERED");
             foreach (Transform child in other.transform)
             {
-                Debug.Log("this is a child: " + child.name);
+                //Debug.Log("this is a child: " + child.name);
                 child.GetComponent<MeshRenderer>().enabled = true;
             }
         }
@@ -240,9 +301,10 @@ public class CuttingPlane_Interaction : MonoBehaviour
         {
             foreach (Transform child in other.transform)
             {
-                Debug.Log("this is a child: " + child.name);
+                //Debug.Log("this is a child: " + child.name);
                 child.GetComponent<MeshRenderer>().enabled = false;
             }
+            //Debug.Log("EXITED");
         }
     }
 
@@ -270,6 +332,10 @@ public class CuttingPlane_Interaction : MonoBehaviour
     }
     */
 
+    /// <summary>
+    /// Changes the color of the holo Saw depending on the material parameter. 
+    /// </summary>
+    /// <param name="material"></param>
     private void ChangeHoloSawColor(Material material)
     {
         foreach (Transform child in SawHolo.transform)
