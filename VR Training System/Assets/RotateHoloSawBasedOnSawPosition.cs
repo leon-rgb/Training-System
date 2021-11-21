@@ -12,6 +12,7 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
     private Vector3 AngleLeft;
     private float DistRight;
     private float DistLeft;
+    private bool IsEnabled;
 
     /// <summary>
     /// Start is called once upon starting the script. Here the HoloSaw will be rotated around the cutting plane once in x direction. 
@@ -19,6 +20,7 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
     /// </summary>
     void Start()
     {
+        EnableHoloSawRotation();
         PosRight = this.transform.position;
         AngleRight = this.transform.eulerAngles;
         Vector3 RotPoint = CuttingPlane.position;
@@ -35,17 +37,31 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
     /// </summary>
     void Update()
     {
-        DistRight = Vector3.Distance(Saw.position, PosRight);
-        DistLeft = Vector3.Distance(Saw.position, PosLeft);
-        if(DistLeft < DistRight)
+        if (IsEnabled)
         {
-            this.transform.position = PosLeft;
-            this.transform.eulerAngles = AngleLeft;
-        }
-        else
-        {
-            this.transform.position = PosRight;
-            this.transform.eulerAngles = AngleRight;
-        }
-    }  
+            DistRight = Vector3.Distance(Saw.position, PosRight);
+            DistLeft = Vector3.Distance(Saw.position, PosLeft);
+            if (DistLeft < DistRight)
+            {
+                this.transform.position = PosLeft;
+                this.transform.eulerAngles = AngleLeft;
+            }
+            else
+            {
+                this.transform.position = PosRight;
+                this.transform.eulerAngles = AngleRight;
+            }
+        }    
+    }
+
+    public void EnableHoloSawRotation()
+    {
+        IsEnabled = true;
+    }
+
+    public void DisableHoloSawRotation()
+    {
+        IsEnabled = false;
+    }
+
 }

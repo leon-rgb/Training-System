@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static RotateHoloSawBasedOnSawPosition;
 
 public class CuttingPlane_Interaction : MonoBehaviour
 {
@@ -62,16 +63,23 @@ public class CuttingPlane_Interaction : MonoBehaviour
     private float RotY;
     private float RotZ;
     private float EulerRange;
+    private float PosRange;
 
     public GameObject Line;
     public GameObject LineStartPoint;
 
-    private bool IsInvokingTheFirstTime;
+    private bool IsStartTimeAlreadySet;
+    private bool SawHoldingTimeIsOK;
+    private float NeededSawHoldingTime;
+    private float CorrectSawHoldingStartTime;
+    private float CorrectSawHoldingTime;
 
     // Start is called before the first frame update
     void Start()
-    {       
+    {
+        PosRange = 0.025f;
         EulerRange = 5f;
+        NeededSawHoldingTime = 3f;
         CuttingPlaneCollider = CuttingPlane.GetComponent<Collider>();
         // we need the "normal" euler Angles (not local)
         /*
@@ -96,9 +104,19 @@ public class CuttingPlane_Interaction : MonoBehaviour
 
         GetPositionsAndAnglesOfSaws();
         bool SawTransformIsOK = CheckPositionAndAngleOfSaw();
+        /*
         if (SawTransformIsOK && !IsInvoking("MoveHoloSaw"))
         {
             Invoke("MoveHoloSaw", 3f);
+        }
+        */
+        SawHoldingTimeIsOK = CorrectSawHoldingTime >= NeededSawHoldingTime;
+        if (SawTransformIsOK && SawHoldingTimeIsOK)
+        {
+            SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().DisableHoloSawRotation();
+            //GetComponentInParent<Animator>().enabled = true;
+            //transform.parent.gameObject.GetComponent<Animator>().enabled = true;
+            SawHolo.GetComponentInParent<Animator>().enabled = true;
         }
         SetSawColorAndActivateLineRenderer(SawTransformIsOK);
 
@@ -117,10 +135,11 @@ public class CuttingPlane_Interaction : MonoBehaviour
 
     private void MoveHoloSaw()
     {
+        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().DisableHoloSawRotation();
         while (SawHolo.transform.position != CuttingPlane.transform.position)
         {
             Debug.Log("MOVING");
-            float step = 0.01f * Time.deltaTime;
+            float step = 5f * Time.deltaTime;
             SawHolo.transform.position = Vector3.MoveTowards(SawHolo.transform.position, CuttingPlane.transform.position, step);
         }  
     }
@@ -136,7 +155,7 @@ public class CuttingPlane_Interaction : MonoBehaviour
             ChangeHoloSawColor(SawGreen);
             ActivateLineRenderer(true);
         }
-        else
+        else if (!SawHoldingTimeIsOK)
         {
             ChangeHoloSawColor(SawRed);
             ActivateLineRenderer(false);
@@ -149,9 +168,9 @@ public class CuttingPlane_Interaction : MonoBehaviour
     /// <returns> True if Position and Angles of Saw carried by user are ok.</returns>
     private bool CheckPositionAndAngleOfSaw()
     {
-        bool xPosIsOk = SawHoloPosX + 0.025f > PosX && SawHoloPosX - 0.025f < PosX;
-        bool yPosIsOk = SawHoloPosY + 0.025f > PosY && SawHoloPosY - 0.025f < PosY;
-        bool zPosIsOk = SawHoloPosZ + 0.025f > PosZ && SawHoloPosZ - 0.025f < PosZ;
+        bool xPosIsOk = SawHoloPosX + PosRange > PosX && SawHoloPosX - PosRange < PosX;
+        bool yPosIsOk = SawHoloPosY + PosRange > PosY && SawHoloPosY - PosRange < PosY;
+        bool zPosIsOk = SawHoloPosZ + PosRange > PosZ && SawHoloPosZ - PosRange < PosZ;
 
         bool xRotIsOK = CalculateEulerAngleRange(RotX, SawHoloRotX); // SawHoloRotX + 6f > RotX && SawHoloRotX - 6f + 360f < RotX;
         bool yRotIsOK = CalculateEulerAngleRange(RotY, SawHoloRotY); //SawHoloRotY + 6f > RotY && SawHoloRotY - 6f + 360f < RotY;
@@ -159,10 +178,20 @@ public class CuttingPlane_Interaction : MonoBehaviour
 
         if (xPosIsOk && yPosIsOk && zPosIsOk && xRotIsOK && yRotIsOK && zRotIsOK)
         {
+            if (!IsStartTimeAlreadySet)
+            {
+                IsStartTimeAlreadySet = true;
+                CorrectSawHoldingStartTime = Time.time;
+            }
+            else
+            {
+                CorrectSawHoldingTime = Time.time - CorrectSawHoldingStartTime;
+            }
             return true;
         }
         else
         {
+            IsStartTimeAlreadySet = false;
             return false;
         }
     }
