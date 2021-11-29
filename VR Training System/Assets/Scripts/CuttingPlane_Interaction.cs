@@ -133,6 +133,11 @@ public class CuttingPlane_Interaction : MonoBehaviour
 
     }
 
+    private void CreateAnimation(Vector3 TargetPos)
+    {
+        AnimationClip animation = new AnimationClip();
+    }
+
     private void MoveHoloSaw()
     {
         SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().DisableHoloSawRotation();
