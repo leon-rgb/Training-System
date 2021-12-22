@@ -160,3 +160,35 @@ Received Import Request.
 Start importing Assets/Lux 2.02 Personal/Lux Demos/Art/_TerrainAutoUpgrade/layer_rock_drock_n(6.000,6.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000.terrainlayer using Guid(9181f2e441683479a8e2d611d3d2921c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '723f3f64a8a54c5a9310a9468b8efc13') in 0.011325 seconds
   Import took 0.016134 seconds .
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.004510 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.54 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.973 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.52 ms, found 4 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2085 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 122.2 MB.
+System memory in use after: 122.1 MB.
+
+Unloading 14 unused Assets to reduce memory usage. Loaded Objects now: 2646.
+Total: 2.565600 ms (FindLiveObjects: 0.323700 ms CreateObjectMapping: 0.136100 ms MarkObjects: 1.892900 ms  DeleteObjects: 0.211500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 83.807337 seconds.
+  path: Assets/Lux 2.02 Personal/Lux Demos/Art/_TerrainAutoUpgrade/layer_RoughConcrete [Albedo] [Smoothness].terrainlayer
+  artifactKey: Guid(2ea9d338c2c1fe245bb42ae5dd7de13e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Lux 2.02 Personal/Lux Demos/Art/_TerrainAutoUpgrade/layer_RoughConcrete [Albedo] [Smoothness].terrainlayer using Guid(2ea9d338c2c1fe245bb42ae5dd7de13e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '503c9635a351d1cea043f26f62d71cbf') in 0.042365 seconds
+  Import took 0.046712 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file

@@ -6,7 +6,7 @@ TerrainLayer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: layer_RoughConcrete [Albedo] [Smoothness]RoughConcrete [Normal](7.000,7.000)(0.000,0.000)(0.000,0.000,0.000),0.000,0.000
+  m_Name: layer_RoughConcrete [Albedo] [Smoothness]
   m_DiffuseTexture: {fileID: 2800000, guid: 1d9ca459da3674d10ac2608652a0288e, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 1d5f9c3a4cfdd44d394aa1e90eeb53c7, type: 3}
   m_MaskMapTexture: {fileID: 0}
