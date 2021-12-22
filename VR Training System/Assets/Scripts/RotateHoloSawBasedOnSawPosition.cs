@@ -19,14 +19,17 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
     /// Both Positions and rotations will be safed for later comparism in th Update function.
     /// </summary>
     void Start()
-    {
+    {    
         EnableHoloSawRotation();
         PosRight = this.transform.position;
         AngleRight = this.transform.eulerAngles;
         Vector3 RotPoint = CuttingPlane.position;
-        this.transform.RotateAround(RotPoint, Vector3.left, 180f);
+        //this.transform.RotateAround(RotPoint, Vector3.left, 180f);
+        //mit der neuen Rotation, wird um einen Mittelpunkt im Saegeblatt rotiert, was viel genauer ist
+        this.transform.RotateAround(transform.parent.position, Vector3.left, 180f);
         PosLeft = this.transform.position;
         AngleLeft = this.transform.eulerAngles;
+        this.transform.RotateAround(transform.parent.position, Vector3.left, 180f);
     }
 
  
