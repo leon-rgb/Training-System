@@ -41,7 +41,7 @@ public class ChangeBoneVisibility : MonoBehaviour
             //animator.playbackTime = animator.recorderStopTime;
             
         }
-        Debug.Log("MESH MID: " + MeshGeneratorLeg.meshMiddlePoint + "  " + MeshGeneratorLeg.meshRadius * radiusMultiplier + "  " + Vector3.Distance(saw.position, MeshGeneratorLeg.meshMiddlePoint) + "  sawpos: " + saw.position);
+        //Debug.Log("MESH MID: " + MeshGeneratorLeg.meshMiddlePoint + "  " + MeshGeneratorLeg.meshRadius * radiusMultiplier + "  " + Vector3.Distance(saw.position, MeshGeneratorLeg.meshMiddlePoint) + "  sawpos: " + saw.position);
     }
 
     private IEnumerator Delay()

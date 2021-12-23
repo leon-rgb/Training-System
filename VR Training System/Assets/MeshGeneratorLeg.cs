@@ -32,6 +32,7 @@ public class MeshGeneratorLeg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        GetComponent<Rigidbody>().sleepThreshold = 0.0f;
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         CreateMesh();

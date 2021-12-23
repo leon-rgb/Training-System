@@ -39,14 +39,12 @@ public class MoveTowardsObject : MonoBehaviour
         }
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.DrawLine(ThisTransform.position, ThisTransform.forward.normalized * 5f);
-    }
+    }*/
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
+ 
 }

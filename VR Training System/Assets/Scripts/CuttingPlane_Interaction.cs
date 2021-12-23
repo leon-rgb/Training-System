@@ -117,6 +117,7 @@ public class CuttingPlane_Interaction : MonoBehaviour
             //GetComponentInParent<Animator>().enabled = true;
             //transform.parent.gameObject.GetComponent<Animator>().enabled = true;
             SawHolo.GetComponentInParent<Animator>().enabled = true;
+            //TODO: call the animation generator here (currently the method test())
         }
         SetSawColorAndActivateLineRenderer(SawTransformIsOK);
 
