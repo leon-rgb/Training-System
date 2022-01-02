@@ -5,6 +5,9 @@ using UnityEngine.XR;
 
 public class HMD_Manager : MonoBehaviour
 {
+    public GameObject realVRRig;
+    public GameObject gloves;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +18,12 @@ public class HMD_Manager : MonoBehaviour
         else
         {
             Debug.Log("Connected HMD :   " + XRSettings.loadedDeviceName);
+            if (XRSettings.loadedDeviceName == "MockHMD Display")
+            { 
+                Debug.Log("the real vr Rig and the glvoes will be disabled due to MockHMD");
+                realVRRig.SetActive(false);
+                gloves.SetActive(false);
+            }
         }
     }
 
