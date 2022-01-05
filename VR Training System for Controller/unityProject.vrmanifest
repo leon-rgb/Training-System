@@ -1,0 +1,16 @@
+{
+  "source": "Unity",
+  "applications": [
+    {
+      "app_key": "application.generated.unity.vrtrainingsystemforcontroller.exe",
+      "launch_type": "url",
+      "url": "steam://launch/",
+      "action_manifest_path": "C:\\Users\\bopperln\\Documents\\GitHub2\\Training-System\\VR Training System for Controller\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "strings": {
+        "en_us": {
+          "name": "VR Training System for Controller [Testing]"
+        }
+      }
+    }
+  ]
+}
