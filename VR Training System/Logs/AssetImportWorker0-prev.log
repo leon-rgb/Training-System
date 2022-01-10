@@ -1,6 +1,6 @@
 Using pre-set license
 Built from '2020.3/staging' branch; Version is '2020.3.3f1 (76626098c1c4) revision 7758432'; Using compiler version '192528614'; Build Type 'Release'
-OS: 'Windows 10 Enterprise; OS build 18363.1977; Version 1909; 64bit' Language: 'de' Physical Memory: 32701 MB
+OS: 'Windows 10 Home; OS build 19043.1415; Version 2009; 64bit' Language: 'de' Physical Memory: 32710 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
  COMMAND LINE ARGUMENTS:
@@ -11,581 +11,206 @@ C:\Program Files\Unity\Hub\Editor\2020.3.3f1\Editor\Unity.exe
 -name
 AssetImportWorker0
 -projectPath
-C:/Users/bopperln/Documents/GitHub2/Training-System/VR Training System
+C:/Users/leonv/Documents/GitHub/Training-System/VR Training System
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-1956
-Successfully changed project path to: C:/Users/bopperln/Documents/GitHub2/Training-System/VR Training System
-C:/Users/bopperln/Documents/GitHub2/Training-System/VR Training System
+63518
+Successfully changed project path to: C:/Users/leonv/Documents/GitHub/Training-System/VR Training System
+C:/Users/leonv/Documents/GitHub/Training-System/VR Training System
 Using Asset Import Pipeline V2.
-Refreshing native plugins compatible for Editor in 108.77 ms, found 10 plugins.
+Refreshing native plugins compatible for Editor in 82.51 ms, found 10 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2020.3.3f1 (76626098c1c4)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path C:/Users/bopperln/Documents/GitHub2/Training-System/VR Training System/Assets
+[Subsystems] Discovering subsystems at path C:/Users/leonv/Documents/GitHub/Training-System/VR Training System/Assets
 GfxDevice: creating device client; threaded=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: AMD Radeon VII (ID=0x66af)
+    Renderer: NVIDIA GeForce GTX 980 Ti (ID=0x17c8)
     Vendor:   
-    VRAM:     16311 MB
-    Driver:   30.0.13025.5005
+    VRAM:     6097 MB
+    Driver:   30.0.14.7111
 Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56636
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56564
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2020.3.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.001654 seconds.
+Registered in 0.002848 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 53.73 ms, found 10 plugins.
+Refreshing native plugins compatible for Editor in 61.54 ms, found 10 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.007 seconds
+- Completed reload, in  1.191 seconds
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.033370 seconds.
+Registered in 0.009984 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 53.37 ms, found 10 plugins.
+Refreshing native plugins compatible for Editor in 61.14 ms, found 10 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.095 seconds
+- Completed reload, in  1.333 seconds
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.05 seconds
-Refreshing native plugins compatible for Editor in 0.82 ms, found 10 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.06 seconds
+Refreshing native plugins compatible for Editor in 0.72 ms, found 10 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2934 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 156.6 MB.
-System memory in use after: 156.4 MB.
+Unloading 2937 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 156.2 MB.
+System memory in use after: 156.1 MB.
 
-Unloading 39 unused Assets to reduce memory usage. Loaded Objects now: 3377.
-Total: 2.597600 ms (FindLiveObjects: 0.308500 ms CreateObjectMapping: 0.174000 ms MarkObjects: 1.865500 ms  DeleteObjects: 0.248000 ms)
-
-========================================================================
-Received Import Request.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility
-  artifactKey: Guid(8b608c5a58e520544ac116bd8ec63105) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility using Guid(8b608c5a58e520544ac116bd8ec63105) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0770aca92179dcb215d883952312611b') in 0.007774 seconds
-  Import took 0.011988 seconds .
+Unloading 38 unused Assets to reduce memory usage. Loaded Objects now: 3375.
+Total: 2.857800 ms (FindLiveObjects: 0.352300 ms CreateObjectMapping: 0.198200 ms MarkObjects: 2.080600 ms  DeleteObjects: 0.225900 ms)
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000277 seconds.
-  path: Assets/HTC.UnityPlugin
-  artifactKey: Guid(dec74e8959409834a95e5902709df638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin using Guid(dec74e8959409834a95e5902709df638) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6525381dbeec489c657923a4eff0fdda') in 0.004504 seconds
-  Import took 0.008592 seconds .
+  path: Assets/SteamVR/Prefabs/vr_glove_right_model_slim.prefab
+  artifactKey: Guid(6def53d002137b747aec0b29551e0e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/vr_glove_right_model_slim.prefab using Guid(6def53d002137b747aec0b29551e0e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c7ae4c4d2cd9b95536322e5b6aba9e6') in 0.210799 seconds
+  Import took 0.216060 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.979891 seconds.
-  path: Assets/HTC.UnityPlugin/Utility
-  artifactKey: Guid(9554659977a77254ba3497360bc7a4ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/Utility using Guid(9554659977a77254ba3497360bc7a4ee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3db84013d3e04fb863e6f309b08f461b') in 0.004891 seconds
-  Import took 0.009333 seconds .
+  Time since last request: 0.000235 seconds.
+  path: Assets/SteamVR/Prefabs/vr_glove_right.prefab
+  artifactKey: Guid(5dc81ef5cae96304586abbc6e4b5beb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/vr_glove_right.prefab using Guid(5dc81ef5cae96304586abbc6e4b5beb8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b5be56745244ccb4dbd163f398c18e20') in 0.013015 seconds
+  Import took 0.018258 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.920000 seconds.
-  path: Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround01.wav
-  artifactKey: Guid(5dff85aa6aacb32469945a41190eadf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround01.wav using Guid(5dff85aa6aacb32469945a41190eadf8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'af4132c155935140f315760ccc64427b') in 0.165170 seconds
-  Import took 0.169485 seconds .
+  Time since last request: 0.000193 seconds.
+  path: Assets/SteamVR/Prefabs/vr_glove_left.prefab
+  artifactKey: Guid(057574477c20401448aba7c848873712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/vr_glove_left.prefab using Guid(057574477c20401448aba7c848873712) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd07f32021cf778e9738f96c72af10459') in 0.018213 seconds
+  Import took 0.022772 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround07.wav
-  artifactKey: Guid(128eba63f6457ff41a65fbae1979778e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround07.wav using Guid(128eba63f6457ff41a65fbae1979778e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9cab6f0584761563044c628abbe2b979') in 0.012473 seconds
-  Import took 0.016508 seconds .
+  Time since last request: 1.115588 seconds.
+  path: Assets/SenseGlove/Materials
+  artifactKey: Guid(dfbdec6f1d63c62499f9616fcdc598e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Materials using Guid(dfbdec6f1d63c62499f9616fcdc598e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f37022f9436ed122b69547d78d61d709') in 0.002475 seconds
+  Import took 0.007624 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000199 seconds.
-  path: Assets/SteamVR/Textures/background.png
-  artifactKey: Guid(bb00cc87e146a414fbf2c4d3c0d31151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/Textures/background.png using Guid(bb00cc87e146a414fbf2c4d3c0d31151) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8ec962f03189294bc006a9e742369cbc') in 0.029103 seconds
-  Import took 0.033404 seconds .
+  Time since last request: 0.001982 seconds.
+  path: Assets/SenseGlove/Materials
+  artifactKey: Guid(dfbdec6f1d63c62499f9616fcdc598e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Materials using Guid(dfbdec6f1d63c62499f9616fcdc598e2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f37022f9436ed122b69547d78d61d709') in 0.002954 seconds
+  Import took 0.007235 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000234 seconds.
-  path: Assets/SteamVR/InteractionSystem/Samples/Materials/Grey.mat
-  artifactKey: Guid(07bcd4e0597eb0648b7a45624f2e0594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Samples/Materials/Grey.mat using Guid(07bcd4e0597eb0648b7a45624f2e0594) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1becc16d753e72375be0a3d025179cee') in 0.033546 seconds
-  Import took 0.037822 seconds .
+  Time since last request: 131.878975 seconds.
+  path: Assets/SenseGlove/Prefabs
+  artifactKey: Guid(c0d1886a3a78c904cabbd2536367476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Prefabs using Guid(c0d1886a3a78c904cabbd2536367476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '897051a0f27625af861c17d85f7ebd99') in 0.002580 seconds
+  Import took 0.007535 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000190 seconds.
-  path: Assets/Surgical Instruments - Free hospital props/Models/Materials/Ground.mat
-  artifactKey: Guid(37f15c53cfed62f41aeec83d281ae127) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Surgical Instruments - Free hospital props/Models/Materials/Ground.mat using Guid(37f15c53cfed62f41aeec83d281ae127) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38abaa2c84bf5448e7bc196308a98478') in 0.023611 seconds
-  Import took 0.027918 seconds .
+  Time since last request: 0.001500 seconds.
+  path: Assets/SenseGlove/Prefabs
+  artifactKey: Guid(c0d1886a3a78c904cabbd2536367476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Prefabs using Guid(c0d1886a3a78c904cabbd2536367476a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '897051a0f27625af861c17d85f7ebd99') in 0.002131 seconds
+  Import took 0.006535 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000246 seconds.
-  path: Assets/SteamVR/InteractionSystem/Samples/Grenade/Grenade.mat
-  artifactKey: Guid(7156e712e2c3e7944a1ccdaf56734abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Samples/Grenade/Grenade.mat using Guid(7156e712e2c3e7944a1ccdaf56734abb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f93beb44ac2b48ffe3b3d5155f6ac42a') in 0.022876 seconds
-  Import took 0.026960 seconds .
+  Time since last request: 10.804329 seconds.
+  path: Assets/SteamVR/Prefabs/vr_glove_right_model_slim.prefab
+  artifactKey: Guid(6def53d002137b747aec0b29551e0e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/vr_glove_right_model_slim.prefab using Guid(6def53d002137b747aec0b29551e0e25) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e24d5a4c7ff35fe7e26c77c81e86be93') in 0.014852 seconds
+  Import took 0.019703 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000210 seconds.
-  path: Assets/SteamVR/InteractionSystem/Hints/Textures/HintBackground.png
-  artifactKey: Guid(5697c26ee2ef0c848996640f6a3d3432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Hints/Textures/HintBackground.png using Guid(5697c26ee2ef0c848996640f6a3d3432) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6748335ac67e3947d5c1bc3a6268896d') in 0.019959 seconds
-  Import took 0.024095 seconds .
+  Time since last request: 280.044910 seconds.
+  path: Assets/SenseGlove/Prefabs/[SG_User].prefab
+  artifactKey: Guid(3af6aab5b51669f499e1b42f13f72db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Prefabs/[SG_User].prefab using Guid(3af6aab5b51669f499e1b42f13f72db7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '758d8e24a8fc8547672579e96e0cf323') in 0.038661 seconds
+  Import took 0.044332 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000239 seconds.
-  path: Assets/Lux 2.02 Personal/Lux Demos/Art/Unity Blacksmith Demo/Vegetation/Grass_1 [Diffuse].psd
-  artifactKey: Guid(1caae1016c33a48c68c630690ebb8397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lux 2.02 Personal/Lux Demos/Art/Unity Blacksmith Demo/Vegetation/Grass_1 [Diffuse].psd using Guid(1caae1016c33a48c68c630690ebb8397) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f8d7faaa4afbe626f75d02fc9862bb62') in 0.024171 seconds
-  Import took 0.028485 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000236 seconds.
-  path: Assets/SenseGlove/Materials/Hologram.mat
-  artifactKey: Guid(a81cdced5a4115942b8b172ee9c89e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SenseGlove/Materials/Hologram.mat using Guid(a81cdced5a4115942b8b172ee9c89e1f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd09d34b80426f4bd37742a820664d472') in 0.012606 seconds
-  Import took 0.016525 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000180 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/3.3DDrag/Materials/grid.mat
-  artifactKey: Guid(16e58087e8cae74458175a04c1e2f587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/3.3DDrag/Materials/grid.mat using Guid(16e58087e8cae74458175a04c1e2f587) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1870b9de7e015b0b5a0fb3bd1ccf2d3b') in 0.011649 seconds
-  Import took 0.015889 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000258 seconds.
-  path: Assets/Samples/XR Interaction Toolkit/2.0.0-pre.6/XR Device Simulator/XR Device Simulator Controls.inputactions
-  artifactKey: Guid(da2b439d1a2de5c46a4f428f8cf4fe19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples/XR Interaction Toolkit/2.0.0-pre.6/XR Device Simulator/XR Device Simulator Controls.inputactions using Guid(da2b439d1a2de5c46a4f428f8cf4fe19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c8233e6d485cf8f3e61f15eb9e0fdd5c') in 0.015941 seconds
-  Import took 0.019998 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000255 seconds.
-  path: Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround03.wav
-  artifactKey: Guid(c848d318c783da14d920cdb75f1ee7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround03.wav using Guid(c848d318c783da14d920cdb75f1ee7ac) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c22d88ea30c47ebba9ac82cb808b1d6') in 0.012539 seconds
-  Import took 0.016698 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000201 seconds.
-  path: Assets/SteamVR/InteractionSystem/Poses/GrenadePose_pinch.asset
-  artifactKey: Guid(99c9269b2d9df784c990f84ae9ae1e87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Poses/GrenadePose_pinch.asset using Guid(99c9269b2d9df784c990f84ae9ae1e87) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5d83f413a2978f29572673ce1d91f3e1') in 0.007405 seconds
-  Import took 0.011466 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000242 seconds.
-  path: Assets/SenseGlove/Materials/GreySkyBox.mat
-  artifactKey: Guid(389fdbda2ea82ec4fbeecca91d051cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SenseGlove/Materials/GreySkyBox.mat using Guid(389fdbda2ea82ec4fbeecca91d051cd2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd783c06d0d6c8c3dff5331bb4da3a7b5') in 0.012935 seconds
-  Import took 0.016790 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000251 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/10.ControllerTooltips/GridMataterial.mat
-  artifactKey: Guid(ef9706aad694cbe47b4bbba6ed12b241) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/10.ControllerTooltips/GridMataterial.mat using Guid(ef9706aad694cbe47b4bbba6ed12b241) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b1440deeb2420c2e3cd40d07d844ed0a') in 0.010416 seconds
-  Import took 0.014268 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000206 seconds.
-  path: Assets/SenseGlove/Materials/Hologram-MustCalibrate.mat
-  artifactKey: Guid(25a0a13892031ad41817d7e10e534225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SenseGlove/Materials/Hologram-MustCalibrate.mat using Guid(25a0a13892031ad41817d7e10e534225) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c3c46de050e50ffeb0b9b1c6659d17b') in 0.010011 seconds
-  Import took 0.014125 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000268 seconds.
-  path: Assets/Lux 2.02 Personal/Lux Demos/Materials/Lux Custom surface Shaders Demo/Lux Aniso Fibre Grid.mat
-  artifactKey: Guid(7f1d336d941774ed68ad8fbf4dee8567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lux 2.02 Personal/Lux Demos/Materials/Lux Custom surface Shaders Demo/Lux Aniso Fibre Grid.mat using Guid(7f1d336d941774ed68ad8fbf4dee8567) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'beac25009fbee4b0a6b405f464a0ac52') in 0.223968 seconds
-  Import took 0.227935 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000249 seconds.
-  path: Assets/Lux 2.02 Personal/Lux Demos/Art/Unity Blacksmith Demo/Vegetation/Grass [Diffuse].psd
-  artifactKey: Guid(ea42a66ba08044e999471cb6e5ec7325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Lux 2.02 Personal/Lux Demos/Art/Unity Blacksmith Demo/Vegetation/Grass [Diffuse].psd using Guid(ea42a66ba08044e999471cb6e5ec7325) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ca6344f1960faa1869d0f4128dd51d3d') in 0.012047 seconds
-  Import took 0.016122 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround02.wav
-  artifactKey: Guid(46bb1e3e014c28740ae8c96427da5270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround02.wav using Guid(46bb1e3e014c28740ae8c96427da5270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bdf3a8d3e9a3db215efa8e6c52d3dd70') in 0.014290 seconds
-  Import took 0.018603 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000232 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials/ReticleGreen.mat
-  artifactKey: Guid(243933786e1096e49a50b301a5564634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials/ReticleGreen.mat using Guid(243933786e1096e49a50b301a5564634) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3fe370c1327c6de1128f819b0a355459') in 0.013112 seconds
-  Import took 0.017276 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000273 seconds.
-  path: Assets/SenseGlove/Materials/Hologram-Calibrating.mat
-  artifactKey: Guid(b25b7e183d33ff14b893b600a81a72cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SenseGlove/Materials/Hologram-Calibrating.mat using Guid(b25b7e183d33ff14b893b600a81a72cf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0c1c0efca3c6672c71b347a575bf964b') in 0.009637 seconds
-  Import took 0.013843 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000174 seconds.
-  path: Assets/SenseGlove/Materials/Hologram-CheckRanges.mat
-  artifactKey: Guid(c53c4e2ae286050448241fdbee257dd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SenseGlove/Materials/Hologram-CheckRanges.mat using Guid(c53c4e2ae286050448241fdbee257dd9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5994b5ef2cad9bdac257a2bace63a70e') in 0.010136 seconds
-  Import took 0.014366 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround04.wav
-  artifactKey: Guid(cb0cd73b74d6f884bab13a472f547100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround04.wav using Guid(cb0cd73b74d6f884bab13a472f547100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e59a51353a66b07fbc7b67d72935e28c') in 0.010772 seconds
-  Import took 0.015173 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000304 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/8.NearFieldHandInteraction/Prefabs/GrabbableBall.prefab
-  artifactKey: Guid(ea73708d8a4b39e4596498e7163a7cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/8.NearFieldHandInteraction/Prefabs/GrabbableBall.prefab using Guid(ea73708d8a4b39e4596498e7163a7cc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c028991a4a632753934e2d805eb62a57') in 0.027665 seconds
-  Import took 0.032345 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000257 seconds.
-  path: Assets/SteamVR/InteractionSystem/Samples/Grenade/Grenade.fbx
-  artifactKey: Guid(4fb2904dac114a24da3aa9af947011a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Samples/Grenade/Grenade.fbx using Guid(4fb2904dac114a24da3aa9af947011a4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b46d7480e6896355c24ca13dbe9cfe3e') in 0.044740 seconds
-  Import took 0.049180 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000247 seconds.
-  path: Assets/SteamVR/InteractionSystem/Samples/Materials/LightGreen.mat
-  artifactKey: Guid(80a6bae7122d17d4c9243b982a652788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Samples/Materials/LightGreen.mat using Guid(80a6bae7122d17d4c9243b982a652788) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91934f84b1245363ab57603475449653') in 0.107565 seconds
-  Import took 0.111328 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000233 seconds.
-  path: Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround05.wav
-  artifactKey: Guid(da7243059d8ed744abfe851fd03f8405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround05.wav using Guid(da7243059d8ed744abfe851fd03f8405) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '166ae39b1e1374efde104f8fa607b0ed') in 0.011605 seconds
-  Import took 0.015738 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000261 seconds.
-  path: Assets/SteamVR/InteractionSystem/Poses/GrenadePose.asset
-  artifactKey: Guid(bd65db1a4d6b7894a8fccb2ebfda0fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Poses/GrenadePose.asset using Guid(bd65db1a4d6b7894a8fccb2ebfda0fe2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '80a173a6017cb701bf97f5ce37236098') in 0.005328 seconds
-  Import took 0.009568 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/SenseGlove/Materials/GrabColliderColor.mat
-  artifactKey: Guid(1c960c60e8cdd774eb3b847c003e26c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SenseGlove/Materials/GrabColliderColor.mat using Guid(1c960c60e8cdd774eb3b847c003e26c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb020bfcccc0cfa2136792f7fe1fdb08') in 0.010320 seconds
-  Import took 0.014668 seconds .
+  Time since last request: 0.000281 seconds.
+  path: Assets/SenseGlove/Prefabs/SG Left Hand.prefab
+  artifactKey: Guid(fa1014786930c3b4d9743b20372d2497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Prefabs/SG Left Hand.prefab using Guid(fa1014786930c3b4d9743b20372d2497) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c0ee877237c3bd5c22151cc5ed1f552c') in 0.014232 seconds
+  Import took 0.018572 seconds .
 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000228 seconds.
-  path: Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround06.wav
-  artifactKey: Guid(9ad392a45efa3b14bbcc169371974cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/SteamVR/InteractionSystem/Longbow/Sounds/ArrowFallGround06.wav using Guid(9ad392a45efa3b14bbcc169371974cd7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2568b4f72dc4bf80e13086a087646c33') in 0.011511 seconds
-  Import took 0.016121 seconds .
+  path: Assets/SenseGlove/Prefabs/SG Right Hand.prefab
+  artifactKey: Guid(111df1101263ad243a149acef4fd67f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Prefabs/SG Right Hand.prefab using Guid(111df1101263ad243a149acef4fd67f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '46f7eec9ee9e43ad5c49dc9f83216c69') in 0.013328 seconds
+  Import took 0.018426 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 6.628176 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Scripts/Misc/BasicGrabbable.cs
-  artifactKey: Guid(2c1e088ce10ab7d4c87f03fd1f2dfcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Scripts/Misc/BasicGrabbable.cs using Guid(2c1e088ce10ab7d4c87f03fd1f2dfcae) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fb7a90575a94558e4d2ecf48c2378f70') in 0.013390 seconds
-  Import took 0.017490 seconds .
+  Time since last request: 0.000238 seconds.
+  path: Assets/SenseGlove/Prefabs/Origin.prefab
+  artifactKey: Guid(59aed9174295a794486c599dec3b06c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Prefabs/Origin.prefab using Guid(59aed9174295a794486c599dec3b06c3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b553f5a5b43487044e4a76999cee293') in 0.009419 seconds
+  Import took 0.013487 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 18.408154 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples
-  artifactKey: Guid(b91da71c58f530247bcf2e4769d59a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples using Guid(b91da71c58f530247bcf2e4769d59a41) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3bec0d31df5f1735ede7c1d5ac295a76') in 0.003991 seconds
-  Import took 0.008259 seconds .
+  Time since last request: 0.000246 seconds.
+  path: Assets/SenseGlove/Prefabs/WireFrame.prefab
+  artifactKey: Guid(bfcf706ae5fde5a43b23b7cd13012906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Prefabs/WireFrame.prefab using Guid(bfcf706ae5fde5a43b23b7cd13012906) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e61a6e00ad9d23ffc3534930c0ecc1a7') in 0.010341 seconds
+  Import took 0.014412 seconds .
 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.586557 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials
-  artifactKey: Guid(862b385c715c97b449065c85e8e0f4d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials using Guid(862b385c715c97b449065c85e8e0f4d1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '33653520680d584a0a072e9568d5a0f4') in 0.004745 seconds
-  Import took 0.009326 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.043496 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials/GuideLine.mat
-  artifactKey: Guid(2807c77f22a845e4f9765e00034f4446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials/GuideLine.mat using Guid(2807c77f22a845e4f9765e00034f4446) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ede5c3a378653344ae0f656805d3e187') in 0.010860 seconds
-  Import took 0.015044 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000231 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials/Reticle.mat
-  artifactKey: Guid(3320905fb6f6bd54297f26399d87c525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials/Reticle.mat using Guid(3320905fb6f6bd54297f26399d87c525) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f9c6605be8de3fc60d2342911515c82c') in 0.010985 seconds
-  Import took 0.014993 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000262 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials/GuideLineWhite.mat
-  artifactKey: Guid(abc43bcd82cb6b8409bc484d5d9816d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials/GuideLineWhite.mat using Guid(abc43bcd82cb6b8409bc484d5d9816d2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '645cb95e9d8e4ce10b053da2049dbec7') in 0.009866 seconds
-  Import took 0.014326 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000207 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials/ReticleBlue.mat
-  artifactKey: Guid(0d9c67bc6dc42434eb69a9a019c712f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials/ReticleBlue.mat using Guid(0d9c67bc6dc42434eb69a9a019c712f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ade6533b740a5ba2ae36060228abe624') in 0.010258 seconds
-  Import took 0.014535 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000248 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials/ReticleRed.mat
-  artifactKey: Guid(50143b523bb80ca4696e4d922443e44f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials/ReticleRed.mat using Guid(50143b523bb80ca4696e4d922443e44f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c984c5a465b7f28c833af3464ab279c') in 0.010494 seconds
-  Import took 0.014679 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000208 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Materials/GuideLineYellow.mat
-  artifactKey: Guid(8d2435df2508a1048b42248ac6d63074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Materials/GuideLineYellow.mat using Guid(8d2435df2508a1048b42248ac6d63074) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '22a83fd6b23ed2ab48fdb536154a9781') in 0.009965 seconds
-  Import took 0.014175 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 4.582390 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop
-  artifactKey: Guid(45120698ed499b04c8d1e24122c4bac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/2.2DDragDrop using Guid(45120698ed499b04c8d1e24122c4bac7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc68e3d7362adb75e5545c08e514403a') in 0.005274 seconds
-  Import took 0.009462 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 12.623177 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/3.3DDrag
-  artifactKey: Guid(e2cdcf65508ee3b4d8030a2f14365c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/3.3DDrag using Guid(e2cdcf65508ee3b4d8030a2f14365c5b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f522435f2c3c1a712d6d02514113fad') in 0.004785 seconds
-  Import took 0.009180 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 7.278527 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/3.3DDrag/3DDrag.unity
-  artifactKey: Guid(ce84185c8ba60394c84a54b4fe34af8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/3.3DDrag/3DDrag.unity using Guid(ce84185c8ba60394c84a54b4fe34af8f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7e1b6ac4e6ca3acdf50d521f78ae03c8') in 0.005009 seconds
-  Import took 0.009149 seconds .
+  Time since last request: 3.220943 seconds.
+  path: Assets/SenseGlove/Models/finalRightHand.fbx
+  artifactKey: Guid(d2fc1c5ad64642843b90dabd505473b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SenseGlove/Models/finalRightHand.fbx using Guid(d2fc1c5ad64642843b90dabd505473b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7eb42f63b2d6f2bc3215b5e7ed1c4f4c') in 0.061465 seconds
+  Import took 0.066226 seconds .
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.010216 seconds.
+Registered in 0.011134 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.80 ms, found 10 plugins.
+Refreshing native plugins compatible for Editor in 0.76 ms, found 10 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.035 seconds
+- Completed reload, in  1.055 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.81 ms, found 10 plugins.
+Refreshing native plugins compatible for Editor in 0.75 ms, found 10 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2834 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 170.9 MB.
-System memory in use after: 170.8 MB.
+Unloading 2836 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 184.2 MB.
+System memory in use after: 184.1 MB.
 
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3431.
-Total: 2.517900 ms (FindLiveObjects: 0.294600 ms CreateObjectMapping: 0.165400 ms MarkObjects: 1.832600 ms  DeleteObjects: 0.224300 ms)
-
-========================================================================
-Received Import Request.
-  Time since last request: 168.761068 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/1.UGUI
-  artifactKey: Guid(224af41e281d3954c969731e21e85763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/1.UGUI using Guid(224af41e281d3954c969731e21e85763) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8dcee1e307329070f4063134bfcdcb19') in 0.009966 seconds
-  Import took 0.017476 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 3.330537 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/4.Teleport
-  artifactKey: Guid(4eef1624d2c6cef4ebfd37d74d3bb0d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/4.Teleport using Guid(4eef1624d2c6cef4ebfd37d74d3bb0d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7cc4cffdb7a79f5e5cb36b5849c51f36') in 0.004596 seconds
-  Import took 0.009290 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.454603 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/5.ColliderEvent
-  artifactKey: Guid(f46d708a8f934934ab14d93cf28ca286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/5.ColliderEvent using Guid(f46d708a8f934934ab14d93cf28ca286) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b1763ab89ff1b4af9496861c281c290') in 0.004869 seconds
-  Import took 0.009184 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.343992 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/6.ControllerManagerSample
-  artifactKey: Guid(c7d01a623685e724d90caac03903d250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/6.ControllerManagerSample using Guid(c7d01a623685e724d90caac03903d250) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '902e41b38d34e37ceb476b754def0584') in 0.004620 seconds
-  Import took 0.009213 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.673795 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/7.RoleBindingExample
-  artifactKey: Guid(a73d2df6d39d1e64daf782e4e44904b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/7.RoleBindingExample using Guid(a73d2df6d39d1e64daf782e4e44904b2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '12b31d816f66c759a004652c6e9243e3') in 0.004479 seconds
-  Import took 0.008835 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.459947 seconds.
-  path: Assets/HTC.UnityPlugin/ViveInputUtility/Examples/8.NearFieldHandInteraction
-  artifactKey: Guid(4b370555dc8b98d4ea93f995f50ecdc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/HTC.UnityPlugin/ViveInputUtility/Examples/8.NearFieldHandInteraction using Guid(4b370555dc8b98d4ea93f995f50ecdc4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '059138d036aeb25bccae3d58d8e33ead') in 0.004504 seconds
-  Import took 0.008916 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 5.141949 seconds.
-  path: Assets/Samples
-  artifactKey: Guid(c133d5f752a0a074c886f3cb0fcce6b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Samples using Guid(c133d5f752a0a074c886f3cb0fcce6b8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0daec6e016c9a9bf8dba3b90622472ca') in 0.004550 seconds
-  Import took 0.008934 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 11.064156 seconds.
-  path: Assets/Scenes/New Scene 1.unity
-  artifactKey: Guid(5d6be9490adb0a5498eb96a125d59789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/New Scene 1.unity using Guid(5d6be9490adb0a5498eb96a125d59789) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc5d4bb37a8e53a631bc3a934fd00bc6') in 0.010908 seconds
-  Import took 0.015410 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.566775 seconds.
-  path: Assets/Scenes/MeshTesting.unity
-  artifactKey: Guid(d5cb5b8c0ae7b2a4f91df7aafccd1dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MeshTesting.unity using Guid(d5cb5b8c0ae7b2a4f91df7aafccd1dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91e37d59244475ccd5a437670a62924d') in 0.006487 seconds
-  Import took 0.010627 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.000950 seconds.
-  path: Assets/Scenes/MeshTesting.unity
-  artifactKey: Guid(d5cb5b8c0ae7b2a4f91df7aafccd1dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/MeshTesting.unity using Guid(d5cb5b8c0ae7b2a4f91df7aafccd1dc9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91e37d59244475ccd5a437670a62924d') in 0.004390 seconds
-  Import took 0.008482 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 1.228033 seconds.
-  path: Assets/Scenes/SampleScene.unity
-  artifactKey: Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SampleScene.unity using Guid(9fc0d4010bbf28b4594072e72b8655ab) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '191947ea6e25561ffb60ea537d677a1a') in 0.004800 seconds
-  Import took 0.009089 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.318754 seconds.
-  path: Assets/Scenes/SteamVR_Player.unity
-  artifactKey: Guid(28ef46b27c1856d4486fd29f50254572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SteamVR_Player.unity using Guid(28ef46b27c1856d4486fd29f50254572) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '35cabf5f6fede90fdfb2ab2d533868ef') in 0.004716 seconds
-  Import took 0.009053 seconds .
-
-========================================================================
-Received Import Request.
-  Time since last request: 0.538256 seconds.
-  path: Assets/Scenes/SurgeryRoom.unity
-  artifactKey: Guid(c04a3d35aaae8c04f9c3c28ab32de986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Scenes/SurgeryRoom.unity using Guid(c04a3d35aaae8c04f9c3c28ab32de986) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0bea9eb93afc515dbfc281b727f1b49e') in 0.005272 seconds
-  Import took 0.010011 seconds .
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 3426.
+Total: 2.591900 ms (FindLiveObjects: 0.257100 ms CreateObjectMapping: 0.145000 ms MarkObjects: 1.985300 ms  DeleteObjects: 0.203300 ms)
 
 ========================================================================
 Received Prepare
 Registering precompiled user dll's ...
-Registered in 0.009971 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.178 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.80 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.0 MB.
-System memory in use after: 170.9 MB.
-
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3436.
-Total: 2.781500 ms (FindLiveObjects: 0.425100 ms CreateObjectMapping: 0.216100 ms MarkObjects: 1.899100 ms  DeleteObjects: 0.240100 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009967 seconds.
+Registered in 0.009428 seconds.
 Begin MonoManager ReloadAssembly
 Native extension for WindowsStandalone target not found
 Refreshing native plugins compatible for Editor in 0.81 ms, found 10 plugins.
@@ -594,153 +219,23 @@ Invoked RoslynAnalysisRunner static constructor.
 RoslynAnalysisRunner will not be running.
 RoslynAnalysisRunner has terminated.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.996 seconds
+- Completed reload, in  1.057 seconds
 Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.79 ms, found 10 plugins.
+Refreshing native plugins compatible for Editor in 0.76 ms, found 10 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.1 MB.
-System memory in use after: 171.0 MB.
+Unloading 2836 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 184.2 MB.
+System memory in use after: 184.2 MB.
 
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3440.
-Total: 2.796500 ms (FindLiveObjects: 0.274600 ms CreateObjectMapping: 0.155600 ms MarkObjects: 2.101400 ms  DeleteObjects: 0.263900 ms)
+Unloading 31 unused Assets to reduce memory usage. Loaded Objects now: 3430.
+Total: 2.587400 ms (FindLiveObjects: 0.271900 ms CreateObjectMapping: 0.106300 ms MarkObjects: 1.976300 ms  DeleteObjects: 0.231600 ms)
 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.011697 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.82 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.116 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.86 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.1 MB.
-System memory in use after: 171.0 MB.
-
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3444.
-Total: 2.987200 ms (FindLiveObjects: 0.280100 ms CreateObjectMapping: 0.138400 ms MarkObjects: 2.296300 ms  DeleteObjects: 0.271400 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009787 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 1.04 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.006 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.84 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.1 MB.
-System memory in use after: 171.0 MB.
-
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3448.
-Total: 3.119600 ms (FindLiveObjects: 0.312000 ms CreateObjectMapping: 0.219100 ms MarkObjects: 2.323100 ms  DeleteObjects: 0.264300 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010083 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.993 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.83 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 180.4 MB.
-System memory in use after: 180.3 MB.
-
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3452.
-Total: 2.850400 ms (FindLiveObjects: 0.332200 ms CreateObjectMapping: 0.242100 ms MarkObjects: 2.011400 ms  DeleteObjects: 0.263700 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.010020 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.88 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  0.994 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.83 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 180.4 MB.
-System memory in use after: 180.3 MB.
-
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3456.
-Total: 2.822000 ms (FindLiveObjects: 0.280000 ms CreateObjectMapping: 0.183200 ms MarkObjects: 2.087000 ms  DeleteObjects: 0.270800 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009763 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.94 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.000 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 1.02 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 180.4 MB.
-System memory in use after: 180.3 MB.
-
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3460.
-Total: 2.805400 ms (FindLiveObjects: 0.399000 ms CreateObjectMapping: 0.190800 ms MarkObjects: 1.938000 ms  DeleteObjects: 0.276500 ms)
-
-========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.009827 seconds.
-Begin MonoManager ReloadAssembly
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 0.90 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Invoked RoslynAnalysisRunner static constructor.
-RoslynAnalysisRunner will not be running.
-RoslynAnalysisRunner has terminated.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.012 seconds
-Platform modules already initialized, skipping
-Refreshing native plugins compatible for Editor in 0.81 ms, found 10 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2835 Unused Serialized files (Serialized files now loaded: 0)
-System memory in use before: 171.1 MB.
-System memory in use after: 171.0 MB.
-
-Unloading 32 unused Assets to reduce memory usage. Loaded Objects now: 3464.
-Total: 2.750700 ms (FindLiveObjects: 0.488700 ms CreateObjectMapping: 0.173900 ms MarkObjects: 1.809400 ms  DeleteObjects: 0.277200 ms)
+Received Import Request.
+  Time since last request: 190.071137 seconds.
+  path: Assets/SteamVR/Prefabs/vr_glove_left_model_slim.prefab
+  artifactKey: Guid(638779290bce1af49b356f33dcc6fccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/SteamVR/Prefabs/vr_glove_left_model_slim.prefab using Guid(638779290bce1af49b356f33dcc6fccf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f5de8db1dc749f9b8e48064fb4b2998b') in 0.088240 seconds
+  Import took 0.094002 seconds .
 
 AssetImportWorkerClient::OnTransportError - code=2 error=End of file
