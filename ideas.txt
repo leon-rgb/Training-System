@@ -1,0 +1,14 @@
+genauigkeit innerhalb des cutting planes:
+	Punkte ca 100 - 1000 Stück innerhalb des cutting planes erzeugen (alle reihenweise zu den punkten der curve) mit object pooling
+		Punkte --> empty gameObjects
+		Punkte in einem abstand von (1 / Punkte pro Reihe) erzeugen  
+		punkte pro reihe = dist(curvePoint, korrespondierenem point in der gerade) / 0.05f 
+			--> 0.05f da das der length coefficient vom mesh generator leg ist.
+		jeder punkt soll ein skript attached haben, das überprüft ob es von der saw getroffen wurde (getroffen wird approximiert durch distanz berechnung)
+			--> prefab für di epunkte erstellen
+
+
+Object pooling
+https://learn.unity.com/tutorial/object-pooling?signup=true#
+https://www.youtube.com/watch?v=tdSmKaJvCoA
+	
