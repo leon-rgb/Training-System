@@ -762,9 +762,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e340432cdc281247bdad9a44d2569a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controllerLeft: {fileID: 1824722003}
+  controllerRight: {fileID: 1786440347}
   hapticAction:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
+  sawForController: {fileID: 839368999}
 --- !u!54 &166159343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3215,20 +3218,6 @@ MonoBehaviour:
       values: 010101010101
     previewEnabled: 1
   scale: 1
---- !u!114 &839369001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 839368999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8ca2cc563cc33f542a5d9f8f661184ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  highLightMaterial: {fileID: 0}
-  fireHapticsOnHightlight: 1
 --- !u!4 &851771781 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400004, guid: 41a3b4523a140e245b18852ca870c49e, type: 3}
@@ -6593,6 +6582,16 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1762713539}
   m_Mesh: {fileID: -6530799260575302985, guid: 5db476d4bb2045e4eb5b92f4844ec11e, type: 3}
+--- !u!1 &1786440347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 160596, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+  m_PrefabInstance: {fileID: 784573566}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1824722003 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 144230, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+  m_PrefabInstance: {fileID: 784573566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1835066685
 GameObject:
   m_ObjectHideFlags: 0
