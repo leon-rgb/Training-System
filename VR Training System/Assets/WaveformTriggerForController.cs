@@ -14,6 +14,7 @@ public class WaveformTriggerForController : MonoBehaviour
     public SteamVR_Action_Vibration hapticAction;
     public GameObject sawForController;
     private Interactable sawForControllerI;
+    private bool blockPulse;
     //public SteamVR_Action_Boolean trackpadAction;
 
     // Start is called before the first frame update
@@ -23,6 +24,7 @@ public class WaveformTriggerForController : MonoBehaviour
         handRight = controllerRight.GetComponent<Hand>();
         GetComponent<Rigidbody>().sleepThreshold = 0.0f;
         sawForControllerI = sawForController.GetComponent<Interactable>();
+        blockPulse = false;
     }
 
     // Update is called once per frame
@@ -40,12 +42,13 @@ public class WaveformTriggerForController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {    
-        if (other.CompareTag("CuttingPlane"))
+        if (other.CompareTag("CuttingPlane") && !blockPulse)
         {
+            blockPulse = true;
             hand = getAttachedHand();
             if (hand != null)
             {
-                sendPulse(0.3f, 10, 75, hand);
+                StartCoroutine(sendThreePulses(hand));
                 Debug.Log("WAVEFORMCOLLISION  " + hand);
             }   
             
@@ -55,7 +58,7 @@ public class WaveformTriggerForController : MonoBehaviour
             hand = getAttachedHand();
             if (hand != null)
             {
-                sendPulse(0.5f, 200, 120, hand);
+                sendPulse(0.5f, 70, 90, hand);
                 Debug.Log("WAVEFORMCOLLISION bone  " + hand);
             }
             Debug.Log("WAVEFORMCOLLISION bone");           
@@ -93,16 +96,29 @@ public class WaveformTriggerForController : MonoBehaviour
         
     }
 
-    private void sendDelayedPulse(float delay, float duration, float frequency, float amplitude, SteamVR_Input_Sources source = SteamVR_Input_Sources.Any)
+    private void sendDelayedPulse(float delay, float duration, float frequency, float amplitude, Hand hand = null)
     {
-        if (source == SteamVR_Input_Sources.Any)
+        if (hand == null)
         {
             hapticAction.Execute(delay, duration, frequency, amplitude, SteamVR_Input_Sources.LeftHand);
             hapticAction.Execute(delay, duration, frequency, amplitude, SteamVR_Input_Sources.RightHand);
         }
+        else if (hand == handRight)
+        {
+            hapticAction.Execute(delay, duration, frequency, amplitude, SteamVR_Input_Sources.LeftHand);
+        }
         else
         {
-            hapticAction.Execute(delay, duration, frequency, amplitude, source);
+            hapticAction.Execute(delay, duration, frequency, amplitude, SteamVR_Input_Sources.RightHand);
         }
+    }
+
+    IEnumerator sendThreePulses(Hand hand)
+    {
+        sendPulse(0.25f, 30, 40, hand);
+        yield return new WaitForSeconds(0.45f);
+        sendPulse(0.25f, 30, 40, hand);
+        yield return new WaitForSeconds(0.45f);
+        sendPulse(0.25f, 30, 40, hand);
     }
 }
