@@ -60,9 +60,18 @@ public class WaveformTriggerForController : MonoBehaviour
             {
                 sendPulse(0.5f, 70, 90, hand);
                 Debug.Log("WAVEFORMCOLLISION bone  " + hand);
-            }
-            Debug.Log("WAVEFORMCOLLISION bone");           
+            }         
         }
+        else if (other.CompareTag("CutToDeep"))
+        {
+            hand = getAttachedHand();
+            if (hand != null)
+            {
+                sendPulse(0.5f, 120, 150, hand);
+                Debug.Log("WAVEFORMCOLLISION ToDeep  " + hand);
+            }
+        }
+
     }
 
     private Hand getAttachedHand()

@@ -28,6 +28,7 @@ public class MeshGeneratorLeg : MonoBehaviour
     public static float meshRadius;
 
     public GameObject saw;
+    public bool meshWasCreated = false;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +37,7 @@ public class MeshGeneratorLeg : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         CreateMesh();
+        meshWasCreated = true;
         UpdateMesh();
         UpdateCollider();
         meshMiddlePoint = mesh.bounds.center;
@@ -79,6 +81,27 @@ public class MeshGeneratorLeg : MonoBehaviour
 
         //Algorithm to connect all Vertices correctly (so that they can just be added to the triangles in order)
         List<Vector3> sortedVertices = new List<Vector3>();
+        sortedVertices = SortVertices(correspondingVertices, curveVertices);
+
+        vertices = sortedVertices.ToArray();
+
+        triangles = new int[vertices.Length];
+        for (int i = 0; i < vertices.Length; i++)
+        {
+            triangles[i] = i;
+        }
+
+        /*
+        Mesh tmp = new Mesh();
+        tmp.Clear();
+        tmp.vertices = vertices;
+        mesh.triangles = triangles;
+        */
+    }
+
+    public List<Vector3> SortVertices(Vector3[] correspondingVertices, Vector3[] curveVertices)
+    {
+        List<Vector3> sortedVertices = new List<Vector3>();
         for (int i = 0; i < correspondingVertices.Length; i++)
         {
             if (i == 0)
@@ -103,21 +126,7 @@ public class MeshGeneratorLeg : MonoBehaviour
                 sortedVertices.Add(curveVertices[i + 1]);
             }
         }
-
-        vertices = sortedVertices.ToArray();
-
-        triangles = new int[vertices.Length];
-        for (int i = 0; i < vertices.Length; i++)
-        {
-            triangles[i] = i;
-        }
-
-        /*
-        Mesh tmp = new Mesh();
-        tmp.Clear();
-        tmp.vertices = vertices;
-        mesh.triangles = triangles;
-        */
+        return sortedVertices;
     }
 
     void UpdateMesh()
@@ -137,29 +146,31 @@ public class MeshGeneratorLeg : MonoBehaviour
         //Mesh invMesh = InvertMesh();
         //Mesh combMesh = MergeMeshes(invMesh);
         //mesh = combMesh;
-        Mesh invMesh = InvertMesh();
-        invMesh = DuplicateAndMoveMesh(invMesh);
+        Mesh invMesh = InvertMesh(mesh, triangles);
+        invMesh = DuplicateAndMoveMesh(invMesh, triangles);
         //invMesh.triangles.Reverse().ToArray();
 
-        mesh = MergeMeshes(invMesh);
+        mesh = MergeMeshes(mesh, invMesh);
         Debug.Log("ARRAY: " + mesh.vertices);
 
-       saw.GetComponent<SawAnimationGenerator>().test();
+        saw.GetComponent<SawAnimationGenerator>().test();
     }
 
-    private Mesh DuplicateAndMoveMesh(Mesh mesh)
+    public Mesh DuplicateAndMoveMesh(Mesh mesh, int[] triangles)
     {
         Mesh dupMesh = new Mesh();
         Vector3[] verts = mesh.vertices;
-        for(int i = 0; i < verts.Length; i++)
+        
+        for (int i = 0; i < verts.Length; i++)
         {
             verts[i].z = verts[i].z - widthCoef;
         }
+         
         dupMesh.vertices = verts;
         dupMesh.triangles = triangles;
         return dupMesh;
     }
-    private Mesh MergeMeshes(Mesh invMesh)
+    public Mesh MergeMeshes(Mesh mesh, Mesh invMesh)
     {
         CombineInstance[] combInst = new CombineInstance[2]
         {
@@ -171,7 +182,7 @@ public class MeshGeneratorLeg : MonoBehaviour
         combMesh.CombineMeshes(combInst);
         return combMesh;
     }
-    private Mesh InvertMesh()
+    public Mesh InvertMesh(Mesh mesh, int[] triangles)
     {
         triangles = mesh.triangles.Reverse().ToArray();
         Vector3[] normals = mesh.normals;
@@ -201,6 +212,56 @@ public class MeshGeneratorLeg : MonoBehaviour
         return curveVertices;
     }
 
+    public Mesh CreateNonFlatCurveVertices(Vector3[] curveVertices, Vector3[]vertices, int[]triangles)
+    {
+        List<Vector3> tmp = new List<Vector3>();
+        for(int i = 0; i < curveVertices.Length-1; i++)
+        {
+            tmp.Add(curveVertices[i]);
+
+            Vector3 newLeft = new Vector3(curveVertices[i].x, curveVertices[i].y, curveVertices[i].z - widthCoef);
+            tmp.Add(newLeft);
+
+            tmp.Add(curveVertices[i+1]);
+
+            tmp.Add(curveVertices[i + 1]);
+
+            tmp.Add(newLeft);
+
+            Vector3 newRight = new Vector3(curveVertices[i+1].x, curveVertices[i+1].y, curveVertices[i+1].z - widthCoef);
+            tmp.Add(newRight);
+        }
+
+        Vector3[] tmpArray = tmp.ToArray();
+        Vector3[] combinedVertices = new Vector3[tmpArray.Length];
+
+        int j = 0;/*
+        foreach(Vector3 vert in vertices)
+        {
+            combinedVertices[j] = vert;
+            j++;
+        }*/
+        foreach(Vector3 vert in tmpArray)
+        {
+            combinedVertices[j] = vert;
+            j++;
+        }
+
+        
+
+
+        int[] tmp2 = new int[combinedVertices.Length];
+        for (int i = 0; i < combinedVertices.Length; i++)
+        {
+            tmp2[i] = i;
+        }
+
+        Mesh nonFlatCurve = new Mesh();
+        nonFlatCurve.vertices = combinedVertices;
+        nonFlatCurve.triangles = tmp2;
+        //nonFlatCurve.triangles = nonFlatCurve.triangles.Reverse().ToArray();
+        return nonFlatCurve;
+    }
     
     private void OnDrawGizmos()
     {
@@ -209,10 +270,11 @@ public class MeshGeneratorLeg : MonoBehaviour
             return;
 
         }
+        /*
         Gizmos.color = Color.white;
         foreach (Vector3 vert in curveVertices)
         {
-            Gizmos.DrawSphere(vert, 0.01f);
+            Gizmos.DrawSphere(vert, 0.001f);
         }
 
 
@@ -228,6 +290,12 @@ public class MeshGeneratorLeg : MonoBehaviour
         {
             Gizmos.DrawSphere(vert, 0.01f);
         }
+        
+        foreach ( Vector3 vert in CreateNonFlatCurveVertices(curveVertices))
+        {
+            Gizmos.DrawSphere(vert, 0.001f);
+        }*/
+
 
         Gizmos.color = Color.cyan;
         Gizmos.DrawSphere(mesh.bounds.center, 0.01f);
