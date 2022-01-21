@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 using Valve.VR;
+using System;
 
 public class WaveformTriggerForController : MonoBehaviour
 {
+    [Header("InGame TextFields")]
     public GameObject controllerLeft;
     public GameObject controllerRight;
     private Hand handLeft;
@@ -14,56 +16,86 @@ public class WaveformTriggerForController : MonoBehaviour
     public SteamVR_Action_Vibration hapticAction;
     public GameObject sawForController;
     private Interactable sawForControllerI;
-    private bool blockPulse;
-    //public SteamVR_Action_Boolean trackpadAction;
+
+    [Tooltip("This is a tooltip")]
+    public float timeoutLength;
+
+    private bool cuttingPlaneTimeout;
+    private float cuttingPlaneStartTime;
+
+    private bool cutTooDeepTimeout;
+    private float cutTooDeepStartTime;
+    public float Depth { get; set; }
+    public int CutToDeepCount { get; set; }
+    private Vector3 depthStart;
+
+    float curTime;
+
 
     // Start is called before the first frame update
     void Start()
     {
         handLeft = controllerLeft.GetComponent<Hand>();
         handRight = controllerRight.GetComponent<Hand>();
-        GetComponent<Rigidbody>().sleepThreshold = 0.0f;
+        //GetComponent<Rigidbody>().sleepThreshold = 0.0f;
         sawForControllerI = sawForController.GetComponent<Interactable>();
-        blockPulse = false;
+        
+        cuttingPlaneTimeout = false;
+        cutTooDeepTimeout = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        if(sawForControllerI.attachedToHand != null)
+        curTime = Time.time;
+        if (cutTooDeepTimeout)
         {
-            if (sawForControllerI.attachedToHand == handRight)
+            //Debug.Log("timeout left : " + (timeoutLength - (curTime-cutToDeepStartTime)));
+            if(curTime -  timeoutLength > cutTooDeepStartTime)
             {
-                Debug.Log(sawForControllerI.attachedToHand);
-            }      
-        }*/
+                cutTooDeepTimeout = false;
+                //Debug.Log("timeout ended");
+            }
+        }
+        if (cuttingPlaneTimeout)
+        {
+            if (curTime - timeoutLength > cuttingPlaneStartTime)
+            {
+                cuttingPlaneTimeout = false;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
-    {    
-        if (other.CompareTag("CuttingPlane") && !blockPulse)
+    {
+        if (other.CompareTag("CuttingPlane") && !cuttingPlaneTimeout)
         {
-            blockPulse = true;
+            cuttingPlaneTimeout = true;
+            cuttingPlaneStartTime = Time.time;
             hand = getAttachedHand();
+            Debug.Log("hallo plane");
             if (hand != null)
             {
                 StartCoroutine(sendThreePulses(hand));
                 Debug.Log("WAVEFORMCOLLISION  " + hand);
-            }   
-            
+            }
+
         }
-        else if(other.CompareTag("Bones"))
+        else if (other.CompareTag("Bones"))
         {
             hand = getAttachedHand();
             if (hand != null)
             {
                 sendPulse(0.5f, 70, 90, hand);
                 Debug.Log("WAVEFORMCOLLISION bone  " + hand);
-            }         
+            }
         }
-        else if (other.CompareTag("CutToDeep"))
+        else if (other.CompareTag("CutToDeep") && !cutTooDeepTimeout)
         {
+            cutTooDeepTimeout = true;
+            cutTooDeepStartTime = Time.time;
+            MainScript.OnCutTooDeepEnter(transform.position);
+            Debug.Log("hallo " + other.name);
             hand = getAttachedHand();
             if (hand != null)
             {
@@ -73,6 +105,34 @@ public class WaveformTriggerForController : MonoBehaviour
         }
 
     }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("CutToDeep"))
+        {
+            MainScript.OnCutTooDeepStay(transform.position);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+       
+    }
+
+    /*
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("collision detected with : " + collision.rigidbody.gameObject);
+        if (collision.gameObject.CompareTag("CutToDeep"))
+        {
+            hand = getAttachedHand();
+            if (hand != null)
+            {
+                sendPulse(0.5f, 120, 150, hand);
+                Debug.Log("WAVEFORMCOLLISION ToDeep  " + hand);
+            }
+        }
+    }*/
 
     private Hand getAttachedHand()
     {

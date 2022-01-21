@@ -7,6 +7,12 @@ genauigkeit innerhalb des cutting planes:
 		jeder punkt soll ein skript attached haben, das überprüft ob es von der saw getroffen wurde (getroffen wird approximiert durch distanz berechnung)
 			--> prefab für di epunkte erstellen
 
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+alle variablen und textsetzungen in main script auslagern
+--> dann verzweigung in cutting accuracy entfernen
+
+
+
 
 Object pooling
 https://learn.unity.com/tutorial/object-pooling?signup=true#

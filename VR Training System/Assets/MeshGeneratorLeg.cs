@@ -30,6 +30,10 @@ public class MeshGeneratorLeg : MonoBehaviour
     public GameObject saw;
     public bool meshWasCreated = false;
 
+    public GameObject cuttingSphereAccuracyPrefab;
+    public GameObject cuttingSphereWaveformPrefab;
+    public List<CuttingPlane_Sphere> AllCuttingPlaneAccuracySpheres { get; set; }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,12 +41,14 @@ public class MeshGeneratorLeg : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         CreateMesh();
+        AllCuttingPlaneAccuracySpheres = new List<CuttingPlane_Sphere>();
+        InstantiateCuttingSpheres();
         meshWasCreated = true;
         UpdateMesh();
         UpdateCollider();
         meshMiddlePoint = mesh.bounds.center;
         meshRadius = Vector3.Magnitude(mesh.bounds.max - mesh.bounds.center);
-        //meshMiddlePoint = (TopCuttingPoint.position + correspondingVertices[correspondingVertices.Length / 2])/2;
+        //meshMiddlePoint = (TopCuttingPoint.position + correspondingVertices[correspondingVertices.Length / 2])/2;        
     }
 
     private void UpdateCollider()
@@ -136,19 +142,11 @@ public class MeshGeneratorLeg : MonoBehaviour
         mesh.triangles = triangles;
         mesh.Optimize();
         mesh.RecalculateNormals();
-        /*
-        Mesh[] meshesToCombine = new Mesh[]
-        {
-            mesh,
-            InvertMesh()
-        };*/
-        //Mesh.CombineMeshes(new Mesh[]{mesh, InvertMesh()}, true);
-        //Mesh invMesh = InvertMesh();
-        //Mesh combMesh = MergeMeshes(invMesh);
-        //mesh = combMesh;
+
         Mesh invMesh = InvertMesh(mesh, triangles);
         invMesh = DuplicateAndMoveMesh(invMesh, triangles);
         //invMesh.triangles.Reverse().ToArray();
+        //mesh.triangles = triangles.Reverse().ToArray();
 
         mesh = MergeMeshes(mesh, invMesh);
         Debug.Log("ARRAY: " + mesh.vertices);
@@ -212,11 +210,13 @@ public class MeshGeneratorLeg : MonoBehaviour
         return curveVertices;
     }
 
-    public Mesh CreateNonFlatCurveVertices(Vector3[] curveVertices, Vector3[]vertices, int[]triangles)
+    public Mesh CreateNonFlatCurveVertices(Vector3[] curveVertices, Vector3[]vertices, int[]triangles, Vector3[] correspondingVertices)
     {
         List<Vector3> tmp = new List<Vector3>();
-        for(int i = 0; i < curveVertices.Length-1; i++)
-        {
+        Vector3 firstBackRight = Vector3.zero;
+        Vector3 firstBackLeft = Vector3.zero;
+        for (int i = 0; i < curveVertices.Length-1; i++)
+        {      
             tmp.Add(curveVertices[i]);
 
             Vector3 newLeft = new Vector3(curveVertices[i].x, curveVertices[i].y, curveVertices[i].z - widthCoef);
@@ -230,6 +230,42 @@ public class MeshGeneratorLeg : MonoBehaviour
 
             Vector3 newRight = new Vector3(curveVertices[i+1].x, curveVertices[i+1].y, curveVertices[i+1].z - widthCoef);
             tmp.Add(newRight);
+
+            if (i == 0)
+            {    
+                firstBackRight = new Vector3(correspondingVertices[i].x, curveVertices[i].y, curveVertices[i].z - widthCoef);
+                tmp.Add(firstBackRight);
+                tmp.Add(newLeft);               
+                tmp.Add(curveVertices[i]);
+
+                firstBackLeft = new Vector3(correspondingVertices[i].x, curveVertices[i].y, curveVertices[i].z);
+                tmp.Add(firstBackRight);
+                tmp.Add(curveVertices[i]);
+                tmp.Add(firstBackLeft);
+            }
+
+            if(i == curveVertices.Length - 2)
+            {
+                i++;
+                Vector3 backRight = new Vector3(correspondingVertices[i].x, curveVertices[i].y, curveVertices[i].z - widthCoef);
+                tmp.Add(curveVertices[i]);
+                tmp.Add(newRight);
+                tmp.Add(backRight);
+
+                
+                Vector3 backLeft = new Vector3(correspondingVertices[i].x, curveVertices[i].y, curveVertices[i].z);
+                tmp.Add(backLeft);
+                tmp.Add(curveVertices[i]);
+                tmp.Add(backRight);
+
+                tmp.Add(backRight);
+                tmp.Add(firstBackRight);
+                tmp.Add(backLeft);
+
+                tmp.Add(backLeft);
+                tmp.Add(firstBackRight);
+                tmp.Add(firstBackLeft);
+            }
         }
 
         Vector3[] tmpArray = tmp.ToArray();
@@ -247,8 +283,6 @@ public class MeshGeneratorLeg : MonoBehaviour
             j++;
         }
 
-        
-
 
         int[] tmp2 = new int[combinedVertices.Length];
         for (int i = 0; i < combinedVertices.Length; i++)
@@ -263,6 +297,33 @@ public class MeshGeneratorLeg : MonoBehaviour
         return nonFlatCurve;
     }
     
+    private void InstantiateCuttingSpheres()
+    {
+        Vector3 pos = Vector3.zero;
+        for(int i = 0; i < curveVertices.Length; i++)
+        {
+            pos = curveVertices[i];
+            float spheresPerRow = (Vector3.Distance(curveVertices[i], correspondingVertices[i]) / (lengthCoef*0.1f));
+            float accuracyPortion = spheresPerRow/3;
+            Debug.Log("spheres per row : " + spheresPerRow);
+            for (int j = 0; j < spheresPerRow; j++)
+            {
+                pos.x = curveVertices[i].x - j * lengthCoef * 0.1f;
+                GameObject go;
+                if (j < accuracyPortion)
+                {
+                    go = Instantiate(cuttingSphereAccuracyPrefab, pos, Quaternion.identity);
+                    AllCuttingPlaneAccuracySpheres.Add(go.GetComponent<CuttingPlane_Sphere>());
+                }
+                else
+                {
+                    go = Instantiate(cuttingSphereWaveformPrefab, pos, Quaternion.identity);
+                }               
+                go.transform.parent = transform;
+            }
+        }
+    }
+
     private void OnDrawGizmos()
     {
         if (vertices == null)

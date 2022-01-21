@@ -2,8 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
-public class MeshGeneratorCutToDeep : MonoBehaviour
+public class CuttingAccuracy : MonoBehaviour
 {
     private MeshGeneratorLeg cuttingMeshGenerator;
     public GameObject cuttingMeshObj;
@@ -18,15 +19,51 @@ public class MeshGeneratorCutToDeep : MonoBehaviour
     [Range(5, 20)]
     public int distToCuttingMeshCoef;
 
+    public GameObject spherePrefab;
+
+    private List<CuttingPlane_Sphere> allCuttingPlaneAccuracySpheres;
+    public float CuttingPlaneAccuracy { get; set; }
+    public float TotalAccuracy { get; set; }
+    [Range(0.3f, 1)]
+    public float UpdateAccuracyInterval;
+
+    public Transform WaveformTriggerTransform;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        GetComponent<Rigidbody>().sleepThreshold = 0.0f;
+        //GetComponent<Rigidbody>().sleepThreshold = 0.0f;
         deepMesh = new Mesh();
         GetComponent<MeshFilter>().mesh = deepMesh;
         cuttingMeshGenerator = cuttingMeshObj.GetComponent<MeshGeneratorLeg>();
         //wait for creation of cutting mesh
         StartCoroutine(DelayedMeshCreation());
+    }
+
+    private void Update()
+    {
+       StartCoroutine(CalculateCuttingPlaneAccuracy());
+    }
+
+    private IEnumerator CalculateCuttingPlaneAccuracy()
+    {
+        yield return new WaitForSeconds(UpdateAccuracyInterval);
+        allCuttingPlaneAccuracySpheres = cuttingMeshGenerator.AllCuttingPlaneAccuracySpheres;
+        int totalQuantity = allCuttingPlaneAccuracySpheres.Count;
+        int realQuantity = 0;
+        foreach (CuttingPlane_Sphere sphere in allCuttingPlaneAccuracySpheres)
+        {
+            if (sphere.wasHit) realQuantity++;
+        }
+        CuttingPlaneAccuracy = (100 * realQuantity) / totalQuantity;
+
+        float depth;
+        float cutToDeepCount;
+        /*
+            depth = waveformTriggerForController.Depth;
+            cutToDeepCount = waveformTriggerForController.CutToDeepCount;
+         */
     }
 
     private void UpdateMesh()
@@ -38,12 +75,13 @@ public class MeshGeneratorCutToDeep : MonoBehaviour
         deepMesh.Optimize();
         deepMesh.RecalculateNormals();
 
-        Mesh invMesh = cuttingMeshGenerator.InvertMesh(deepMesh, deepTriangles);
+        Mesh invMesh;
         invMesh = cuttingMeshGenerator.DuplicateAndMoveMesh(deepMesh, deepTriangles);
+        invMesh.triangles = invMesh.triangles.Reverse().ToArray();
 
         deepMesh = cuttingMeshGenerator.MergeMeshes(deepMesh, invMesh);
         
-        nonFlatCurve= cuttingMeshGenerator.CreateNonFlatCurveVertices(movedCurveVertices, deepVertices, deepTriangles);
+        nonFlatCurve= cuttingMeshGenerator.CreateNonFlatCurveVertices(movedCurveVertices, deepVertices, deepTriangles, deepCorrespondingVertices);
        
         Debug.Log("DEEP VERTS: " + deepVertices);
         Debug.Log(nonFlatCurve.vertices);
@@ -54,9 +92,19 @@ public class MeshGeneratorCutToDeep : MonoBehaviour
         deepMesh.Optimize();
         deepMesh.RecalculateNormals();*/
         //deepMesh = cuttingMeshGenerator.MergeMeshes(deepMesh, nonFlatCurve);
-        deepMesh.Clear();
+        
+        nonFlatCurve = cuttingMeshGenerator.MergeMeshes(deepMesh, nonFlatCurve);
         deepMesh = nonFlatCurve;
         deepMesh.RecalculateNormals();        //deepMesh = cuttingMeshGenerator.MergeMeshes(deepMesh, nonFlatCurve);
+    }
+
+    private void InstantiateSpheres()
+    {
+        foreach(Vector3 vec in movedCurveVertices)
+        {
+            GameObject go = Instantiate(spherePrefab, vec, Quaternion.identity);
+            go.transform.parent = transform;
+        }
     }
 
     private void CreateMesh()
@@ -108,10 +156,24 @@ public class MeshGeneratorCutToDeep : MonoBehaviour
         
     }
 
+    private void createMovedCurve()
+    {
+        Vector3[] curveVertices = cuttingMeshGenerator.getVertices();
+        movedCurveVertices = new Vector3[curveVertices.Length];
+        for (int i = 0; i < curveVertices.Length; i++)
+        {
+            float x = curveVertices[i].x + cuttingMeshGenerator.lengthCoef / distToCuttingMeshCoef;
+            movedCurveVertices[i] = new Vector3(x, curveVertices[i].y, curveVertices[i].z);
+        }
+    }
+
     IEnumerator DelayedMeshCreation(){
         yield return new WaitUntil(() => cuttingMeshGenerator.meshWasCreated);
-        CreateMesh();
-        UpdateMesh();
-        GetComponent<MeshCollider>().sharedMesh = deepMesh;
+        //CreateMesh();
+        //UpdateMesh();
+        //GetComponent<MeshCollider>().sharedMesh = deepMesh;
+
+        createMovedCurve();
+        InstantiateSpheres();
     }
 }
