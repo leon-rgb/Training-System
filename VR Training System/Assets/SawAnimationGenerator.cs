@@ -147,7 +147,7 @@ public class SawAnimationGenerator : MonoBehaviour
         holoSaw.GetComponentInChildren<RotateHoloSawBasedOnSawPosition>().DisableHoloSawRotation();
         initialSawPos = holoSaw.position;
         initialSawRot = holoSaw.eulerAngles;
-        Debug.Log("OK LETS GO");
+        //Debug.Log("OK LETS GO");
         Vector3[] pointsToLookAt= CalcPointsToLookAt(pointPairs);
         StartCoroutine(Look(pointsToLookAt));
         /*

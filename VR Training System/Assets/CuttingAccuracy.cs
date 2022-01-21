@@ -22,13 +22,13 @@ public class CuttingAccuracy : MonoBehaviour
     public GameObject spherePrefab;
 
     private List<CuttingPlane_Sphere> allCuttingPlaneAccuracySpheres;
-    public float CuttingPlaneAccuracy { get; set; }
-    public float TotalAccuracy { get; set; }
+    public float CuttingPlaneAccuracy { get; set; } = 0;
+    public float TotalAccuracy { get; set; } = 0;
     [Range(0.3f, 1)]
     public float UpdateAccuracyInterval;
 
-    public Transform WaveformTriggerTransform;
-
+    public Transform mainTransform;
+    private MainScript main;
 
     // Start is called before the first frame update
     void Start()
@@ -39,11 +39,13 @@ public class CuttingAccuracy : MonoBehaviour
         cuttingMeshGenerator = cuttingMeshObj.GetComponent<MeshGeneratorLeg>();
         //wait for creation of cutting mesh
         StartCoroutine(DelayedMeshCreation());
+        main = mainTransform.GetComponent<MainScript>();
     }
 
     private void Update()
     {
        StartCoroutine(CalculateCuttingPlaneAccuracy());
+       StartCoroutine(CalculateTotalAccuracy());
     }
 
     private IEnumerator CalculateCuttingPlaneAccuracy()
@@ -56,14 +58,42 @@ public class CuttingAccuracy : MonoBehaviour
         {
             if (sphere.wasHit) realQuantity++;
         }
-        CuttingPlaneAccuracy = (100 * realQuantity) / totalQuantity;
+        CuttingPlaneAccuracy = (100 * realQuantity) / totalQuantity;      
+    }
 
-        float depth;
-        float cutToDeepCount;
-        /*
-            depth = waveformTriggerForController.Depth;
-            cutToDeepCount = waveformTriggerForController.CutToDeepCount;
-         */
+    private IEnumerator CalculateTotalAccuracy()
+    {
+        yield return new WaitForSeconds(UpdateAccuracyInterval);
+        float depth = main.Depth * 1000; // *1000 to get size in mm 
+        float cutToDeepCount = main.CutTooDeepCount;
+        // you could scale x to make the accuracy score easier/harder -> e.g. x*0.5 is much easier.
+        // or you could not take the size in mm --> e.g. depth = main.Depth * 100 (is in cm then).
+        // of course you could also scale it in a non linear way.
+        float x = cutToDeepCount * depth;
+        x *= 0.5f;
+        //Debug.Log("x = " + x);
+
+        //function used: 5.08219*10^-22x^4 + 0.00003*x^3 - 0.00194*x^2 + 0.00091x + 1
+        //every line is one exponent (for easier reading)
+        double errCoefficient;
+        if (x > 32.8)
+        {
+            errCoefficient = 0; //needed since approximation gets negative after x = 32.8 and than gets positive again
+        }
+        else
+        {
+            errCoefficient = 5.08219 * Math.Pow(10, -22) * Math.Pow(x, 4);
+            errCoefficient += 0.00003 * Math.Pow(x, 3);
+            errCoefficient -= 0.00194 * Math.Pow(x, 2);
+            errCoefficient += 0.00091 * x + 1;
+
+            if (errCoefficient > 1) errCoefficient = 1;
+            //if (errCoefficient < 0) errCoefficient = 0;
+        }
+       
+        //TotalAccuracy = (float) errCoefficient * CuttingPlaneAccuracy;
+        TotalAccuracy = (float)errCoefficient * CuttingPlaneAccuracy;
+        TotalAccuracy = (float) (Math.Round(TotalAccuracy, 2));
     }
 
     private void UpdateMesh()

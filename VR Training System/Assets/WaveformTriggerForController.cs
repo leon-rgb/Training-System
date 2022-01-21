@@ -31,6 +31,8 @@ public class WaveformTriggerForController : MonoBehaviour
 
     float curTime;
 
+    public Transform mainTransform;
+    private MainScript main;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +44,8 @@ public class WaveformTriggerForController : MonoBehaviour
         
         cuttingPlaneTimeout = false;
         cutTooDeepTimeout = false;
+
+        main = mainTransform.GetComponent<MainScript>();
     }
 
     // Update is called once per frame
@@ -51,7 +55,7 @@ public class WaveformTriggerForController : MonoBehaviour
         if (cutTooDeepTimeout)
         {
             //Debug.Log("timeout left : " + (timeoutLength - (curTime-cutToDeepStartTime)));
-            if(curTime -  timeoutLength > cutTooDeepStartTime)
+            if(curTime -  timeoutLength/10 > cutTooDeepStartTime)
             {
                 cutTooDeepTimeout = false;
                 //Debug.Log("timeout ended");
@@ -94,12 +98,12 @@ public class WaveformTriggerForController : MonoBehaviour
         {
             cutTooDeepTimeout = true;
             cutTooDeepStartTime = Time.time;
-            MainScript.OnCutTooDeepEnter(transform.position);
+            main.OnCutTooDeepEnter(transform.position);
             Debug.Log("hallo " + other.name);
             hand = getAttachedHand();
             if (hand != null)
             {
-                sendPulse(0.5f, 120, 150, hand);
+                sendPulse(0.5f, 160, 200, hand);
                 Debug.Log("WAVEFORMCOLLISION ToDeep  " + hand);
             }
         }
@@ -110,7 +114,7 @@ public class WaveformTriggerForController : MonoBehaviour
     {
         if (other.CompareTag("CutToDeep"))
         {
-            MainScript.OnCutTooDeepStay(transform.position);
+            main.OnCutTooDeepStay(transform.position);
         }
     }
 

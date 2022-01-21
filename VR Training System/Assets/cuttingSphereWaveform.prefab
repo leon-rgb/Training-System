@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 2548267473157897811}
   - component: {fileID: 2548267473157897810}
   - component: {fileID: 2548267473157897809}
+  - component: {fileID: 7905863891496274601}
   m_Layer: 7
   m_Name: cuttingSphereWaveform
-  m_TagString: Untagged
+  m_TagString: CuttingPlane
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295
@@ -95,3 +96,15 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &7905863891496274601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2548267473157897815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a097f76c3faba7e419fe8abed7880717, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

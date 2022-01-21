@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using TMPro;
 using Random = UnityEngine.Random;
 using System;
+using System.Collections;
 
 public class MainScript : MonoBehaviour
 {
@@ -11,18 +9,18 @@ public class MainScript : MonoBehaviour
     [Tooltip("This is a tooltip")]
     public float timeoutLength;
 
-    public static float Depth { get; set; }
-    public static int CutTooDeepCount { get; set; }
-    private static Vector3 depthStart;
+    public float Depth { get; set; }
+    public int CutTooDeepCount { get; set; }
+    private Vector3 depthStart;
 
     float curTime;
 
     [Header("UI Manager and Accuracy GO")]
     public Transform uiManagerTransform;
-    private static UI_Manager uiManager;
+    private UI_Manager uiManager;
 
     public Transform cuttingAccuracy;
-    private static CuttingAccuracy cuttingAccuracyScript;
+    private CuttingAccuracy cuttingAccuracyScript;
 
 
     private void OnEnable()
@@ -34,20 +32,34 @@ public class MainScript : MonoBehaviour
     void Start()
     {
         //initialize variables
+        Depth = 0;
         CutTooDeepCount = 0;
 
         //initialize variables
         uiManager = uiManagerTransform.GetComponent<UI_Manager>();
         cuttingAccuracyScript = cuttingAccuracy.GetComponent<CuttingAccuracy>();
+
+        //initialize textfields
+        StartCoroutine(initializeUITexts());
     }
 
     // Update is called once per frame
     void Update()
     {
         UpdateUIText(Infotext.ACCURACY_PLANE);
+        UpdateUIText(Infotext.ACCURACY_TOTAL);
     }
 
-    public static void UpdateUIText(Infotext infotext)
+    IEnumerator initializeUITexts()
+    {
+        yield return new WaitUntil(() => uiManager.AreInGameTextsInit);
+        UpdateUIText(Infotext.DEPTH);
+        UpdateUIText(Infotext.TO_DEEP_COUNT);
+        UpdateUIText(Infotext.ACCURACY_PLANE);
+        UpdateUIText(Infotext.ACCURACY_TOTAL);
+    }
+
+    public void UpdateUIText(Infotext infotext)
     {
         switch (infotext)
         {
@@ -64,24 +76,22 @@ public class MainScript : MonoBehaviour
                 break;
 
             case Infotext.ACCURACY_TOTAL:
-
+                uiManager.TotalAccuracyText.text = "Cutting accuracy (total): " + cuttingAccuracyScript.TotalAccuracy + "%";
                 break;
         }
     }
 
-    public static void OnCutTooDeepEnter(Vector3 triggerPos)
+    public void OnCutTooDeepEnter(Vector3 triggerPos)
     {
         depthStart = triggerPos;
         CutTooDeepCount++;
         UpdateUIText(Infotext.TO_DEEP_COUNT);
     }
-    public static void OnCutTooDeepStay(Vector3 triggerPos)
+    public void OnCutTooDeepStay(Vector3 triggerPos)
     {
         float dist = Vector3.Distance(depthStart, triggerPos);
-        Debug.Log("test1" + dist + "   " + Depth);
         if (dist > Depth)
         {
-            Debug.Log("test2");
             Depth = dist;
             UpdateUIText(Infotext.DEPTH);
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.17276844, g: 0.21589246, b: 0.2978263, a: 1}
+  m_IndirectSpecularColor: {r: 0.17276807, g: 0.21589197, b: 0.29782572, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -453,7 +453,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 140738145}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6852436, y: -0.27376467, z: -1.0997007}
+  m_LocalPosition: {x: 2.6869, y: -0.2783, z: -1.0997007}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1486100079}
@@ -751,7 +751,8 @@ MonoBehaviour:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
   sawForController: {fileID: 839368999}
-  timeoutLength: 0.5
+  timeoutLength: 2.5
+  mainTransform: {fileID: 166159341}
 --- !u!54 &166159343
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1458,26 +1459,6 @@ Transform:
   m_Father: {fileID: 109280335}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &411727956 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 125964, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
-  m_PrefabInstance: {fileID: 784573566}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &411727961
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 411727956}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 515d9b17ab3cb5248a02c599557001bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timeoutLength: 0
-  uiManagerTransform: {fileID: 0}
-  cuttingAccuracy: {fileID: 0}
 --- !u!1 &422372288
 GameObject:
   m_ObjectHideFlags: 0
@@ -2772,7 +2753,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.523
+      value: 0.982
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2817,7 +2798,11 @@ PrefabInstance:
     - target: {fileID: 11401046, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: renderModelPrefab
       value: 
-      objectReference: {fileID: 1000012617731570, guid: 837f93beb9a614743ae3a2c0ada7c388, type: 3}
+      objectReference: {fileID: 1000012617731570, guid: 5603590e8b536ec4591a92f0f40911d6, type: 3}
+    - target: {fileID: 11450312, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
+      propertyPath: renderModelPrefab
+      value: 
+      objectReference: {fileID: 1000011547835092, guid: cbfaf75a8a9d9794996ebd7703dd0651, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
 --- !u!1 &803335565
@@ -3288,6 +3273,7 @@ MonoBehaviour:
   CutToDeep: {fileID: 1966630466}
   Depth: {fileID: 1061304977}
   Accuracy: {fileID: 542422565}
+  TotalAccuracy: {fileID: 1840461174}
   test: {fileID: 0}
 --- !u!1 &940362053
 GameObject:
@@ -4892,10 +4878,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cuttingMeshObj: {fileID: 1704605399}
-  distToCuttingMeshCoef: 10
+  distToCuttingMeshCoef: 7
   spherePrefab: {fileID: 7352841189191782389, guid: b758d841f0879b441a632a242d0fb92f, type: 3}
-  UpdateAccuracyInterval: 0
-  WaveformTriggerTransform: {fileID: 0}
+  UpdateAccuracyInterval: 0.3
+  mainTransform: {fileID: 166159341}
 --- !u!54 &1492877957
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5137,6 +5123,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: aa1d8aca8c3dabf4fa267c92469a60c9, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: aa1d8aca8c3dabf4fa267c92469a60c9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: aa1d8aca8c3dabf4fa267c92469a60c9, type: 3}
       propertyPath: m_TagString
@@ -5567,7 +5557,7 @@ MeshCollider:
   m_GameObject: {fileID: 1704605399}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
@@ -5777,7 +5767,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1740616795}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6846435, y: -0.23268467, z: -1.0997007}
+  m_LocalPosition: {x: 2.68839, y: -0.22313, z: -1.0997007}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children: []
   m_Father: {fileID: 1486100079}
@@ -6139,7 +6129,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1835066685}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.6972437, y: -0.24792469, z: -1.0997007}
+  m_LocalPosition: {x: 2.7031, y: -0.2451, z: -1.0997007}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 617696307}
@@ -7489,13 +7479,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2140652343}
-  m_LocalRotation: {x: -0.49999997, y: 0.50000006, z: 0.49999997, w: 0.50000006}
-  m_LocalPosition: {x: 1.1361, y: 0.28, z: -0.6282}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: 1.1421, y: 0.4122, z: -0.746}
   m_LocalScale: {x: 1.2000002, y: 1.2000003, z: 1.2000002}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: -90, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
 --- !u!1001 &452905523158393960
 PrefabInstance:
   m_ObjectHideFlags: 0

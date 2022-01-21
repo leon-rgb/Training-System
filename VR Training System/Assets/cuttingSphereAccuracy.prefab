@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2548267473157897804}
   m_Layer: 7
   m_Name: cuttingSphereAccuracy
-  m_TagString: Untagged
+  m_TagString: Bones
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 4294967295

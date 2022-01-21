@@ -11,6 +11,26 @@ genauigkeit innerhalb des cutting planes:
 alle variablen und textsetzungen in main script auslagern
 --> dann verzweigung in cutting accuracy entfernen
 
+Funktion für total accuracy:
+Idee ist kreiren einer Funktion f(x), wobei x = errors * TooDeepLength
+
+-0.0006x^2 + 0.0002x + 1 --> sinkt vlt zu schnell 
+
+
+---->>> 5.08219*10^-22x^4 + 0.00003*x^3 - 0.00194*x^2 + 0.00091x + 1
+Aus Erfahrungswerten (der kombination aus err anzahl + max err length/deepness) habe ich die Punkte (x,y) erstellt
+p1 = (0,1), p2 = (5,0.96), p3 = (20,0.5), p4 = (35,0.04), p5 = (40, 0) 
+--> Soll am anfange nicht ganz so schnell sinken und am ende schnelll
+mit diesen habe ich am Computer eine Newton Interpolation durchführen lassen und bin zu dem obenstehenden Ergebnis gekommen.
+
+Newton interpolation: https://www.mathworks.com/matlabcentral/fileexchange/7405-newton-s-interpolation 
+		      https://www.mathworks.com/matlabcentral/fileexchange?q=newton+interpolation
+--> schauen ob wir in statstoch bzw eher numerik selbst eine geschrieben haben
+-->https://ilias3.uni-stuttgart.de/goto_Uni_Stuttgart_fold_2054269.html
+
+
+
+//6.22222*10^-7*x^4 - 0.00005x^3 + 0.00070x^2 - 001033x +1
 
 
 
@@ -18,3 +38,7 @@ Object pooling
 https://learn.unity.com/tutorial/object-pooling?signup=true#
 https://www.youtube.com/watch?v=tdSmKaJvCoA
 	
+
+TODO
+bones timeout erstellen (waveformtrigger)
+movedCurveVertices fixen --> falschrum oder so (cuttingaccuracy)

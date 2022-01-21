@@ -15,7 +15,7 @@ public class CuttingPlane_Sphere : MonoBehaviour
     {
         if (other.CompareTag("Sawblade"))
         {
-            Debug.Log("cuttingSphere was hit");
+            //Debug.Log("cuttingSphere was hit");
             wasHit = true;
             GetComponent<MeshRenderer>().material.color = Color.blue;
             GetComponent<Collider>().enabled = false;

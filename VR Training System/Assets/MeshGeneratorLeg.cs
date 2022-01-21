@@ -71,11 +71,6 @@ public class MeshGeneratorLeg : MonoBehaviour
 
         //create curve out of the vertices
         curveVertices = CurveGenerator.SmoothLine(startVertices, curveSmoothCoef);
-        foreach (Vector3 vec in curveVertices)
-        {
-            Debug.Log("NEW SCRIPT: " + vec);
-        }
-        Debug.Log(curveVertices.Length);
 
         //create vertices in a straight line. Each vertex corresponds to a vertex in the curve.
         correspondingVertices = new Vector3[curveVertices.Length];
@@ -149,7 +144,6 @@ public class MeshGeneratorLeg : MonoBehaviour
         //mesh.triangles = triangles.Reverse().ToArray();
 
         mesh = MergeMeshes(mesh, invMesh);
-        Debug.Log("ARRAY: " + mesh.vertices);
 
         saw.GetComponent<SawAnimationGenerator>().test();
     }
@@ -206,7 +200,7 @@ public class MeshGeneratorLeg : MonoBehaviour
 
     public Vector3[] getVertices()
     {
-        Debug.Log("Curve Verts: " + curveVertices);
+        //Debug.Log("Curve Verts: " + curveVertices);
         return curveVertices;
     }
 
@@ -305,7 +299,7 @@ public class MeshGeneratorLeg : MonoBehaviour
             pos = curveVertices[i];
             float spheresPerRow = (Vector3.Distance(curveVertices[i], correspondingVertices[i]) / (lengthCoef*0.1f));
             float accuracyPortion = spheresPerRow/3;
-            Debug.Log("spheres per row : " + spheresPerRow);
+            //Debug.Log("spheres per row : " + spheresPerRow);
             for (int j = 0; j < spheresPerRow; j++)
             {
                 pos.x = curveVertices[i].x - j * lengthCoef * 0.1f;
