@@ -16,7 +16,7 @@ public class CuttingAccuracy : MonoBehaviour
     int[] deepTriangles;
     Mesh nonFlatCurve;
 
-    [Range(5, 20)]
+    [Range(1, 20)]
     public int distToCuttingMeshCoef;
 
     public GameObject spherePrefab;
@@ -192,7 +192,7 @@ public class CuttingAccuracy : MonoBehaviour
         movedCurveVertices = new Vector3[curveVertices.Length];
         for (int i = 0; i < curveVertices.Length; i++)
         {
-            float x = curveVertices[i].x + cuttingMeshGenerator.lengthCoef / distToCuttingMeshCoef;
+            float x = curveVertices[i].x + 0.0025f + cuttingMeshGenerator.lengthCoef * 0.01f * distToCuttingMeshCoef;
             movedCurveVertices[i] = new Vector3(x, curveVertices[i].y, curveVertices[i].z);
         }
     }

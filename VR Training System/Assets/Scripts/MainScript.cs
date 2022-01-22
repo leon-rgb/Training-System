@@ -6,14 +6,9 @@ using System.Collections;
 public class MainScript : MonoBehaviour
 {
 
-    [Tooltip("This is a tooltip")]
-    public float timeoutLength;
-
     public float Depth { get; set; }
     public int CutTooDeepCount { get; set; }
     private Vector3 depthStart;
-
-    float curTime;
 
     [Header("UI Manager and Accuracy GO")]
     public Transform uiManagerTransform;
@@ -53,10 +48,12 @@ public class MainScript : MonoBehaviour
     IEnumerator initializeUITexts()
     {
         yield return new WaitUntil(() => uiManager.AreInGameTextsInit);
+        uiManager.DepthText.text = "Max Length you cut to deep:";
+        uiManager.CutToDeepText.text = "Times you cut to deep:";
+        uiManager.AccuracyText.text = "Cutting accuracy (in plane):";
+        uiManager.TotalAccuracyText.text = "Cutting accuracy (total):";
         UpdateUIText(Infotext.DEPTH);
         UpdateUIText(Infotext.TO_DEEP_COUNT);
-        UpdateUIText(Infotext.ACCURACY_PLANE);
-        UpdateUIText(Infotext.ACCURACY_TOTAL);
     }
 
     public void UpdateUIText(Infotext infotext)
@@ -64,19 +61,19 @@ public class MainScript : MonoBehaviour
         switch (infotext)
         {
             case Infotext.DEPTH:
-                uiManager.DepthText.text = "Max Length you cut to deep: " + Math.Round(Depth * 100, 2) + "cm";              
+                uiManager.DepthValue.text =  Math.Round(Depth * 100, 2) + "cm";              
                 break;
 
             case Infotext.TO_DEEP_COUNT:
-                uiManager.CutToDeepText.text = "Times you cut to deep: " + CutTooDeepCount;
+                uiManager.CutToDeepValue.text = "" + CutTooDeepCount;
                 break;
 
             case Infotext.ACCURACY_PLANE:
-                uiManager.AccuracyText.text = "Cutting accuracy (in plane): " + cuttingAccuracyScript.CuttingPlaneAccuracy + "%";
+                uiManager.AccuracyValue.text = cuttingAccuracyScript.CuttingPlaneAccuracy + "%";
                 break;
 
             case Infotext.ACCURACY_TOTAL:
-                uiManager.TotalAccuracyText.text = "Cutting accuracy (total): " + cuttingAccuracyScript.TotalAccuracy + "%";
+                uiManager.TotalAccuracyValue.text = cuttingAccuracyScript.TotalAccuracy + "%";
                 break;
         }
     }

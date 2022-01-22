@@ -17,7 +17,7 @@ public class WaveformTriggerForController : MonoBehaviour
     public GameObject sawForController;
     private Interactable sawForControllerI;
 
-    [Tooltip("This is a tooltip")]
+    [Tooltip("Timeout for sending haptic feedback in cutting Plane. Scaled appropriately for bones and cutToDeep")]
     public float timeoutLength;
 
     private bool cuttingPlaneTimeout;
@@ -25,9 +25,9 @@ public class WaveformTriggerForController : MonoBehaviour
 
     private bool cutTooDeepTimeout;
     private float cutTooDeepStartTime;
-    public float Depth { get; set; }
-    public int CutToDeepCount { get; set; }
-    private Vector3 depthStart;
+
+    private bool bonesTimeout;
+    private float bonesStartTime;
 
     float curTime;
 
@@ -44,6 +44,7 @@ public class WaveformTriggerForController : MonoBehaviour
         
         cuttingPlaneTimeout = false;
         cutTooDeepTimeout = false;
+        bonesTimeout = false;
 
         main = mainTransform.GetComponent<MainScript>();
     }
@@ -68,6 +69,13 @@ public class WaveformTriggerForController : MonoBehaviour
                 cuttingPlaneTimeout = false;
             }
         }
+        if (bonesTimeout)
+        {
+            if (curTime - timeoutLength*0.4f > bonesStartTime)
+            {
+                bonesTimeout = false;
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -85,8 +93,10 @@ public class WaveformTriggerForController : MonoBehaviour
             }
 
         }
-        else if (other.CompareTag("Bones"))
+        else if (other.CompareTag("Bones") && !bonesTimeout)
         {
+            bonesTimeout = true;
+            bonesStartTime = Time.time;
             hand = getAttachedHand();
             if (hand != null)
             {
@@ -122,21 +132,6 @@ public class WaveformTriggerForController : MonoBehaviour
     {
        
     }
-
-    /*
-    private void OnCollisionEnter(Collision collision)
-    {
-        Debug.Log("collision detected with : " + collision.rigidbody.gameObject);
-        if (collision.gameObject.CompareTag("CutToDeep"))
-        {
-            hand = getAttachedHand();
-            if (hand != null)
-            {
-                sendPulse(0.5f, 120, 150, hand);
-                Debug.Log("WAVEFORMCOLLISION ToDeep  " + hand);
-            }
-        }
-    }*/
 
     private Hand getAttachedHand()
     {

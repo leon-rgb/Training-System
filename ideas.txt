@@ -39,6 +39,28 @@ https://learn.unity.com/tutorial/object-pooling?signup=true#
 https://www.youtube.com/watch?v=tdSmKaJvCoA
 	
 
-TODO
-bones timeout erstellen (waveformtrigger)
-movedCurveVertices fixen --> falschrum oder so (cuttingaccuracy)
+
+fixed:
+-bones timeout erstellen (waveformtrigger)
+-movedCurveVertices fixen --> falschrum oder so (cuttingaccuracy)
+	--> default wert ist 6 (von 20)
+-InfoTexts aufteilen in statischen und dynamischen text (dyn. = value)
+
+
+
+TODO / Ideas
+-holosaw movement verbessern 
+	+wieder einbauen, dass holosaw je nach haltung der saw rechts oder links rotiert ist
+-raum designen
+-editor mode fürs cuttting plane
+	--> cutting planes sollen gespeichert werden
+	--> cuttings planes sollen geladen werden können (per name etc)
+	--> wäre cool wenn ein Bild des Cutting planes angezeigt werden würde
+-menu mit settings 
+	--> points im cutting plane visualisieren an/aus
+	--> häufigkeit von haptischen feedback
+	--> schwierigkeit für accuracy einstellen
+	--> entfernung der cutToDeep Punkte zum cutting plane
+	eventuell:
+	--> gravity an/aus
+	-->update accuracy timeout zum performance sparen

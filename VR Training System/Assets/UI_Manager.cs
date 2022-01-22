@@ -7,14 +7,22 @@ public class UI_Manager : MonoBehaviour
 {
     [Header("InGame TextFields")]
     [Space]
-    public RectTransform CutToDeep;
-    public RectTransform Depth;
-    public RectTransform Accuracy;
-    public RectTransform TotalAccuracy;
+    public RectTransform CutToDeepTxtTrafo;
+    public RectTransform CutToDeepValTrafo;
+    public RectTransform DepthTxtTrafo;
+    public RectTransform DepthValTrafo;
+    public RectTransform AccuracyTxtTrafo;
+    public RectTransform AccuracyValTrafo;
+    public RectTransform TotalAccuracyTxtTrafo;
+    public RectTransform TotalAccuracyValTrafo;
     public TextMeshPro CutToDeepText { get; set; }
+    public TextMeshPro CutToDeepValue { get; set; }
     public TextMeshPro DepthText { get; set; }
+    public TextMeshPro DepthValue { get; set; }
     public TextMeshPro AccuracyText { get; set; }
+    public TextMeshPro AccuracyValue { get; set; }
     public TextMeshPro TotalAccuracyText { get; set; }
+    public TextMeshPro TotalAccuracyValue { get; set; }
     public bool AreInGameTextsInit { get; set; } = false;
 
 
@@ -24,12 +32,16 @@ public class UI_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(CutToDeep != null)
+        if(CutToDeepTxtTrafo != null)
         {
-            CutToDeepText = CutToDeep.GetComponent<TextMeshPro>();
-            DepthText = Depth.GetComponent<TextMeshPro>();
-            AccuracyText = Accuracy.GetComponent<TextMeshPro>();
-            TotalAccuracyText = TotalAccuracy.GetComponent<TextMeshPro>();
+            CutToDeepText = CutToDeepTxtTrafo.GetComponent<TextMeshPro>();
+            CutToDeepValue = CutToDeepValTrafo.GetComponent<TextMeshPro>();
+            DepthText = DepthTxtTrafo.GetComponent<TextMeshPro>();
+            DepthValue= DepthValTrafo.GetComponent<TextMeshPro>();
+            AccuracyText = AccuracyTxtTrafo.GetComponent<TextMeshPro>();
+            AccuracyValue = AccuracyValTrafo.GetComponent<TextMeshPro>();
+            TotalAccuracyText = TotalAccuracyTxtTrafo.GetComponent<TextMeshPro>();
+            TotalAccuracyValue = TotalAccuracyValTrafo.GetComponent<TextMeshPro>();
             AreInGameTextsInit = true;
         }
         else
