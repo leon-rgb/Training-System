@@ -51,6 +51,8 @@ fixed:
 TODO / Ideas
 -holosaw movement verbessern 
 	+wieder einbauen, dass holosaw je nach haltung der saw rechts oder links rotiert ist
+	+Geschwindigkeit des movement abh. von distanz machen 
+	+wenn saw zu weit weg von holosaw, soll diese stoppen bis man wieder nah genug ist
 -raum designen
 -editor mode fürs cuttting plane
 	--> cutting planes sollen gespeichert werden

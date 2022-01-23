@@ -319,8 +319,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 109280331}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.14163975, y: 0.0018463135, z: -0.18992616}
-  m_LocalScale: {x: 1.3999996, y: 1.4, z: 1.3999996}
+  m_LocalPosition: {x: 0.121, y: -0.0005, z: -0.1623}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_Children:
   - {fileID: 1102045238}
   - {fileID: 1704165333}
@@ -1477,11 +1477,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40a3e7a7afde16845aec0498aaaf02f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  holoSaw: {fileID: 1461531407}
+  holoSawPivot: {fileID: 1461531407}
   SawPoints:
   - {fileID: 940362054}
   - {fileID: 422372289}
-  Treshhold: 0.005
+  Treshhold: 0.003
 --- !u!114 &367360344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1886,7 +1886,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &504527720
 Transform:
   m_ObjectHideFlags: 0
@@ -5315,7 +5315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1461531407}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: SawHoloPivot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7749,7 +7749,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2064138207
 Transform:
   m_ObjectHideFlags: 0
