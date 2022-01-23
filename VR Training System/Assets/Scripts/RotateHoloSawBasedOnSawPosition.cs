@@ -6,6 +6,10 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
 {
     public Transform CuttingPlane;
     public Transform Saw;
+    [SerializeField]
+    private Transform topCuttingPointTransform;
+    [SerializeField]
+    private Transform botCuttingPointTransform;
     private Vector3 PosRight;
     private Vector3 PosLeft;
     private Vector3 AngleRight;
@@ -21,6 +25,15 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
     void Start()
     {    
         EnableHoloSawRotation();
+
+        //place saw in front of cutting plane
+        Vector3 topCuttingPoint = topCuttingPointTransform.position;
+        Vector3 botCuttingPoint = botCuttingPointTransform.position;
+        Vector3 initialPos = (topCuttingPoint + botCuttingPoint) / 2;
+        initialPos.x = transform.parent.position.x;
+        transform.parent.position = initialPos;
+
+        //safe left and right rotated holoSaw
         PosRight = this.transform.position;
         AngleRight = this.transform.eulerAngles;
         Vector3 RotPoint = CuttingPlane.position;

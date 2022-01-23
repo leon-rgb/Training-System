@@ -15,6 +15,7 @@ public class SawAnimationGenerator : MonoBehaviour
     private Vector3 initialSawPos;
     private Vector3 initialSawRot;
     private Vector3[] firstAndLastPoint;
+    private float speed = 0.1f; //default = 0.05f
 
     private void Awake()
     {
@@ -113,7 +114,7 @@ public class SawAnimationGenerator : MonoBehaviour
         for (int i = 1; i < points.Length; i++)
         {
             Debug.Log("this was executed");
-            if (Mathf.Abs(Vector3.Distance(curPoint, points[i]) - dist) <= Treshhold)
+            if (Mathf.Abs(Vector3.Distance(curPoint, points[i]) - dist*0.75f) <= Treshhold)
             {
                 pointPairs.Add(points[i]);
                 curPoint = points[i];
@@ -208,7 +209,7 @@ public class SawAnimationGenerator : MonoBehaviour
         {
             //yield return new WaitForSeconds(0.04f);
             yield return new WaitForEndOfFrame();
-            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * 0.05f;
+            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed;
         }
         yield return new WaitForSeconds(1f);
         holoSawPivot.position = initialSawPos;
@@ -245,7 +246,7 @@ public class SawAnimationGenerator : MonoBehaviour
                     holoSawPivot.LookAt(pointsToLookAt[i]);
                     // slerp to the desired rotation over time
                 }
-                holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * 0.05f;
+                holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed;
                 curDist = Vector3.Distance(holoSawPivot.position, pointsToLookAt[i]);
             }
             yield return new WaitForSeconds(1f);
@@ -261,7 +262,7 @@ public class SawAnimationGenerator : MonoBehaviour
         {
             //yield return new WaitForSeconds(0.04f);
             yield return new WaitForEndOfFrame();
-            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * 0.05f;
+            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed;
         }
         // LETZTEN PUNKT NOCH GERADE ABARBEITEN
         // nehme distanz von oberen saw punkt zu unterem / 2. Bewege ersten punkt temporär nach um diesen wert nach unten und unteren punkt umgekehrt.

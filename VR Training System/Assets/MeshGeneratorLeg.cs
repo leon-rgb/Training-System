@@ -8,13 +8,18 @@ using UnityEngine;
 [RequireComponent(typeof(MeshFilter))]
 public class MeshGeneratorLeg : MonoBehaviour
 {
-
+    [Header("Cutting Points")]
     public Transform TopCuttingPoint;
     public Transform MidCuttingPoint;
     public Transform BotCuttingPoint;
+
+    [Header("Plane coefficients")]
     public float lengthCoef;
     public float widthCoef;
     public float curveSmoothCoef;
+    [Tooltip("Defines how close to each other the spheres are and therefore how many exist. Value is relative to length of cutting plane. ")]
+    [Range(0.04f, 1)]
+    public float sphereFrequencyCoef;  //default between 0.1 and 0.05
 
     Mesh mesh;
 
@@ -27,9 +32,11 @@ public class MeshGeneratorLeg : MonoBehaviour
     public static Vector3 meshMiddlePoint;
     public static float meshRadius;
 
+    [Header("Saw")]
     public GameObject saw;
-    public bool meshWasCreated = false;
-
+    public bool meshWasCreated { get; set; } = false;
+    
+    [Header("Prefabs for in plane created spheres")]
     public GameObject cuttingSphereAccuracyPrefab;
     public GameObject cuttingSphereWaveformPrefab;
     public List<CuttingPlane_Sphere> AllCuttingPlaneAccuracySpheres { get; set; }
@@ -297,12 +304,12 @@ public class MeshGeneratorLeg : MonoBehaviour
         for(int i = 0; i < curveVertices.Length; i++)
         {
             pos = curveVertices[i];
-            float spheresPerRow = (Vector3.Distance(curveVertices[i], correspondingVertices[i]) / (lengthCoef*0.1f));
+            float spheresPerRow = (Vector3.Distance(curveVertices[i], correspondingVertices[i]) / (lengthCoef*sphereFrequencyCoef));
             float accuracyPortion = spheresPerRow/3;
             //Debug.Log("spheres per row : " + spheresPerRow);
             for (int j = 0; j < spheresPerRow; j++)
             {
-                pos.x = curveVertices[i].x - j * lengthCoef * 0.1f;
+                pos.x = curveVertices[i].x - j * lengthCoef * sphereFrequencyCoef;
                 GameObject go;
                 if (j < accuracyPortion)
                 {
