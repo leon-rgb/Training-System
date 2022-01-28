@@ -45,19 +45,19 @@ fixed:
 -movedCurveVertices fixen --> falschrum oder so (cuttingaccuracy)
 	--> default wert ist 6 (von 20)
 -InfoTexts aufteilen in statischen und dynamischen text (dyn. = value)
-
-
-
-TODO / Ideas
 -holosaw movement verbessern 
 	+wieder einbauen, dass holosaw je nach haltung der saw rechts oder links rotiert ist
 	+Geschwindigkeit des movement abh. von distanz machen 
-	+wenn saw zu weit weg von holosaw, soll diese stoppen bis man wieder nah genug ist
+	+wenn saw zu weit weg von holosaw, soll diese stoppen bis man wieder nah genug ist + Farbänderung
+
+
+TODO / Ideas
 -raum designen
 -editor mode fürs cuttting plane
 	--> cutting planes sollen gespeichert werden
 	--> cuttings planes sollen geladen werden können (per name etc)
 	--> wäre cool wenn ein Bild des Cutting planes angezeigt werden würde
+	--> möglich machen, dass man animation für holo saw generieren kann
 -menu mit settings 
 	--> points im cutting plane visualisieren an/aus
 	--> häufigkeit von haptischen feedback

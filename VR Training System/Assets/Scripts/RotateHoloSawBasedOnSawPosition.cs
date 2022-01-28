@@ -17,6 +17,8 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
     private float DistRight;
     private float DistLeft;
     private bool IsEnabled;
+    [Tooltip("Any child of the holoSaw -> to calculate distance between saw and holoSaw")]
+    public Transform battery;
 
     /// <summary>
     /// Start is called once upon starting the script. Here the HoloSaw will be rotated around the cutting plane once in x direction. 
@@ -33,6 +35,20 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
         initialPos.x = transform.parent.position.x;
         transform.parent.position = initialPos;
 
+        // tried to rotate saw to angle between top and bot point, but doesnt work.
+        /* Vector3 topNorm = topCuttingPoint.normalized;
+        Vector3 botNorm = botCuttingPoint.normalized;
+        Vector3 cross = Vector3.Cross(topNorm,botNorm);
+        float dot = Vector3.Dot(topNorm, botNorm);
+        Quaternion facingRot = transform.parent.rotation;
+        Vector3 dir = (topCuttingPoint - botCuttingPoint).normalized;
+        transform.parent.rotation = Quaternion.LookRotation(dir);
+        Vector3 euler = transform.parent.localEulerAngles;
+        euler.x += 90;
+        transform.parent.localEulerAngles = euler;*/
+        
+
+
         //safe left and right rotated holoSaw
         PosRight = this.transform.position;
         AngleRight = this.transform.eulerAngles;
@@ -43,6 +59,7 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
         PosLeft = this.transform.position;
         AngleLeft = this.transform.eulerAngles;
         this.transform.RotateAround(transform.parent.position, Vector3.left, 180f);
+
     }
 
  
@@ -80,4 +97,12 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
         IsEnabled = false;
     }
 
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawSphere(PosRight, 0.05f);
+        Gizmos.DrawSphere(PosLeft, 0.05f);
+        Gizmos.color = Color.black;
+        Gizmos.DrawSphere(Saw.position, 0.05f);
+    }
 }

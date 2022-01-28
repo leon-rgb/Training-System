@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Has methods for creating an automated movement for the holoSaw in the cutting Plane.
+/// </summary>
 public class SawAnimationGenerator : MonoBehaviour
 {
 
@@ -15,11 +18,106 @@ public class SawAnimationGenerator : MonoBehaviour
     private Vector3 initialSawPos;
     private Vector3 initialSawRot;
     private Vector3[] firstAndLastPoint;
-    private float speed = 0.1f; //default = 0.05f
+    private float speed = 0.05f; //default = 0.05f
+    private float distanceRange;
+    private int angleRange;
+
+
+    List<CustomTransform> transforms;
+
+    public Transform Saw;
+    public Transform SawPivot;
+    public Transform HoloSawFrame1;
+    private bool isSawClose;
+    private float distanceBetweenSaws;
+    private float angleBetweenSaws;
+    public SawMat curMat { get;set;}
+    public Material SawGreen;
+    public Material SawRed;
+    private bool wasMovementStarted;
+    private MeshGeneratorLeg meshGenerator;
+    List<Vector3> pointPairs;
+    Vector3[] pointsToLookAt;
+
 
     private void Awake()
     {
+        // initialize variables
         CalcSawPointDistance();
+        curMat = SawMat.RED;
+        wasMovementStarted = false;
+        meshGenerator = GameObject.Find("PlaneMeshGenerator").GetComponent<MeshGeneratorLeg>();
+        speed = 0.05f; //default = 0.05f
+        distanceRange = 0.075f; //default = 0.075f
+        angleRange = 5; //default = 5
+    }
+
+    private void Update()
+    {
+        
+        // use the frame (or any other child of the saws) for calculating the distance
+        // because the position center is not the same in the parent
+        distanceBetweenSaws = Vector3.Distance(SawPivot.position, holoSawPivot.GetChild(0).position);
+
+        //get angle between saw and holoSaw (not pivot)
+        angleBetweenSaws = Quaternion.Angle(Saw.rotation, holoSawPivot.GetChild(0).rotation);
+        // Debug.Log(distanceBetweenSaws + "   " + angleBetweenSaws + "   " + holoSawPivot.GetChild(0));
+        
+        // check if distance and angle between holded saw and holoSaw is in range
+        if(distanceBetweenSaws < distanceRange && angleBetweenSaws < angleRange && angleBetweenSaws > -angleRange)
+        {
+            isSawClose = true;
+            // change material if it's not already the right one
+            if(curMat != SawMat.GREEN)
+            {
+                ChangeHoloSawColor(SawGreen);
+                curMat = SawMat.GREEN;
+            }
+            // start saw movement if it wasn't already and mesh of cutting plane was already created
+            if (!wasMovementStarted && meshGenerator.meshWasCreated)
+            {
+                StartSawMovement();
+                wasMovementStarted = true;
+            }
+
+        }
+        else
+        {
+            isSawClose = false;
+            // change material if it's not already the right one
+            if (curMat != SawMat.RED)
+            {
+                ChangeHoloSawColor(SawRed);
+                curMat = SawMat.RED;
+            }
+        }
+    }
+    private void OnDrawGizmos()
+    {
+        //Gizmos.DrawSphere(SawPivot.position, 0.05f);
+        //Gizmos.DrawSphere(holoSawPivot.position, 0.05f);
+        Gizmos.color = Color.black;
+
+        Gizmos.DrawSphere(SawPoints[0].position, 0.01f);
+        Gizmos.DrawSphere(SawPoints[1].position, 0.01f);
+        Gizmos.DrawSphere(holoSawPivot.position, 0.01f);
+
+        Gizmos.color = Color.red;
+        if (pointPairs != null)
+        {
+            /*foreach(Vector3 point in pointsToLookAt)
+            {
+                Gizmos.DrawSphere(point, 0.01f);
+            }*/
+            Gizmos.DrawSphere(firstAndLastPoint[0], 0.01f);
+            Gizmos.DrawSphere(firstAndLastPoint[1], 0.01f);
+        }
+    }
+
+    public enum SawMat
+    {
+        GREEN,
+        RED
     }
 
     //for calculating the width of the saw blade
@@ -28,46 +126,20 @@ public class SawAnimationGenerator : MonoBehaviour
         dist = Vector3.Distance(SawPoints[0].position, SawPoints[1].position); //* 0.8f;
     }
 
-    private void Start()
-    {
-        //Look(Vector3.zero);
-        //test();
-    }
-
-
-    public AnimationClip GenerateClips(Vector3[] points)
-    {
-        // Get the positions of the points at the saw
-        Vector3[] SawPointPositions;
-        SawPointPositions = GetSawPointPositions();
-
-        List<Vector3> pointPairs = GeneratePointPairs(points);
-
-        AnimationClip anim = new AnimationClip();
-        AnimationCurve curve = new AnimationCurve();
-
-        Vector3[] startAndEndPoint = {holoSawPivot.position, (pointPairs[0]+pointPairs[1])/2};
-        //CurveGenerator.SmoothLine(startAndEndPoint, 0.1f);
-        //Keyframe[] keyframes = new Keyframe[];
-        curve = AnimationCurve.Linear(0.0F, holoSawPivot.position.x, 2.0F, ((pointPairs[0] + pointPairs[1]) / 2).x);
-        anim.SetCurve("", typeof(Transform), "xPosition",curve);
-        holoSawPivot.GetComponent<Animation>().AddClip(anim, anim.name);
-        holoSawPivot.GetComponent<Animation>().Play(anim.name);
-        return null;
-    }
-
+    /// <summary>
+    /// Safes every point in points, that have aproximately the distance of the width of the saw
+    /// </summary>
+    /// <param name="points">points from which to chose from</param>
+    /// <returns>List of points, that have aproximately the distance of the width of the saw </returns>
     private List<Vector3> GeneratePointPairs(Vector3[] points)
     {
-        Vector3[] SawPointPositions;
-        SawPointPositions = GetSawPointPositions();
-
         List<Vector3> pointPairs = new List<Vector3>();
-
         Vector3 curPoint = points[0];
         pointPairs.Add(curPoint);
         for (int i = 1; i < points.Length; i++)
         {
-            if (Mathf.Abs(Vector3.Distance(curPoint, points[i]) - dist) <= Treshhold)
+            Debug.Log("this was executed");
+            if (Mathf.Abs(Vector3.Distance(curPoint, points[i]) - dist * 0.75f) <= Treshhold)
             {
                 pointPairs.Add(points[i]);
                 curPoint = points[i];
@@ -90,194 +162,184 @@ public class SawAnimationGenerator : MonoBehaviour
 
         }
         pointPairs.Add(points[points.Length - 1]);
-
-        
-
         return pointPairs;    
     }
 
-    public List<Vector3> test()
+    /// <summary>
+    /// executes everything needed to automatically move the saw and moves it afterwards.
+    /// </summary>
+    /// <returns></returns>
+    public List<Vector3> StartSawMovement()
     {
         Vector3[] points = GameObject.Find("PlaneMeshGenerator").GetComponent<MeshGeneratorLeg>().getVertices();
-        Vector3[] SawPointPositions;    
-        SawPointPositions = GetSawPointPositions();
         firstAndLastPoint = new Vector3[]
         {
             points[0],
             points[points.Length-1]
         };
 
-        List<Vector3> pointPairs = new List<Vector3>();
-        
-        Vector3 curPoint = points[0];
-        pointPairs.Add(curPoint);
-        for (int i = 1; i < points.Length; i++)
-        {
-            Debug.Log("this was executed");
-            if (Mathf.Abs(Vector3.Distance(curPoint, points[i]) - dist*0.75f) <= Treshhold)
-            {
-                pointPairs.Add(points[i]);
-                curPoint = points[i];
-            }
-        }
-        //check if last point is in pointPairs and add it with another point if not. (since we want to cut every part of the plane)
-        if (!pointPairs.Contains(points[points.Length - 1]))
-        {
-            pointPairs.Add(points[points.Length - 1]);
-            /**
-            for (int i = points.Length - 2; i >= 0; i--)
-            {
-                if (Mathf.Abs(Vector3.Distance(curPoint, points[i]) - dist) <= Treshhold)
-                {
-                    pointPairs.Add(curPoint);
-                    pointPairs.Add(points[i]);
-                    break;
-                }
-            }*/
+        pointPairs = GeneratePointPairs(points);
 
-        }
-        pointPairs.Add(points[points.Length-1]);
-
-        /*
-        AnimationClip anim = new AnimationClip();
-        AnimationCurve curve = new AnimationCurve();
-
-        Vector3[] startAndEndPoint = { holoSaw.position, (pointPairs[0] + pointPairs[1]) / 2 };
-        //CurveGenerator.SmoothLine(startAndEndPoint, 0.1f);
-        //Keyframe[] keyframes = new Keyframe[];
-        curve = AnimationCurve.Linear(0.0F, holoSaw.position.x, 2.0F, ((pointPairs[0] + pointPairs[1]) / 2).x);
-        anim.ClearCurves();
-        anim.SetCurve("", typeof(Transform), "xPosition", curve);
-        holoSaw.GetComponentInChildren<RotateHoloSawBasedOnSawPosition>().DisableHoloSawRotation();
-        holoSaw.GetComponent<Animation>().AddClip(anim, "test");
-        holoSaw.GetComponent<Animation>().Play(anim.name);
-        */
         holoSawPivot.GetComponentInChildren<RotateHoloSawBasedOnSawPosition>().DisableHoloSawRotation();
         initialSawPos = holoSawPivot.position;
         initialSawRot = holoSawPivot.eulerAngles;
         //Debug.Log("OK LETS GO");
-        Vector3[] pointsToLookAt= CalcPointsToLookAt(pointPairs);
+        pointsToLookAt= CalcPointsToLookAt(pointPairs);
         StartCoroutine(Look(pointsToLookAt));
-        /*
-        for (int i = 0; i < pointPairs.Count-1; i++)
-        {
-            StartCoroutine(Look(pointPairs[i]));
-            Debug.Log("pointPairs[" + i + "] = " + pointPairs[i]);
-        }*/
-        //Look(Vector3.zero);
-       // StartCoroutine(Look(pointPairs[0]));
         return pointPairs;
     }
 
+    /// <summary>
+    /// Creates an automated animation of the holo saw to give user an idea how to cut the cutting plan
+    /// </summary>
+    /// <param name="pointsToLookAt">points that the saw will be moved and rotated to</param>
+    /// <returns></returns>
     IEnumerator Look(Vector3[] pointsToLookAt)
     {
         yield return new WaitForSeconds(1);
+        yield return new WaitUntil(() => isSawClose);
+        // this curstom transform was created to be able to record the transform of the saw and rewind the recording
+        // methods for this are InsertTransform() and RewindTransform() 
+        transforms = new List<CustomTransform>();
+        Treshhold /= 2;
 
-        //holoSawPivot.position = new Vector3(holoSawPivot.position.x,  pointsToLookAt[0].y, holoSawPivot.position.z);
-        //pointsToLookAt[0].x -= Treshhold*5;
-        //StartCoroutine(Move(pointsToLookAt[0]));
-        yield return new WaitForSeconds(1f);
-        //yield return new WaitUntil(() => true);
-
-        /*
-        float dist = Vector3.Distance(holoSawPivot.position, pointsToLookAt[0]);
-        float curDist = dist;
-        bool executed = false;
-        while (curDist > Treshhold)
+        //note that distance is a new variable and has not the same semantic meaning as dist 
+        //(dist is the distance between most left and most right point of the saw blade)
+        //move saw to a middle position
+        float distance = Vector3.Distance(holoSawPivot.position, (firstAndLastPoint[0] + firstAndLastPoint[1]) / 2);
+        Debug.Log("distance  " + distance);
+        while (Vector3.Distance(holoSawPivot.position, (firstAndLastPoint[0]+firstAndLastPoint[1])/2) > distance / 5)
         {
-            //yield return new WaitForSeconds(0.04f);
-            //holoSawPivot.position = Vector3.MoveTowards(holoSawPivot.position, targetPosition, 0.01f
             yield return new WaitForEndOfFrame();
-            if((curDist < dist / 4) && !executed)
-            {
-                holoSawPivot.LookAt(pointsToLookAt[0]);
-                executed = true;
-            }
-            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * 0.025f;
-            //Vector3 dir = Vector3.RotateTowards(holoSawPivot.forward, pointsToLookAt[0], Time.deltaTime * 0.005f, 0);
-            //holoSawPivot.LookAt(dir);
-            //Debug.DrawRay(holoSawPivot.position, dir, Color.red);
-            curDist = Vector3.Distance(holoSawPivot.position, pointsToLookAt[0]);
-        }*/
-        //holoSawPivot.position = initialSawPos;
-        firstAndLastPoint[0].y -= dist / 2;
-        
-
-        holoSawPivot.position = new Vector3(holoSawPivot.position.x, firstAndLastPoint[0].y, holoSawPivot.position.z);
-      
-        while (Vector3.Distance(holoSawPivot.position, firstAndLastPoint[0]) > Treshhold)
-        {
-            //yield return new WaitForSeconds(0.04f);
-            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => isSawClose);
             holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed;
         }
+        InsertTransform();
+        yield return new WaitForSeconds(1.5f);
+        yield return new WaitUntil(() => isSawClose);
+
+        //move top point down by half the saw blade width and move saw to the same heigth
+        firstAndLastPoint[0].y -= dist / 2;
+        float stepSize = Math.Abs(holoSawPivot.position.y - firstAndLastPoint[0].y) / 120;
+        while (Math.Abs(holoSawPivot.position.y - firstAndLastPoint[0].y) > Treshhold)
+        {
+            holoSawPivot.position = new Vector3(holoSawPivot.position.x, holoSawPivot.position.y + stepSize, holoSawPivot.position.z);
+            InsertTransform();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => isSawClose);
+        }
+        holoSawPivot.position = new Vector3(holoSawPivot.position.x, firstAndLastPoint[0].y, holoSawPivot.position.z);
+        InsertTransform();
+
+        // move saw forward to the first point
+        while (Vector3.Distance(holoSawPivot.position, firstAndLastPoint[0]) > Treshhold)
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => isSawClose);
+            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed;
+            InsertTransform();
+        } 
         yield return new WaitForSeconds(1f);
-        holoSawPivot.position = initialSawPos;
-        holoSawPivot.localEulerAngles = initialSawRot;
+        yield return new WaitUntil(() => isSawClose);
+        // make the saw move back to mid position
+        while (RewindTransform()) { yield return new WaitForEndOfFrame(); }
+        yield return new WaitUntil(() => isSawClose);
+
+        Quaternion wantedRot;
+        // for every pointToLook at rotate saw towards it and then move saw to that point
         for (int i = 0; i < pointsToLookAt.Length - 2; i++)
         {
-            
-            //yield return new WaitUntil(() => true);          
-            //Debug.Log("pointPairs[" + i + "] = " + pointsToLookAt[i]);
-            float dist = Vector3.Distance(holoSawPivot.position, pointsToLookAt[i]);
-            float curDist = dist;
+            // sa
+            float curDist = Vector3.Distance(holoSawPivot.position, pointsToLookAt[i]);
+            // bool to check if saw was already rotated towards a point
             bool executed = false;
             while (curDist > Treshhold)
             {
                 yield return new WaitForEndOfFrame();
-                if ((curDist < dist / 4) && !executed)
+                yield return new WaitUntil(() => isSawClose);
+                //rotate saw towards point if it's the first iterationf or the point
+                if (!executed)
                 {
-                    //holoSawPivot.LookAt(pointsToLookAt[i]);
                     executed = true;
-
                     Vector3 dir = pointsToLookAt[i] - holoSawPivot.position;
-                    Quaternion wantedRot = Quaternion.LookRotation(dir);
+                    wantedRot = Quaternion.LookRotation(dir);
                     while (true)
                     {
                         yield return new WaitForEndOfFrame();
+                        yield return new WaitUntil(() => isSawClose);
                         dir = pointsToLookAt[i] - holoSawPivot.position;
-                        //dir.y = 0;
-                        //dir.z = 0;
                         Quaternion rot = Quaternion.LookRotation(dir);
                         holoSawPivot.rotation = Quaternion.Lerp(holoSawPivot.rotation, rot, 1.5f * Time.deltaTime);
-                        //Debug.Log(from0to1);
-                        if (-0.2f < Quaternion.Angle(holoSawPivot.rotation, wantedRot)  && Quaternion.Angle(holoSawPivot.rotation, wantedRot) < 0.2f) break;
+                        if (-0.4f < Quaternion.Angle(holoSawPivot.rotation, wantedRot)  && Quaternion.Angle(holoSawPivot.rotation, wantedRot) < 0.4f) break;
                     }
                     holoSawPivot.LookAt(pointsToLookAt[i]);
-                    // slerp to the desired rotation over time
+                    // lerp to the wanted rotation over time
                 }
+                // move saw a bit and save transform
+                InsertTransform();
                 holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed;
                 curDist = Vector3.Distance(holoSawPivot.position, pointsToLookAt[i]);
             }
             yield return new WaitForSeconds(1f);
-            holoSawPivot.position = initialSawPos;
-            holoSawPivot.localEulerAngles = initialSawRot;
-
-            Debug.Log("pointPairs[" + i + "] = " + pointsToLookAt[i]);
+            yield return new WaitUntil(() => isSawClose);
+            // make the saw move back to mid position
+            while (RewindTransform()) { yield return new WaitForEndOfFrame(); }
+            yield return new WaitUntil(() => isSawClose);
         }
-        firstAndLastPoint[1].y += dist / 2;
-        holoSawPivot.position = new Vector3(holoSawPivot.position.x, firstAndLastPoint[1].y, holoSawPivot.position.z);
+        yield return new WaitForSeconds(1f);
 
+        // lerp back to initial position
+        wantedRot = Quaternion.Euler(initialSawRot);
+        while (true)
+        {
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => isSawClose);
+            holoSawPivot.rotation = Quaternion.Lerp(holoSawPivot.rotation, wantedRot, 1.5f * Time.deltaTime);
+            if (-0.4f < Quaternion.Angle(holoSawPivot.rotation, wantedRot) && Quaternion.Angle(holoSawPivot.rotation, wantedRot) < 0.4f) break;
+        }
+
+        // move bot point up by half the saw blade width and move saw to the same heigth
+        firstAndLastPoint[1].y += dist / 2;
+        stepSize = Math.Abs(holoSawPivot.position.y - firstAndLastPoint[1].y) / 120;
+        while (Math.Abs(holoSawPivot.position.y - firstAndLastPoint[1].y) > Treshhold)
+        {
+            holoSawPivot.position = new Vector3(holoSawPivot.position.x, holoSawPivot.position.y - stepSize, holoSawPivot.position.z);
+            InsertTransform();
+            yield return new WaitForEndOfFrame();
+            yield return new WaitUntil(() => isSawClose);
+        }
+        holoSawPivot.position = new Vector3(holoSawPivot.position.x, firstAndLastPoint[1].y, holoSawPivot.position.z);
+        InsertTransform();
+
+        // move saw towards the last point
         while (Vector3.Distance(holoSawPivot.position, firstAndLastPoint[1]) > Treshhold)
         {
-            //yield return new WaitForSeconds(0.04f);
+            InsertTransform();
             yield return new WaitForEndOfFrame();
-            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed;
+            yield return new WaitUntil(() => isSawClose);
+            holoSawPivot.position += holoSawPivot.forward * Time.deltaTime * speed * 0.25f;
         }
-        // LETZTEN PUNKT NOCH GERADE ABARBEITEN
-        // nehme distanz von oberen saw punkt zu unterem / 2. Bewege ersten punkt temporär nach um diesen wert nach unten und unteren punkt umgekehrt.
+        InsertTransform();
+        while (RewindTransform()) { yield return new WaitForEndOfFrame(); }
+
+        // fade out the saw 
+        yield return new WaitForSeconds(1);
+        holoSawPivot.GetComponent<Animator>().enabled = true;
+        yield return new WaitForSeconds(1);
+
+        // reset saw transform and treshhold
+        holoSawPivot.position = initialSawPos;
+        holoSawPivot.localEulerAngles = initialSawRot;
+        Treshhold *= 2;      
     }
 
-    IEnumerator Move(Vector3 targetPosition)
-    {
-        while (Vector3.Distance(holoSawPivot.position, targetPosition) > Treshhold)
-        {
-            //yield return new WaitForSeconds(0.04f);
-            yield return new WaitForEndOfFrame();
-            holoSawPivot.position = Vector3.MoveTowards(holoSawPivot.position, targetPosition, 0.01f);
-        }
-    }
-
+    /// <summary>
+    /// Safes the middle of every two points next to each other in the list
+    /// </summary>
+    /// <param name="pointPairs">
+    /// points of the curve of the cutting plane which have approximately the distance of the width of the saw blade
+    /// </param>
+    /// <returns>A List with the final points to look at</returns>
     private Vector3[] CalcPointsToLookAt(List<Vector3> pointPairs)
     {
         Vector3[] pointsToLookAt = new Vector3[pointPairs.Count - 1];
@@ -289,14 +351,60 @@ public class SawAnimationGenerator : MonoBehaviour
         return pointsToLookAt;
     }
 
-    private Vector3[] GetSawPointPositions()
+    /// <summary>
+    /// safe the current position an roation of the saw
+    /// </summary>
+    private void InsertTransform()
     {
-        Vector3[] tmp = new Vector3[SawPoints.Length];
-        for(int i = 0; i < SawPoints.Length; i++)
+        transforms.Insert(0, new CustomTransform(holoSawPivot.position, holoSawPivot.rotation));
+    }
+
+    /// <summary>
+    /// Sets the position and rotation of the Saw back to the last saved one
+    /// </summary>
+    /// <returns>True if Transform list is not empty</returns>
+    private bool RewindTransform()
+    {
+        if(transforms.Count != 0)
         {
-            tmp[i] = SawPoints[i].position;
+            CustomTransform rewindedTransform = transforms[0];
+            holoSawPivot.position = rewindedTransform.pos;
+            holoSawPivot.rotation = rewindedTransform.rot;
+            transforms.RemoveAt(0);
+            return true;
         }
-        return tmp;
+        else
+        {
+            return false;
+        }
+    }
+
+    /// <summary>
+    /// A simplified Transform that can be easily used for recording position and rotation of a Transform.
+    /// </summary>
+    public class CustomTransform
+    {
+        public Vector3 pos;
+        public Quaternion rot;
+
+        public CustomTransform(Vector3 _pos, Quaternion _rot)
+        {
+            pos = _pos;
+            rot = _rot;
+        }
+
+    }
+
+    /// <summary>
+    /// Changes the color of the holo Saw depending on the material parameter. 
+    /// </summary>
+    /// <param name="material"></param>
+    private void ChangeHoloSawColor(Material material)
+    {
+        foreach (Transform child in holoSawPivot.GetChild(0).transform)
+        {
+            child.GetComponent<MeshRenderer>().material = material;
+        }
     }
 
     /* This moves the saw around like shit, since it calls the test function again and again

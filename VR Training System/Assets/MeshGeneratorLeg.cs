@@ -152,7 +152,7 @@ public class MeshGeneratorLeg : MonoBehaviour
 
         mesh = MergeMeshes(mesh, invMesh);
 
-        saw.GetComponent<SawAnimationGenerator>().test();
+        //saw.GetComponent<SawAnimationGenerator>().StartSawMovement();
     }
 
     public Mesh DuplicateAndMoveMesh(Mesh mesh, int[] triangles)
