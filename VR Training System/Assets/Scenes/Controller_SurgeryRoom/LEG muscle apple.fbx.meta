@@ -1,0 +1,316 @@
+fileFormatVersion: 2
+guid: 9336f85891c273a4faed5b4453fd62c8
+timeCreated: 1510334531
+licenseType: Store
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bones
+    100002: //RootNode
+    100004: leg_muscles_1
+    100006: leg_muscles_10
+    100008: leg_muscles_11
+    100010: leg_muscles_12
+    100012: leg_muscles_13
+    100014: leg_muscles_15_1
+    100016: leg_muscles_17
+    100018: leg_muscles_18_1
+    100020: leg_muscles_1_2
+    100022: leg_muscles_2
+    100024: leg_muscles_20
+    100026: leg_muscles_22
+    100028: leg_muscles_23
+    100030: leg_muscles_24
+    100032: leg_muscles_26
+    100034: leg_muscles_27
+    100036: leg_muscles_28
+    100038: leg_muscles_29
+    100040: leg_muscles_3
+    100042: leg_muscles_4
+    100044: leg_muscles_5
+    100046: leg_muscles_6
+    100048: leg_muscles_7
+    100050: leg_muscles_8
+    100052: leg_muscles_9
+    400000: bones
+    400002: //RootNode
+    400004: leg_muscles_1
+    400006: leg_muscles_10
+    400008: leg_muscles_11
+    400010: leg_muscles_12
+    400012: leg_muscles_13
+    400014: leg_muscles_15_1
+    400016: leg_muscles_17
+    400018: leg_muscles_18_1
+    400020: leg_muscles_1_2
+    400022: leg_muscles_2
+    400024: leg_muscles_20
+    400026: leg_muscles_22
+    400028: leg_muscles_23
+    400030: leg_muscles_24
+    400032: leg_muscles_26
+    400034: leg_muscles_27
+    400036: leg_muscles_28
+    400038: leg_muscles_29
+    400040: leg_muscles_3
+    400042: leg_muscles_4
+    400044: leg_muscles_5
+    400046: leg_muscles_6
+    400048: leg_muscles_7
+    400050: leg_muscles_8
+    400052: leg_muscles_9
+    2300000: bones
+    2300002: leg_muscles_1
+    2300004: leg_muscles_10
+    2300006: leg_muscles_11
+    2300008: leg_muscles_12
+    2300010: leg_muscles_13
+    2300012: leg_muscles_15_1
+    2300014: leg_muscles_17
+    2300016: leg_muscles_18_1
+    2300018: leg_muscles_1_2
+    2300020: leg_muscles_2
+    2300022: leg_muscles_20
+    2300024: leg_muscles_22
+    2300026: leg_muscles_23
+    2300028: leg_muscles_24
+    2300030: leg_muscles_26
+    2300032: leg_muscles_27
+    2300034: leg_muscles_28
+    2300036: leg_muscles_29
+    2300038: leg_muscles_3
+    2300040: leg_muscles_4
+    2300042: leg_muscles_5
+    2300044: leg_muscles_6
+    2300046: leg_muscles_7
+    2300048: leg_muscles_8
+    2300050: leg_muscles_9
+    3300000: bones
+    3300002: leg_muscles_1
+    3300004: leg_muscles_10
+    3300006: leg_muscles_11
+    3300008: leg_muscles_12
+    3300010: leg_muscles_13
+    3300012: leg_muscles_15_1
+    3300014: leg_muscles_17
+    3300016: leg_muscles_18_1
+    3300018: leg_muscles_1_2
+    3300020: leg_muscles_2
+    3300022: leg_muscles_20
+    3300024: leg_muscles_22
+    3300026: leg_muscles_23
+    3300028: leg_muscles_24
+    3300030: leg_muscles_26
+    3300032: leg_muscles_27
+    3300034: leg_muscles_28
+    3300036: leg_muscles_29
+    3300038: leg_muscles_3
+    3300040: leg_muscles_4
+    3300042: leg_muscles_5
+    3300044: leg_muscles_6
+    3300046: leg_muscles_7
+    3300048: leg_muscles_8
+    3300050: leg_muscles_9
+    4300000: bones
+    4300002: leg_muscles_3
+    4300004: leg_muscles_1
+    4300006: leg_muscles_1_2
+    4300008: leg_muscles_2
+    4300010: leg_muscles_4
+    4300012: leg_muscles_5
+    4300014: leg_muscles_6
+    4300016: leg_muscles_7
+    4300018: leg_muscles_8
+    4300020: leg_muscles_9
+    4300022: leg_muscles_10
+    4300024: leg_muscles_11
+    4300026: leg_muscles_12
+    4300028: leg_muscles_13
+    4300030: leg_muscles_15_1
+    4300032: leg_muscles_17
+    4300034: leg_muscles_18_1
+    4300036: leg_muscles_20
+    4300038: leg_muscles_22
+    4300040: leg_muscles_23
+    4300042: leg_muscles_24
+    4300044: leg_muscles_26
+    4300046: leg_muscles_27
+    4300048: leg_muscles_28
+    4300050: leg_muscles_29
+    7400000: idle
+    7400002: expand
+    7400004: join
+    9500000: //RootNode
+    11100000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat
+    second: {fileID: 2100000, guid: dffe3d3590e954174ac18150a8a78358, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat.1
+    second: {fileID: 2100000, guid: dffe3d3590e954174ac18150a8a78358, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: idle
+      takeName: C4D Animation Take
+      firstFrame: 2
+      lastFrame: 3
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: expand
+      takeName: C4D Animation Take
+      firstFrame: 3
+      lastFrame: 39
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: join
+      takeName: C4D Animation Take
+      firstFrame: 40
+      lastFrame: 80
+      wrapMode: 1
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 50
+    normalImportMode: 1
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

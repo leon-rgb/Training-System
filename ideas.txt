@@ -49,9 +49,15 @@ fixed:
 	+wieder einbauen, dass holosaw je nach haltung der saw rechts oder links rotiert ist
 	+Geschwindigkeit des movement abh. von distanz machen 
 	+wenn saw zu weit weg von holosaw, soll diese stoppen bis man wieder nah genug ist + Farbänderung
-
+-holo saw winkel/abstand zu streng
 
 TODO / Ideas
+-button um holosaw zu deaktivieren
+-alles stoppen wenn cutting plan accuracy 100% ???
+-weiteres cutting plane erstellen
+-am ausgang game verlassen
+-am pc einstellungen oder nächstes cutting plane laden 
+-go to next button (später für user study)
 -raum designen
 -editor mode fürs cuttting plane
 	--> cutting planes sollen gespeichert werden

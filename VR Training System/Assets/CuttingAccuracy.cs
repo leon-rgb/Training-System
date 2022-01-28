@@ -27,6 +27,7 @@ public class CuttingAccuracy : MonoBehaviour
     [Range(0.3f, 1)]
     public float UpdateAccuracyInterval;
 
+    [Tooltip("Select the collider of the saw blade in the scene")]
     public Transform mainTransform;
     private MainScript main;
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
 {
-    public Transform CuttingPlane;
+    //public Transform CuttingPlane;
     public Transform Saw;
     [SerializeField]
     private Transform topCuttingPointTransform;
@@ -52,7 +52,7 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
         //safe left and right rotated holoSaw
         PosRight = this.transform.position;
         AngleRight = this.transform.eulerAngles;
-        Vector3 RotPoint = CuttingPlane.position;
+        //Vector3 RotPoint = CuttingPlane.position;
         //this.transform.RotateAround(RotPoint, Vector3.left, 180f);
         //mit der neuen Rotation, wird um einen Mittelpunkt im Saegeblatt rotiert, was viel genauer ist
         this.transform.RotateAround(transform.parent.position, Vector3.left, 180f);

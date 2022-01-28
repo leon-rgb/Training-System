@@ -32,8 +32,6 @@ public class MeshGeneratorLeg : MonoBehaviour
     public static Vector3 meshMiddlePoint;
     public static float meshRadius;
 
-    [Header("Saw")]
-    public GameObject saw;
     public bool meshWasCreated { get; set; } = false;
     
     [Header("Prefabs for in plane created spheres")]

@@ -18,7 +18,7 @@ public class SawAnimationGenerator : MonoBehaviour
     private Vector3 initialSawPos;
     private Vector3 initialSawRot;
     private Vector3[] firstAndLastPoint;
-    private float speed = 0.05f; //default = 0.05f
+    private float speed;
     private float distanceRange;
     private int angleRange;
 
@@ -47,9 +47,9 @@ public class SawAnimationGenerator : MonoBehaviour
         curMat = SawMat.RED;
         wasMovementStarted = false;
         meshGenerator = GameObject.Find("PlaneMeshGenerator").GetComponent<MeshGeneratorLeg>();
-        speed = 0.05f; //default = 0.05f
-        distanceRange = 0.075f; //default = 0.075f
-        angleRange = 5; //default = 5
+        speed = 0.06f; //default = 0.05f
+        distanceRange = 0.085f; //default = 0.075f
+        angleRange = 7; //default = 5
     }
 
     private void Update()
