@@ -50,6 +50,8 @@ fixed:
 	+Geschwindigkeit des movement abh. von distanz machen 
 	+wenn saw zu weit weg von holosaw, soll diese stoppen bis man wieder nah genug ist + Farbänderung
 -holo saw winkel/abstand zu streng
+-raum designen
+
 
 TODO / Ideas
 -button um holosaw zu deaktivieren
@@ -58,8 +60,10 @@ TODO / Ideas
 -am ausgang game verlassen
 -am pc einstellungen oder nächstes cutting plane laden 
 -go to next button (später für user study)
--raum designen
 -editor mode fürs cuttting plane
+	--> punkte nachdem maus losgelassen war, alle auf die selbe z position bringen (am besten auswahl in dem ui ob es aktiviert sein soll)
+	--> movedCurveVertices müsen noch neu berechnet werden
+	--> Ui anzeigen, dass die keybindings zeigt und in welchem man speed anzeigen kann, plane speichern kann,...
 	--> cutting planes sollen gespeichert werden
 	--> cuttings planes sollen geladen werden können (per name etc)
 	--> wäre cool wenn ein Bild des Cutting planes angezeigt werden würde

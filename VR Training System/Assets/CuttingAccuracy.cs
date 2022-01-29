@@ -187,7 +187,7 @@ public class CuttingAccuracy : MonoBehaviour
         
     }
 
-    private void createMovedCurve()
+    public void CreateMovedCurve()
     {
         Vector3[] curveVertices = cuttingMeshGenerator.getVertices();
         movedCurveVertices = new Vector3[curveVertices.Length];
@@ -204,7 +204,17 @@ public class CuttingAccuracy : MonoBehaviour
         //UpdateMesh();
         //GetComponent<MeshCollider>().sharedMesh = deepMesh;
 
-        createMovedCurve();
+        CreateMovedCurve();
+        InstantiateSpheres();
+    }
+
+    public void CreateNewMesh()
+    {
+        foreach (Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        CreateMovedCurve();
         InstantiateSpheres();
     }
 }

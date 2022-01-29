@@ -56,6 +56,24 @@ public class MeshGeneratorLeg : MonoBehaviour
         //meshMiddlePoint = (TopCuttingPoint.position + correspondingVertices[correspondingVertices.Length / 2])/2;        
     }
 
+    public void CreateNewMesh()
+    {
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+        mesh = new Mesh();
+        CreateMesh();
+        InstantiateCuttingSpheres();
+        UpdateMesh();
+        UpdateCollider();
+        meshMiddlePoint = mesh.bounds.center;
+        meshRadius = Vector3.Magnitude(mesh.bounds.max - mesh.bounds.center);
+
+        //alle kinder destroyen
+        //maybe lsite fpr accuracy leeren, aber wahrscheinlich nicht notwendig, da sie eh nur im hauptprogramm verwendet wird
+    }
+
     private void UpdateCollider()
     {
         GetComponent<MeshCollider>().sharedMesh = mesh;
@@ -143,13 +161,15 @@ public class MeshGeneratorLeg : MonoBehaviour
         mesh.Optimize();
         mesh.RecalculateNormals();
 
-        Mesh invMesh = InvertMesh(mesh, triangles);
-        invMesh = DuplicateAndMoveMesh(invMesh, triangles);
+        //Mesh invMesh = InvertMesh(mesh, triangles);
+        //invMesh = DuplicateAndMoveMesh(invMesh, triangles);
+        
+        //no need to reverse
         //invMesh.triangles.Reverse().ToArray();
         //mesh.triangles = triangles.Reverse().ToArray();
 
-        mesh = MergeMeshes(mesh, invMesh);
-
+        //mesh = MergeMeshes(mesh, invMesh);
+        GetComponent<MeshFilter>().mesh = mesh;
         //saw.GetComponent<SawAnimationGenerator>().StartSawMovement();
     }
 
