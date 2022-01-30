@@ -14,6 +14,10 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
     private MeshGeneratorLeg meshGenerator;
     public Transform CutToDeepMeshGenerator;
     private CuttingAccuracy cuttingAccuracy;
+    public GameObject leg;
+    private Animator anim;
+    public Transform JSON_SerializerTransform;
+    private JSON_Serializer serializer;
 
     private void Awake()
     {
@@ -21,7 +25,10 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         body = GetComponent<Rigidbody>();
         meshGenerator = MeshGeneratorLeg.GetComponent<MeshGeneratorLeg>();
         cuttingAccuracy = CutToDeepMeshGenerator.GetComponent<CuttingAccuracy>();
+        anim = leg.GetComponent<Animator>();
+        serializer = JSON_SerializerTransform.GetComponent<JSON_Serializer>();
         rotateSpeed = speed / 3;
+        anim.SetBool("playReversed", true);
     }
     void Update()
     {
@@ -29,6 +36,20 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         {
             meshGenerator.CreateNewMesh();
             cuttingAccuracy.CreateNewMesh();
+        }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            ChangeVisibility();
+        }
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            serializer.SetupCuttingPlane("hallo");
+            meshGenerator.CreateNewMesh();
+            cuttingAccuracy.CreateNewMesh();
+        }
+        if (Input.GetKeyDown(KeyCode.S))
+        {           
+            Debug.Log("Save was succesful? --> " + serializer.SaveCuttingPlane("plane2", false));
         }
     }
     private void FixedUpdate()
@@ -80,8 +101,25 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         {
             body.velocity = Vector3.zero;
         }
-        Debug.Log(distanceToRotPoint);
+        //Debug.Log(distanceToRotPoint);
+    }
 
-        
+    private void ChangeVisibility()
+    {
+        anim.enabled = true;
+        if (anim.GetBool("playReversed"))
+        {            
+            anim.SetBool("playReversed", false);
+        }
+        else 
+        {            
+            anim.SetBool("playReversed", true);
+        }
+    }
+
+
+    private void SaveProcess()
+    {
+
     }
 }
