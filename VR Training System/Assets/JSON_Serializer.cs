@@ -6,12 +6,20 @@ using UnityEngine;
 
 public class JSON_Serializer : MonoBehaviour
 {
-    public Vector3[] cuttingPoints;
-    public string savePath;
+    // Note that cutting points need to be in the right order in the hierarchy. 
+    // At least the mid point has to be in the middle 
+    private static Vector3[] cuttingPoints;
+    private static string savePath;
+    private static string countSavePath;
+    private static Transform MeshGeneratorLeg;
+    private static MeshGeneratorLeg meshGenerator;
+    private static Transform CutToDeepMeshGenerator;
+    private static CuttingAccuracy cuttingAccuracy;
 
     private void Start()
     {
-        savePath = Application.dataPath + "/json.txt";      
+        savePath = Application.dataPath + "/json.txt";
+        countSavePath = Application.dataPath + "/count.txt";
     }
 
     [Serializable]
@@ -28,15 +36,25 @@ public class JSON_Serializer : MonoBehaviour
         public List<CuttingPlane> cuttingPlanes;
     }
 
+    [Serializable]
+    public class CuttingPlaneCount
+    {
+        public int value;
+    }
 
-    public bool SaveCuttingPlane(string _name, bool _isAnimatable)
+    public static bool SaveCuttingPlane(string _name, bool _isAnimatable)
     {
         // get cutting points
-        cuttingPoints = new Vector3[transform.childCount];
-        for (int i = 0; i < transform.childCount; i++)
+        Transform t = GameObject.FindGameObjectWithTag("CuttingPoints").transform;
+        cuttingPoints = new Vector3[t.childCount];
+        for(int i = 0; i < t.childCount; i++)
+        {
+            cuttingPoints[i] = t.GetChild(i).position;
+        }
+        /*for (int i = 0; i < transform.childCount; i++)
         {
             cuttingPoints[i] = transform.GetChild(i).position;
-        }
+        }*/
 
         // create CuttingPlan object
         CuttingPlane plane = new CuttingPlane
@@ -82,7 +100,25 @@ public class JSON_Serializer : MonoBehaviour
         }       
     }
 
-    public CuttingPlane LoadCuttingPlane(string planeName, List<CuttingPlane> planeList)
+    public static bool DeleteCuttingPlane(string planeName)
+    {
+        CuttingPlaneList cuttingPlaneList = LoadCuttingPlaneList();
+        foreach (CuttingPlane tmp_plane in cuttingPlaneList.cuttingPlanes)
+        {
+            if (planeName == tmp_plane.name)
+            {
+                cuttingPlaneList.cuttingPlanes.Remove(tmp_plane);
+
+                string json = JsonUtility.ToJson(cuttingPlaneList, true);
+                File.Delete(savePath);
+                File.WriteAllText(savePath, json);
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static CuttingPlane LoadCuttingPlane(string planeName, List<CuttingPlane> planeList)
     {
         if (planeList != null)
         {
@@ -94,7 +130,7 @@ public class JSON_Serializer : MonoBehaviour
         return null;
     }
 
-    public CuttingPlaneList LoadCuttingPlaneList()
+    public static CuttingPlaneList LoadCuttingPlaneList()
     {
         if (File.Exists(savePath))
         {
@@ -108,14 +144,86 @@ public class JSON_Serializer : MonoBehaviour
         return null;
     }
 
-    public void SetupCuttingPlane(string planeName)
+    public static void SetupCuttingPlane(string planeName)
     {
         List<CuttingPlane> planeList = LoadCuttingPlaneList().cuttingPlanes;
         CuttingPlane plane = LoadCuttingPlane(planeName, planeList);
-        for(int i = 0; i < plane.positions.Length; i++)
+        Transform t = GameObject.FindGameObjectWithTag("CuttingPoints").transform;
+        for (int i = 0; i < plane.positions.Length; i++)
         {
-            transform.GetChild(i).position = plane.positions[i];
+            //transform.GetChild(i).position = plane.positions[i];           
+            t.GetChild(i).position = plane.positions[i];
         }
     }
 
+    public static void SetupCuttingPlaneCompletly(string name)
+    {
+        // setup cutting points
+        SetupCuttingPlane(name);
+
+        // get mesh generators
+        MeshGeneratorLeg = GameObject.Find("PlaneMeshGenerator").transform;
+        meshGenerator = MeshGeneratorLeg.GetComponent<MeshGeneratorLeg>();
+        CutToDeepMeshGenerator = GameObject.Find("CutToDeepMeshGenerator").transform;
+        cuttingAccuracy = CutToDeepMeshGenerator.GetComponent<CuttingAccuracy>();
+
+        // recalculate meshes
+        meshGenerator.CreateNewMesh();
+        cuttingAccuracy.CreateNewMesh();
+    }
+
+    public void SaveCount()
+    {
+        CuttingPlaneCount count = new CuttingPlaneCount();    
+
+        // declare json data
+        string json;
+
+        // check if file already exists.
+        if (File.Exists(countSavePath))
+        {
+            // load saved value and increment it
+            count.value = LoadCount().value + 1;
+            
+            // save new value
+            json = JsonUtility.ToJson(count, true);
+            File.Delete(countSavePath);
+            File.WriteAllText(countSavePath, json);
+        }
+        else
+        {
+            // set count to 1 since its the first plane saved
+            count.value = 1;
+
+            // create json file
+            json = JsonUtility.ToJson(count, true); // true is for printing the json better readable
+            File.WriteAllText(countSavePath, json);
+        }
+    }
+
+    public static CuttingPlaneCount LoadCount()
+    {
+        if (File.Exists(countSavePath))
+        {
+            string fileContent = File.ReadAllText(countSavePath);
+            if (fileContent != null)
+            {
+                CuttingPlaneCount count = JsonUtility.FromJson<CuttingPlaneCount>(fileContent);
+                return count;
+            }
+        }
+        return null;
+    }
+
+    public static void DecreaseCount()
+    {
+        CuttingPlaneCount count = new CuttingPlaneCount();
+        string json;
+        count.value = LoadCount().value - 1;
+        
+        // save new value
+        json = JsonUtility.ToJson(count, true);
+        File.Delete(countSavePath);
+        File.WriteAllText(countSavePath, json);
+    }
 }

@@ -9,6 +9,12 @@ TagManager:
   - Bones
   - CutToDeep
   - Sawblade
+  - CuttingPoints
+  - LoadMenu
+  - DeletePanel
+  - ui
+  - ScrollViewContent
+  - PopUpText
   layers:
   - Default
   - TransparentFX

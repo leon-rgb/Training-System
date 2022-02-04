@@ -27,7 +27,11 @@ public class UI_Manager : MonoBehaviour
 
 
     [Header("Other UI Elements")]
-    public Transform test;
+    [Tooltip("Meant are the panels that open when you click a button on the ui")]
+    public GameObject[] OverlayPanel;
+    public GameObject PopUpText_go;
+    private TextMeshProUGUI PopUpText;
+    public GameObject[] BindingsAndButtons;
 
     // Start is called before the first frame update
     void Start()
@@ -50,9 +54,66 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void ExitGame()
     {
-        
+        Debug.Log("Game was closed");
+        Application.Quit();
+    }
+
+    public void DisablePanels()
+    {
+        foreach(GameObject go in OverlayPanel)
+        {
+            go.SetActive(false);
+        }
+    }
+
+    public void OpenSubMenu(string name)
+    {
+        foreach (GameObject go in OverlayPanel)
+        {
+            if (go.name == name) go.SetActive(true);
+        }
+    }
+
+    public GameObject GetSubMenu(string name)
+    {
+        foreach (GameObject go in OverlayPanel)
+        {
+            if (go.name == name) return go;
+        }
+        return null;
+    }
+
+    public bool IsAnySubMenuEnabled()
+    {
+        foreach (GameObject go in OverlayPanel)
+        {
+            if (go.activeInHierarchy) return true;
+        }
+        return false;
+    }
+
+    public void UI_SwitchEnabledState()
+    {
+        bool enabledState = BindingsAndButtons[0].activeInHierarchy;
+        foreach(GameObject go in BindingsAndButtons)
+        {
+            go.SetActive(!enabledState);
+        }
+    }
+
+    public void ShowPopUpText(string text)
+    {
+        PopUpText = PopUpText_go.GetComponent<TextMeshProUGUI>();
+        PopUpText.text = text;
+        StartCoroutine(PopUpTextAnim());
+    }
+
+    private IEnumerator PopUpTextAnim()
+    {
+        PopUpText_go.SetActive(true);
+        yield return new WaitForSeconds(1.1f); //since animation duration is around 1.1 secs
+        PopUpText_go.SetActive(false);
     }
 }

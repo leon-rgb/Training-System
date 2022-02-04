@@ -1,3 +1,4 @@
 
 
 "Emergency Escape Light" (https://skfb.ly/6Z8FB) by Gurazh is licensed under Creative Commons Attribution (http://creativecommons.org/licenses/by/4.0/).
+JsonUtility.FromJson<Vector3>("{ \"x\":-2.6302037239074709,\"y\":0.9123166799545288,\"z\":1.347090244293213}");

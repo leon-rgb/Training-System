@@ -18,6 +18,14 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
     private Animator anim;
     public Transform JSON_SerializerTransform;
     private JSON_Serializer serializer;
+    public GameObject UI_Manager_go;
+    private UI_Manager ui;
+    private bool isUiActive;
+    private static Vector3 pos1;
+    private static Vector3 pos2;
+    private static Quaternion rot1;
+    private static Quaternion rot2;
+    private bool IsAtPos1;
 
     private void Awake()
     {
@@ -27,11 +35,25 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         cuttingAccuracy = CutToDeepMeshGenerator.GetComponent<CuttingAccuracy>();
         anim = leg.GetComponent<Animator>();
         serializer = JSON_SerializerTransform.GetComponent<JSON_Serializer>();
+        ui = UI_Manager_go.GetComponent<UI_Manager>();
         rotateSpeed = speed / 3;
         anim.SetBool("playReversed", true);
+
+        SetUpPosAndRots();
     }
     void Update()
     {
+        //check if ui is active
+        isUiActive = ui.IsAnySubMenuEnabled();
+        if (isUiActive)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            ui.UI_SwitchEnabledState();
+        }
         if (Input.GetKeyDown(KeyCode.C))
         {
             meshGenerator.CreateNewMesh();
@@ -43,17 +65,37 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.L))
         {
-            serializer.SetupCuttingPlane("hallo");
-            meshGenerator.CreateNewMesh();
-            cuttingAccuracy.CreateNewMesh();
+            JSON_Serializer.SetupCuttingPlane("hallo");
+            //meshGenerator.CreateNewMesh();
+            //cuttingAccuracy.CreateNewMesh();
         }
-        if (Input.GetKeyDown(KeyCode.S))
-        {           
-            Debug.Log("Save was succesful? --> " + serializer.SaveCuttingPlane("plane2", false));
+
+        // change transform to a 2d like view
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            if (!IsAtPos1)
+            {
+                transform.position = pos1;
+                transform.rotation = rot1;
+                IsAtPos1 = true;
+            }
+            else
+            {
+                transform.position = pos2;
+                transform.rotation = rot2;
+                IsAtPos1 = false;
+            }
         }
     }
     private void FixedUpdate()
     {
+        //check if ui is active
+        if (isUiActive)
+        {
+            return;
+        }
+
+        
         distanceToRotPoint = Vector3.Distance(transform.position, RotationPoint.position);
         if (Input.GetKey(KeyCode.RightArrow))
         {
@@ -104,6 +146,9 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         //Debug.Log(distanceToRotPoint);
     }
 
+    /// <summary>
+    /// Changes the animation of the leg model accordingly to current visibilty
+    /// </summary>
     private void ChangeVisibility()
     {
         anim.enabled = true;
@@ -117,9 +162,15 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         }
     }
 
-
-    private void SaveProcess()
+    /// <summary>
+    /// Sets up 2 hardcoded transforms that give a 2d like view on the cutting plane
+    /// </summary>
+    private void SetUpPosAndRots()
     {
-
+        IsAtPos1 = false;
+        pos1 = JsonUtility.FromJson<Vector3>("{ \"x\":-2.6302037239074709,\"y\":0.9123166799545288,\"z\":1.347090244293213}");
+        rot1 = JsonUtility.FromJson<Quaternion>("{ \"x\":0.04833417758345604,\"y\":0.7054529190063477,\"z\":-0.04833417758345604,\"w\":0.7054529190063477}");
+        pos2 = new Vector3(-2.45450997f, 0.904134154f, 1.45936608f);
+        rot2 = new Quaternion(-1.37835741e-07f, 0.997661114f, -0.0683548152f, -2.04332173e-06f);
     }
 }
