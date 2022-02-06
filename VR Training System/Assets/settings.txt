@@ -1,0 +1,8 @@
+{
+    "ShowAnimation": true,
+    "Difficulty": 3.0,
+    "FrequencyHaptic": 2.0,
+    "ShowSpheres": false,
+    "FrequencySpheres": 0.07500000298023224,
+    "DistanceCutTooDeep": 6.0
+}

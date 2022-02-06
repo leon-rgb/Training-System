@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -20,20 +21,14 @@ public class ScreenshotMaker : MonoBehaviour
         //TakeScreenshot("test");
     }
 
+    
     /// <summary>
-    /// Makes all necessary steps to take and save a screenshot
+    /// Starts a coroutine that executes all necessary steps to take and save a screenshot
     /// </summary>
     /// <param name="planeName"></param>
     public void TakeScreenshot(string planeName)
     {
-        var color = ChangeVisibility();
-
-        Texture2D texture = Capture(ScreenshotCamera, width, height);
-
-        string path = BasePath + planeName + ".png";
-        SaveTexture(path, texture);
-
-        ChangeVisibilityBack(color);
+        StartCoroutine(ScreenshotCoroutine(planeName));
     }
 
     /// <summary>
@@ -96,24 +91,24 @@ public class ScreenshotMaker : MonoBehaviour
     }
 
     /// <summary>
-    /// Changes alpha of muscle and bone material.
+    /// [Deprecated] Changes alpha of muscle and bone material.
     /// </summary>
     /// <returns>initial bone color</returns>
     private Color ChangeVisibility()
     {
         var color = muscleMat.color;
         float old_alpha = color.a;
-        color.a = 0.15f;
+        color.a = 0.1f;
         muscleMat.color = color;
         color = boneMat.color;
-        color.a = 0.15f;
+        color.a = 0.1f;
         boneMat.color = color;
         color.a = old_alpha;
         return color;
     }
 
     /// <summary>
-    /// Changes alpha of muscle and bone material to initial alpha
+    /// [Deprecated] Changes alpha of muscle and bone material to initial alpha
     /// </summary>
     /// <param name="color">initial color</param>
     private void ChangeVisibilityBack(Color color)
@@ -123,5 +118,38 @@ public class ScreenshotMaker : MonoBehaviour
         color = muscleMat.color;
         color.a = old_alpha;
         muscleMat.color = color;
+    }
+
+    /// <summary>
+    /// Makes all necessary steps to take and save a screenshot
+    /// </summary>
+    /// <param name="planeName"></param>
+    /// <returns></returns>
+    private IEnumerator ScreenshotCoroutine(string planeName)
+    {
+        // init/declare variables
+        Texture2D texture;
+        string path = BasePath + planeName + ".png";
+        Animator anim = GameObject.FindGameObjectWithTag("leg").GetComponent<Animator>();
+        // check if bones are already less visible
+        if (!anim.GetBool("playReversed"))
+        {
+            // if less visible take screenshot and break coroutine
+            texture = Capture(ScreenshotCamera, width, height);
+            SaveTexture(path, texture);
+            yield break;
+        }
+        
+        // if fully visible play animation first, wait for it and take screenshot
+        anim.SetBool("playReversed", false);
+        anim.enabled = true;
+        yield return new WaitForSeconds(0.2f);
+
+        texture = Capture(ScreenshotCamera, width, height);
+        SaveTexture(path, texture);
+
+        //give computer time for saving the texture and change bone visibility back
+        yield return new WaitForSeconds(0.01f);
+        anim.SetBool("playReversed", true);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlanePanelFunctionality : MonoBehaviour
 {
@@ -40,7 +41,11 @@ public class PlanePanelFunctionality : MonoBehaviour
 
     public void Load()
     {
-        JSON_Serializer.SetupCuttingPlaneCompletly(Name.GetComponent<TextMeshProUGUI>().text);
+        string planeName = Name.GetComponent<TextMeshProUGUI>().text;
+        JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
+        // display pop up text if in cutting plane creation
+        if (SceneManager.GetActiveScene().name == "CuttingPlaneCreation") GameObject.FindGameObjectWithTag("ui").GetComponent<UI_Manager>().ShowPopUpText("\"" + planeName + "\"  was loaded!");       
+        // disable load menu
         GameObject.FindGameObjectWithTag("LoadMenu").SetActive(false);
     }
 

@@ -38,6 +38,7 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
         ui = UI_Manager_go.GetComponent<UI_Manager>();
         rotateSpeed = speed / 3;
         anim.SetBool("playReversed", true);
+        anim.SetFloat("direction", 40f);
 
         SetUpPosAndRots();
     }
@@ -168,9 +169,14 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
     private void SetUpPosAndRots()
     {
         IsAtPos1 = false;
-        pos1 = JsonUtility.FromJson<Vector3>("{ \"x\":-2.6302037239074709,\"y\":0.9123166799545288,\"z\":1.347090244293213}");
+        /*pos1 = JsonUtility.FromJson<Vector3>("{ \"x\":-2.6302037239074709,\"y\":0.9123166799545288,\"z\":1.347090244293213}");
         rot1 = JsonUtility.FromJson<Quaternion>("{ \"x\":0.04833417758345604,\"y\":0.7054529190063477,\"z\":-0.04833417758345604,\"w\":0.7054529190063477}");
         pos2 = new Vector3(-2.45450997f, 0.904134154f, 1.45936608f);
-        rot2 = new Quaternion(-1.37835741e-07f, 0.997661114f, -0.0683548152f, -2.04332173e-06f);
+        rot2 = new Quaternion(-1.37835741e-07f, 0.997661114f, -0.0683548152f, -2.04332173e-06f);*/
+
+        pos1 = new Vector3(-2.57902741f, 0.888400018f, 1.34650576f);
+        rot1 = new Quaternion(0, 0.707106829f, 0, 0.707106829f);
+        pos2 = new Vector3(-2.45509386f, 0.888400018f, 1.46762753f);
+        rot2 = new Quaternion(0, 1, 0, -1.77696347e-06f);
     }
 }

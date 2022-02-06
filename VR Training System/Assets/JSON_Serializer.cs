@@ -25,7 +25,7 @@ public class JSON_Serializer : MonoBehaviour
     [Serializable]
     public class CuttingPlane
     {
-        public String name;
+        public string name;
         public Vector3[] positions;
         public bool isAnimatable;
     }
@@ -42,15 +42,22 @@ public class JSON_Serializer : MonoBehaviour
         public int value;
     }
 
-    public static bool SaveCuttingPlane(string _name, bool _isAnimatable)
+    public static Vector3[] GetCuttingPoints()
     {
-        // get cutting points
         Transform t = GameObject.FindGameObjectWithTag("CuttingPoints").transform;
         cuttingPoints = new Vector3[t.childCount];
-        for(int i = 0; i < t.childCount; i++)
+        for (int i = 0; i < t.childCount; i++)
         {
             cuttingPoints[i] = t.GetChild(i).position;
         }
+        return cuttingPoints;
+    }
+
+    public static bool SaveCuttingPlane(string _name, bool _isAnimatable)
+    {
+        // get cutting points
+        GetCuttingPoints();
+
         /*for (int i = 0; i < transform.childCount; i++)
         {
             cuttingPoints[i] = transform.GetChild(i).position;

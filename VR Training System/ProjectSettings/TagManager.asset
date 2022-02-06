@@ -15,6 +15,7 @@ TagManager:
   - ui
   - ScrollViewContent
   - PopUpText
+  - leg
   layers:
   - Default
   - TransparentFX
