@@ -9,8 +9,8 @@ using System.IO;
 
 public class Settings : MonoBehaviour
 {
-    private static string savePath;
-    private static string savePathDefault;
+    public static string savePath;
+    public static string savePathDefault;
     public static bool ShowAnimation { get; set; }
     public static float Difficulty { get; set; }
     public static float FrequencyHaptic { get; set; }
@@ -47,7 +47,10 @@ public class Settings : MonoBehaviour
     {
         savePath = Application.dataPath + "/settings.txt";
         savePathDefault = Application.dataPath + "/settings_default.txt";
-        Ui_Manager = Ui_manager_go.GetComponent<UI_Manager>();
+        if (Ui_manager_go.GetComponent<UI_Manager>())
+        {
+            Ui_Manager = Ui_manager_go.GetComponent<UI_Manager>();
+        }       
         OnMenuOpened();
     }
 
