@@ -76,3 +76,6 @@ TODO / Ideas
 	eventuell:
 	--> gravity an/aus
 	-->update accuracy timeout zum performance sparen
+
+Links: (aus uni)
+https://docs.unity3d.com/Packages/com.unity.xr.management@4.0/manual/EndUser.html

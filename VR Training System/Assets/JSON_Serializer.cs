@@ -199,8 +199,8 @@ public class JSON_Serializer : MonoBehaviour
         }
         else
         {
-            // set count to 1 since its the first plane saved
-            count.value = 1;
+            // set count to 2 since its the first plane saved (and next one saved will be no 2)
+            count.value = 2;
 
             // create json file
             json = JsonUtility.ToJson(count, true); // true is for printing the json better readable

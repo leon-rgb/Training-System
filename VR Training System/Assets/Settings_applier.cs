@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -18,14 +19,26 @@ public class Settings_applier: MonoBehaviour
     {
         //Todo path setzen von den settings, da dieser nicht existiert wenn script nicht aktiv ist
         //persistent data path in Settings und json verwenden....
-        Settings.savePath = Application.dataPath + "/settings.txt";
-        settings = Settings.Load();
-        Debug.Log("test " + settings);
+        
 
         cuttingAccuracy = GameObject.Find("CutToDeepMeshGenerator");
         meshGenerator = GameObject.Find("PlaneMeshGenerator");
         waveformCol = GameObject.FindGameObjectWithTag("Sawblade");
         sawHolo = GameObject.FindGameObjectWithTag("SawHolo");
+
+        Settings.savePath = Application.dataPath + "/settings.txt";
+
+        // if application is launched for the first time set values manually
+        if (!File.Exists(Settings.savePath))
+        {
+            settings = Settings.SettingsOnFirstLaunch();
+        }
+        else
+        {
+            settings = Settings.Load();
+            Debug.Log("test " + settings);
+        }
+        
 
         if (SceneManager.GetActiveScene().name == "CuttingPlaneCreation")
         {
@@ -37,7 +50,7 @@ public class Settings_applier: MonoBehaviour
 
     public void ApplySettingsNonVR(bool IsInitialCall)
     {
-        settings = Settings.Load();
+        if (File.Exists(Settings.savePath)) settings = Settings.Load();
         SetSpheresFrequency(settings.FrequencySpheres);
         SetDistance(settings.DistanceCutTooDeep);
         SetSpheresVisibility(settings.ShowSpheres);

@@ -30,6 +30,8 @@ public class CuttingAccuracy : MonoBehaviour
     [Tooltip("Select the collider of the saw blade in the scene")]
     public Transform mainTransform;
     private MainScript main;
+    private bool isMainMissing;
+    private bool difficultyIs0;
 
     // Start is called before the first frame update
     void Start()
@@ -40,13 +42,23 @@ public class CuttingAccuracy : MonoBehaviour
         cuttingMeshGenerator = cuttingMeshObj.GetComponent<MeshGeneratorLeg>();
         //wait for creation of cutting mesh
         StartCoroutine(DelayedMeshCreation());
-        main = mainTransform.GetComponent<MainScript>();
+        if (mainTransform)
+        {
+            main = mainTransform.GetComponent<MainScript>();
+            isMainMissing = false;
+            return;
+        }
+        isMainMissing = true;
+        difficultyIs0 = false;
     }
 
     private void Update()
     {
-       StartCoroutine(CalculateCuttingPlaneAccuracy());
-       StartCoroutine(CalculateTotalAccuracy());
+        if (!isMainMissing)
+        {
+            StartCoroutine(CalculateCuttingPlaneAccuracy());
+            StartCoroutine(CalculateTotalAccuracy());
+        }   
     }
 
     private IEnumerator CalculateCuttingPlaneAccuracy()
@@ -73,7 +85,11 @@ public class CuttingAccuracy : MonoBehaviour
         float x = cutToDeepCount * depth;
         x *= Difficulty; // scales x to 0.6 for default difficulty 
         //-> means that gradient of function is 0.6 of normal gradient
-        if (Difficulty == 0) Debug.LogWarning("Difficulty was not set!");
+        if (Difficulty == 0 && !difficultyIs0)
+        {
+            difficultyIs0 = true;
+            Debug.LogWarning("Difficulty was not set!");
+        }
 
         //function used: 5.08219*10^-22x^4 + 0.00003*x^3 - 0.00194*x^2 + 0.00091x + 1
         //every line is one exponent (for easier reading)

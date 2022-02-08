@@ -47,10 +47,17 @@ public class Settings : MonoBehaviour
     {
         savePath = Application.dataPath + "/settings.txt";
         savePathDefault = Application.dataPath + "/settings_default.txt";
+        // if applicaiton is launched for the first time create initial settings
+        if (!File.Exists(savePath))
+        {
+            SaveOnFirstLaunch();
+        }
+
         if (Ui_manager_go.GetComponent<UI_Manager>())
         {
             Ui_Manager = Ui_manager_go.GetComponent<UI_Manager>();
-        }       
+        }
+        
         OnMenuOpened();
     }
 
@@ -124,6 +131,27 @@ public class Settings : MonoBehaviour
         ShowSpheres = ShowSpheresTrafo.GetComponent<Toggle>().isOn;
         FrequencySpheres = FrequencySpheresTrafo.GetComponent<Slider>().value;
         DistanceCutTooDeep = (int) DistanceCutTooDeepTrafo.GetComponent<Slider>().value;
+    }
+
+    public void SaveOnFirstLaunch()
+    {
+        SettingsObject settings = SettingsOnFirstLaunch();
+        string json = JsonUtility.ToJson(settings);
+        File.WriteAllText(savePath, json);
+        File.WriteAllText(savePathDefault, json);
+    }
+    public static SettingsObject SettingsOnFirstLaunch()
+    {
+        SettingsObject settings = new SettingsObject
+        {
+            ShowAnimation = true,
+            Difficulty = 3,
+            FrequencyHaptic = 2,
+            ShowSpheres = false,
+            FrequencySpheres = 0.075f,
+            DistanceCutTooDeep = 6
+        };
+        return settings;
     }
 
     /// <summary>

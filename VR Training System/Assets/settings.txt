@@ -2,7 +2,7 @@
     "ShowAnimation": false,
     "Difficulty": 3,
     "FrequencyHaptic": 2,
-    "ShowSpheres": true,
-    "FrequencySpheres": 0.509660542011261,
-    "DistanceCutTooDeep": 6
+    "ShowSpheres": false,
+    "FrequencySpheres": 1.0,
+    "DistanceCutTooDeep": 10
 }
