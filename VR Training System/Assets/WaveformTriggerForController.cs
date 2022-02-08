@@ -17,8 +17,9 @@ public class WaveformTriggerForController : MonoBehaviour
     public GameObject sawForController;
     private Interactable sawForControllerI;
 
-    [Tooltip("Timeout for sending haptic feedback in cutting Plane. Scaled appropriately for bones and cutToDeep")]
-    public float timeoutLength;
+    //Timeout for sending haptic feedback in cutting Plane. Scaled appropriately for bones and cutToDeep
+    public float timeoutLength { get; set; }
+    public bool HapticsEnabled { get; set; }
 
     private bool cuttingPlaneTimeout;
     private float cuttingPlaneStartTime;
@@ -37,6 +38,7 @@ public class WaveformTriggerForController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("Haptics enabled = " + HapticsEnabled);
         handLeft = controllerLeft.GetComponent<Hand>();
         handRight = controllerRight.GetComponent<Hand>();
         //GetComponent<Rigidbody>().sleepThreshold = 0.0f;
@@ -86,7 +88,7 @@ public class WaveformTriggerForController : MonoBehaviour
             cuttingPlaneStartTime = Time.time;
             hand = getAttachedHand();
             Debug.Log("hallo plane");
-            if (hand != null)
+            if (hand != null && HapticsEnabled)
             {
                 StartCoroutine(sendThreePulses(hand));
                 Debug.Log("WAVEFORMCOLLISION  " + hand);
@@ -98,7 +100,7 @@ public class WaveformTriggerForController : MonoBehaviour
             bonesTimeout = true;
             bonesStartTime = Time.time;
             hand = getAttachedHand();
-            if (hand != null)
+            if (hand != null && HapticsEnabled)
             {
                 sendPulse(0.5f, 70, 90, hand);
                 Debug.Log("WAVEFORMCOLLISION bone  " + hand);
@@ -111,7 +113,7 @@ public class WaveformTriggerForController : MonoBehaviour
             main.OnCutTooDeepEnter(transform.position);
             Debug.Log("hallo " + other.name);
             hand = getAttachedHand();
-            if (hand != null)
+            if (hand != null && HapticsEnabled)
             {
                 sendPulse(0.5f, 160, 200, hand);
                 Debug.Log("WAVEFORMCOLLISION ToDeep  " + hand);

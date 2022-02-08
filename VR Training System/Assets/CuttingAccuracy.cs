@@ -16,8 +16,7 @@ public class CuttingAccuracy : MonoBehaviour
     int[] deepTriangles;
     Mesh nonFlatCurve;
 
-    [Range(1, 20)]
-    public int distToCuttingMeshCoef;
+    public int distToCuttingMeshCoef { get; set; } //Range 0-20
 
     public GameObject spherePrefab;
 
@@ -26,6 +25,7 @@ public class CuttingAccuracy : MonoBehaviour
     public float TotalAccuracy { get; set; } = 0;
     [Range(0.3f, 1)]
     public float UpdateAccuracyInterval;
+    public float Difficulty { get; set; }
 
     [Tooltip("Select the collider of the saw blade in the scene")]
     public Transform mainTransform;
@@ -71,8 +71,9 @@ public class CuttingAccuracy : MonoBehaviour
         // or you could not take the size in mm --> e.g. depth = main.Depth * 100 (is in cm then).
         // of course you could also scale it in a non linear way.
         float x = cutToDeepCount * depth;
-        x *= 0.5f;
-        //Debug.Log("x = " + x);
+        x *= Difficulty; // scales x to 0.6 for default difficulty 
+        //-> means that gradient of function is 0.6 of normal gradient
+        if (Difficulty == 0) Debug.LogWarning("Difficulty was not set!");
 
         //function used: 5.08219*10^-22x^4 + 0.00003*x^3 - 0.00194*x^2 + 0.00091x + 1
         //every line is one exponent (for easier reading)

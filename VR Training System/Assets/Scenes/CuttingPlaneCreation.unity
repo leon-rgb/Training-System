@@ -6564,6 +6564,7 @@ GameObject:
   - component: {fileID: 2039855219}
   - component: {fileID: 2039855221}
   - component: {fileID: 2039855222}
+  - component: {fileID: 2039855223}
   m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6748,6 +6749,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2039855223
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2039855215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88a1dd8a40802e5498b5c053b8411b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpherePrefabs:
+  - {fileID: 2548267473157897815, guid: db268a95552422944aa1a1ff9682f9f9, type: 3}
+  - {fileID: 7352841189191782389, guid: b758d841f0879b441a632a242d0fb92f, type: 3}
+  - {fileID: 2548267473157897815, guid: 6d8e77cd4f1b7684ab57a05bde330949, type: 3}
 --- !u!1 &2095995810
 GameObject:
   m_ObjectHideFlags: 0
@@ -10488,7 +10505,6 @@ MonoBehaviour:
     actionPath: /actions/default/out/Haptic
     needsReinit: 0
   sawForController: {fileID: 5546581962793375560}
-  timeoutLength: 2.5
   mainTransform: {fileID: 5546581960801387298}
 --- !u!114 &5546581960801387297
 MonoBehaviour:
@@ -10851,7 +10867,6 @@ MonoBehaviour:
   lengthCoef: 0.05
   widthCoef: 0.003
   curveSmoothCoef: 0.002
-  sphereFrequencyCoef: 0.075
   cuttingSphereAccuracyPrefab: {fileID: 2548267473157897815, guid: db268a95552422944aa1a1ff9682f9f9, type: 3}
   cuttingSphereWaveformPrefab: {fileID: 2548267473157897815, guid: 6d8e77cd4f1b7684ab57a05bde330949, type: 3}
 --- !u!64 &5546581960920537990
@@ -11119,7 +11134,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cuttingMeshObj: {fileID: 5546581960920537992}
-  distToCuttingMeshCoef: 6
   spherePrefab: {fileID: 7352841189191782389, guid: b758d841f0879b441a632a242d0fb92f, type: 3}
   UpdateAccuracyInterval: 0.3
   mainTransform: {fileID: 5546581960801387298}
@@ -18265,7 +18279,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.075, y: 1}
+  m_AnchorMax: {x: 0.036458336, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -18331,7 +18345,7 @@ MonoBehaviour:
   m_FillRect: {fileID: 8956303416135926986}
   m_HandleRect: {fileID: 8956303417290628064}
   m_Direction: 0
-  m_MinValue: 0
+  m_MinValue: 0.04
   m_MaxValue: 1
   m_WholeNumbers: 0
   m_Value: 0.075
@@ -18653,6 +18667,7 @@ MonoBehaviour:
   FrequencySpheresTrafo: {fileID: 8956303416142454595}
   DistanceCutTooDeepTrafo: {fileID: 8956303417281030756}
   Ui_manager_go: {fileID: 98197200}
+  Settings_appl: {fileID: 2039855215}
 --- !u!114 &8956303416194399044
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22767,7 +22782,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8956303416606442688
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29901,8 +29916,8 @@ RectTransform:
   m_Father: {fileID: 8956303416894478244}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.075, y: 0}
-  m_AnchorMax: {x: 0.075, y: 1}
+  m_AnchorMin: {x: 0.036458336, y: 0}
+  m_AnchorMax: {x: 0.036458336, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}

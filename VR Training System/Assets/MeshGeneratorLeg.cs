@@ -17,9 +17,9 @@ public class MeshGeneratorLeg : MonoBehaviour
     public float lengthCoef;
     public float widthCoef;
     public float curveSmoothCoef;
-    [Tooltip("Defines how close to each other the spheres are and therefore how many exist. Value is relative to length of cutting plane. ")]
-    [Range(0.04f, 1)]
-    public float sphereFrequencyCoef;  //default between 0.1 and 0.05
+    
+    //Defines how close to each other the spheres are and therefore how many exist.Value is relative to length of cutting plane.
+    public float sphereFrequencyCoef { get; set; }  //default between 0.1 and 0.05
 
     Mesh mesh;
 

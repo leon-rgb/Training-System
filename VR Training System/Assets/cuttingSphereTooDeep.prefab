@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8850137518512927040}
   - component: {fileID: 601686513592131671}
   m_Layer: 7
-  m_Name: Sphere
+  m_Name: cuttingSphereTooDeep
   m_TagString: CutToDeep
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

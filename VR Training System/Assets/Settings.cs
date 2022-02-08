@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.IO;
 
 public class Settings : MonoBehaviour
@@ -12,11 +11,11 @@ public class Settings : MonoBehaviour
     public static string savePath;
     public static string savePathDefault;
     public static bool ShowAnimation { get; set; }
-    public static float Difficulty { get; set; }
-    public static float FrequencyHaptic { get; set; }
+    public static int Difficulty { get; set; }
+    public static int FrequencyHaptic { get; set; }
     public static bool ShowSpheres { get; set; }
     public static float FrequencySpheres { get; set; }
-    public static float DistanceCutTooDeep { get; set; }
+    public static int DistanceCutTooDeep { get; set; }
 
     private static SettingsObject SettingsOnMenuOpened;
     private static SettingsObject SettingsOnMenuClosed;
@@ -31,16 +30,17 @@ public class Settings : MonoBehaviour
     public GameObject Ui_manager_go;
     private UI_Manager Ui_Manager;
 
+    public GameObject Settings_appl;
 
     [Serializable]
     public class SettingsObject
     {
         public bool ShowAnimation;
-        public float Difficulty;
-        public float FrequencyHaptic;
+        public int Difficulty;
+        public int FrequencyHaptic;
         public bool ShowSpheres;
         public float FrequencySpheres;
-        public float DistanceCutTooDeep;
+        public int DistanceCutTooDeep;
     }
 
     private void OnEnable()
@@ -85,9 +85,10 @@ public class Settings : MonoBehaviour
         }
         // settings have changed
         // disable ui panels and display that settings were saved
+        Save();       
         Ui_Manager.DisablePanels();
         Ui_Manager.ShowPopUpText("Settings were saved!");
-        Save();
+        Settings_appl.GetComponent<Settings_applier>().ApplySettingsNonVR(false);
     }
 
     /// <summary>
@@ -118,11 +119,11 @@ public class Settings : MonoBehaviour
     public void GetValues()
     {
         ShowAnimation = AnimationTrafo.GetComponent<Toggle>().isOn;
-        Difficulty = DifficultyTrafo.GetComponent<Slider>().value;
-        FrequencyHaptic = FrequencyHapticTrafo.GetComponent<Slider>().value;
+        Difficulty = (int) DifficultyTrafo.GetComponent<Slider>().value;
+        FrequencyHaptic = (int) FrequencyHapticTrafo.GetComponent<Slider>().value;
         ShowSpheres = ShowSpheresTrafo.GetComponent<Toggle>().isOn;
         FrequencySpheres = FrequencySpheresTrafo.GetComponent<Slider>().value;
-        DistanceCutTooDeep = DistanceCutTooDeepTrafo.GetComponent<Slider>().value;
+        DistanceCutTooDeep = (int) DistanceCutTooDeepTrafo.GetComponent<Slider>().value;
     }
 
     /// <summary>
