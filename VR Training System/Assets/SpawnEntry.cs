@@ -29,7 +29,7 @@ public class SpawnEntry : MonoBehaviour
         {
             GameObject go = Instantiate(prefab, transform, false);
             plane = go.GetComponent<PlanePanelFunctionality>();
-            Texture texture = ScreenshotMaker.GetScreenshot("test");
+            //Texture texture = ScreenshotMaker.GetScreenshot("test");
             plane.SetElements("plane" + i, false, texture);
             yield return new WaitForSeconds(1);
         }       

@@ -15,11 +15,19 @@ public class JSON_Serializer : MonoBehaviour
     private static MeshGeneratorLeg meshGenerator;
     private static Transform CutToDeepMeshGenerator;
     private static CuttingAccuracy cuttingAccuracy;
+    public const string StringNamePlayerPrefs = "currentCuttingPlaneName";
 
     private void Start()
-    {
+    {     
         savePath = Application.dataPath + "/json.txt";
         countSavePath = Application.dataPath + "/count.txt";
+        if (PlayerPrefs.GetString(StringNamePlayerPrefs) == null)
+        {
+            PlayerPrefs.SetString(StringNamePlayerPrefs, "");
+            SetupCuttingPlaneCompletly("");
+            return;
+        }
+        SetupCuttingPlaneCompletly(PlayerPrefs.GetString(StringNamePlayerPrefs));
     }
 
     [Serializable]
@@ -153,9 +161,20 @@ public class JSON_Serializer : MonoBehaviour
 
     public static void SetupCuttingPlane(string planeName)
     {
-        List<CuttingPlane> planeList = LoadCuttingPlaneList().cuttingPlanes;
-        CuttingPlane plane = LoadCuttingPlane(planeName, planeList);
+        // get cutting pints
         Transform t = GameObject.FindGameObjectWithTag("CuttingPoints").transform;
+
+        // check if default plane should be loaded
+        if (planeName == "")
+        {
+            t.GetChild(0).position = new Vector3(-2.46281028f, 0.911469996f, 1.34659994f);
+            t.GetChild(1).position = new Vector3(-2.44809985f, 0.889499962f, 1.34659994f);
+            t.GetChild(2).position = new Vector3(-2.46429992f, 0.865499973f, 1.34659994f);
+            return;
+        }
+
+        List<CuttingPlane> planeList = LoadCuttingPlaneList().cuttingPlanes;
+        CuttingPlane plane = LoadCuttingPlane(planeName, planeList);       
         for (int i = 0; i < plane.positions.Length; i++)
         {
             //transform.GetChild(i).position = plane.positions[i];           
@@ -165,8 +184,9 @@ public class JSON_Serializer : MonoBehaviour
 
     public static void SetupCuttingPlaneCompletly(string name)
     {
-        // setup cutting points
+        // setup cutting points and current name
         SetupCuttingPlane(name);
+        PlayerPrefs.SetString(StringNamePlayerPrefs, name);
 
         // get mesh generators
         MeshGeneratorLeg = GameObject.Find("PlaneMeshGenerator").transform;
@@ -174,10 +194,13 @@ public class JSON_Serializer : MonoBehaviour
         CutToDeepMeshGenerator = GameObject.Find("CutToDeepMeshGenerator").transform;
         cuttingAccuracy = CutToDeepMeshGenerator.GetComponent<CuttingAccuracy>();
 
+
         // recalculate meshes
         meshGenerator.CreateNewMesh();
         cuttingAccuracy.CreateNewMesh();
     }
+
+     
 
     public void SaveCount()
     {

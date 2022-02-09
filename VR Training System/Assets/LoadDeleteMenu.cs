@@ -1,21 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class LoadDeleteMenu : MonoBehaviour
 {
     public GameObject prefab;
     private PlanePanelFunctionality planePanel;
 
-
     private void OnEnable()
     {
-        InitPlanePanels();    
+        if (SceneManager.GetActiveScene().name == "CuttingPlaneCreation") InitPlanePanels();
     }
 
     private void OnDisable()
     {
-        DestroyPlanePanels();
+        if (SceneManager.GetActiveScene().name == "CuttingPlaneCreation") DestroyPlanePanels();
+    }
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().name != "CuttingPlaneCreation")
+        {
+            InitPlanePanels();
+            GameObject.FindGameObjectWithTag("LoadMenu").SetActive(false);
+        }
     }
 
     public void InitPlanePanels()

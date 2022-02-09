@@ -18,6 +18,7 @@ public class ScreenshotMaker : MonoBehaviour
     {
         ScreenshotCamera = GetComponent<Camera>();
         BasePath = Application.dataPath + "/";
+        Debug.Log(BasePath);
         //TakeScreenshot("test");
     }
 

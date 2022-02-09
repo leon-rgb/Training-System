@@ -42,9 +42,17 @@ public class PlanePanelFunctionality : MonoBehaviour
     public void Load()
     {
         string planeName = Name.GetComponent<TextMeshProUGUI>().text;
-        JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
+        Debug.Log("LOADED " + planeName);
+        
         // display pop up text if in cutting plane creation
-        if (SceneManager.GetActiveScene().name == "CuttingPlaneCreation") GameObject.FindGameObjectWithTag("ui").GetComponent<UI_Manager>().ShowPopUpText("\"" + planeName + "\"  was loaded!");       
+        if (SceneManager.GetActiveScene().name == "CuttingPlaneCreation") {
+            JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
+            GameObject.FindGameObjectWithTag("ui").GetComponent<UI_Manager>().ShowPopUpText("\"" + planeName + "\"  was loaded!");
+        } 
+        else
+        {
+            VR_Canvas_functions.LoadCuttingPlane(planeName);
+        }
         // disable load menu
         GameObject.FindGameObjectWithTag("LoadMenu").SetActive(false);
     }

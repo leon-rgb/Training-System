@@ -38,10 +38,10 @@ public class CuttingAccuracy : MonoBehaviour
     {
         //GetComponent<Rigidbody>().sleepThreshold = 0.0f;
         deepMesh = new Mesh();
-        GetComponent<MeshFilter>().mesh = deepMesh;
+        //GetComponent<MeshFilter>().mesh = deepMesh;
         cuttingMeshGenerator = cuttingMeshObj.GetComponent<MeshGeneratorLeg>();
         //wait for creation of cutting mesh
-        StartCoroutine(DelayedMeshCreation());
+        //StartCoroutine(DelayedMeshCreation());
         if (mainTransform)
         {
             main = mainTransform.GetComponent<MainScript>();
@@ -54,11 +54,17 @@ public class CuttingAccuracy : MonoBehaviour
 
     private void Update()
     {
-        if (!isMainMissing)
+        if (!isMainMissing && Time.time > 2)
         {
             StartCoroutine(CalculateCuttingPlaneAccuracy());
             StartCoroutine(CalculateTotalAccuracy());
         }   
+    }
+
+    public void ClearAccuracyData()
+    {
+        cuttingMeshGenerator.AllCuttingPlaneAccuracySpheres.Clear();
+        main.ResetEverything();
     }
 
     private IEnumerator CalculateCuttingPlaneAccuracy()

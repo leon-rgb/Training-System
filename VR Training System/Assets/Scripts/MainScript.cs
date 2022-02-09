@@ -26,16 +26,13 @@ public class MainScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //initialize variables
-        Depth = 0;
-        CutTooDeepCount = 0;
-
-        //initialize variables
+        //initialize scripts
         uiManager = uiManagerTransform.GetComponent<UI_Manager>();
         cuttingAccuracyScript = cuttingAccuracy.GetComponent<CuttingAccuracy>();
 
+        //initialize variables
         //initialize textfields
-        StartCoroutine(initializeUITexts());
+        ResetEverything();
     }
 
     // Update is called once per frame
@@ -54,6 +51,12 @@ public class MainScript : MonoBehaviour
         uiManager.TotalAccuracyText.text = "Cutting accuracy (total):";
         UpdateUIText(Infotext.DEPTH);
         UpdateUIText(Infotext.TO_DEEP_COUNT);
+    }
+    public void ResetEverything()
+    {
+        Depth = 0;
+        CutTooDeepCount = 0;
+        StartCoroutine(initializeUITexts());
     }
 
     public void UpdateUIText(Infotext infotext)

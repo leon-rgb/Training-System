@@ -42,18 +42,19 @@ public class MeshGeneratorLeg : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        /*
         GetComponent<Rigidbody>().sleepThreshold = 0.0f;
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
-        CreateMesh();
+        CreateMesh();*/
         AllCuttingPlaneAccuracySpheres = new List<CuttingPlane_Sphere>();
-        InstantiateCuttingSpheres();
+        /*InstantiateCuttingSpheres();
         meshWasCreated = true;
         UpdateMesh();
         UpdateCollider();
         meshMiddlePoint = mesh.bounds.center;
         meshRadius = Vector3.Magnitude(mesh.bounds.max - mesh.bounds.center);
-        //meshMiddlePoint = (TopCuttingPoint.position + correspondingVertices[correspondingVertices.Length / 2])/2;        
+        //meshMiddlePoint = (TopCuttingPoint.position + correspondingVertices[correspondingVertices.Length / 2])/2;       */ 
     }
 
     public void CreateNewMesh()
@@ -332,6 +333,9 @@ public class MeshGeneratorLeg : MonoBehaviour
                 if (j < accuracyPortion)
                 {
                     go = Instantiate(cuttingSphereAccuracyPrefab, pos, Quaternion.identity);
+                    Debug.Log("spheres: " + AllCuttingPlaneAccuracySpheres != null);
+                    Debug.Log("go: " + go);
+                    Debug.Log(go.GetComponent<CuttingPlane_Sphere>());
                     AllCuttingPlaneAccuracySpheres.Add(go.GetComponent<CuttingPlane_Sphere>());
                 }
                 else
