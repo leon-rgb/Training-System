@@ -1,18 +1,53 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
+using TMPro;
+using System;
+using UnityEngine.SceneManagement;
 
 public class OpenCuttingPlaneCreation : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private Hand HoveringHand;
+    public Transform TextTransform;
+    private TextMeshPro tmpro;
+    float timeLeft;
+    float timerDuration = 4;
+    float startTime;
+    bool isHovering = false;
+
+    private void Start()
     {
-        
+        tmpro = TextTransform.GetComponent<TextMeshPro>();
+    }
+    private void Update()
+    {
+        OnHover();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void OnHover()
     {
-        
+        if (GetComponent<Interactable>().hoveringHand != null)
+        {
+            GetComponent<MeshRenderer>().enabled = true;
+            if (!isHovering)
+            {
+                isHovering = true;
+                startTime = Time.time;
+            }
+            timeLeft = startTime + timerDuration - Time.time;
+            tmpro.text = "Switch to Cutting Plane Creation in " + Math.Round(timeLeft) + " seconds";
+            TextTransform.gameObject.SetActive(true);
+            if (timeLeft <= 0)
+            {
+                tmpro.text = "Loaded Scene!";
+                SceneManager.LoadScene("CuttingPlaneCreation");
+            }
+        }
+        else
+        {
+            TextTransform.gameObject.SetActive(false);
+            GetComponent<MeshRenderer>().enabled = false;
+            isHovering = false;
+            startTime = int.MaxValue;
+        }
     }
 }

@@ -23,10 +23,10 @@ public class ExitScript : MonoBehaviour
     }
     private void Update()
     {
-        anything();
+        OnHover();
     }
 
-    void anything()
+    public void OnHover()
     {
         if(GetComponent<Interactable>().hoveringHand != null)
         {
@@ -37,7 +37,7 @@ public class ExitScript : MonoBehaviour
                 startTime = Time.time;
             }
             timeLeft = startTime + timerDuration - Time.time;
-            tmpro.text = "Exiting in " + Math.Round(timeLeft) + " seconds";
+            tmpro.text = "Exiting in \n" + Math.Round(timeLeft) + " seconds";
             TextTransform.gameObject.SetActive(true);
             if (timeLeft <= 0)
             {
