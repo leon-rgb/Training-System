@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Settings_applier: MonoBehaviour
 {
 
-    private static Settings.SettingsObject settings;
+    public static Settings.SettingsObject settings;
     public GameObject[] SpherePrefabs;
     private GameObject meshGenerator;
     private GameObject cuttingAccuracy;

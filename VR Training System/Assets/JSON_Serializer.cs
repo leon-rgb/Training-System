@@ -92,6 +92,8 @@ public class JSON_Serializer : MonoBehaviour
             {
                 if (_name == tmp_plane.name) return false;
             }
+            // save name (if new) as current cutting plane 
+            PlayerPrefs.SetString(StringNamePlayerPrefs, _name);
 
             // plane name is new --> add it to list and update json file
             cuttingPlaneList.cuttingPlanes.Add(plane);
@@ -102,6 +104,9 @@ public class JSON_Serializer : MonoBehaviour
         }
         else
         {
+            // save name as current cutting plane
+            PlayerPrefs.SetString(StringNamePlayerPrefs, _name);
+
             // create tmp List to initialize json file with a list of cutting planes
             List<CuttingPlane> tmp = new List<CuttingPlane>();
             tmp.Add(plane);
@@ -159,7 +164,12 @@ public class JSON_Serializer : MonoBehaviour
         return null;
     }
 
-    public static void SetupCuttingPlane(string planeName)
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="planeName">if plane is animatable</param>
+    /// <returns></returns>
+    public static bool SetupCuttingPlane(string planeName)
     {
         // get cutting pints
         Transform t = GameObject.FindGameObjectWithTag("CuttingPoints").transform;
@@ -170,7 +180,7 @@ public class JSON_Serializer : MonoBehaviour
             t.GetChild(0).position = new Vector3(-2.46281028f, 0.911469996f, 1.34659994f);
             t.GetChild(1).position = new Vector3(-2.44809985f, 0.889499962f, 1.34659994f);
             t.GetChild(2).position = new Vector3(-2.46429992f, 0.865499973f, 1.34659994f);
-            return;
+            return true;
         }
 
         List<CuttingPlane> planeList = LoadCuttingPlaneList().cuttingPlanes;
@@ -180,12 +190,13 @@ public class JSON_Serializer : MonoBehaviour
             //transform.GetChild(i).position = plane.positions[i];           
             t.GetChild(i).position = plane.positions[i];
         }
+        return plane.isAnimatable;
     }
 
     public static void SetupCuttingPlaneCompletly(string name)
     {
-        // setup cutting points and current name
-        SetupCuttingPlane(name);
+        // setup cutting points and save current name
+        bool isAnimatable = SetupCuttingPlane(name);
         PlayerPrefs.SetString(StringNamePlayerPrefs, name);
 
         // get mesh generators
@@ -198,6 +209,9 @@ public class JSON_Serializer : MonoBehaviour
         // recalculate meshes
         meshGenerator.CreateNewMesh();
         cuttingAccuracy.CreateNewMesh();
+
+        // signal SawAnimation if it should work
+        SawAnimationGenerator.isCuttingPlaneFlat = isAnimatable;
     }
 
      

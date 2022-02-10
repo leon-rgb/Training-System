@@ -39,6 +39,10 @@ public class MeshGeneratorLeg : MonoBehaviour
     public GameObject cuttingSphereWaveformPrefab;
     public List<CuttingPlane_Sphere> AllCuttingPlaneAccuracySpheres { get; set; }
 
+    private void Awake()
+    {
+        AllCuttingPlaneAccuracySpheres = new List<CuttingPlane_Sphere>();
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -47,7 +51,7 @@ public class MeshGeneratorLeg : MonoBehaviour
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         CreateMesh();*/
-        AllCuttingPlaneAccuracySpheres = new List<CuttingPlane_Sphere>();
+        
         /*InstantiateCuttingSpheres();
         meshWasCreated = true;
         UpdateMesh();
@@ -343,6 +347,7 @@ public class MeshGeneratorLeg : MonoBehaviour
                     go = Instantiate(cuttingSphereWaveformPrefab, pos, Quaternion.identity);
                 }               
                 go.transform.parent = transform;
+                Debug.Log(go.transform.parent);
             }
         }
     }

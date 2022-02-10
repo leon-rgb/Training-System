@@ -24,15 +24,16 @@ public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
     /// Start is called once upon starting the script. Here the HoloSaw will be rotated around the cutting plane once in x direction. 
     /// Both Positions and rotations will be safed for later comparism in th Update function.
     /// </summary>
-    void Start()
+    public void Start()
     {    
         EnableHoloSawRotation();
+        transform.parent.rotation = new Quaternion(0, 0.707106829f, 0, 0.707106829f);
 
         //place saw in front of cutting plane
         Vector3 topCuttingPoint = topCuttingPointTransform.position;
         Vector3 botCuttingPoint = botCuttingPointTransform.position;
         Vector3 initialPos = (topCuttingPoint + botCuttingPoint) / 2;
-        initialPos.x = transform.parent.position.x;
+        initialPos.x -= 0.18f;
         transform.parent.position = initialPos;
 
         // tried to rotate saw to angle between top and bot point, but doesnt work.

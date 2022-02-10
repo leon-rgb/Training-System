@@ -39,6 +39,7 @@ public class SawAnimationGenerator : MonoBehaviour
     List<Vector3> pointPairs;
     Vector3[] pointsToLookAt;
 
+    public static bool isCuttingPlaneFlat;
 
     private void Awake()
     {
@@ -52,9 +53,23 @@ public class SawAnimationGenerator : MonoBehaviour
         angleRange = 7; //default = 5
     }
 
+    public void ResetEverything()
+    {
+        StopAllCoroutines();
+        ChangeVisibilityOfSawParts(true);
+        holoSawPivot.GetComponent<Animator>().enabled = false;
+        wasMovementStarted = false;
+        Awake();
+    }
+
     private void Update()
     {
-        
+        // if plane is not flat do nothing
+        if (!isCuttingPlaneFlat)
+        {
+            return;
+        }
+
         // use the frame (or any other child of the saws) for calculating the distance
         // because the position center is not the same in the parent
         distanceBetweenSaws = Vector3.Distance(SawPivot.position, holoSawPivot.GetChild(0).position);
@@ -74,7 +89,7 @@ public class SawAnimationGenerator : MonoBehaviour
                 curMat = SawMat.GREEN;
             }
             // start saw movement if it wasn't already and mesh of cutting plane was already created
-            if (!wasMovementStarted && meshGenerator.meshWasCreated)
+            if (!wasMovementStarted /*&& meshGenerator.meshWasCreated*/)
             {
                 StartSawMovement();
                 wasMovementStarted = true;
@@ -324,13 +339,23 @@ public class SawAnimationGenerator : MonoBehaviour
 
         // fade out the saw 
         yield return new WaitForSeconds(1);
-        holoSawPivot.GetComponent<Animator>().enabled = true;
+        //holoSawPivot.GetComponent<Animator>().enabled = true;
+        ChangeVisibilityOfSawParts(false);
         yield return new WaitForSeconds(1);
 
         // reset saw transform and treshhold
         holoSawPivot.position = initialSawPos;
         holoSawPivot.localEulerAngles = initialSawRot;
         Treshhold *= 2;      
+    }
+
+
+    private void ChangeVisibilityOfSawParts(bool visible)
+    {
+        foreach( Transform t in holoSawPivot.GetChild(0))
+        {
+            t.GetComponent<Renderer>().enabled = visible;
+        }
     }
 
     /// <summary>

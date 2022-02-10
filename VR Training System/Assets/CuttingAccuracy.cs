@@ -33,10 +33,24 @@ public class CuttingAccuracy : MonoBehaviour
     private bool isMainMissing;
     private bool difficultyIs0;
 
+    private void Awake()
+    {
+        deepMesh = new Mesh();
+        cuttingMeshGenerator = cuttingMeshObj.GetComponent<MeshGeneratorLeg>();
+        if (mainTransform)
+        {
+            main = mainTransform.GetComponent<MainScript>();
+            isMainMissing = false;
+            return;
+        }
+        isMainMissing = true;
+        difficultyIs0 = false;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
-        //GetComponent<Rigidbody>().sleepThreshold = 0.0f;
+        /*//GetComponent<Rigidbody>().sleepThreshold = 0.0f;
         deepMesh = new Mesh();
         //GetComponent<MeshFilter>().mesh = deepMesh;
         cuttingMeshGenerator = cuttingMeshObj.GetComponent<MeshGeneratorLeg>();
@@ -49,7 +63,7 @@ public class CuttingAccuracy : MonoBehaviour
             return;
         }
         isMainMissing = true;
-        difficultyIs0 = false;
+        difficultyIs0 = false;*/
     }
 
     private void Update()
@@ -212,6 +226,7 @@ public class CuttingAccuracy : MonoBehaviour
 
     public void CreateMovedCurve()
     {
+        Debug.Log("curve verts: " + cuttingMeshGenerator);
         Vector3[] curveVertices = cuttingMeshGenerator.getVertices();
         movedCurveVertices = new Vector3[curveVertices.Length];
         for (int i = 0; i < curveVertices.Length; i++)

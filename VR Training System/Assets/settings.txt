@@ -1,5 +1,5 @@
 {
-    "ShowAnimation": false,
+    "ShowAnimation": true,
     "Difficulty": 3,
     "FrequencyHaptic": 2,
     "ShowSpheres": true,
