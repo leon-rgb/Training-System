@@ -48,7 +48,7 @@ public class SawAnimationGenerator : MonoBehaviour
         curMat = SawMat.RED;
         wasMovementStarted = false;
         meshGenerator = GameObject.Find("PlaneMeshGenerator").GetComponent<MeshGeneratorLeg>();
-        speed = 0.06f; //default = 0.05f
+        speed = 0.05f; //default = 0.05f
         distanceRange = 0.085f; //default = 0.075f
         angleRange = 7; //default = 5
     }
@@ -67,6 +67,7 @@ public class SawAnimationGenerator : MonoBehaviour
         // if plane is not flat do nothing
         if (!isCuttingPlaneFlat)
         {
+            holoSawPivot.GetChild(0).gameObject.SetActive(false);
             return;
         }
 
@@ -216,7 +217,7 @@ public class SawAnimationGenerator : MonoBehaviour
         // this curstom transform was created to be able to record the transform of the saw and rewind the recording
         // methods for this are InsertTransform() and RewindTransform() 
         transforms = new List<CustomTransform>();
-        Treshhold /= 2;
+        //Treshhold /= 2;
 
         //note that distance is a new variable and has not the same semantic meaning as dist 
         //(dist is the distance between most left and most right point of the saw blade)
@@ -346,7 +347,7 @@ public class SawAnimationGenerator : MonoBehaviour
         // reset saw transform and treshhold
         holoSawPivot.position = initialSawPos;
         holoSawPivot.localEulerAngles = initialSawRot;
-        Treshhold *= 2;      
+        //Treshhold *= 2;      
     }
 
 

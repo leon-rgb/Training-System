@@ -16,6 +16,7 @@ public class ExitScript : MonoBehaviour
     float timerDuration = 4;
     float startTime;
     bool isHovering = false;
+    public MainScript mainScript;
 
     private void Start()
     {
@@ -42,6 +43,7 @@ public class ExitScript : MonoBehaviour
             if (timeLeft <= 0)
             {
                 tmpro.text = "EXITED!";
+                mainScript.ResetEverything();
                 Application.Quit();
             }
         }

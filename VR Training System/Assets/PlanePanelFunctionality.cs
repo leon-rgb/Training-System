@@ -51,7 +51,7 @@ public class PlanePanelFunctionality : MonoBehaviour
         } 
         else
         {
-            VR_Canvas_functions.LoadCuttingPlane(planeName);
+            GameObject.Find("Canvases").GetComponent<VR_Canvas_functions>().LoadCuttingPlane(planeName);
         }
         // disable load menu
         GameObject.FindGameObjectWithTag("LoadMenu").SetActive(false);

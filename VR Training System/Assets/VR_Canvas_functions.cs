@@ -12,30 +12,46 @@ public class VR_Canvas_functions : MonoBehaviour
     public Settings_applier settings;
     public GameObject SawHolo;
 
+    /// <summary>
+    /// Opening or closing the scroll view. Depending on it's current state.
+    /// </summary>
     public void OpenLoadingScrollView()
     {
         LoadingMenuScroller.SetActive(!LoadingMenuScroller.activeInHierarchy);
     }
 
-    public static void LoadCuttingPlane(string planeName)
+    /// <summary>
+    /// Setup a cutting plane by it's name
+    /// </summary>
+    /// <param name="planeName"></param>
+    public void LoadCuttingPlane(string planeName)
     {
-        // used find to have a static function
-        GameObject.Find("CutToDeepMeshGenerator").GetComponent<CuttingAccuracy>().ClearAccuracyData();
-        JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
-        GameObject go = GameObject.FindGameObjectWithTag("SawHolo");
-        go.SetActive(false);
-        go.GetComponent<RotateHoloSawBasedOnSawPosition>().enabled = false;
-        go.SetActive(true);
-        go.GetComponent<RotateHoloSawBasedOnSawPosition>().enabled = true;
-    }
-
-    public void ReloadCuttingPlane()
-    {
-        string planeName = PlayerPrefs.GetString(JSON_Serializer.StringNamePlayerPrefs);
+        // clear accuracy and setup plane
         cuttingAccuracy.ClearAccuracyData();
         JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
-        SawHolo.SetActive(false);
+
+        // Reset HoloSaw
         SawHolo.SetActive(true);
+        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
+        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();
+    }
+
+    /// <summary>
+    /// Reload the current setup plane
+    /// </summary>
+    public void ReloadCuttingPlane()
+    {
+        // Get name of current plane
+        string planeName = PlayerPrefs.GetString(JSON_Serializer.StringNamePlayerPrefs);
+
+        // Setup the plane
+        cuttingAccuracy.ClearAccuracyData();
+        JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
+
+        // Reset HoloSaw
+        SawHolo.SetActive(true);
+        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
+        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();   
     }
 
     /// <summary>
@@ -47,6 +63,7 @@ public class VR_Canvas_functions : MonoBehaviour
         string currentPlane = PlayerPrefs.GetString(JSON_Serializer.StringNamePlayerPrefs);
         List <JSON_Serializer.CuttingPlane> planeList = JSON_Serializer.LoadCuttingPlaneList().cuttingPlanes;
 
+        // check if only one plane exists --> load default and return if true
         if(planeList == null || planeList.Count == 1)
         {
             JSON_Serializer.SetupCuttingPlaneCompletly(currentPlane);
@@ -54,6 +71,7 @@ public class VR_Canvas_functions : MonoBehaviour
             return;
         }
 
+        // Get random plane until it is a new one
         int rand = 0;
         JSON_Serializer.CuttingPlane plane = null;
         plane = GetRandomPlane(planeList, rand, plane);
@@ -63,11 +81,23 @@ public class VR_Canvas_functions : MonoBehaviour
             plane = GetRandomPlane(planeList, rand, plane);
         }
         Debug.Log("Loaded " + plane.name);
-        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
-        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();
+
+        // Setup the new plane
+        cuttingAccuracy.ClearAccuracyData();
         JSON_Serializer.SetupCuttingPlaneCompletly(plane.name);
+        // Reset HoloSaw
+        SawHolo.SetActive(true);
+        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
+        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();    
     }
 
+    /// <summary>
+    /// gets a random plane from saved planes
+    /// </summary>
+    /// <param name="planeList"></param>
+    /// <param name="rand"></param>
+    /// <param name="plane"></param>
+    /// <returns></returns>
     private JSON_Serializer.CuttingPlane GetRandomPlane(List<JSON_Serializer.CuttingPlane> planeList, int rand, JSON_Serializer.CuttingPlane plane)
     {
         rand = Random.Range(0, planeList.Count);

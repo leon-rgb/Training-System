@@ -10,7 +10,7 @@ public class ScrollVR_collision : MonoBehaviour
     Vector3 currentPoint;
     public ScrollRect scrollRect;
 
-    private const float speedMultiplier = 0.001f;
+    private const float speedMultiplier = 0.004f;
     public float xSpeed = 0;
     public float ySpeed = 0;
     private float hPos, vPos;

@@ -337,9 +337,6 @@ public class MeshGeneratorLeg : MonoBehaviour
                 if (j < accuracyPortion)
                 {
                     go = Instantiate(cuttingSphereAccuracyPrefab, pos, Quaternion.identity);
-                    Debug.Log("spheres: " + AllCuttingPlaneAccuracySpheres != null);
-                    Debug.Log("go: " + go);
-                    Debug.Log(go.GetComponent<CuttingPlane_Sphere>());
                     AllCuttingPlaneAccuracySpheres.Add(go.GetComponent<CuttingPlane_Sphere>());
                 }
                 else

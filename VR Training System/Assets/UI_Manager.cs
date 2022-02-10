@@ -23,6 +23,10 @@ public class UI_Manager : MonoBehaviour
     public TextMeshPro AccuracyValue { get; set; }
     public TextMeshPro TotalAccuracyText { get; set; }
     public TextMeshPro TotalAccuracyValue { get; set; }
+
+    public GameObject FinishedText;
+    public TextMeshPro CuttingPlaneName;
+
     public bool AreInGameTextsInit { get; set; } = false;
 
 
@@ -52,6 +56,18 @@ public class UI_Manager : MonoBehaviour
         {
             Debug.LogWarning("InGame Text Elements not set");
         }
+    }
+
+    public void TriggerFinishedText()
+    {
+        StartCoroutine(FinishedTextCoroutine());
+    }
+
+    IEnumerator FinishedTextCoroutine()
+    {
+        FinishedText.SetActive(true);
+        yield return new WaitForSeconds(1.5f);
+        FinishedText.SetActive(false);
     }
 
     public void ExitGame()

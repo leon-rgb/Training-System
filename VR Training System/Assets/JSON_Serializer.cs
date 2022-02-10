@@ -11,6 +11,7 @@ public class JSON_Serializer : MonoBehaviour
     private static Vector3[] cuttingPoints;
     private static string savePath;
     private static string countSavePath;
+    private static string experimentDataSavePath;
     private static Transform MeshGeneratorLeg;
     private static MeshGeneratorLeg meshGenerator;
     private static Transform CutToDeepMeshGenerator;
@@ -21,6 +22,7 @@ public class JSON_Serializer : MonoBehaviour
     {     
         savePath = Application.dataPath + "/json.txt";
         countSavePath = Application.dataPath + "/count.txt";
+        experimentDataSavePath = Application.dataPath + "/ExperimentData.txt";
         if (PlayerPrefs.GetString(StringNamePlayerPrefs) == null)
         {
             PlayerPrefs.SetString(StringNamePlayerPrefs, "");
@@ -269,5 +271,96 @@ public class JSON_Serializer : MonoBehaviour
         json = JsonUtility.ToJson(count, true);
         File.Delete(countSavePath);
         File.WriteAllText(countSavePath, json);
+    }
+
+
+    [Serializable]
+    public class ExperimentData
+    {
+        public int TotalDataCount;
+
+        public List<int> CutTooDeepCounts;
+        public float AverageCutTooDeepCount;
+
+        public List<float> CutTooDeepLenghts;
+        public float AverageCutTooDeepLength;
+
+        public List<float> PlaneAccuracies;
+        public float AveragePlaneAccuracy;
+
+        public List<float> TotalAccuracies;
+        public float AverageTotalAccuracy;
+    }
+
+    /// <summary>
+    /// 
+    /// 
+    /// </summary>
+    /// <param name="CutTooDeepCount"></param>
+    /// <param name="CutTooDeepLength"></param>
+    /// <param name="PlaneAccuracy"></param>
+    /// <param name="TotalAccuracy"></param>
+    public static void SaveExperimentData(int CutTooDeepCount, float CutTooDeepLength, float PlaneAccuracy, float TotalAccuracy)
+    {
+        ExperimentData experimentData = new ExperimentData();
+
+        // declare json data
+        string json;
+
+        // check if file already exists.
+        if (File.Exists(experimentDataSavePath))
+        {
+            experimentData = LoadExperimentData();
+
+            experimentData.TotalDataCount++;
+            experimentData.CutTooDeepCounts.Add(CutTooDeepCount);
+            experimentData.CutTooDeepLenghts.Add(CutTooDeepLength);
+            experimentData.PlaneAccuracies.Add(PlaneAccuracy);
+            experimentData.TotalAccuracies.Add(TotalAccuracy);
+
+            experimentData.AverageCutTooDeepCount = (experimentData.AverageCutTooDeepCount + CutTooDeepCount) / 2;
+            experimentData.AverageCutTooDeepLength = (experimentData.AverageCutTooDeepLength + CutTooDeepLength) / 2;
+            experimentData.AveragePlaneAccuracy = (experimentData.AveragePlaneAccuracy + PlaneAccuracy) / 2;
+            experimentData.AverageTotalAccuracy = (experimentData.AverageTotalAccuracy + TotalAccuracy) / 2;
+
+            json = JsonUtility.ToJson(experimentData, true);
+            File.Delete(experimentDataSavePath);
+            File.WriteAllText(experimentDataSavePath, json);
+        }
+        else
+        {
+            experimentData.TotalDataCount = 1;
+            experimentData.CutTooDeepCounts = new List<int>();
+            experimentData.CutTooDeepCounts.Add(CutTooDeepCount);
+            experimentData.CutTooDeepLenghts = new List<float>();
+            experimentData.CutTooDeepLenghts.Add(CutTooDeepLength);
+            experimentData.PlaneAccuracies = new List<float>();
+            experimentData.PlaneAccuracies.Add(PlaneAccuracy);
+            experimentData.TotalAccuracies = new List<float>();
+            experimentData.TotalAccuracies.Add(TotalAccuracy);
+
+            experimentData.AverageCutTooDeepCount = CutTooDeepCount;
+            experimentData.AverageCutTooDeepLength = CutTooDeepLength;
+            experimentData.AveragePlaneAccuracy = PlaneAccuracy;
+            experimentData.AverageTotalAccuracy = TotalAccuracy;
+
+            // create json file
+            json = JsonUtility.ToJson(experimentData, true); // true is for printing the json better readable
+            File.WriteAllText(experimentDataSavePath, json);
+        }
+    }
+
+    public static ExperimentData LoadExperimentData()
+    {
+        if (File.Exists(experimentDataSavePath))
+        {
+            string fileContent = File.ReadAllText(experimentDataSavePath);
+            if (fileContent != null)
+            {
+                ExperimentData experimentData = JsonUtility.FromJson<ExperimentData>(fileContent);
+                return experimentData;
+            }
+        }
+        return null;
     }
 }

@@ -1,0 +1,23 @@
+{
+    "TotalDataCount": 2,
+    "CutTooDeepCounts": [
+        2,
+        3
+    ],
+    "AverageCutTooDeepCount": 2.5,
+    "CutTooDeepLenghts": [
+        0.5600000023841858,
+        0.8100000023841858
+    ],
+    "AverageCutTooDeepLength": 0.6850000023841858,
+    "PlaneAccuracies": [
+        100.0,
+        68.0
+    ],
+    "AveragePlaneAccuracy": 84.0,
+    "TotalAccuracies": [
+        92.76000213623047,
+        47.16999816894531
+    ],
+    "AverageTotalAccuracy": 69.96499633789063
+}

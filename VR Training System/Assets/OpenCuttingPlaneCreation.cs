@@ -13,7 +13,7 @@ public class OpenCuttingPlaneCreation : MonoBehaviour
     float timerDuration = 4;
     float startTime;
     bool isHovering = false;
-
+    public MainScript mainScript;
     private void Start()
     {
         tmpro = TextTransform.GetComponent<TextMeshPro>();
@@ -39,6 +39,7 @@ public class OpenCuttingPlaneCreation : MonoBehaviour
             if (timeLeft <= 0)
             {
                 tmpro.text = "Loaded Scene!";
+                mainScript.ResetEverything();
                 SceneManager.LoadScene("CuttingPlaneCreation");
             }
         }

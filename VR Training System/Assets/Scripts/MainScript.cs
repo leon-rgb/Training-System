@@ -15,6 +15,7 @@ public class MainScript : MonoBehaviour
 
     public Transform cuttingAccuracy;
     private CuttingAccuracy cuttingAccuracyScript;
+    private bool WasFinishedDisplayed;
 
 
     private void OnEnable()
@@ -39,11 +40,19 @@ public class MainScript : MonoBehaviour
     {
         UpdateUIText(Infotext.ACCURACY_PLANE);
         UpdateUIText(Infotext.ACCURACY_TOTAL);
+
+        if (WasFinishedDisplayed) return;
+        if (cuttingAccuracyScript.CuttingPlaneAccuracy >= 100)
+        {
+            WasFinishedDisplayed = true;
+            uiManager.TriggerFinishedText();
+        }
     }
 
     IEnumerator initializeUITexts()
     {
         yield return new WaitUntil(() => uiManager.AreInGameTextsInit);
+        uiManager.CuttingPlaneName.text = PlayerPrefs.GetString(JSON_Serializer.StringNamePlayerPrefs);
         uiManager.DepthText.text = "Max Length you cut to deep:";
         uiManager.CutToDeepText.text = "Times you cut to deep:";
         uiManager.AccuracyText.text = "Cutting accuracy (in plane):";
@@ -53,9 +62,21 @@ public class MainScript : MonoBehaviour
     }
     public void ResetEverything()
     {
+        // only save experiment data if user started cutting
+        if(cuttingAccuracyScript.CuttingPlaneAccuracy != 0)
+        {
+            JSON_Serializer.SaveExperimentData(CutTooDeepCount,
+                        (float)Math.Round(Depth * 100, 2),
+                        cuttingAccuracyScript.CuttingPlaneAccuracy,
+                        cuttingAccuracyScript.TotalAccuracy);
+        }
+       
         Depth = 0;
         CutTooDeepCount = 0;
+        cuttingAccuracyScript.CuttingPlaneAccuracy = 0;
+        cuttingAccuracyScript.TotalAccuracy = 0;
         StartCoroutine(initializeUITexts());
+        WasFinishedDisplayed = false;
     }
 
     public void UpdateUIText(Infotext infotext)

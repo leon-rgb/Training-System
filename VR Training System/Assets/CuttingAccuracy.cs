@@ -78,6 +78,8 @@ public class CuttingAccuracy : MonoBehaviour
     public void ClearAccuracyData()
     {
         cuttingMeshGenerator.AllCuttingPlaneAccuracySpheres.Clear();
+        //CuttingPlaneAccuracy = 0;
+        //TotalAccuracy = 0;
         main.ResetEverything();
     }
 
@@ -151,8 +153,6 @@ public class CuttingAccuracy : MonoBehaviour
         
         nonFlatCurve= cuttingMeshGenerator.CreateNonFlatCurveVertices(movedCurveVertices, deepVertices, deepTriangles, deepCorrespondingVertices);
        
-        Debug.Log("DEEP VERTS: " + deepVertices);
-        Debug.Log(nonFlatCurve.vertices);
         /*
         deepMesh.Clear();
         deepMesh.vertices = deepVertices;
@@ -226,7 +226,6 @@ public class CuttingAccuracy : MonoBehaviour
 
     public void CreateMovedCurve()
     {
-        Debug.Log("curve verts: " + cuttingMeshGenerator);
         Vector3[] curveVertices = cuttingMeshGenerator.getVertices();
         movedCurveVertices = new Vector3[curveVertices.Length];
         for (int i = 0; i < curveVertices.Length; i++)
