@@ -25,7 +25,7 @@ public class PlanePanelFunctionality : MonoBehaviour
 
     public void SetFlatness(bool isFlat)
     {
-        Debug.Log("toggle val: " + isFlat);
+        //Debug.Log("toggle val: " + isFlat);
         if (isFlat)
         {
             IsFlatToggle.GetComponent<Toggle>().isOn = true;
@@ -42,6 +42,9 @@ public class PlanePanelFunctionality : MonoBehaviour
     public void Load()
     {
         string planeName = Name.GetComponent<TextMeshProUGUI>().text;
+        // save plane as current plane in playerprefs
+        PlayerPrefs.SetString(JSON_Serializer.StringNamePlayerPrefs, planeName);
+
         Debug.Log("LOADED " + planeName);
         
         // display pop up text if in cutting plane creation
@@ -59,6 +62,11 @@ public class PlanePanelFunctionality : MonoBehaviour
 
     public void Delete()
     {
+        // if deleted plane was current plane, reset player pref
+        if(PlayerPrefs.GetString(JSON_Serializer.StringNamePlayerPrefs) == Name.GetComponent<TextMeshProUGUI>().text)
+        {
+            PlayerPrefs.SetString(JSON_Serializer.StringNamePlayerPrefs, "");
+        }
         DeletePanel.planeName = Name.GetComponent<TextMeshProUGUI>().text;
         GameObject ui = GameObject.FindGameObjectWithTag("ui");
         ui.GetComponent<UI_Manager>().OpenSubMenu("DeletePanel");

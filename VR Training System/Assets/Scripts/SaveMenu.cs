@@ -111,6 +111,9 @@ public class SaveMenu : MonoBehaviour
             serializer.SaveCount();
         }
 
+        // save the name into playerprefs
+        PlayerPrefs.SetString(JSON_Serializer.StringNamePlayerPrefs, NameInput.text);
+
         // take screenshot and save it with planes name
         screenshotMaker.TakeScreenshot(NameInput.text);
         

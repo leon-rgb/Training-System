@@ -14,6 +14,9 @@ public class OpenCuttingPlaneCreation : MonoBehaviour
     float startTime;
     bool isHovering = false;
     public MainScript mainScript;
+    //public SwitchBetweenVRAndPC switchBetweenVR;
+    public  DestroyOnSceneChange player;
+
     private void Start()
     {
         tmpro = TextTransform.GetComponent<TextMeshPro>();
@@ -40,6 +43,8 @@ public class OpenCuttingPlaneCreation : MonoBehaviour
             {
                 tmpro.text = "Loaded Scene!";
                 mainScript.ResetEverything();
+                //switchBetweenVR.StopXR();
+                player.Destroy();
                 SceneManager.LoadScene("CuttingPlaneCreation");
             }
         }

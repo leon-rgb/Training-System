@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -25,7 +24,7 @@ public class BasicVRButton : MonoBehaviour
             isPressed = false;
             timeLeft = float.MaxValue;
             GetComponent<MeshRenderer>().material = material;
-            Debug.Log("exited button");
+            //Debug.Log("exited button");
         }
     }
 
@@ -34,7 +33,7 @@ public class BasicVRButton : MonoBehaviour
         if (other.CompareTag("Hand"))
         {
             // give the button a timeout
-            Debug.Log(other.tag + "  " + other.name);
+            //Debug.Log(other.tag + "  " + other.name);
             if (!isPressed)
             {
                 isPressed = true;
@@ -42,7 +41,7 @@ public class BasicVRButton : MonoBehaviour
                 onPressed.Invoke();
                 material = GetComponent<MeshRenderer>().material;
                 GetComponent<MeshRenderer>().material = highlightMaterial;
-                Debug.Log("pressed button");
+                //Debug.Log("pressed button");
             }
         }
     }

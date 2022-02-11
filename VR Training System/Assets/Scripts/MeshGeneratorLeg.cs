@@ -344,7 +344,7 @@ public class MeshGeneratorLeg : MonoBehaviour
                     go = Instantiate(cuttingSphereWaveformPrefab, pos, Quaternion.identity);
                 }               
                 go.transform.parent = transform;
-                Debug.Log(go.transform.parent);
+                //Debug.Log(go.transform.parent);
             }
         }
     }

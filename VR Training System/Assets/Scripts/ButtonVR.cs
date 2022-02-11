@@ -1,10 +1,8 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using UnityEditor;
 
 public class ButtonVR : Button
 {
@@ -13,21 +11,6 @@ public class ButtonVR : Button
     public float timeout = 1.5f;
     float startTime;
     float timeLeft = float.MaxValue;
-
-
-    // Since we are inheriting form Button new properties are not shown in inspector --> add event manually
-    [CustomEditor(typeof(ButtonVR))]
-    public class MenuButtonEditor : Editor
-    {
-        public override void OnInspectorGUI()
-        {
-            DrawDefaultInspector();
-            SerializedProperty onPressed = serializedObject.FindProperty("onPressed"); // <-- UnityEvent
-            //EditorGUILayout.PropertyField(onPressed);
-            //serializedObject.ApplyModifiedProperties();
-            
-        }
-    }
 
     protected override void OnEnable()
     {
@@ -49,10 +32,10 @@ public class ButtonVR : Button
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Hand"))
+        if (other.CompareTag("Hand"))
         {
             // give the button a timeout, load plane and close menu
-            Debug.Log(other.tag + "  " + other.name);         
+            Debug.Log(other.tag + "  " + other.name);
             if (!isPressed)
             {
                 isPressed = true;
@@ -61,6 +44,6 @@ public class ButtonVR : Button
                 onPressed.Invoke();
                 Debug.Log("pressed button");
             }
-        }        
+        }
     }
 }

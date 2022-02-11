@@ -51,9 +51,6 @@ fixed:
 	+wenn saw zu weit weg von holosaw, soll diese stoppen bis man wieder nah genug ist + Farbänderung
 -holo saw winkel/abstand zu streng
 -raum designen
-
-
-TODO / Ideas
 -button um holosaw zu deaktivieren
 -alles stoppen wenn cutting plan accuracy 100% ???
 -weiteres cutting plane erstellen
@@ -76,6 +73,12 @@ TODO / Ideas
 	eventuell:
 	--> gravity an/aus
 	-->update accuracy timeout zum performance sparen
+
+
+TODO / Ideas
+lightmaps neu erstellen.
+
+
 
 Links: (aus uni)
 https://docs.unity3d.com/Packages/com.unity.xr.management@4.0/manual/EndUser.html

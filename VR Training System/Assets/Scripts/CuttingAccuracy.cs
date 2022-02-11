@@ -33,6 +33,8 @@ public class CuttingAccuracy : MonoBehaviour
     private bool isMainMissing;
     private bool difficultyIs0;
 
+    public Settings_applier settings_applier;
+
     private void Awake()
     {
         deepMesh = new Mesh();
@@ -173,6 +175,7 @@ public class CuttingAccuracy : MonoBehaviour
             GameObject go = Instantiate(spherePrefab, vec, Quaternion.identity);
             go.transform.parent = transform;
         }
+        settings_applier.SetSpheresVisibility(Settings_applier.settings.ShowSpheres);
     }
 
     private void CreateMesh()

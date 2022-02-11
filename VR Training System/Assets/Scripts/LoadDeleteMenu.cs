@@ -27,7 +27,10 @@ public class LoadDeleteMenu : MonoBehaviour
 
     public void InitPlanePanels()
     {
-        foreach (JSON_Serializer.CuttingPlane plane in JSON_Serializer.LoadCuttingPlaneList().cuttingPlanes)
+        JSON_Serializer.CuttingPlaneList cuttingPlaneList = JSON_Serializer.LoadCuttingPlaneList();
+        if (cuttingPlaneList == null) return;
+
+        foreach (JSON_Serializer.CuttingPlane plane in cuttingPlaneList.cuttingPlanes)
         {
             // instantiate prefab as child of this transform and set WorldPositionStays to false
             GameObject go = Instantiate(prefab, transform, false);

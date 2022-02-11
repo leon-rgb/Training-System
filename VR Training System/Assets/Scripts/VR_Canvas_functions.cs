@@ -31,9 +31,7 @@ public class VR_Canvas_functions : MonoBehaviour
         JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
 
         // Reset HoloSaw
-        SawHolo.SetActive(true);
-        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
-        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();
+        ResetHoloSaw();
     }
 
     /// <summary>
@@ -49,9 +47,7 @@ public class VR_Canvas_functions : MonoBehaviour
         JSON_Serializer.SetupCuttingPlaneCompletly(planeName);
 
         // Reset HoloSaw
-        SawHolo.SetActive(true);
-        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
-        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();   
+        ResetHoloSaw();
     }
 
     /// <summary>
@@ -61,15 +57,18 @@ public class VR_Canvas_functions : MonoBehaviour
     {
 
         string currentPlane = PlayerPrefs.GetString(JSON_Serializer.StringNamePlayerPrefs);
-        List <JSON_Serializer.CuttingPlane> planeList = JSON_Serializer.LoadCuttingPlaneList().cuttingPlanes;
+        JSON_Serializer.CuttingPlaneList cuttingPlaneList = JSON_Serializer.LoadCuttingPlaneList();
+        
 
         // check if only one plane exists --> load default and return if true
-        if(planeList == null || planeList.Count == 1)
+        if(cuttingPlaneList == null || cuttingPlaneList.cuttingPlanes.Count == 1)
         {
             JSON_Serializer.SetupCuttingPlaneCompletly(currentPlane);
             Debug.Log("Loaded Same Cutting Plane since only 1 exists");
             return;
         }
+
+        List<JSON_Serializer.CuttingPlane> planeList = cuttingPlaneList.cuttingPlanes;
 
         // Get random plane until it is a new one
         int rand = 0;
@@ -86,9 +85,7 @@ public class VR_Canvas_functions : MonoBehaviour
         cuttingAccuracy.ClearAccuracyData();
         JSON_Serializer.SetupCuttingPlaneCompletly(plane.name);
         // Reset HoloSaw
-        SawHolo.SetActive(true);
-        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
-        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();    
+        ResetHoloSaw();
     }
 
     /// <summary>
@@ -115,6 +112,13 @@ public class VR_Canvas_functions : MonoBehaviour
     {
         Settings_applier.settings.ShowSpheres = !Settings_applier.settings.ShowSpheres;
         settings.SetSpheresVisibility(Settings_applier.settings.ShowSpheres);
-        meshGenerator.CreateNewMesh();
+        //meshGenerator.CreateNewMesh();
+    }
+
+    private void ResetHoloSaw()
+    {
+        SawHolo.SetActive(Settings_applier.settings.ShowAnimation);
+        SawHolo.GetComponent<RotateHoloSawBasedOnSawPosition>().Start();
+        SawHolo.GetComponentInChildren<SawAnimationGenerator>().ResetEverything();
     }
 }

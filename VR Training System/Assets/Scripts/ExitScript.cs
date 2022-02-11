@@ -17,6 +17,7 @@ public class ExitScript : MonoBehaviour
     float startTime;
     bool isHovering = false;
     public MainScript mainScript;
+    private bool exited = false;
 
     private void Start()
     {
@@ -40,8 +41,10 @@ public class ExitScript : MonoBehaviour
             timeLeft = startTime + timerDuration - Time.time;
             tmpro.text = "Exiting in \n" + Math.Round(timeLeft) + " seconds";
             TextTransform.gameObject.SetActive(true);
-            if (timeLeft <= 0)
+            if (timeLeft <= 0 && !exited)
             {
+                exited = true;             // prevents saving multiple experiment datas in editor mode
+                timeLeft = float.MaxValue; // prevents saving multiple experiment datas in editor mode
                 tmpro.text = "EXITED!";
                 mainScript.ResetEverything();
                 Application.Quit();

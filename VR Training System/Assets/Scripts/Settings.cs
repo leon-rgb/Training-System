@@ -133,13 +133,14 @@ public class Settings : MonoBehaviour
         DistanceCutTooDeep = (int) DistanceCutTooDeepTrafo.GetComponent<Slider>().value;
     }
 
-    public void SaveOnFirstLaunch()
+    public static void SaveOnFirstLaunch()
     {
         SettingsObject settings = SettingsOnFirstLaunch();
         string json = JsonUtility.ToJson(settings);
-        File.WriteAllText(savePath, json);
-        File.WriteAllText(savePathDefault, json);
+        File.WriteAllText(Application.dataPath + "/settings.txt", json);
+        File.WriteAllText(Application.dataPath + "/settings_default.txt", json);
     }
+
     public static SettingsObject SettingsOnFirstLaunch()
     {
         SettingsObject settings = new SettingsObject

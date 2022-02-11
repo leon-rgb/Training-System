@@ -27,12 +27,17 @@ public class JSON_Serializer : MonoBehaviour
         experimentDataSavePath = Application.dataPath + "/ExperimentData.txt";
         experimentStatisticsSavePath = Application.dataPath + "/ExperimentStatistics.txt";
 
+        if (!File.Exists(Application.dataPath + "/settings.txt"))
+        {
+            Settings.SaveOnFirstLaunch();
+        }
+
         if (PlayerPrefs.GetString(StringNamePlayerPrefs) == null)
         {
             PlayerPrefs.SetString(StringNamePlayerPrefs, "");
             SetupCuttingPlaneCompletly("");
-            return;
-        }
+        }      
+
         SetupCuttingPlaneCompletly(PlayerPrefs.GetString(StringNamePlayerPrefs));
     }
 
@@ -177,11 +182,12 @@ public class JSON_Serializer : MonoBehaviour
     /// <returns></returns>
     public static bool SetupCuttingPlane(string planeName)
     {
-        // get cutting pints
+        // get cutting pints and CuttingPlaneList for null check in next if
         Transform t = GameObject.FindGameObjectWithTag("CuttingPoints").transform;
+        CuttingPlaneList cuttingPlaneList = LoadCuttingPlaneList();
 
         // check if default plane should be loaded
-        if (planeName == "")
+        if (planeName == "" || cuttingPlaneList == null)
         {
             t.GetChild(0).position = new Vector3(-2.46281028f, 0.911469996f, 1.34659994f);
             t.GetChild(1).position = new Vector3(-2.44809985f, 0.889499962f, 1.34659994f);
@@ -189,8 +195,9 @@ public class JSON_Serializer : MonoBehaviour
             return true;
         }
 
-        List<CuttingPlane> planeList = LoadCuttingPlaneList().cuttingPlanes;
+        List<CuttingPlane> planeList = cuttingPlaneList.cuttingPlanes;
         CuttingPlane plane = LoadCuttingPlane(planeName, planeList);       
+
         for (int i = 0; i < plane.positions.Length; i++)
         {
             //transform.GetChild(i).position = plane.positions[i];           

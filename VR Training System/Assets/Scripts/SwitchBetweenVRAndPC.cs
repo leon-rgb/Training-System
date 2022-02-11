@@ -9,14 +9,29 @@ using UnityEngine.XR.Management;
 
 public class SwitchBetweenVRAndPC : MonoBehaviour
 {
+
+    public GameObject SteamVRObjects;
+    float aspect;
     private void Awake()
     {
-        if (SceneManager.GetActiveScene().name == "CuttingPlaneCreation")
+        
+        if (SceneManager.GetActiveScene().name != "CuttingPlaneCreation")
         {
-            StopXR();
-            return;
+            
+            StartXR();
+            GetComponent<Camera>().ResetAspect();
+            //SteamVR.Initialize();
         }
-        StartXR();        
+        else
+        {
+            
+            StopXR();
+            //SteamVR.enabled = false;
+            Destroy(GameObject.Find("Player"));
+            Destroy(GameObject.Find("SawForController"));
+            GetComponent<Camera>().ResetAspect();
+            GetComponent<Camera>().ResetAspect();
+        }           
     }
 
     /*public static void EnableVR(bool enable)
@@ -38,13 +53,14 @@ public class SwitchBetweenVRAndPC : MonoBehaviour
 
     public void StartXR()
     {
-        SteamVR.enabled = true;
+        //XRSettings.enabled = true;       
         StartCoroutine(StartXRCoroutine());
+        //SteamVR.enabled = true;
     }
 
     public IEnumerator StartXRCoroutine()
     {
-        Debug.Log("Initializing XR...");
+        Debug.Log("Initializing XR...");       
         yield return XRGeneralSettings.Instance.Manager.InitializeLoader();
 
         if (XRGeneralSettings.Instance.Manager.activeLoader == null)
@@ -53,18 +69,26 @@ public class SwitchBetweenVRAndPC : MonoBehaviour
         }
         else
         {
-            Debug.Log("Starting XR..." + XRGeneralSettings.Instance.Manager.activeLoader);
+            Debug.Log("Starting XR..." + XRGeneralSettings.Instance.Manager.activeLoader);                      
             XRGeneralSettings.Instance.Manager.StartSubsystems();
+            //SteamVR.Initialize();
+            //SteamVRObjects.SetActive(true);
+            //SteamVR.Initialize();
         }
     }
 
-    void StopXR()
+    public void StopXR()
     {
-        Debug.Log("Stopping XR...");
+        //XRSettings.enabled = false;
+        //SteamVR.enabled = false;
+        //SteamVRObjects.SetActive(false);
+        Debug.Log(XRGeneralSettings.Instance.Manager.activeLoader);      
+        if (XRGeneralSettings.Instance.Manager.activeLoader == null) return;
 
+        Debug.Log("Stopping XR...");
         XRGeneralSettings.Instance.Manager.StopSubsystems();
         XRGeneralSettings.Instance.Manager.DeinitializeLoader();
-        SteamVR.enabled = false;
-        Debug.Log("XR stopped completely. " + XRGeneralSettings.Instance.Manager.activeLoader);
+        //SteamVR.enabled = false;
+        Debug.Log("XR stopped completely. " + XRGeneralSettings.Instance.Manager.activeLoader);        
     }
 }

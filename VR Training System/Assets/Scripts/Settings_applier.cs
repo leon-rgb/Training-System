@@ -18,8 +18,7 @@ public class Settings_applier: MonoBehaviour
     private void OnEnable()
     {
         //Todo path setzen von den settings, da dieser nicht existiert wenn script nicht aktiv ist
-        //persistent data path in Settings und json verwenden....
-        
+        //persistent data path in Settings und json verwenden....       
 
         cuttingAccuracy = GameObject.Find("CutToDeepMeshGenerator");
         meshGenerator = GameObject.Find("PlaneMeshGenerator");
@@ -36,7 +35,6 @@ public class Settings_applier: MonoBehaviour
         else
         {
             settings = Settings.Load();
-            Debug.Log("test " + settings);
         }
         
 
@@ -54,7 +52,7 @@ public class Settings_applier: MonoBehaviour
         SetSpheresFrequency(settings.FrequencySpheres);
         SetDistance(settings.DistanceCutTooDeep);
         SetSpheresVisibility(settings.ShowSpheres);
-        Debug.Log(settings.ShowSpheres);
+        Debug.Log("show spheres? --> " + settings.ShowSpheres);
         
         // if it's not the first call of this method generate new mesh to make visibility changes visible.
         if (!IsInitialCall)
@@ -89,15 +87,19 @@ public class Settings_applier: MonoBehaviour
 
     public void SetHoloSawVisibility(bool isVisible) 
     {
-        Debug.Log("isvisible : " + isVisible);
+        //Debug.Log("isvisible : " + isVisible);
         sawHolo.SetActive(isVisible);
     }
 
     public void SetSpheresVisibility(bool isVisible)
     {
-        foreach(GameObject go in SpherePrefabs)
+        foreach(Transform t in meshGenerator.transform)
         {
-            go.GetComponent<Renderer>().enabled = isVisible;
+            t.GetComponent<Renderer>().enabled = isVisible;
+        }
+        foreach(Transform t in cuttingAccuracy.transform)
+        {
+            t.GetComponent<Renderer>().enabled = isVisible;
         }
     }
 
