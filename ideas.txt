@@ -77,9 +77,14 @@ fixed:
 
 TODO / Ideas
 lightmaps neu erstellen.
+exit und switchtocuttingplanecreation an SG anpaassen
+saw rotation/pivot anpassen für sawanimation scrip an saw von holosaw
+saw mit sg greifen/testen
 
 
 
 Links: (aus uni)
+file:///C:/Users/leonv/Desktop/SG_Unity_Doc_v2_2/class_s_g_1_1_s_g___grab_script.html
+file:///C:/Users/leonv/Desktop/SG_Unity_Doc_v2_2/class_s_g_1_1_s_g___interactable.html#a0f3e56bf0b1495d07fddcfc36871bfff
 https://docs.unity3d.com/Packages/com.unity.xr.management@4.0/manual/EndUser.html
 https://www.screentogif.com/
