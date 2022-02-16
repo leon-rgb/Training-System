@@ -74,6 +74,7 @@ public class SawAnimationGenerator : MonoBehaviour
         // use the frame (or any other child of the saws) for calculating the distance
         // because the position center is not the same in the parent
         distanceBetweenSaws = Vector3.Distance(SawPivot.position, holoSawPivot.GetChild(0).position);
+        //Debug.Log("Distance is " + distanceBetweenSaws);
 
         //get angle between saw and holoSaw (not pivot)
         angleBetweenSaws = Quaternion.Angle(Saw.rotation, holoSawPivot.GetChild(0).rotation);
