@@ -125,10 +125,10 @@ public class Settings_applier: MonoBehaviour
 
     public void SetHapticFrequency(int freq)
     {
+        Debug.Log("haptic timeout = " + freq * 1.25f);
         // check if controller is used
         if (waveformCol.GetComponent<WaveformTriggerForController>())
         {
-            Debug.Log("haptic timeout = " + freq * 1.25f);
             waveformCol.GetComponent<WaveformTriggerForController>().timeoutLength = freq * 1.25f;
             if (freq == 0)
             {
@@ -138,8 +138,22 @@ public class Settings_applier: MonoBehaviour
             waveformCol.GetComponent<WaveformTriggerForController>().HapticsEnabled = true;
             return;
         }
-        // if we are here gloves are used
-        Debug.LogWarning("settings not implemented for gloves");
+
+        // check if gloves are used
+        if (waveformCol.GetComponent<WaveformTrigger>())
+        {
+            waveformCol.GetComponent<WaveformTrigger>().timeoutLength = freq * 1.25f;
+            if (freq == 0)
+            {
+                waveformCol.GetComponent<WaveformTrigger>().HapticsEnabled = false;
+                return;
+            }
+            waveformCol.GetComponent<WaveformTrigger>().HapticsEnabled = true;
+            return;
+        }
+
+        // if we are here something went wrong
+        Debug.LogWarning("haptic settings are corrupted");
     }
 
 }

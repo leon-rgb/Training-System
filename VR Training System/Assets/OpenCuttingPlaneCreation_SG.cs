@@ -21,9 +21,12 @@ public class OpenCuttingPlaneCreation_SG : MonoBehaviour
 
     private void Start()
     {
+        //GetComponent<SG_Interactable>().SetHighLight(true);
         tmpro = TextTransform.GetComponent<TextMeshPro>();
+        GetComponent<MeshRenderer>().enabled = false;
     }
-    private void Update()
+
+    /*private void Update()
     {
         OnHover();
     }
@@ -66,5 +69,39 @@ public class OpenCuttingPlaneCreation_SG : MonoBehaviour
             if (grabber.IsHovering()) return true;
         }
         return false;
+    }*/
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Hand")) return;
+
+        startTime = Time.time;
+        TextTransform.gameObject.SetActive(true);
+        GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Hand")) return;
+
+        timeLeft = startTime + timerDuration - Time.time;
+        tmpro.text = "Switch to Cutting Plane Creation in " + Math.Round(timeLeft) + " seconds";
+        if (timeLeft <= 0)
+        {
+            tmpro.text = "Loaded Scene!";
+            mainScript.ResetEverything();
+            //switchBetweenVR.StopXR();
+            player.Destroy();
+            SceneManager.LoadScene("CuttingPlaneCreation");
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Hand")) return;
+
+        TextTransform.gameObject.SetActive(false);
+        GetComponent<MeshRenderer>().enabled = false;
+        isHovering = false;
+        startTime = int.MaxValue;
     }
 }

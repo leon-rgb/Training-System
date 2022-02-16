@@ -21,7 +21,7 @@ public class WaveformController : MonoBehaviour
         currentWaveform = allWaveForms[0];
     }
 
-    /*/ Update is called once per frame
+    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.A))
@@ -35,7 +35,7 @@ public class WaveformController : MonoBehaviour
         {
             ApplyWaveform("CutBones");
         }
-    }*/
+    }
 
     IEnumerator waitShort()
     {

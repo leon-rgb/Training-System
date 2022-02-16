@@ -6,7 +6,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 
-[RequireComponent(typeof(SG_Interactable))]
+//[RequireComponent(typeof(SG_Interactable))]
 public class ExitScript_SG : MonoBehaviour
 {
     public SG_PhysicsGrab[] hapticGloves = new SG_PhysicsGrab[0];
@@ -20,19 +20,23 @@ public class ExitScript_SG : MonoBehaviour
     public MainScript mainScript;
     //public SwitchBetweenVRAndPC switchBetweenVR;
     public DestroyOnSceneChange player;
+    private bool exited = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        interactable = GetComponent<SG_Interactable>();
+        //interactable = GetComponent<SG_Interactable>();
         tmpro = TextTransform.GetComponent<TextMeshPro>();
+        GetComponent<MeshRenderer>().enabled = false;
     }
 
+    /*
     private void Update()
     {
         OnHover();
-    }
+    }*/
 
+   /*
     public void OnHover()
     {
         if (IsHovering())
@@ -64,6 +68,7 @@ public class ExitScript_SG : MonoBehaviour
         }
     }
 
+    */
     public bool IsHovering()
     {
         foreach (SG_PhysicsGrab grabber in hapticGloves)
@@ -72,4 +77,40 @@ public class ExitScript_SG : MonoBehaviour
         }
         return false;
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.CompareTag("Hand")) return;
+
+        startTime = Time.time;
+        TextTransform.gameObject.SetActive(true);
+        GetComponent<MeshRenderer>().enabled = true;
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (!other.CompareTag("Hand")) return;
+
+        timeLeft = startTime + timerDuration - Time.time;
+        tmpro.text = "Exiting in \n" + Math.Round(timeLeft) + " seconds";
+        if (timeLeft <= 0 && !exited)
+        {
+            exited = true;             // prevents saving multiple experiment datas in editor mode
+            timeLeft = float.MaxValue; // prevents saving multiple experiment datas in editor mode
+            tmpro.text = "EXITED!";
+            mainScript.ResetEverything();
+            Application.Quit();
+        }
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Hand")) return;
+
+        TextTransform.gameObject.SetActive(false);
+        GetComponent<MeshRenderer>().enabled = false;
+        isHovering = false;
+        startTime = int.MaxValue;
+    }
+
+
 }
