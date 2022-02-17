@@ -62,7 +62,7 @@ public class MeshGenerator : MonoBehaviour
             new Vector3(0,0,0),
         };
         //create curve out of the vertices
-        curveVertices = CurveGenerator.SmoothLine(startVertices, 0.05f);
+        curveVertices = CurveGenerator.CreateCurve(startVertices, 0.05f);
         foreach (Vector3 vec in curveVertices)
         {
             Debug.Log(vec);

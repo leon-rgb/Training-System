@@ -98,7 +98,7 @@ public class MeshGeneratorLeg : MonoBehaviour
         };
 
         //create curve out of the vertices
-        curveVertices = CurveGenerator.SmoothLine(startVertices, curveSmoothCoef);
+        curveVertices = CurveGenerator.CreateCurve(startVertices, curveSmoothCoef);
 
         //create vertices in a straight line. Each vertex corresponds to a vertex in the curve.
         correspondingVertices = new Vector3[curveVertices.Length];

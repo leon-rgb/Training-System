@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class CurveGenerator : MonoBehaviour
 {
-	public static Vector3[] SmoothLine(Vector3[] inputPoints, float segmentSize)
+	public static Vector3[] CreateCurve(Vector3[] inputPoints, float distBetweenPointsCoefficient)
 	{
-		//create curves
+		//create curve for every dimenson
 		AnimationCurve curveX = new AnimationCurve();
 		AnimationCurve curveY = new AnimationCurve();
 		AnimationCurve curveZ = new AnimationCurve();
 
-		//create keyframe sets
+		//create keyframe sets for those curves
 		Keyframe[] keysX = new Keyframe[inputPoints.Length];
 		Keyframe[] keysY = new Keyframe[inputPoints.Length];
 		Keyframe[] keysZ = new Keyframe[inputPoints.Length];
@@ -38,38 +38,36 @@ public class CurveGenerator : MonoBehaviour
 		}
 
 		//list to write smoothed values to
-		List<Vector3> lineSegments = new List<Vector3>();
+		List<Vector3> curve = new List<Vector3>();
 
 		//find segments in each section
 		for (int i = 0; i < inputPoints.Length; i++)
 		{
 			//add first point
-			lineSegments.Add(inputPoints[i]);
+			curve.Add(inputPoints[i]);
 
-			//make sure within range of array
+			// for making sure we stay inside array size
 			if (i + 1 < inputPoints.Length)
 			{
-				//find distance to next point
+				// get distance to next input point
 				float distanceToNext = Vector3.Distance(inputPoints[i], inputPoints[i + 1]);
+				// how many points will be created
+				int pointCount = (int)(distanceToNext / distBetweenPointsCoefficient);
 
-				//number of segments
-				int segments = (int)(distanceToNext / segmentSize);
-
-				//add segments
-				for (int s = 1; s < segments; s++)
+				//add points
+				for (int s = 1; s < pointCount; s++)
 				{
-					//interpolated time on curve
-					float time = ((float)s / (float)segments) + (float)i;
+					//interpolate time on curve
+					float time = ((float)s / (float)pointCount) + (float)i;
 
-					//sample curves to find smoothed position
-					Vector3 newSegment = new Vector3(curveX.Evaluate(time), curveY.Evaluate(time), curveZ.Evaluate(time));
+					//get value on that time
+					Vector3 newPoint = new Vector3(curveX.Evaluate(time), curveY.Evaluate(time), curveZ.Evaluate(time));
 
-					//add to list
-					lineSegments.Add(newSegment);
+					//add new point to list
+					curve.Add(newPoint);
 				}
 			}
 		}
-
-		return lineSegments.ToArray();
+		return curve.ToArray();
     }
 }

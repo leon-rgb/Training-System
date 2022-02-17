@@ -75,16 +75,18 @@ fixed:
 	-->update accuracy timeout zum performance sparen
 -exit und switchtocuttingplanecreation an SG anpaassen
 -saw rotation/pivot anpassen für sawanimation scrip an saw von holosaw
+-saw mit sg greifen/testen
+-SG haptic feedback ebenfalls nur von einer hand senden.
+-cc hinzufügen (camera)
+-projekt aufräumen
+-scripte umschreiben/variablen umbennenen die aus dem internet inspiriert sind
 
 TODO / Ideas
-lightmaps neu erstellen.
-saw mit sg greifen/testen
+code kommentieren
+lightmaps neu erstellen. (gemacht für SG, ist aber buggy)
 xingayao fragen wie man surveys / questionaires findet
-scripte umschreiben/variablen umbennenen die aus dem internet inspiriert sind
-projekt aufräumen
 build machen und testen
-cc hinzufügen (camera)
-SG haptic feedback ebenfalls nur von einer hand senden.
+
 
 
 Links: (aus uni)
