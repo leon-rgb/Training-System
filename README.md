@@ -9,6 +9,7 @@ Both Versions of the prototype use the [CuttingPlaneCreation.unity](https://gith
 ## Controller Version
 
 The scene of the Controller version is "Controller_SurgeryRoom.unity" and can be found in [/VR Training System/Assests/Scenes](https://github.com/leon-rgb/Training-System/blob/main/VR%20Training%20System/Assets/Scenes/) <br><br>
+Make sure to disable all controllers (including trackers) that you are not using to ensure that the haptic feedback for the controller version works properly. 
 
 
 
