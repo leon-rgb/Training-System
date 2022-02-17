@@ -155,7 +155,7 @@ public class SawAnimationGenerator : MonoBehaviour
         pointPairs.Add(curPoint);
         for (int i = 1; i < points.Length; i++)
         {
-            Debug.Log("this was executed");
+            //Debug.Log("this was executed");
             if (Mathf.Abs(Vector3.Distance(curPoint, points[i]) - dist * 0.75f) <= Treshhold)
             {
                 pointPairs.Add(points[i]);

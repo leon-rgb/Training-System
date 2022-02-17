@@ -28,6 +28,7 @@ public class ExitScript_SG : MonoBehaviour
         //interactable = GetComponent<SG_Interactable>();
         tmpro = TextTransform.GetComponent<TextMeshPro>();
         GetComponent<MeshRenderer>().enabled = false;
+        TextTransform.gameObject.SetActive(false);
     }
 
     /*
@@ -68,7 +69,7 @@ public class ExitScript_SG : MonoBehaviour
         }
     }
 
-    */
+    
     public bool IsHovering()
     {
         foreach (SG_PhysicsGrab grabber in hapticGloves)
@@ -76,7 +77,7 @@ public class ExitScript_SG : MonoBehaviour
             if (grabber.IsHovering()) return true;
         }
         return false;
-    }
+    }*/
 
     private void OnTriggerEnter(Collider other)
     {

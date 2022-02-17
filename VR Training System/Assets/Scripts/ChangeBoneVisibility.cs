@@ -27,13 +27,13 @@ public class ChangeBoneVisibility : MonoBehaviour
                 animator.SetBool("playReversed", false);
                 //animator.playbackTime = 0f;
                 animator.enabled = true;                
-                Debug.Log("THIS IS A IF TEST");
+                //Debug.Log("THIS IS A IF TEST");
                
             }
         }
         else if (wasAlreadyPlayed)
         {
-            Debug.Log("THIS IS A ELSE TEST");
+            //Debug.Log("THIS IS A ELSE TEST");
             wasAlreadyPlayed = false;
             animator.SetBool("playReversed", true);
             //animator.SetFloat("direction", -1f);

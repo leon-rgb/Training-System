@@ -24,6 +24,7 @@ public class OpenCuttingPlaneCreation_SG : MonoBehaviour
         //GetComponent<SG_Interactable>().SetHighLight(true);
         tmpro = TextTransform.GetComponent<TextMeshPro>();
         GetComponent<MeshRenderer>().enabled = false;
+        TextTransform.gameObject.SetActive(false);
     }
 
     /*private void Update()

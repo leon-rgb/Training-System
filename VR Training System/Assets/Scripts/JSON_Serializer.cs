@@ -27,6 +27,8 @@ public class JSON_Serializer : MonoBehaviour
         experimentDataSavePath = Application.dataPath + "/ExperimentData.txt";
         experimentStatisticsSavePath = Application.dataPath + "/ExperimentStatistics.txt";
 
+        CreateVersionFile();
+
         if (!File.Exists(Application.dataPath + "/settings.txt"))
         {
             Settings.SaveOnFirstLaunch();
@@ -403,5 +405,40 @@ public class JSON_Serializer : MonoBehaviour
     {
         // TODO implement
         Debug.Log("Finished Calclulating statistic values and saved them in " + "path");
+    }
+
+
+    /// <summary>
+    /// Creates a file with instructions how to specify which application version to use
+    /// </summary>
+    public static void CreateVersionFile()
+    {
+        
+        string path = Application.dataPath + "/version.txt";
+        //if path not exists...
+        if (!File.Exists(path))
+        {
+            string[] lines = new string[]
+            {
+                "",
+                "Write g (for gloves) or c(for controller) into the first line to specify which version you want to use.",
+                "Reminder: To ensure haptic feedback works properly you should disconnect controllers/trackers you don't use from steamvr and restart steamvr."
+            };
+            File.WriteAllLines(path, lines);         
+        }      
+    }
+
+    /// <summary>
+    /// Gets the version specified by user to load correct VR scene
+    /// </summary>
+    /// <returns></returns>
+    public static string GetVersion()
+    {
+        string path = Application.dataPath + "/version.txt";
+
+        if (!File.Exists(path)) return null;
+
+        string[] lines = File.ReadAllLines(path);
+        return lines[0];
     }
 }
