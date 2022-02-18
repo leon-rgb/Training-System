@@ -4,6 +4,9 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
+/// <summary>
+/// functionality for the save menu in cutting plane creation
+/// </summary>
 public class SaveMenu : MonoBehaviour
 {
 
@@ -33,6 +36,7 @@ public class SaveMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // init variables
         serializer = Json_serializer_go.GetComponent<JSON_Serializer>();
         EmptyName = EmptyName_go.GetComponent<TextMeshProUGUI>();
         NameInput = NameInput_go.GetComponent<TMP_InputField>();
@@ -54,6 +58,9 @@ public class SaveMenu : MonoBehaviour
         EmptyName.enabled = false;
     }
 
+    /// <summary>
+    /// sets the dafult name of the cutting plane into the input field
+    /// </summary>
     public void InitName()
     {
         Debug.Log(serializer);
@@ -69,6 +76,9 @@ public class SaveMenu : MonoBehaviour
         NameInput.text = initValue;       
     }
 
+    /// <summary>
+    /// clears the input field
+    /// </summary>
     public void ClearInput()
     {
         NameExists.enabled = false;
@@ -79,6 +89,9 @@ public class SaveMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// resets input value to default if input was empty and user deselects input field
+    /// </summary>
     public void OnDeselectInput()
     {
         if(NameInput.text == "")
@@ -92,6 +105,7 @@ public class SaveMenu : MonoBehaviour
     {
         if(NameInput.text == "")
         {
+            // display that empty names are not allowed
             EmptyName.enabled = true;
             return;
         }

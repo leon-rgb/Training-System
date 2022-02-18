@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// used for testing purposes only
+/// </summary>
 public class textTest : MonoBehaviour
 {
 

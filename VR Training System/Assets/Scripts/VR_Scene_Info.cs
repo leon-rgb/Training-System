@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// only used for testing purposes
+/// </summary>
 public class VR_Scene_Info : MonoBehaviour
 {
     public bool IsGloveScene = false;

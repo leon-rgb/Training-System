@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// experimental feature that wasn't used in the end
+/// </summary>
 public class CreateLineToCuttingPlane : MonoBehaviour
 {
     // Start is called before the first frame update

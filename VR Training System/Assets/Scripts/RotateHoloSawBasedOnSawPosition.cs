@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// rotates the holo saw based on where the saw that the user can grab is positioned
+/// </summary>
 public class RotateHoloSawBasedOnSawPosition : MonoBehaviour
 {
     //public Transform CuttingPlane;

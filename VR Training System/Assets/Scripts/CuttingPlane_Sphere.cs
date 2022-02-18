@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Script attatched to the spheres inside the bone in the cutting plane
+/// </summary>
 public class CuttingPlane_Sphere : MonoBehaviour
 {
     public bool wasHit { get; set; }

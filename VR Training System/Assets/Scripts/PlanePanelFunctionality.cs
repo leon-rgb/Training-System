@@ -5,12 +5,22 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// Functionality for init and delete panels in the scroll view
+/// Is attached to every entry in the loading/deletion scroll view
+/// </summary>
 public class PlanePanelFunctionality : MonoBehaviour
 {
     public Transform Name;
     public Transform IsFlatToggle;
     public Transform Image;
 
+    /// <summary>
+    /// initializes values of the entry
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="isFlat"></param>
+    /// <param name="image"></param>
     public void SetElements(string name, bool isFlat, Texture image)
     {
         SetName(name);
@@ -39,6 +49,9 @@ public class PlanePanelFunctionality : MonoBehaviour
         Image.GetComponent<RawImage>().texture = image;
     }
 
+    /// <summary>
+    /// sets up the cutting plane with the name that is attached to this panel
+    /// </summary>
     public void Load()
     {
         string planeName = Name.GetComponent<TextMeshProUGUI>().text;
@@ -60,6 +73,9 @@ public class PlanePanelFunctionality : MonoBehaviour
         GameObject.FindGameObjectWithTag("LoadMenu").SetActive(false);
     }
 
+    /// <summary>
+    /// delete the cutting plane with the name that is attached to this panel
+    /// </summary>
     public void Delete()
     {
         // if deleted plane was current plane, reset player pref

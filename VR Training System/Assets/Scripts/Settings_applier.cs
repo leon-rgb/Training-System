@@ -5,6 +5,9 @@ using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// manages the settings saved
+/// </summary>
 public class Settings_applier: MonoBehaviour
 {
 

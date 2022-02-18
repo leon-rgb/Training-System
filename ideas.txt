@@ -80,10 +80,12 @@ fixed:
 -cc hinzufügen (camera)
 -projekt aufräumen
 -scripte umschreiben/variablen umbennenen die aus dem internet inspiriert sind
+-lightmaps neu erstellen. (gemacht für SG, ist aber buggy)
+-code kommentieren
+
 
 TODO / Ideas
-code kommentieren
-lightmaps neu erstellen. (gemacht für SG, ist aber buggy)
+
 xingayao fragen wie man surveys / questionaires findet
 build machen und testen
 

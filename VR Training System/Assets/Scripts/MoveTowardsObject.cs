@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// usef for testing purposes only
+/// </summary>
 public class MoveTowardsObject : MonoBehaviour
 {
     private Transform ThisTransform;

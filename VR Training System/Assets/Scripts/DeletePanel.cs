@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// functionality of the pop up apperaing when clicking "delete" in the Load/Delete menu
+/// </summary>
 public class DeletePanel : MonoBehaviour
 {
     public Transform Text;
@@ -13,6 +16,7 @@ public class DeletePanel : MonoBehaviour
 
     private void OnEnable()
     {
+        // display planeName in deletion question
         tmpro = Text.GetComponent<TextMeshProUGUI>();
         SetText("Do you really want to delete " + planeName + "?");
     }

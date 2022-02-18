@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// script makes it possible to drag gameobjects and highlights them when dragged
+/// </summary>
 public class DragGameObject : MonoBehaviour
 {
     private Vector3 mouseOffset;

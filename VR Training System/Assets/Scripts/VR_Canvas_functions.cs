@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
+/// <summary>
+/// Manages functions for the settings and load cutting plane buttons in the VR scenes.
+/// </summary>
 public class VR_Canvas_functions : MonoBehaviour
 {
 

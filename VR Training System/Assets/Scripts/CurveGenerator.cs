@@ -2,8 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Is used for creating the curve in the cutting plane 
+/// </summary>
 public class CurveGenerator : MonoBehaviour
 {
+	/// <summary>
+	/// Is used for creating a curve out of an array of input points
+	/// </summary>
 	public static Vector3[] CreateCurve(Vector3[] inputPoints, float distBetweenPointsCoefficient)
 	{
 		//create curve for every dimenson

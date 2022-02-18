@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Was only used for testing purposes.
+/// </summary>
 public class CreatePositionAndAngleOfCuttingAdvisors : MonoBehaviour
 {
     private GameObject SawHolo;

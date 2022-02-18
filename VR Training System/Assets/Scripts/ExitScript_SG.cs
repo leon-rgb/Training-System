@@ -6,7 +6,10 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 
-//[RequireComponent(typeof(SG_Interactable))]
+/// <summary>
+/// Makes exiting in the VR scene with Glvoes possible
+/// Works similar to basiv vr button
+/// </summary>
 public class ExitScript_SG : MonoBehaviour
 {
     public SG_PhysicsGrab[] hapticGloves = new SG_PhysicsGrab[0];
@@ -14,12 +17,11 @@ public class ExitScript_SG : MonoBehaviour
     public Transform TextTransform;
     private TextMeshPro tmpro;
     float timeLeft;
+    // duration user has to hold his hand into the exit area
     float timerDuration = 4;
     float startTime;
     bool isHovering = false;
     public MainScript mainScript;
-    //public SwitchBetweenVRAndPC switchBetweenVR;
-    public DestroyOnSceneChange player;
     private bool exited = false;
 
     // Start is called before the first frame update

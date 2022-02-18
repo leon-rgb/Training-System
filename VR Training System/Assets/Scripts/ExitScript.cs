@@ -6,6 +6,10 @@ using Valve.VR.InteractionSystem;
 using TMPro;
 using System;
 
+
+/// <summary>
+/// Makes exiting in the VR scene with Controllers possible
+/// </summary>
 [RequireComponent(typeof(Interactable))]
 public class ExitScript : MonoBehaviour
 {
@@ -13,6 +17,7 @@ public class ExitScript : MonoBehaviour
     public Transform TextTransform;
     private TextMeshPro tmpro;
     float timeLeft;
+    // duration user has to hold his hand into the exit area
     float timerDuration = 4;
     float startTime;
     bool isHovering = false;

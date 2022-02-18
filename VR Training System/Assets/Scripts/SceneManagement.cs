@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/// <summary>
+/// manages scenes of the programm. Decides wheter to load controller or gloves version based on a version text file
+/// </summary>
 public class SceneManagement : MonoBehaviour
 {
     public void Start()

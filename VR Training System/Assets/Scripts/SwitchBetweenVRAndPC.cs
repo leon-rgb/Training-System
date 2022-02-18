@@ -7,6 +7,10 @@ using Valve.VR.InteractionSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.Management;
 
+
+/// <summary>
+/// provides most of the neccesary steps to switch between vr and pc scenes
+/// </summary>
 public class SwitchBetweenVRAndPC : MonoBehaviour
 {
 

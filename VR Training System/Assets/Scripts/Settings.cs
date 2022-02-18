@@ -6,6 +6,9 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 using System.IO;
 
+/// <summary>
+/// class for serializing settings
+/// </summary>
 public class Settings : MonoBehaviour
 {
     public static string savePath;

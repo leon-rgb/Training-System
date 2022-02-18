@@ -5,14 +5,17 @@ using Valve.VR.InteractionSystem;
 using Valve.VR;
 using System;
 
+/// <summary>
+/// provides haptic feedback for the controllers
+/// </summary>
 public class WaveformTriggerForController : MonoBehaviour
-{
-    [Header("InGame TextFields")]
+{   
     public GameObject controllerLeft;
     public GameObject controllerRight;
     private Hand handLeft;
     private Hand handRight;
     private Hand hand;
+    [Header("Select haptic actionset")]
     public SteamVR_Action_Vibration hapticAction;
     public GameObject sawForController;
     private Interactable sawForControllerI;
@@ -38,6 +41,7 @@ public class WaveformTriggerForController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // init variables
         Debug.Log("Haptics enabled = " + HapticsEnabled);
         handLeft = controllerLeft.GetComponent<Hand>();
         handRight = controllerRight.GetComponent<Hand>();
@@ -54,6 +58,7 @@ public class WaveformTriggerForController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if any timout has to be reseted
         curTime = Time.time;
         if (cutTooDeepTimeout)
         {
@@ -80,6 +85,11 @@ public class WaveformTriggerForController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// sends haptic feedback and accuracy information when spheres are hit by the saw
+    /// feedback and information is sent corresponding to the type of sphere that was hit
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CuttingPlane") && !cuttingPlaneTimeout)
@@ -122,6 +132,10 @@ public class WaveformTriggerForController : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// updates cutTooDeep length 
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("CutToDeep"))
@@ -135,6 +149,10 @@ public class WaveformTriggerForController : MonoBehaviour
        
     }
 
+    /// <summary>
+    /// checks which hand holds the saw
+    /// </summary>
+    /// <returns></returns>
     private Hand getAttachedHand()
     {
         if(sawForControllerI.attachedToHand != null)
@@ -148,6 +166,13 @@ public class WaveformTriggerForController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// sends haptic feedback to both controllers or to the other hand than which is sent as parameter
+    /// </summary>
+    /// <param name="duration"></param>
+    /// <param name="frequency"></param>
+    /// <param name="amplitude"></param>
+    /// <param name="hand"></param>
     private void sendPulse(float duration, float frequency, float amplitude, Hand hand = null)
     {
         if(hand == null)
@@ -183,6 +208,11 @@ public class WaveformTriggerForController : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// sends three short haptic pulses to a hand or both hands (see sendPulse function)
+    /// </summary>
+    /// <param name="hand"></param>
+    /// <returns></returns>
     IEnumerator sendThreePulses(Hand hand)
     {
         sendPulse(0.25f, 30, 40, hand);

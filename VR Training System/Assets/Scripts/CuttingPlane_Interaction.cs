@@ -4,6 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using static RotateHoloSawBasedOnSawPosition;
 
+
+/// <summary>
+/// [Not used anymore] old scirpt for hiding/showing the holo saw based on the distance to the saw held by user
+/// </summary>
 public class CuttingPlane_Interaction : MonoBehaviour
 {
 

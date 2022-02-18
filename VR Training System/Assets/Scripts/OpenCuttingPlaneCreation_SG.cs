@@ -6,12 +6,17 @@ using TMPro;
 using UnityEngine.SceneManagement;
 using System;
 
+/// <summary>
+/// makes it possible to switch between glove vr scene and cutting plane creation
+/// works similar to a basic vr button
+/// </summary>
 public class OpenCuttingPlaneCreation_SG : MonoBehaviour
 {
     public SG_PhysicsGrab[] hapticGloves = new SG_PhysicsGrab[0];
     public Transform TextTransform;
     private TextMeshPro tmpro;
     float timeLeft;
+    // duration user has to hold his hand into the exit area
     float timerDuration = 4;
     float startTime;
     bool isHovering = false;
@@ -76,6 +81,7 @@ public class OpenCuttingPlaneCreation_SG : MonoBehaviour
     {
         if (!other.CompareTag("Hand")) return;
 
+        // start timer 
         startTime = Time.time;
         TextTransform.gameObject.SetActive(true);
         GetComponent<MeshRenderer>().enabled = true;

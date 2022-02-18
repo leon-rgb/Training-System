@@ -5,6 +5,9 @@ using System.Linq;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// Makes it possible to create the cutting plane with the cutting spheres in it
+/// </summary>
 [RequireComponent(typeof(MeshFilter))]
 public class MeshGeneratorLeg : MonoBehaviour
 {
@@ -21,17 +24,15 @@ public class MeshGeneratorLeg : MonoBehaviour
     //Defines how close to each other the spheres are and therefore how many exist.Value is relative to length of cutting plane.
     public float sphereFrequencyCoef { get; set; }  //default between 0.1 and 0.05
 
+    // variables of the mesh itself
     Mesh mesh;
-
     Vector3[] vertices;
     Vector3[] startVertices;
     Vector3[] curveVertices;
     Vector3[] correspondingVertices;
     int[] triangles;
-
     public static Vector3 meshMiddlePoint;
     public static float meshRadius;
-
     public bool meshWasCreated { get; set; } = false;
     
     [Header("Prefabs for in plane created spheres")]
@@ -61,17 +62,25 @@ public class MeshGeneratorLeg : MonoBehaviour
         //meshMiddlePoint = (TopCuttingPoint.position + correspondingVertices[correspondingVertices.Length / 2])/2;       */ 
     }
 
+    /// <summary>
+    /// calulates a mesh based on cutting sphere postions
+    /// </summary>
     public void CreateNewMesh()
     {
+        // destory plane spheres
         foreach(Transform child in transform)
         {
             Destroy(child.gameObject);
         }
+
+        // create new mesh
         mesh = new Mesh();
         CreateMesh();
         InstantiateCuttingSpheres();
         UpdateMesh();
         UpdateCollider();
+
+        // calculate mesh middle point and diameter 
         meshMiddlePoint = mesh.bounds.center;
         meshRadius = Vector3.Magnitude(mesh.bounds.max - mesh.bounds.center);
 
@@ -79,6 +88,9 @@ public class MeshGeneratorLeg : MonoBehaviour
         //maybe lsite fpr accuracy leeren, aber wahrscheinlich nicht notwendig, da sie eh nur im hauptprogramm verwendet wird
     }
 
+    /// <summary>
+    /// sets the collider of the gameobject to the mesh created
+    /// </summary>
     private void UpdateCollider()
     {
         GetComponent<MeshCollider>().sharedMesh = mesh;
@@ -87,6 +99,9 @@ public class MeshGeneratorLeg : MonoBehaviour
         //GetComponent<Rigidbody>().WakeUp();
     }
 
+    /// <summary>
+    /// creates all collections needed for mesh generation
+    /// </summary>
     private void CreateMesh()
     {
         //create Array out of input Points 
@@ -128,6 +143,12 @@ public class MeshGeneratorLeg : MonoBehaviour
         */
     }
 
+    /// <summary>
+    /// sorts corresponding verts and curve verts to be in the right order for the triangles in the mesh
+    /// </summary>
+    /// <param name="correspondingVertices"></param>
+    /// <param name="curveVertices"></param>
+    /// <returns></returns>
     public List<Vector3> SortVertices(Vector3[] correspondingVertices, Vector3[] curveVertices)
     {
         List<Vector3> sortedVertices = new List<Vector3>();
@@ -158,6 +179,9 @@ public class MeshGeneratorLeg : MonoBehaviour
         return sortedVertices;
     }
 
+    /// <summary>
+    /// resets the mesh and sets new vertices and triangles
+    /// </summary>
     void UpdateMesh()
     {
         mesh.Clear();
@@ -178,6 +202,12 @@ public class MeshGeneratorLeg : MonoBehaviour
         //saw.GetComponent<SawAnimationGenerator>().StartSawMovement();
     }
 
+    /// <summary>
+    /// duplicates the mesh and moves it a bit to the side
+    /// </summary>
+    /// <param name="mesh"></param>
+    /// <param name="triangles"></param>
+    /// <returns></returns>
     public Mesh DuplicateAndMoveMesh(Mesh mesh, int[] triangles)
     {
         Mesh dupMesh = new Mesh();
@@ -192,6 +222,13 @@ public class MeshGeneratorLeg : MonoBehaviour
         dupMesh.triangles = triangles;
         return dupMesh;
     }
+
+    /// <summary>
+    /// merges two meshes to one
+    /// </summary>
+    /// <param name="mesh"></param>
+    /// <param name="invMesh"></param>
+    /// <returns></returns>
     public Mesh MergeMeshes(Mesh mesh, Mesh invMesh)
     {
         CombineInstance[] combInst = new CombineInstance[2]
@@ -204,6 +241,13 @@ public class MeshGeneratorLeg : MonoBehaviour
         combMesh.CombineMeshes(combInst);
         return combMesh;
     }
+
+    /// <summary>
+    /// inverts traingles and normals of a mesh
+    /// </summary>
+    /// <param name="mesh"></param>
+    /// <param name="triangles"></param>
+    /// <returns></returns>
     public Mesh InvertMesh(Mesh mesh, int[] triangles)
     {
         triangles = mesh.triangles.Reverse().ToArray();
@@ -228,12 +272,24 @@ public class MeshGeneratorLeg : MonoBehaviour
         return invMesh;
     }
 
+    /// <summary>
+    /// gets the curve vertices
+    /// </summary>
+    /// <returns></returns>
     public Vector3[] getVertices()
     {
         //Debug.Log("Curve Verts: " + curveVertices);
         return curveVertices;
     }
 
+    /// <summary>
+    /// was used to create a mesh for cutting to deep. is not used anymore
+    /// </summary>
+    /// <param name="curveVertices"></param>
+    /// <param name="vertices"></param>
+    /// <param name="triangles"></param>
+    /// <param name="correspondingVertices"></param>
+    /// <returns></returns>
     public Mesh CreateNonFlatCurveVertices(Vector3[] curveVertices, Vector3[]vertices, int[]triangles, Vector3[] correspondingVertices)
     {
         List<Vector3> tmp = new List<Vector3>();
@@ -321,24 +377,37 @@ public class MeshGeneratorLeg : MonoBehaviour
         return nonFlatCurve;
     }
     
+    /// <summary>
+    /// spawns the cutting spheres as child of this object. Depends on lengthcoef and sphereFrequencyCoef.
+    /// </summary>
     private void InstantiateCuttingSpheres()
     {
         Vector3 pos = Vector3.zero;
+        // for every vert in curvVertices create a row of cutting sphers
         for(int i = 0; i < curveVertices.Length; i++)
         {
             pos = curveVertices[i];
+            
+            // calculate how many spheres should be in one row (row = curve point to end point on the same y position)
             float spheresPerRow = (Vector3.Distance(curveVertices[i], correspondingVertices[i]) / (lengthCoef*sphereFrequencyCoef));
+            
+            // percentage how many spheres are used for calculating the accuracy
             float accuracyPortion = spheresPerRow/3;
             //Debug.Log("spheres per row : " + spheresPerRow);
             for (int j = 0; j < spheresPerRow; j++)
             {
+                // interpolates the position where the sphere is spanned 
                 pos.x = curveVertices[i].x - j * lengthCoef * sphereFrequencyCoef;
                 GameObject go;
+
+                // create spheres that are used for accuracy calculation
                 if (j < accuracyPortion)
                 {
                     go = Instantiate(cuttingSphereAccuracyPrefab, pos, Quaternion.identity);
                     AllCuttingPlaneAccuracySpheres.Add(go.GetComponent<CuttingPlane_Sphere>());
                 }
+
+                // create spheres that are used for haptic feedback only
                 else
                 {
                     go = Instantiate(cuttingSphereWaveformPrefab, pos, Quaternion.identity);

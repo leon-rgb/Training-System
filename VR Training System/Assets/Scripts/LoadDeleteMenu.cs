@@ -2,8 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+
+/// <summary>
+/// manages the load/delete menu in the cutting plane creation scene
+/// </summary>
 public class LoadDeleteMenu : MonoBehaviour
 {
+    // prefab of the plane panels (in the scroll view)
     public GameObject prefab;
     private PlanePanelFunctionality planePanel;
 
@@ -25,8 +30,12 @@ public class LoadDeleteMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Load all saved cutting planes and create plane panel for them
+    /// </summary>
     public void InitPlanePanels()
     {
+        //If list does not exist load nothing
         JSON_Serializer.CuttingPlaneList cuttingPlaneList = JSON_Serializer.LoadCuttingPlaneList();
         if (cuttingPlaneList == null) return;
 
@@ -44,6 +53,9 @@ public class LoadDeleteMenu : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// destroy all loaded plane panels
+    /// </summary>
     public void DestroyPlanePanels()
     {
         foreach (Transform t in transform)

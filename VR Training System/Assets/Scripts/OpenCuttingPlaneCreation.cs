@@ -10,6 +10,7 @@ public class OpenCuttingPlaneCreation : MonoBehaviour
     public Transform TextTransform;
     private TextMeshPro tmpro;
     float timeLeft;
+    // duration user has to hold his hand into the exit area
     float timerDuration = 4;
     float startTime;
     bool isHovering = false;

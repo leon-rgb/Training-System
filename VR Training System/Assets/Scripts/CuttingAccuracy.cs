@@ -4,11 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
 
+/// <summary>
+/// Class that creates the "CutTooDeep"-Spheres and calculates the accuracy of the cutting
+/// </summary>
 public class CuttingAccuracy : MonoBehaviour
 {
+    // the cutting plane
     private MeshGeneratorLeg cuttingMeshGenerator;
     public GameObject cuttingMeshObj;
 
+    // variables of this this mesh 
+    // (actually isn't a mesh anymore, only the moved vertices are used)
     Mesh deepMesh;
     private Vector3[] deepVertices;
     private Vector3[] movedCurveVertices;
@@ -16,10 +22,13 @@ public class CuttingAccuracy : MonoBehaviour
     int[] deepTriangles;
     Mesh nonFlatCurve;
 
+    // distance to the cutting plane of the "CutTooDeep"-Spheres
     public int distToCuttingMeshCoef { get; set; } //Range 0-20
 
+    [Tooltip("Prefab of the \"CutTooDeep\"-Spheres")]
     public GameObject spherePrefab;
 
+    // variables for calculating the accuracy
     private List<CuttingPlane_Sphere> allCuttingPlaneAccuracySpheres;
     public float CuttingPlaneAccuracy { get; set; } = 0;
     public float TotalAccuracy { get; set; } = 0;
@@ -33,18 +42,24 @@ public class CuttingAccuracy : MonoBehaviour
     private bool isMainMissing;
     private bool difficultyIs0;
 
+    // used to choose whether spheres are visible or not
     public Settings_applier settings_applier;
 
     private void Awake()
     {
+        // init mesh and cutting plane
         deepMesh = new Mesh();
         cuttingMeshGenerator = cuttingMeshObj.GetComponent<MeshGeneratorLeg>();
+        
+        // check if main script is attached
         if (mainTransform)
         {
+            // get main
             main = mainTransform.GetComponent<MainScript>();
             isMainMissing = false;
             return;
         }
+        // used to prevent exceptions
         isMainMissing = true;
         difficultyIs0 = false;
     }
@@ -70,6 +85,7 @@ public class CuttingAccuracy : MonoBehaviour
 
     private void Update()
     {
+        //calculate accuracy if main script is attached
         if (!isMainMissing && Time.time > 2)
         {
             StartCoroutine(CalculateCuttingPlaneAccuracy());
@@ -77,6 +93,9 @@ public class CuttingAccuracy : MonoBehaviour
         }   
     }
 
+    /// <summary>
+    /// Clears array that stores the spheres for calculating the accuracy and resets main script
+    /// </summary>
     public void ClearAccuracyData()
     {
         cuttingMeshGenerator.AllCuttingPlaneAccuracySpheres.Clear();
@@ -85,6 +104,10 @@ public class CuttingAccuracy : MonoBehaviour
         main.ResetEverything();
     }
 
+    /// <summary>
+    /// Calculates the accuracy inside the cutting plane
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator CalculateCuttingPlaneAccuracy()
     {
         yield return new WaitForSeconds(UpdateAccuracyInterval);
@@ -98,6 +121,10 @@ public class CuttingAccuracy : MonoBehaviour
         CuttingPlaneAccuracy = (100 * realQuantity) / totalQuantity;      
     }
 
+    /// <summary>
+    /// calculates the total accuracy
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator CalculateTotalAccuracy()
     {
         yield return new WaitForSeconds(UpdateAccuracyInterval);
@@ -109,12 +136,15 @@ public class CuttingAccuracy : MonoBehaviour
         float x = cutToDeepCount * depth;
         x *= Difficulty; // scales x to 0.6 for default difficulty 
         //-> means that gradient of function is 0.6 of normal gradient
+
+        // check to prevent errors
         if (Difficulty == 0 && !difficultyIs0)
         {
             difficultyIs0 = true;
             Debug.LogWarning("Difficulty was not set!");
         }
 
+        //calculates value of the function used to calculate the accuracy
         //function used: 5.08219*10^-22x^4 + 0.00003*x^3 - 0.00194*x^2 + 0.00091x + 1
         //every line is one exponent (for easier reading)
         double errCoefficient;
@@ -134,6 +164,8 @@ public class CuttingAccuracy : MonoBehaviour
         }
        
         //TotalAccuracy = (float) errCoefficient * CuttingPlaneAccuracy;
+        
+        // multiply error with accuracy in cutting plane and round the result
         TotalAccuracy = (float)errCoefficient * CuttingPlaneAccuracy;
         TotalAccuracy = (float) (Math.Round(TotalAccuracy, 2));
     }
@@ -168,6 +200,9 @@ public class CuttingAccuracy : MonoBehaviour
         deepMesh.RecalculateNormals();        //deepMesh = cuttingMeshGenerator.MergeMeshes(deepMesh, nonFlatCurve);
     }
 
+    /// <summary>
+    /// Instantiate the "CutTooDeep"-Spheres as child of this object
+    /// </summary>
     private void InstantiateSpheres()
     {
         foreach(Vector3 vec in movedCurveVertices)
@@ -227,6 +262,9 @@ public class CuttingAccuracy : MonoBehaviour
         
     }
 
+    /// <summary>
+    /// duplicates and moves the curve of the cutting plane
+    /// </summary>
     public void CreateMovedCurve()
     {
         Vector3[] curveVertices = cuttingMeshGenerator.getVertices();
@@ -248,6 +286,9 @@ public class CuttingAccuracy : MonoBehaviour
         InstantiateSpheres();
     }
 
+    /// <summary>
+    /// Deletes current mesh and spheres and calculates new one based on vertices of the cutting plane
+    /// </summary>
     public void CreateNewMesh()
     {
         foreach (Transform child in transform)

@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+/// <summary>
+/// [Deprecated] old version of changing the visibility of the bone
+/// </summary>
 public class PlaneCollision : MonoBehaviour
 {
     public GameObject leg;

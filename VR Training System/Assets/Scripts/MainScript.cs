@@ -2,9 +2,13 @@ using UnityEngine;
 using System;
 using System.Collections;
 
+/// <summary>
+/// This scripts connects the texts on the whiteboard in vr with the cutting accuracy script
+/// It saves values about the cutting accuracy and updates the texts
+/// </summary>
 public class MainScript : MonoBehaviour
 {
-
+    // accuracy values
     public float Depth { get; set; }
     public int CutTooDeepCount { get; set; }
     private Vector3 depthStart;
@@ -15,6 +19,8 @@ public class MainScript : MonoBehaviour
 
     public Transform cuttingAccuracy;
     private CuttingAccuracy cuttingAccuracyScript;
+
+    // for the finished text
     private bool WasFinishedDisplayed;
 
 
@@ -41,6 +47,7 @@ public class MainScript : MonoBehaviour
         UpdateUIText(Infotext.ACCURACY_PLANE);
         UpdateUIText(Infotext.ACCURACY_TOTAL);
 
+        // display finished text if it not already was and accuracy is 100%
         if (WasFinishedDisplayed) return;
         if (cuttingAccuracyScript.CuttingPlaneAccuracy >= 100)
         {
@@ -49,6 +56,10 @@ public class MainScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// setup the texts on the whiteboard
+    /// </summary>
+    /// <returns></returns>
     IEnumerator initializeUITexts()
     {
         yield return new WaitUntil(() => uiManager.AreInGameTextsInit);
@@ -60,6 +71,10 @@ public class MainScript : MonoBehaviour
         UpdateUIText(Infotext.DEPTH);
         UpdateUIText(Infotext.TO_DEEP_COUNT);
     }
+
+    /// <summary>
+    /// reset all texts and values
+    /// </summary>
     public void ResetEverything()
     {
         // only save experiment data if user started cutting
@@ -79,6 +94,10 @@ public class MainScript : MonoBehaviour
         WasFinishedDisplayed = false;
     }
 
+    /// <summary>
+    /// update a specific text on the whiteboard
+    /// </summary>
+    /// <param name="infotext">the infotext to update</param>
     public void UpdateUIText(Infotext infotext)
     {
         switch (infotext)
@@ -101,12 +120,21 @@ public class MainScript : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// saves the start position when cutting to deep and increses cut to deep count
+    /// </summary>
+    /// <param name="triggerPos"></param>
     public void OnCutTooDeepEnter(Vector3 triggerPos)
     {
         depthStart = triggerPos;
         CutTooDeepCount++;
         UpdateUIText(Infotext.TO_DEEP_COUNT);
     }
+
+    /// <summary>
+    /// tracks the depth when cutting to deep
+    /// </summary>
+    /// <param name="triggerPos"></param>
     public void OnCutTooDeepStay(Vector3 triggerPos)
     {
         float dist = Vector3.Distance(depthStart, triggerPos);

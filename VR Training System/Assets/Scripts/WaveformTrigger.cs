@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// provides haptic feedback for the gloves
+/// </summary>
 public class WaveformTrigger : MonoBehaviour
 {
     /*
@@ -68,6 +71,7 @@ public class WaveformTrigger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // check if any timout has to be reseted
         curTime = Time.time;
         if (cutTooDeepTimeout)
         {
@@ -94,6 +98,12 @@ public class WaveformTrigger : MonoBehaviour
         }
     }
 
+
+    /// <summary>
+    /// sends haptic feedback and accuracy information when spheres are hit by the saw
+    /// feedback and information is sent corresponding to the type of sphere that was hit
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("CuttingPlane") && !cuttingPlaneTimeout)
@@ -131,6 +141,10 @@ public class WaveformTrigger : MonoBehaviour
 
     }
 
+    /// <summary>
+    /// updates cutTooDeep length 
+    /// </summary>
+    /// <param name="other"></param>
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("CutToDeep"))

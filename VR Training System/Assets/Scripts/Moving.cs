@@ -1,6 +1,9 @@
 using UnityEngine;
 using System.Collections;
 
+/// <summary>
+/// used for Testing purposes only
+/// </summary>
 public class Moving : MonoBehaviour
 {
     //Amount to travel (in metres) per second

@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Acts like a main script in the cutting plane cration. Has all the keybindings in it.
+/// </summary>
 public class MoveCameraAroundCuttingArea : MonoBehaviour
 {
     public float speed;
@@ -29,17 +32,24 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
 
     private void Awake()
     {
+        // look directly to the bone and set rotation speed
         transform.LookAt(RotationPoint);
+        rotateSpeed = speed / 3;
+
+        // get all scripts
         body = GetComponent<Rigidbody>();
         meshGenerator = MeshGeneratorLeg.GetComponent<MeshGeneratorLeg>();
         cuttingAccuracy = CutToDeepMeshGenerator.GetComponent<CuttingAccuracy>();
         anim = leg.GetComponent<Animator>();
         serializer = JSON_SerializerTransform.GetComponent<JSON_Serializer>();
         ui = UI_Manager_go.GetComponent<UI_Manager>();
-        rotateSpeed = speed / 3;
+        
+        // set up bone animation to play animation that makes bone 
+        // invisible when first pressing the corresponding button
         anim.SetBool("playReversed", true);
         anim.SetFloat("direction", 40f);
 
+        // set up 2d like positons
         SetUpPosAndRots();
     }
     void Update()
@@ -51,24 +61,23 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
             return;
         }
 
+        // show/hide ui
         if (Input.GetKeyDown(KeyCode.Space))
         {
             ui.UI_SwitchEnabledState();
         }
+
+        // calculate new cutting plane
         if (Input.GetKeyDown(KeyCode.C))
         {
             meshGenerator.CreateNewMesh();
             cuttingAccuracy.CreateNewMesh();
         }
+
+        // change bone visibility
         if (Input.GetKeyDown(KeyCode.V))
         {
             ChangeVisibility();
-        }
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            JSON_Serializer.SetupCuttingPlane("hallo");
-            //meshGenerator.CreateNewMesh();
-            //cuttingAccuracy.CreateNewMesh();
         }
 
         // change transform to a 2d like view
@@ -96,19 +105,25 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
             return;
         }
 
-        
+        // track distance to rotation point to stop zooming in or out depending on the distance
         distanceToRotPoint = Vector3.Distance(transform.position, RotationPoint.position);
+
+        // rotate right
         if (Input.GetKey(KeyCode.RightArrow))
         {
             //need y-direction to rotate camera left and right
             transform.RotateAround(RotationPoint.position, Vector3.down, rotateSpeed);
             body.velocity = Vector3.zero;
         }
+
+        // rotate left
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.RotateAround(RotationPoint.position, Vector3.up, rotateSpeed);
             body.velocity = Vector3.zero;
         }
+
+        // zoom out
         if (Input.GetKey(KeyCode.DownArrow))
         {
             if (distanceToRotPoint < 0.5f)
@@ -121,6 +136,8 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
                 body.velocity = Vector3.zero;
             }
         }
+
+        // zoom in
         if (Input.GetKey(KeyCode.UpArrow))
         {
             if (distanceToRotPoint > 0.1f)
@@ -134,17 +151,17 @@ public class MoveCameraAroundCuttingArea : MonoBehaviour
             }
         }
 
-        
+        // reset velocity if not zooming in or out (otherwise would keep moving)
         if(!(Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)))
         {
             body.velocity = Vector3.zero;
         }
 
+        // reset velocity if user also rotates while zooming. --> only rotate or zoom 
         if((Input.GetKey(KeyCode.RightArrow) || Input.GetKey(KeyCode.LeftArrow)) && (Input.GetKey(KeyCode.UpArrow) || Input.GetKey(KeyCode.DownArrow)))
         {
             body.velocity = Vector3.zero;
         }
-        //Debug.Log(distanceToRotPoint);
     }
 
     /// <summary>

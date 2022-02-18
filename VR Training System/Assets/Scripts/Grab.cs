@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using HTC.UnityPlugin.Vive;
 
+/// <summary>
+/// for testing purposes only. Was made by a fellow student @duc
+/// </summary>
 public class Grab : MonoBehaviour
 {
     private List<GameObject> objects = new List<GameObject>();

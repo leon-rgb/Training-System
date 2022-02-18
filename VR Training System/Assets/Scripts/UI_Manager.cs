@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
+/// <summary>
+/// a class that manages nearly all text fields in multiple scenes
+/// </summary>
 public class UI_Manager : MonoBehaviour
 {
     [Header("InGame TextFields")]
@@ -40,6 +43,7 @@ public class UI_Manager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // sets up texts in vr
         if(CutToDeepTxtTrafo != null)
         {
             CutToDeepText = CutToDeepTxtTrafo.GetComponent<TextMeshPro>();
@@ -58,11 +62,18 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Triggers coroutine for displaying the finnished text in vr
+    /// </summary>
     public void TriggerFinishedText()
     {
         StartCoroutine(FinishedTextCoroutine());
     }
 
+    /// <summary>
+    /// displays the animated text when finishing cutting in vr
+    /// </summary>
+    /// <returns></returns>
     IEnumerator FinishedTextCoroutine()
     {
         FinishedText.SetActive(true);
@@ -76,6 +87,9 @@ public class UI_Manager : MonoBehaviour
         Application.Quit();
     }
 
+    /// <summary>
+    /// disables all ui panels in cutting plane creation
+    /// </summary>
     public void DisablePanels()
     {
         foreach(GameObject go in OverlayPanel)
@@ -84,6 +98,10 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// opens a ui planel by name in cutting plane creation
+    /// </summary>
+    /// <param name="name"></param>
     public void OpenSubMenu(string name)
     {
         foreach (GameObject go in OverlayPanel)
@@ -92,6 +110,11 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// gets a submenu by name in cutting plane creation
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public GameObject GetSubMenu(string name)
     {
         foreach (GameObject go in OverlayPanel)
@@ -101,6 +124,10 @@ public class UI_Manager : MonoBehaviour
         return null;
     }
 
+    /// <summary>
+    /// checks if any submenu is enabled in cutting plane creation
+    /// </summary>
+    /// <returns></returns>
     public bool IsAnySubMenuEnabled()
     {
         foreach (GameObject go in OverlayPanel)
@@ -110,6 +137,9 @@ public class UI_Manager : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// enables or disables the ui in cutting plane creation
+    /// </summary>
     public void UI_SwitchEnabledState()
     {
         bool enabledState = BindingsAndButtons[0].activeInHierarchy;
@@ -119,6 +149,10 @@ public class UI_Manager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// manages the text that pops up when e.g. saving a cutting plane
+    /// </summary>
+    /// <param name="text"></param>
     public void ShowPopUpText(string text)
     {
         PopUpText = PopUpText_go.GetComponent<TextMeshProUGUI>();
@@ -126,6 +160,10 @@ public class UI_Manager : MonoBehaviour
         StartCoroutine(PopUpTextAnim());
     }
 
+    /// <summary>
+    /// animates the text that pops up when e.g. saving a cutting plane
+    /// </summary>
+    /// <returns></returns>
     private IEnumerator PopUpTextAnim()
     {
         PopUpText_go.SetActive(true);

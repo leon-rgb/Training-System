@@ -4,6 +4,9 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// functionylity for screenshoting a cutting plane in cutting plane creation
+/// </summary>
 public class ScreenshotMaker : MonoBehaviour
 {
     public Material muscleMat;

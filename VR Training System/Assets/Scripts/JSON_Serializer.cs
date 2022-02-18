@@ -5,41 +5,57 @@ using System.IO;
 using UnityEngine;
 using Statistics = MathNet.Numerics.Statistics.Statistics;
 
+/// <summary>
+/// Used for serializing different things. 
+/// Most importantly to Cutting Plane and a count that decides the default name of a cutting plane.
+/// But also experiment data and the version of the application (version means glove or controller).
+/// </summary>
 public class JSON_Serializer : MonoBehaviour
 {
     // Note that cutting points need to be in the right order in the hierarchy. 
     // At least the mid point has to be in the middle 
     private static Vector3[] cuttingPoints;
+
+    // paths for saving serialized data
     private static string savePath;
     private static string countSavePath;
     private static string experimentDataSavePath;
     private static string experimentStatisticsSavePath;
+
+    // mesh scripts
     private static Transform MeshGeneratorLeg;
     private static MeshGeneratorLeg meshGenerator;
     private static Transform CutToDeepMeshGenerator;
     private static CuttingAccuracy cuttingAccuracy;
+
+    // current cutting plane player pref
     public const string StringNamePlayerPrefs = "currentCuttingPlaneName";
 
     private void Start()
     {     
+        // setup all save paths
         savePath = Application.dataPath + "/json.txt";
         countSavePath = Application.dataPath + "/count.txt";
         experimentDataSavePath = Application.dataPath + "/ExperimentData.txt";
         experimentStatisticsSavePath = Application.dataPath + "/ExperimentStatistics.txt";
 
+        // create version file if it not exists
         CreateVersionFile();
 
+        // create settings file if it not exists
         if (!File.Exists(Application.dataPath + "/settings.txt"))
         {
             Settings.SaveOnFirstLaunch();
         }
 
+        // create current cutting plane player pref if it not exists and set default cutting plane up then
         if (PlayerPrefs.GetString(StringNamePlayerPrefs) == null)
         {
             PlayerPrefs.SetString(StringNamePlayerPrefs, "");
-            SetupCuttingPlaneCompletly("");
+            //SetupCuttingPlaneCompletly("");
         }      
 
+        // setup last used cutting plane
         SetupCuttingPlaneCompletly(PlayerPrefs.GetString(StringNamePlayerPrefs));
     }
 
@@ -63,6 +79,10 @@ public class JSON_Serializer : MonoBehaviour
         public int value;
     }
 
+    /// <summary>
+    /// Get's the Cutting Points in the scene
+    /// </summary>
+    /// <returns></returns>
     public static Vector3[] GetCuttingPoints()
     {
         Transform t = GameObject.FindGameObjectWithTag("CuttingPoints").transform;
@@ -74,6 +94,12 @@ public class JSON_Serializer : MonoBehaviour
         return cuttingPoints;
     }
 
+    /// <summary>
+    /// save a cutting plane with a name and a bool that says if its animatable aka flat
+    /// </summary>
+    /// <param name="_name"></param>
+    /// <param name="_isAnimatable"></param>
+    /// <returns></returns>
     public static bool SaveCuttingPlane(string _name, bool _isAnimatable)
     {
         // get cutting points
@@ -133,6 +159,11 @@ public class JSON_Serializer : MonoBehaviour
         }       
     }
 
+    /// <summary>
+    /// deletes a saved cutting plane by it's name
+    /// </summary>
+    /// <param name="planeName"></param>
+    /// <returns></returns>
     public static bool DeleteCuttingPlane(string planeName)
     {
         CuttingPlaneList cuttingPlaneList = LoadCuttingPlaneList();
@@ -151,6 +182,12 @@ public class JSON_Serializer : MonoBehaviour
         return false;
     }
 
+    /// <summary>
+    /// Loads a cutting plane by it's name out of a List of Cutting Plane
+    /// </summary>
+    /// <param name="planeName"></param>
+    /// <param name="planeList"></param>
+    /// <returns></returns>
     public static CuttingPlane LoadCuttingPlane(string planeName, List<CuttingPlane> planeList)
     {
         if (planeList != null)
@@ -163,6 +200,10 @@ public class JSON_Serializer : MonoBehaviour
         return null;
     }
 
+    /// <summary>
+    /// Loads the Cutting Plane list out of the savePath
+    /// </summary>
+    /// <returns></returns>
     public static CuttingPlaneList LoadCuttingPlaneList()
     {
         if (File.Exists(savePath))
@@ -178,7 +219,7 @@ public class JSON_Serializer : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// Sets the cutting points into the right position when seting up a cutting plane
     /// </summary>
     /// <param name="planeName">if plane is animatable</param>
     /// <returns></returns>
@@ -208,6 +249,10 @@ public class JSON_Serializer : MonoBehaviour
         return plane.isAnimatable;
     }
 
+    /// <summary>
+    /// Does all necceasery steps to setup a cutting plane into the scne by its name
+    /// </summary>
+    /// <param name="name"></param>
     public static void SetupCuttingPlaneCompletly(string name)
     {
         // setup cutting points and save current name
@@ -230,7 +275,9 @@ public class JSON_Serializer : MonoBehaviour
     }
 
      
-
+    /// <summary>
+    /// saves and increases the (cutting plane) count. used for giving cutting planes a default name.
+    /// </summary>
     public void SaveCount()
     {
         CuttingPlaneCount count = new CuttingPlaneCount();    
@@ -260,6 +307,10 @@ public class JSON_Serializer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// loads the current cutting plane count
+    /// </summary>
+    /// <returns></returns>
     public static CuttingPlaneCount LoadCount()
     {
         if (File.Exists(countSavePath))
@@ -363,6 +414,10 @@ public class JSON_Serializer : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// loads the experiment data file and returns it as ExperimentData
+    /// </summary>
+    /// <returns></returns>
     public static ExperimentData LoadExperimentData()
     {
         if (File.Exists(experimentDataSavePath))
@@ -401,6 +456,11 @@ public class JSON_Serializer : MonoBehaviour
         public float InterquartileRange;
     }
 
+
+    /// <summary>
+    /// will be used to generate statistic values out of the saved experiment data
+    /// </summary>
+    /// <param name="experimentData"></param>
     public void GenerateStatisticValues(ExperimentData experimentData)
     {
         // TODO implement

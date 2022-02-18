@@ -5,6 +5,9 @@ using UnityEngine.UI;
 using static UnityEngine.UI.ScrollRect;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+/// makes scrolling in vr possible [for scroll view]
+/// </summary>
 public class ScrollVR_collision : MonoBehaviour
 {
     Vector3 startPoint;

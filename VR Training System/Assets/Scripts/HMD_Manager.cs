@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.XR;
 
+/// <summary>
+/// used for testing purposes only
+/// </summary>
 public class HMD_Manager : MonoBehaviour
 {
     public GameObject realVRRig;

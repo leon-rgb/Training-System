@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR.InteractionSystem;
 
+/// <summary>
+/// used for testing purposes only
+/// </summary>
 public class GrabPositionSetter : MonoBehaviour
 {
     //public Transform[] hands = new Transform[0];

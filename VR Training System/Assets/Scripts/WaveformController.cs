@@ -4,6 +4,9 @@ using UnityEngine;
 using SG;
 using System;
 
+/// <summary>
+/// provides functionality to send haptic feedback for the gloves
+/// </summary>
 public class WaveformController : MonoBehaviour
 {
     [Tooltip("assign right hand first")]
@@ -63,16 +66,17 @@ public class WaveformController : MonoBehaviour
     }
 
     /// <summary>
-    /// 
+    /// sends a waveform by name
     /// </summary>
     /// <param name="waveName"></param>
-    /// <param name="durationInS"></param>
+    /// <param name="durationInS"> optional parameter for changing the duration of the wavform</param>
     public void ApplyWaveform(string waveName, float durationInS = -1)
     {
         currentWaveform = GetWaveform(waveName);
 
         if (durationInS != -1) //check if duration was set
         {
+            // send waveform with specified duration and reset waveform to default aftwards
             float oldDuration = currentWaveform.duration_s;
             currentWaveform.duration_s = durationInS;
             SendCurrentWaveform();
@@ -80,10 +84,16 @@ public class WaveformController : MonoBehaviour
         }  
         else
         {
+            // send waveformw with default lenght
             SendCurrentWaveform();
         }
     }
 
+    /// <summary>
+    /// get a waveform by name
+    /// </summary>
+    /// <param name="name"></param>
+    /// <returns></returns>
     public SG_Waveform GetWaveform(string name)
     {
         foreach(SG_Waveform wave in allWaveForms)
@@ -97,6 +107,7 @@ public class WaveformController : MonoBehaviour
         return null;
     }
 
+    // sends current waveform of this script
     public void SendCurrentWaveform()
     {
         /* old version where feedback was send to both hands
