@@ -97,7 +97,23 @@ file:///C:/Users/leonv/Desktop/SG_Unity_Doc_v2_2/class_s_g_1_1_s_g___interactabl
 https://docs.unity3d.com/Packages/com.unity.xr.management@4.0/manual/EndUser.html
 https://www.screentogif.com/
 
-How do i find questionaires?
+
 
 WICHTIG FÜR EXPERIMENT:
 Auch wenn programm als 2in1 funktioniert, einen ordner für controller und einen für gloves erstellen, damit experiment data getrennt ist.
+
+NasaTLX ein mal für controller und ein mal für gloves,
+aber was ist mit SUS, auch für beides?
+Interview dann mit fragen zu beidem...
+
+
+Hypothesen:
+-beide Systeme motivieren das Interesse die eigenen chirurgischen Fähigkeiten zu trainieren.
+-die Genauigkeit ist mit den Controllern signifikant höher
+-die usability beider systeme unterscheidet sich signifikant
+	--> handschuhe unhandlich, kabel nervig, relativ hohes Gewicht
+-die Arbeitsbelastung mit den Handschuhen ist höher
+-die kognitive Belastung beider Systeme ist gleich (unterscheidet sich nicht signifikant)
+-die physikalische Belastung ist bei den Handschuhen höher 
+-die handschuhe erzeugen eine höhere Immersion
+-längere Benutzung ist mit controllern angenehmer (-> controller alltagstauglicher)
