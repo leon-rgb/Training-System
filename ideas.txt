@@ -108,12 +108,20 @@ Interview dann mit fragen zu beidem...
 
 
 Hypothesen:
--beide Systeme motivieren das Interesse die eigenen chirurgischen Fähigkeiten zu trainieren.
--die Genauigkeit ist mit den Controllern signifikant höher
--die usability beider systeme unterscheidet sich signifikant
-	--> handschuhe unhandlich, kabel nervig, relativ hohes Gewicht
--die Arbeitsbelastung mit den Handschuhen ist höher
--die kognitive Belastung beider Systeme ist gleich (unterscheidet sich nicht signifikant)
--die physikalische Belastung ist bei den Handschuhen höher 
--die handschuhe erzeugen eine höhere Immersion
--längere Benutzung ist mit controllern angenehmer (-> controller alltagstauglicher)
+
+zu automatisiert generierten Daten vom Programm:
+	-die Genauigkeit ist mit den Controllern signifikant höher
+
+zum SUS:
+	-die usability beider systeme unterscheidet sich signifikant
+		--> handschuhe unhandlich, kabel nervig, relativ hohes Gewicht
+	
+zu NasaTLX:
+	-die Arbeitsbelastung mit den Handschuhen ist höher
+	-die kognitive Belastung beider Systeme ist gleich (unterscheidet sich nicht signifikant)
+	-die physikalische Belastung ist bei den Handschuhen höher 
+
+zum interview:
+	-die handschuhe erzeugen eine höhere Immersion
+	-längere Benutzung ist mit controllern angenehmer (-> controller alltagstauglicher)
+	-beide Systeme motivieren das Interesse die eigenen chirurgischen Fähigkeiten zu trainieren.
