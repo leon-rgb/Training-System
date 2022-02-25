@@ -125,3 +125,20 @@ zum interview:
 	-die handschuhe erzeugen eine höhere Immersion
 	-längere Benutzung ist mit controllern angenehmer (-> controller alltagstauglicher)
 	-beide Systeme motivieren das Interesse die eigenen chirurgischen Fähigkeiten zu trainieren.
+	
+	
+	
+Experiment:
+
+	UV: 
+		- Art der Interaktion: Controller und Gloves
+
+	AV:
+		- Accuracy
+		- usability / subjective satisfaction
+		- workload (physical and cognitive)
+	
+	Design: 
+		-within-group
+		
+	8 Probanden
