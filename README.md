@@ -15,7 +15,7 @@ Make sure to disable all controllers (including trackers) that you are not using
 
 
 ## SenseGlove Version
-The scene of the SenseGlove version is temporary "Controller_SurgeryRoom 2.unity" and can be found in [/VR Training System/Assests/Scenes](https://github.com/leon-rgb/Training-System/blob/main/VR%20Training%20System/Assets/Scenes/) <br><br>
+The scene of the SenseGlove version is "Gloves_SurgeryRoom.unity" and can be found in [/VR Training System/Assests/Scenes](https://github.com/leon-rgb/Training-System/blob/main/VR%20Training%20System/Assets/Scenes/) <br><br>
 
 ## Notes to myself: <br>
 - switch cables of the glove sets when finished the thesis. I changed the cable of the right glove.
