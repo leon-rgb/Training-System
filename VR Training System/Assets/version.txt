@@ -1,3 +1,3 @@
-g
+c
 Write g (for gloves) or c(for controller) into the first line to specify which version you want to use.
 Reminder: To ensure haptic feedback works properly you should disconnect controllers/trackers you don't use from steamvr and restart steamvr.
