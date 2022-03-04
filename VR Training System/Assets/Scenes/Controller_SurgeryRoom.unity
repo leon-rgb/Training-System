@@ -1772,7 +1772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 447954, guid: dc06161b6d97feb419f45f03b62e14b9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10436,8 +10436,6 @@ GameObject:
   - component: {fileID: 1803106950}
   - component: {fileID: 1803106949}
   - component: {fileID: 1803106948}
-  - component: {fileID: 1803106952}
-  - component: {fileID: 1803106951}
   m_Layer: 0
   m_Name: Scroll View
   m_TagString: LoadMenu
@@ -10535,30 +10533,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803106946}
   m_CullTransparentMesh: 1
---- !u!114 &1803106951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803106946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7035afd5a1690f4cac7dbc658a708bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1803106952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1803106946}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02d9a3b1bde00484697e862dd1195587, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1813900225
 GameObject:
   m_ObjectHideFlags: 0
