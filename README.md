@@ -3,9 +3,28 @@
 
 I started this Project as a Bachelor Thesis. <br><br>
 This is a prototype of a VR surgery training system that will be used to compare different kinds of haptic feedback in VR. It works with Sensegloves and should work with any Steam VR compatible devices (tested with HTC Vive Pro). <br><br>
-Unity Version: 2020.3.3f1 [lower versions are not recommended] <br><br>
-Both Versions of the prototype use the [CuttingPlaneCreation.unity](https://github.com/leon-rgb/Training-System/tree/main/VR%20Training%20System/Assets/Scenes) scene for managing Cutting Planes.<br><br>
+Both Versions of the prototype use the [CuttingPlaneCreation.unity](https://github.com/leon-rgb/Training-System/tree/main/VR%20Training%20System/Assets/Scenes) scene for managing Cutting Planes.
+
+#### The structure of the of the application consists of three scenes:
+![applicationStructure](https://media.github.tik.uni-stuttgart.de/user/2568/files/07da9780-aa04-11ec-83c5-aa791e8183d6)
 To chose what version you want to use, you have to change the [version.txt](https://github.com/leon-rgb/Training-System/blob/main/VR%20Training%20System/Assets/version.txt) file in this repository. This is not transfered if you make a build of the application. The version file is created when first starting and can be found in the folder /VR Surgery Training System_Data then.
+
+### Versions, Plugins, SDKs, ...
+It uses Unity Version: 2020.3.3f1 [lower versions are not recommended]. <br>**The repository uses git lfs --> should be activated**<br><br>
+- [SteamVR Unity Plugin (Version 2.7.3)](https://valvesoftware.github.io/steamvr_unity_plugin/)
+- [SenseGlove Unity Plugin (Version 2.2)](https://github.com/Adjuvo/SenseGlove-Unity)
+- VIVE Input Utility (Version  1.15.0)
+- XR Plugin Management (Version 4.0.7)
+- Pro Builder (Version 4.5.2)
+- Post Processing (Version 3.1.1)
+
+*Packages that are not linked can be found directly in the Unity Package Manager or the Asset Store.*
+
+## Windows Builds of the system can be found here:
+
+[Google Drive Link](https://drive.google.com/drive/folders/1OyvivWRcgjhE81wN5nj4Lj1z13s1_HjY) <br>
+[One Drive Link](https://1drv.ms/u/s!AkgSs2wgFvVx0CggKm4iPNe0PKfU?e=Twoape)
+
 
 ## Controller Version
 
