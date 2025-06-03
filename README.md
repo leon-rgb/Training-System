@@ -6,7 +6,8 @@ This is a prototype of a VR surgery training system that will be used to compare
 Both Versions of the prototype use the [CuttingPlaneCreation.unity](https://github.com/leon-rgb/Training-System/tree/main/VR%20Training%20System/Assets/Scenes) scene for managing Cutting Planes.
 
 #### The structure of the of the application consists of three scenes:
-![applicationStructure](https://media.github.tik.uni-stuttgart.de/user/2568/files/07da9780-aa04-11ec-83c5-aa791e8183d6)
+![Screenshot_1](https://github.com/user-attachments/assets/ace58627-a635-4692-a60e-2c5ae8ec3032)
+
 To chose what version you want to use, you have to change the [version.txt](https://github.com/leon-rgb/Training-System/blob/main/VR%20Training%20System/Assets/version.txt) file in this repository. This is not transfered if you make a build of the application. The version file is created when first starting and can be found in the folder /VR Surgery Training System_Data then.
 
 ### Versions, Plugins, SDKs, ...
@@ -20,7 +21,7 @@ It uses Unity Version: 2020.3.3f1 [lower versions are not recommended]. <br>**Th
 
 *Packages that are not linked can be found directly in the Unity Package Manager or the Asset Store.*
 
-## Windows Builds of the system can be found here:
+## Windows Builds, demo videos and in detail documentation of the system can be found here:
 
 [Google Drive Link](https://drive.google.com/drive/folders/1OyvivWRcgjhE81wN5nj4Lj1z13s1_HjY) <br>
 [One Drive Link](https://1drv.ms/u/s!AkgSs2wgFvVx0CggKm4iPNe0PKfU?e=Twoape)
@@ -35,6 +36,3 @@ Make sure to disable all controllers (including trackers) that you are not using
 
 ## SenseGlove Version
 The scene of the SenseGlove version is "Gloves_SurgeryRoom.unity" and can be found in [/VR Training System/Assests/Scenes](https://github.com/leon-rgb/Training-System/blob/main/VR%20Training%20System/Assets/Scenes/) <br><br>
-
-## Notes to myself: <br>
-- switch cables of the glove sets when finished the thesis. I changed the cable of the right glove.
